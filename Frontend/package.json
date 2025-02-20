@@ -12,6 +12,7 @@
   "dependencies": {
     "@headlessui/react": "^2.2.0",
     "@heroicons/react": "^2.2.0",
+    "@material-tailwind/react": "^2.1.10",
     "@tailwindcss/postcss": "^4.0.7",
     "lucide-react": "^0.475.0",
     "react": "^19.0.0",

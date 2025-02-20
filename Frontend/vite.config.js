@@ -3,8 +3,10 @@ import react from '@vitejs/plugin-react';
 
 export default defineConfig({
   plugins: [react()],
-  base: './',
   optimizeDeps: {
     include: ['@material-tailwind/react'],
+  },
+  build: {
+    outDir: 'dist',
   },
 });
