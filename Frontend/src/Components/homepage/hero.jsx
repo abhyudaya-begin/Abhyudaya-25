@@ -9,21 +9,19 @@ function HeroSection() {
     <div
       style={{
         position: "relative",
-        width: "100%",
-        height: "100%",
+        width: "auto",
+        height: "100vh", // Full viewport height
         display: "grid",
         placeItems: "center",
+        alignItems:"center",
+        backgroundImage: `linear-gradient(to right, rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.36)), url(${bgImgSrc})`,
+        backgroundSize: "cover", // Make sure image covers the entire area
+        backgroundPosition: "center", // Center the image
+        backgroundRepeat: "no-repeat", // Prevent repeating
       }}
     >
-      <div
-        style={{
-          backgroundImage: `linear-gradient(to right, rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.36)), url(${bgImgSrc})`,
-        }}
-        className="bg-cover bg-center"
-      >
-        <div className="logo">
-          <img className="" src={heroLogoSrc} alt="Abhyudaya Logo" />
-        </div>
+      <div className="logo">
+        <img className="" src={heroLogoSrc} alt="Abhyudaya Logo" />
       </div>
     </div>
   );
