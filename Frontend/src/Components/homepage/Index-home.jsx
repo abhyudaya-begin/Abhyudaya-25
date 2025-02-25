@@ -21,7 +21,7 @@ const IndexHome = () => {
 
       {/* All over to 2nd year , u can add yr own code and make changes too as per yr convinience */}
 
-
+      {/*Hello world*/}
     </div>
   );
 };
