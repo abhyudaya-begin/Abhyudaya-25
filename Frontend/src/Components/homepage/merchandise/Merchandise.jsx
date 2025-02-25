@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import BlackTshirt from "../../../assets/Logo-images/blackTshirt.png";
+import BlackTshirt from "../../../assets/Logo-images/blackTshirt.jpg";
 const Merchandise = () => {
   const [quantity, setQuantity] = useState(1);
   const [selectedSize, setSelectedSize] = useState("M");
