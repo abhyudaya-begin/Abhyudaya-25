@@ -1,17 +1,12 @@
 import React from "react";
-import { LazyLoadImage } from "react-lazy-load-image-component";
-import "react-lazy-load-image-component/src/effects/blur.css";
-import "./Pin.css";
 
-const Pin = ({ photoUrl }) => {
+const Pin = ({ photoUrl, description }) => {
   return (
-    <div className="pin">
-      <LazyLoadImage
-        src={photoUrl}
-        alt="Pin"
-        className="pin-image"
-        effect="blur"
-      />
+    <div className="relative">
+      <img src={photoUrl} alt={description} className="w-full h-auto" />
+      <div className="absolute bottom-0 left-0 w-full bg-black bg-opacity-50 text-white text-center p-2">
+        {description}
+      </div>
     </div>
   );
 };

@@ -1,56 +1,30 @@
 import React from "react";
 import Masonry from "react-masonry-css";
-import "./PinGrid.css";
 import Pin from "./pin";
 
-import image1 from "../../../assets/Glimses/glimpse1.png";
-import image2 from "../../../assets/Glimses/glimpse2.png";
-import image3 from "../../../assets/Glimses/glimpse3.png";
-import image4 from "../../../assets/Glimses/glimpse4.png";
-import image5 from "../../../assets/Glimses/glimpse5.png";
-import image6 from "../../../assets/Glimses/glimpse6.png";
-import image7 from "../../../assets/Glimses/glimpse7.png";
-import image8 from "../../../assets/Glimses/glimpse8.png";
-import image9 from "../../../assets/Glimses/glimpse9.png";
-import image10 from "../../../assets/Glimses/glimpse10.png";
-import image11 from "../../../assets/Glimses/glimpse11.png";
-import image12 from "../../../assets/Glimses/glimpse12.png";
-import image13 from "../../../assets/Glimses/glimpse13.png";
-import image14 from "../../../assets/Glimses/glimpse14.png";
-import image15 from "../../../assets/Glimses/glimpse15.png";
-import image16 from "../../../assets/Glimses/glimpse16.png";
-import image17 from "../../../assets/Glimses/glimpse17.png";
-import image18 from "../../../assets/Glimses/glimpse18.png";
-import image19 from "../../../assets/Glimses/glimpse19.png";
-import image20 from "../../../assets/Glimses/glimpse20.png";
-import image21 from "../../../assets/Glimses/glimpse21.png";
-import image22 from "../../../assets/Glimses/glimpse22.png";
-
-import { div } from "motion/react-client";
-
 const photoUrls = [
-  image1,
-  image2,
-  image3,
-  image4,
-  image5,
-  image6,
-  image7,
-  image8,
-  image9,
-  image10,
-  image11,
-  image12,
-  image13,
-  image14,
-  image15,
-  image16,
-  image17,
-  image18,
-  image19,
-  image20,
-  image21,
-  image22,
+  { url: "https://www.mediafire.com/convkey/kr344qc7krpjyi5/glimpse1.png", description: "Glimpse 1" },
+  { url: "https://www.mediafire.com/convkey/86u508mktnly37o/glimpse2.png", description: "Glimpse 2" },
+  { url: "https://www.mediafire.com/convkey/s8f2pfycd0lrtlo/glimpse3.png", description: "Glimpse 3" },
+  { url: "https://www.mediafire.com/convkey/4lpty6mjoe4jiix/glimpse4.png", description: "Glimpse 4" },
+  { url: "https://www.mediafire.com/convkey/xvv27c9mh1hysie/glimpse5.png", description: "Glimpse 5" },
+  { url: "https://www.mediafire.com/convkey/z5zleotumjnleob/glimpse6.png", description: "Glimpse 6" },
+  { url: "https://www.mediafire.com/convkey/nn5pd639r4iaihd/glimpse7.png", description: "Glimpse 7" },
+  { url: "https://www.mediafire.com/convkey/5gyn0qbc40v0quk/glimpse8.png", description: "Glimpse 8" },
+  { url: "https://www.mediafire.com/convkey/h82wc5opql7i11e/glimpse9.png", description: "Glimpse 9" },
+  { url: "https://www.mediafire.com/convkey/izzvchbfdvnlz0o/glimpse10.png", description: "Glimpse 10" },
+  { url: "https://www.mediafire.com/convkey/v8bd6l5ibknos7s/glimpse11.png", description: "Glimpse 11" },
+  { url: "https://www.mediafire.com/convkey/si80b3h0rnto0un/glimpse13.png", description: "Glimpse 13" },
+  { url: "https://www.mediafire.com/convkey/8t0gei7hze56bn2/glimpse12.png", description: "Glimpse 12" },
+  { url: "https://www.mediafire.com/convkey/s88qa6d8pi733wu/glimpse14.png", description: "Glimpse 14" },
+  { url: "https://www.mediafire.com/convkey/tu2j2b7qymb2hun/glimpse15.png", description: "Glimpse 15" },
+  { url: "https://www.mediafire.com/convkey/pz7ttydaltlrp8v/glimpse16.png", description: "Glimpse 16" },
+  { url: "https://www.mediafire.com/convkey/1awxqsvwyaavron/glimpse17.png", description: "Glimpse 17" },
+  { url: "https://www.mediafire.com/convkey/k86ik25gv53e78c/glimpse18.png", description: "Glimpse 18" },
+  { url: "https://www.mediafire.com/convkey/du5geofgd1nvnu7/glimpse19.png", description: "Glimpse 19" },
+  { url: "https://www.mediafire.com/convkey/hnca3tde483lk0i/glimpse20.png", description: "Glimpse 20" },
+  { url: "https://www.mediafire.com/convkey/p2n53x0zt9ful54/glimpse21.png", description: "Glimpse 21" },
+  { url: "https://www.mediafire.com/convkey/kstkbsq2hx6ppm1/glimpse22.png", description: "Glimpse 22" },
 ];
 
 const PinGrid = () => {
@@ -62,17 +36,21 @@ const PinGrid = () => {
   };
 
   return (
-    <div>
-    <h1 className="heading">Gallery</h1>
-    <div>
-      {photoUrls && (
-        <Masonry breakpointCols={breakpoints} className="masonry-grid" columnClassName="masonry-grid_column">
-          {photoUrls.map((photoUrl, index) => (
-            <Pin key={index} photoUrl={photoUrl} />
-          ))}
-        </Masonry>
-      )}
-    </div>
+    <div className="bg-[#120c0f]">
+      <h1 className="text-center text-2xl text-gray-600 uppercase mb-4">Gallery</h1>
+      <div>
+        {photoUrls && (
+          <Masonry
+            breakpointCols={breakpoints}
+            className="flex -ml-4 p-4"
+            columnClassName="pl-4 bg-clip-padding"
+          >
+            {photoUrls.map((photo, index) => (
+              <Pin key={index} photoUrl={photo.url} description={photo.description} />
+            ))}
+          </Masonry>
+        )}
+      </div>
     </div>
   );
 };
