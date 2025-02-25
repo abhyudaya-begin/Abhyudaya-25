@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import IndexHome from "./homepage/Index-home";
-
+ 
+import Members from "./Team/Members";
 // Pages
 
 // You can add these placeholder pages or replace with your actual components
@@ -12,9 +13,7 @@ const About = () => (
 const Services = () => (
   <div className="p-4 bg-white rounded-lg shadow">Services Page Content</div>
 );
-const Team = () => (
-  <div className="p-4 bg-white rounded-lg shadow">Team Page Content</div>
-);
+
 
 function Routing() {
   return (
@@ -27,7 +26,7 @@ function Routing() {
       <Route path="/" element={<IndexHome />} />
       <Route path="/about" element={<About />} />
       <Route path="/services" element={<Services />} />
-      <Route path="/team" element={<Team />} />
+      <Route path="/team" element={ <Members/>} />
     </Routes>
     </div>
     // <>
