@@ -15,34 +15,34 @@ import { RiTeamFill } from "react-icons/ri";
 import AbhLogo from "../assets/Logo-images/Abhyudaya.png";
 
 const Sidebar = () => {
-  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-  const location = useLocation();
+  const [isSidebarOpen, setIsSidebarOpen] = useState(window.innerWidth >= 768);
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
   const sidebarRef = useRef(null);
-
-  // Handle screen resize
+  
   useEffect(() => {
     const handleResize = () => {
       const mobile = window.innerWidth < 768;
       setIsMobile(mobile);
-      if (!mobile) setIsSidebarOpen(true);
-      else setIsSidebarOpen(false);
+      setIsSidebarOpen(!mobile); 
 
-      // Update sidebar width dynamically
-      if (isSidebarOpen) {
+      
         const width = sidebarRef.current.offsetWidth;
+        
+       
         document.documentElement.style.setProperty(
           "--sidebar-width",
-          `${width}px`
+          mobile ? "0px" : `${width}px`
         );
-      }
+      
     };
-
+  
     window.addEventListener("resize", handleResize);
     handleResize(); // Set initial state
-
+  
     return () => window.removeEventListener("resize", handleResize);
-  }, []);
+  }, []); 
+  
+  
 
   // 2nd year working zone!
   const navItems = [

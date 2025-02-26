@@ -17,10 +17,13 @@ const Services = () => (
 
 function Routing() {
   return (
-    <div   style={{
-      marginLeft: "calc(var(--sidebar-width))", // Fallback to 60px
-      // paddingLeft: "60px", // Fallback to 60px
-    }} >
+   <div
+  style={{
+    paddingLeft: "calc(var(--sidebar-width) + 0px)", // Ensure px unit
+    width: "100%",
+  }}
+>
+
 
     <Routes>
       <Route path="/" element={<IndexHome />} />

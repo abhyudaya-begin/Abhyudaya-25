@@ -8,7 +8,7 @@ import Merchandise from "./merchandise/Merchandise";
 const IndexHome = () => {
   return (
     <div
-      className="flex flex-col overflow-x-hidden bg-[#120c0f] text-white"
+      className="flex flex-col select-none overflow-x-hidden bg-[#120c0f] text-white"
       
     >
       <HeroSection />
@@ -16,12 +16,7 @@ const IndexHome = () => {
       <CountDown />
       <Merchandise/>
       <ArtistSlider />
-      <PinGrid/>  {/* All about theme and all */}
-
-
-      {/* All over to 2nd year , u can add yr own code and make changes too as per yr convinience */}
-
-      {/*Hello world*/}
+    
     </div>
   );
 };

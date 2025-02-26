@@ -2,6 +2,11 @@
   /* visibility: hidden; */
   width: 0;
 }
+:root {
+  --sidebar-width: 0px; /* Set a default sidebar width */
+}
+
+
 footer {
   margin-bottom: 0;
   padding-bottom: 10px;
