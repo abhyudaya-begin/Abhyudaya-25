@@ -1,5 +1,5 @@
 import React from "react";
-import Carousel from "./sli";
+import Carousel from "./Carousel";
 
 const ArtistSlider = () => {
   let slides = [
@@ -10,8 +10,10 @@ const ArtistSlider = () => {
   ];
 
   return (
-    <div className="bg-[#120c0f]  w-full m-auto md:w-[70%] ">
-      <Carousel slides={slides} />
+    <div className="bg-[#120c0f] flex justify-center items-center w-[90%]  p-4">
+      <div className="w-[90%] ">
+        <Carousel slides={slides} />
+      </div>
     </div>
   );
 };

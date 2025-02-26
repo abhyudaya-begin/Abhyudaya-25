@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import IndexHome from "./homepage/Index-home";
  
 import Members from "./Team/Members";
+import CampusAmbassadorProgram from "./CampusAmbassador/CampusAmbassadorProgram";
 // Pages
 
 // You can add these placeholder pages or replace with your actual components
@@ -30,6 +31,7 @@ function Routing() {
       <Route path="/about" element={<About />} />
       <Route path="/services" element={<Services />} />
       <Route path="/team" element={ <Members/>} />
+      <Route path="/campus-ambassador" element={ <CampusAmbassadorProgram/>} />
     </Routes>
     </div>
     // <>

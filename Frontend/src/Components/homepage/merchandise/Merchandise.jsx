@@ -1,61 +1,64 @@
-import React, { useState } from "react";
+import { useState } from "react";
+import BlackTshirt from "../../../assets/Logo-images/blackTshirt.jpg"
+const tshirts = [
+  {
+    id: 1,
+    name: "Abhyudaya'25 Official Tee",
+    image: BlackTshirt,
+    sizes: ["S", "M", "L", "XL"],
+    price: "₹499",
+  },
+  {
+    id: 2,
+    name: "Abhyudaya'25 Limited Edition Tee",
+    image: BlackTshirt,
+    sizes: ["M", "L", "XL"],
+    price: "₹599",
+  },
+];
 
-import BlackTshirt from "../../../assets/Logo-images/blackTshirt.jpg";
-const Merchandise = () => {
-  const [quantity, setQuantity] = useState(1);
-  const [selectedSize, setSelectedSize] = useState("M");
-  const [selectedColor, setSelectedColor] = useState("white");
+export default function MerchandiseSection() {
+  const [selectedSizes, setSelectedSizes] = useState({});
 
-  const handleQuantityChange = (type) => {
-    if (type === "increase") {
-      setQuantity(quantity + 1);
-    } else if (type === "decrease" && quantity > 1) {
-      setQuantity(quantity - 1);
-    }
+  const handleSizeChange = (id, size) => {
+    setSelectedSizes((prev) => ({ ...prev, [id]: size }));
   };
 
   return (
-    <div className="min-h-screen bg-[#120c0f]  flex flex-col items-center justify-center p-6 text-white">
-      <div className="max-w-4xl w-full flex flex-col md:flex-row items-center bg-[#1a1a3a] p-8 rounded-2xl shadow-lg">
-        <div className="flex-1 flex justify-center">
-          <img
-            src={BlackTshirt}
-            alt="T-shirt"
-            className="w-80 h-auto rounded-lg"
-          />
-        </div>
-
-        <div className="flex-1 space-y-4 mt-6 md:mt-0 md:ml-8">
-          <h2 className="text-2xl font-bold">ABHYUDAYA'25 T-shirt Orders</h2>
-          <p className="text-lg">Price: <span className="font-semibold">₹399</span>, All shirts are oversized.</p>
-          <p className="text-lg">Available Sizes: S, M, L, XL, XXL</p>
-          
-          <div className="border-t border-gray-500 pt-4">
-            <h3 className="text-lg font-bold">Payment Process</h3>
-            <p>Payment will be done through <span className="font-bold">UPI</span></p>
-            <p>Click on <span className="font-bold">Order Now</span> to be redirected.</p>
-            <p>Choose <span className="font-bold">Abhyudaya, MMMUT Gorkhpur</span> in payment category.</p>
-            <p>Enter your <span className="font-bold">personal details</span> as required.</p>
-            <p>Mention the T-shirt price in the <span className="font-bold">Abhyudaya T-shirt</span> field.</p>
-            <p>Mention the T-shirt size in the <span className="font-bold">Remarks</span> field.</p>
-            <p>Complete payment and take a <span className="font-bold">screenshot</span> of the receipt.</p>
+    <div className="p-6 text-center">
+      <h2 className="text-3xl font-bold mb-6">🎽 Merchandise</h2>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {tshirts.map((tshirt) => (
+          <div key={tshirt.id} className="bg-white shadow-xl rounded-xl p-5">
+            <img
+              src={tshirt.image}
+              alt={tshirt.name}
+              
+              className="w-50 h-50 object-cover rounded-lg"
+            />
+            <h3 className="text-lg font-semibold mt-3">{tshirt.name}</h3>
+            <p className="text-gray-500">{tshirt.price}</p>
+            <div className="mt-3">
+              <label className="text-sm font-medium">Size:</label>
+              <select
+                className="mt-1 p-2 border rounded w-full"
+                value={selectedSizes[tshirt.id] || ""}
+                onChange={(e) => handleSizeChange(tshirt.id, e.target.value)}
+              >
+                <option value="">Select Size</option>
+                {tshirt.sizes.map((size) => (
+                  <option key={size} value={size}>
+                    {size}
+                  </option>
+                ))}
+              </select>
+            </div>
+            <button className="mt-4 w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700">
+              Add to Cart
+            </button>
           </div>
-
-          <div className="border-t border-gray-500 pt-4">
-            <h3 className="text-lg font-bold">T-shirt Collection:</h3>
-            <p>You can collect from <span className="font-bold">MPH , MMMUT</span></p>
-            <p>For queries, contact:</p>
-            <p className="font-bold">Pritish Tomar</p>
-            <p>Phone: <a href="tel:9358704604" className="text-blue-400 underline">9358704604</a></p>
-          </div>
-
-          <button className="mt-4 bg-red-500 text-white px-6 py-2 rounded-xl text-lg hover:bg-red-600 transition">
-            Order Now
-          </button>
-        </div>
+        ))}
       </div>
     </div>
   );
-};
-
-export default Merchandise;
+}

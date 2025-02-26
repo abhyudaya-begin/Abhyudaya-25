@@ -76,26 +76,17 @@ const Countdown = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen text-white p-6 bg-transparent">
+    <div className="flex  flex-col items-center justify-center text-white px-6 bg-transparent">
       <div className="w-full max-w-4xl">
-        {/* Festival Title */}
-        <div className="text-center mb-16">
-          <h1 className="text-4xl md:text-7xl font-extrabold mb-2 tracking-tight">
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-pink-300 via-purple-200 to-indigo-100 animate-pulse">
-              ABYUDAYA'25
-            </span>
-          </h1>
        
-          <div className="mt-4 text-white md:text-xl font-medium">The countdown has begun</div>
-        </div>
         
         {/* Countdown Timer */}
         <div className="flex justify-center flex-wrap items-center space-x-1 md:space-x-2">
           {/* Days */}
-          <div className="flex flex-col items-center">
+          <div className="flex flex-col items-center ">
             <div className="relative">
               <div className={`bg-purple-900 bg-opacity-80 backdrop-blur-sm rounded-xl border-2 border-purple-300 border-opacity-70 shadow-lg shadow-purple-500/40 p-4 md:p-6 transition-all duration-700 ease-in-out ${animateDay ? 'scale-110 border-opacity-100' : 'scale-100'}`}>
-                <span className="text-xl md:text-6xl lg:text-7xl font-bold text-white">
+                <span className="text-xl sm:text-5xl  md:text-6xl lg:text-7xl font-bold text-white">
                   {formatTime(timeLeft.days)}
                 </span>
               </div>
@@ -105,13 +96,13 @@ const Countdown = () => {
           </div>
           
           {/* Colon */}
-          <div className="text-xl md:text-6xl lg:text-7xl font-bold text-white opacity-90 animate-pulse flex items-center self-start mt-4 md:mt-6">:</div>
+          <div className="text-xl sm:text-5xl mx-1 md:text-6xl lg:text-7xl font-bold text-white opacity-90 animate-pulse flex items-center self-start mt-4 md:mt-6">:</div>
           
           {/* Hours */}
           <div className="flex flex-col items-center">
             <div className="relative">
               <div className={`bg-indigo-900 bg-opacity-20 backdrop-blur-sm rounded-xl border-2 border-indigo-300 border-opacity-70 shadow-lg shadow-indigo-500/40 p-4 md:p-6 transition-all duration-700 ease-in-out ${animateHour ? 'scale-110 border-opacity-100' : 'scale-100'}`}>
-                <span className="text-xl md:text-6xl lg:text-7xl font-bold text-white">
+                <span className="text-xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white">
                   {formatTime(timeLeft.hours)}
                 </span>
               </div>
@@ -121,13 +112,13 @@ const Countdown = () => {
           </div>
           
           {/* Colon */}
-          <div className="text-xl md:text-6xl lg:text-7xl font-bold text-white opacity-90 animate-pulse flex items-center self-start mt-4 md:mt-6">:</div>
+          <div className="text-xl sm:text-5xl mx-1 md:text-6xl lg:text-7xl font-bold text-white opacity-90 animate-pulse flex items-center self-start mt-4 md:mt-6">:</div>
           
           {/* Minutes */}
           <div className="flex flex-col items-center">
             <div className="relative">
               <div className={`bg-violet-900 bg-opacity-20 backdrop-blur-sm rounded-xl border-2 border-violet-300 border-opacity-70 shadow-lg shadow-violet-500/40 p-4 md:p-6 transition-all duration-700 ease-in-out ${animateMinute ? 'scale-110 border-opacity-100' : 'scale-100'}`}>
-                <span className="text-xl md:text-6xl lg:text-7xl font-bold text-white">
+                <span className="text-xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white">
                   {formatTime(timeLeft.minutes)}
                 </span>
               </div>
@@ -137,13 +128,13 @@ const Countdown = () => {
           </div>
           
           {/* Colon */}
-          <div className="text-xl md:text-6xl lg:text-7xl font-bold text-white opacity-90 animate-pulse flex items-center self-start mt-4 md:mt-6">:</div>
+          <div className="text-xl sm:text-5xl mx-1 md:text-6xl lg:text-7xl font-bold text-white opacity-90 animate-pulse flex items-center self-start mt-4 md:mt-6">:</div>
           
           {/* Seconds */}
           <div className="flex flex-col items-center">
             <div className="relative">
               <div className={`bg-fuchsia-900 bg-opacity-20 backdrop-blur-sm rounded-xl border-2 border-fuchsia-300 border-opacity-70 shadow-lg shadow-fuchsia-500/40 p-4 md:p-6 transition-all duration-700 ease-in-out ${animateSecond ? 'scale-105 border-opacity-100' : 'scale-100'}`}>
-                <span className="text-xl md:text-6xl lg:text-7xl font-bold text-white">
+                <span className="text-xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white">
                   {formatTime(timeLeft.seconds)}
                 </span>
               </div>
