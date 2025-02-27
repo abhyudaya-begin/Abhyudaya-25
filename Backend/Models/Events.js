@@ -1,5 +1,5 @@
-const mongoose = require("mongoose");
-// User Schema
+const  mongoose  = require("mongoose");
+
 const eventSchema = new mongoose.Schema(
   {
     eventName: {
@@ -11,15 +11,6 @@ const eventSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
-
-    //    team type
-    // images -> strings
-    // uniqueId :
-    //  category :
-    // noOFRounds:
-    // EventType : ONline/Offline
-    // price:
-    // ParticipationFee
     category: {
       type: String,
       required: true,
@@ -40,7 +31,7 @@ const eventSchema = new mongoose.Schema(
         type: String, // URLs of images
       },
     ],
-    uniqueId: {
+    eventId: {
       type: String,
       required: true,
       unique: true,
@@ -68,10 +59,9 @@ const eventSchema = new mongoose.Schema(
       type: String,
       required: false,
     },
-    // description -> array of strings -> point wise rules
   },
   { timestamps: true }
 );
 
-const Events = mongoose.model("Events", eventSchema);
-module.exports = { Events };
+ const Events = mongoose.model("Events", eventSchema);
+ module.exports = {Events};

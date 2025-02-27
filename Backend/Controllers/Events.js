@@ -1,4 +1,5 @@
 const { Events } = require("../Models/Events");
+
 const { v4: uuidv4 } = require("uuid");
 
 // Get all events
@@ -30,6 +31,7 @@ const getAllEvents = async (req, res) => {
     const events = await Events.find(filter);
     res.status(200).json(events);
   } catch (error) {
+    console.error(error);
     res.status(500).json({ error: "Failed to retrieve events" });
   }
 };
@@ -37,7 +39,7 @@ const getAllEvents = async (req, res) => {
 // Get event by ID
 const getEventById = async (req, res) => {
   try {
-    const event = await Events.findById(req.params.id);
+    const event = await Events.findOne({ eventId: req.params.id });
     if (!event) {
       return res.status(404).json({ message: "Event not found" });
     }
@@ -82,6 +84,7 @@ const createEvent = async (req, res) => {
     await newEvent.save();
     res.status(201).json(newEvent);
   } catch (error) {
+    console.log(error);
     res
       .status(500)
       .json({ error: "Failed to create event", details: error.message });
@@ -91,8 +94,8 @@ const createEvent = async (req, res) => {
 // Update event
 const updateEvent = async (req, res) => {
   try {
-    const updatedEvent = await Events.findByIdAndUpdate(
-      req.params.id,
+    const updatedEvent = await Events.findOneAndUpdate(
+      { eventId: req.params.id },
       req.body,
       { new: true }
     );
@@ -101,6 +104,7 @@ const updateEvent = async (req, res) => {
     }
     res.status(200).json(updatedEvent);
   } catch (error) {
+    console.log(error);
     res.status(500).json({ error: "Failed to update event" });
   }
 };
@@ -108,7 +112,7 @@ const updateEvent = async (req, res) => {
 // Delete event
 const deleteEvent = async (req, res) => {
   try {
-    const deletedEvent = await Events.findByIdAndDelete(req.params.id);
+    const deletedEvent = await Events.findOneAndDelete({eventId: req.params.id});
     if (!deletedEvent) {
       return res.status(404).json({ message: "Event not found" });
     }
@@ -125,3 +129,5 @@ module.exports = {
   updateEvent,
   deleteEvent,
 };
+
+//

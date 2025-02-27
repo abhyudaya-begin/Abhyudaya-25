@@ -1,6 +1,7 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const eventRouter = require("./Routers/Events");
+const userRouter = require("./Routers/User");
 const dotenv = require("dotenv");
 dotenv.config();
 
@@ -21,9 +22,8 @@ app.get("/", (req, res) => {
 });
 
 app.use("/events", eventRouter); // Aditi
-// Vinayak -> Users
+app.use("/user", userRouter); // Aditi
 
-// app.use('/email', ) -> Chandan
 
 // ....................................................................
 app.listen(8000, () => {
