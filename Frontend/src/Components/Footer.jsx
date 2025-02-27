@@ -10,7 +10,7 @@ import {
   FaBriefcase,
 } from "react-icons/fa";
 import logo from "../assets/Logo-images/Abhyudaya.png";
-import hindiLogo from "../assets/Logo-images/White_Logo.png";
+import hindiLogo from "../assets/Logo-images/White_logo.png";
 
 const Footer = ({ isSidebarOpen }) => {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
