@@ -183,13 +183,15 @@ const Footer = ({ isSidebarOpen }) => {
         {/* Map Section */}
         <div className="flex flex-col md:w-[28%] lg:w-[31%] xl:w-[32%]">
           <div className="rounded-lg overflow-hidden flex-1 h-[250px] md:h-[240px] lg:h-[250px]">
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1791.2985797825392!2d83.2882721!3d26.7494518!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39915b09fb72d6a5%3A0x1c1c3b8d5b3e8e14!2sMadan%20Mohan%20Malaviya%20University%20of%20Technology!5e0!3m2!1sen!2sin!4v1710001234567"
-              className="w-full h-[250px] md:h-[240px] lg:h-[250px] rounded-xl shadow-lg"
-              style={{ border: 0 }}
-              allowFullScreen=""
-              referrerPolicy="no-referrer-when-downgrade"
-            ></iframe>
+          <iframe
+  src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1791.2985797825392!2d83.4331276!3d26.7314295!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39915ca3e2aa136b%3A0xc039bdf0211338a9!2sMMM%20University%20of%20Technology!5e0!3m2!1sen!2sin!4v1710001234567"
+  className="w-full h-[250px] md:h-[240px] lg:h-[250px] rounded-xl shadow-lg"
+  style={{ border: 0 }}
+  allowFullScreen=""
+  referrerPolicy="no-referrer-when-downgrade"
+></iframe>
+
+
           </div>
         </div>
 
