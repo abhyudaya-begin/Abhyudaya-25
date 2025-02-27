@@ -16,7 +16,7 @@ const IndexHome = () => {
       <Hero2Section /> 
       <CountDown />
       <Stats/>
-      <ArtistSlider />
+      {/* <ArtistSlider /> */}
       <Merchandise/>
     
     </div>

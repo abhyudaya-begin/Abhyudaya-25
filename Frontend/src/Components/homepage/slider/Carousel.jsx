@@ -35,51 +35,41 @@ export default function Carousel({ slides }) {
 
   return (
     <>
-    <div
-      {...handlers}
-      className="relative flex w-[100%] overflow-hidden rounded-xl shadow-lg"
-    >
-      <AnimatePresence>
-        <motion.img
+      <div className="relative flex w-full overflow-hidden rounded-xl shadow-lg">
+        <img
           key={current}
           src={slides[current]}
-          className="w-full h-[50vh] sm:h-[60vh] object-cover rounded-xl"
+          className="w-full h-full object-cover rounded-xl"
           alt={`Slide ${current}`}
-          initial={{ x: 0}}
-          animate={{ x: 0 }}
-          exit={{ x: 1000}}
-          transition={{ duration: 0.8, ease: "easeInOut" }}
         />
-      </AnimatePresence>
 
-      {/* Navigation Buttons */}
-      <button
-        onClick={previousSlide}
-        className="absolute left-4 top-1/2 -translate-y-1/2 text-white text-4xl hover:scale-110 transition"
-      >
-        <BsFillArrowLeftCircleFill />
-      </button>
-      <button
-        onClick={nextSlide}
-        className="absolute right-4 top-1/2 -translate-y-1/2 text-white text-4xl hover:scale-110 transition"
-      >
-        <BsFillArrowRightCircleFill />
-      </button>
+        {/* Navigation Buttons */}
+        <button
+          onClick={previousSlide}
+          className="absolute left-4 top-1/2 -translate-y-1/2 text-white hover:scale-110 transition"
+        >
+          <BsFillArrowLeftCircleFill />
+        </button>
+        <button
+          onClick={nextSlide}
+          className="absolute right-4 top-1/2 -translate-y-1/2 text-white hover:scale-110 transition"
+        >
+          <BsFillArrowRightCircleFill />
+        </button>
+      </div>
 
       {/* Dots Indicator */}
-    </div>
-      <div className=" w-full flex justify-center gap-3">
+      <div className="w-full flex justify-center gap-3 mt-2">
         {slides.map((_, i) => (
           <div
             key={i}
             onClick={() => setCurrent(i)}
-            className={`w-4 h-4 rounded-full cursor-pointer transition ${
-              i === current ? "bg-white scale-125" : "bg-gray-500"
+            className={`w-3 h-3 rounded-full cursor-pointer transition ${
+              i === current ? "bg-blue-600 scale-125" : "bg-gray-300"
             }`}
           />
         ))}
       </div>
-      
-      </>
+    </>
   );
 }
