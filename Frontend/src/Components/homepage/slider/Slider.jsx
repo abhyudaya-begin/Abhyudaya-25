@@ -1,21 +1,112 @@
-import React from "react";
-import Carousel from "./Carousel";
+import React, { useEffect } from "react";
+import slide1 from "../../../assets/Artist/Akash_dubey.jpg";
+import slide2 from "../../../assets/Artist/AS_bassi.jpg";
+import slide3 from "../../../assets/Artist/Gajendra_verma.jpg";
+import slide4 from "../../../assets/Artist/Pratyush-Chaubey.png";
+
 
 const ArtistSlider = () => {
-  let slides = [
-    "https://i.pinimg.com/originals/51/82/ac/5182ac536727d576c78a9320ac62de30.jpg",
-    "https://wallpapercave.com/wp/wp3386769.jpg",
-    "https://wallpaperaccess.com/full/809523.jpg",
-    "https://getwallpapers.com/wallpaper/full/5/c/0/606489.jpg",
-  ];
-
+    useEffect(() => {
+        // Add the external CSS link
+        const link = document.createElement("link");
+        link.rel = "stylesheet";
+        link.href =
+          "https://carousel-slider.uiinitiative.com/assets/index.0f26cec9.css";
+        document.head.appendChild(link);
+    
+        // Add the module preload link
+        const preloadLink = document.createElement("link");
+        preloadLink.rel = "modulepreload";
+        preloadLink.href =
+          "https://carousel-slider.uiinitiative.com/assets/vendor.4ea4e284.js";
+        document.head.appendChild(preloadLink);
+    
+        // Add the external script
+        const script = document.createElement("script");
+        script.type = "module";
+        script.crossOrigin = "anonymous";
+        script.src =
+          "https://carousel-slider.uiinitiative.com/assets/index.8457301f.js";
+        document.body.appendChild(script);
+    
+        // Cleanup script and links on unmount
+        return () => {
+          document.head.removeChild(link);
+          document.head.removeChild(preloadLink);
+          document.body.removeChild(script);
+        };
+      }, []);
   return (
-    <div className="bg-[#120c0f] flex justify-center items-center w-[90%]  p-4">
-      <div className="w-[90%] ">
-        <Carousel slides={slides} />
+    < >
+    <div className="swiper swiper-carousel swiper-horizontal swiper-watch-progress w-full h-auto">
+  <div className="swiper-wrapper">
+    <div className="swiper-slide flex justify-center items-center">
+      <div className="swiper-carousel-animate-opacity">
+        <img src={slide2} alt=""  className=" object-contain max-w-full h-auto"/>
+        
       </div>
     </div>
-  );
-};
+
+    <div className="swiper-slide">
+      <div className="swiper-carousel-animate-opacity">
+        <img src={slide2} alt="" className="object-contain max-w-full h-auto" />
+        
+      </div>
+    </div>
+
+    <div className="swiper-slide">
+      <div className="swiper-carousel-animate-opacity">
+        <img src={slide2} alt=""  className="object-contain max-w-full h-auto"/>
+        
+      </div>
+    </div>
+
+    <div className="swiper-slide">
+      <div className="swiper-carousel-animate-opacity">
+        <img src={slide2} alt="" className=" object-contain max-w-full h-auto" />
+        
+      </div>
+    </div>
+
+    <div className="swiper-slide">
+      <div className="swiper-carousel-animate-opacity">
+        <img src={slide2} alt="" className=" object-contain max-w-full h-auto" />
+        
+      </div>
+    </div>
+
+    <div className="swiper-slide">
+      <div className="swiper-carousel-animate-opacity">
+        <img src={slide2} alt=""  className="object-contain max-w-full h-auto"/>
+        
+      </div>
+    </div>
+
+    <div className="swiper-slide">
+      <div className="swiper-carousel-animate-opacity">
+        <img src={slide2} alt="" className="object-contain max-w-full h-auto"/>
+        
+      </div>
+    </div>
+
+    <div className="swiper-slide">
+      <div className="swiper-carousel-animate-opacity">
+        <img src={slide2} alt=""  className=" object-contain max-w-full h-auto"/>
+        
+      </div>
+    </div>
+
+ 
+  </div>
+
+  <div className="swiper-button-prev"></div>
+  <div className="swiper-button-next"></div>
+  <div className="swiper-pagination"></div>
+</div>
+
+    
+     </>
+  )
+}
 
 export default ArtistSlider;
