@@ -119,7 +119,7 @@ const Footer = ({ isSidebarOpen }) => {
 
         {/* Map Section */}
         <div className="flex flex-col w-full md:w-1/3 lg:w-1/3 xl:w-1/3">
-          <div className="rounded-lg overflow-hidden flex-1 h-[250px] md:h-[240px] lg:h-[250px]">
+          <div className="rounded-lg overflow-hidden flex-1 h-[250px] md:h-[240px]  lg:h-[250px]">
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1791.2985797825392!2d83.4331276!3d26.7314295!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39915ca3e2aa136b%3A0xc039bdf0211338a9!2sMMM%20University%20of%20Technology!5e0!3m2!1sen!2sin!4v1710001234567"
               className="w-full h-[250px] md:h-[240px] lg:h-[250px] rounded-xl shadow-lg"
@@ -139,10 +139,10 @@ const Footer = ({ isSidebarOpen }) => {
                 className={`text-center flex flex-col items-center justify-between bg-white/5 backdrop-blur-sm p-2 md:p-2 lg:p-3 rounded-lg hover:bg-white/10 transition-all duration-300 border border-white/20`}
               >
                 <div>
-                  <p className="font-semibold text-6 md:text-6 lg:text-8 mb-1">
+                  <p className="font-semibold text-6 md:text-sm sm:text-8 lg:text-md mb-1">
                     {person.name}
                   </p>
-                  <p className="text-5 md:text-5 lg:text-6 text-gray-400 mb-2">
+                  <p className="text-5 md:text-xs lg:text-sm sm:text-6 text-gray-400 mb-2">
                     {person.role}
                   </p>
                 </div>
@@ -186,7 +186,7 @@ const Footer = ({ isSidebarOpen }) => {
             <FaInstagram size={iconSize} />
           </a>
           <a
-            href="https://www.youtube.com/@abhyudayammmut1045"
+            href="https://www.linkedin.com/in/abhyudaya-mmmut-3b96372b1?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
             className="text-white hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r from-blue-500 to-blue-700 transform hover:scale-110 transition-all hover:shadow-glow p-1"
           >
             <FaLinkedinIn size={iconSize} />
