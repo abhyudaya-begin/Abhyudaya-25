@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
-import slide1 from "../../../assets/Artist/Akash_dubey.jpg";
-import slide2 from "../../../assets/AS_bassi.jpg";
-import slide3 from "../../../assets/Artist/Gajendra_verma.jpg";
-import slide4 from "../../../assets/Artist/Pratyush-Chaubey.png";
+import slide1 from "../../../assets/Artist/AS_bassi.jpg";
+import slide2 from "../../../assets/Artist/AS_bassi.jpg";
+import slide3 from "../../../assets/Artist/AS_bassi.jpg";
+import slide4 from "../../../assets/Artist/AS_bassi.jpg";
 
 
 const ArtistSlider = () => {
