@@ -6,11 +6,7 @@ import {
   FaLinkedinIn,
   FaEnvelope,
   FaPhone,
-  FaUser,
-  FaBriefcase,
 } from "react-icons/fa";
-import logo from "../assets/Logo-images/Abhyudaya.png";
-import hindiLogo from "../assets/Logo-images/White_logo.png";
 
 const Footer = ({ isSidebarOpen }) => {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
@@ -42,13 +38,11 @@ const Footer = ({ isSidebarOpen }) => {
       }
 
       // Adjust sidebar margin based on width and sidebar state
-      if (width >= 1024 && isSidebarOpen) {
-        setSidebarMargin("lg:ml-64");
-      } else if (width >= 768 && isSidebarOpen) {
-        setSidebarMargin("md:ml-80 ");
-      } else {
-        setSidebarMargin("ml-0");
-      }
+      // if (isSidebarOpen) {
+      //   setSidebarMargin("pl-16");
+      // } else {
+      //   setSidebarMargin("pl-4");
+      // }
 
       // Adjust map width
       if (width >= 760 && width < 1024) {
@@ -69,13 +63,13 @@ const Footer = ({ isSidebarOpen }) => {
 
   const contacts = [
     {
-      name: "Alex Wilson",
+      name: "Shivam Rai",
       email: "alex@example.com",
       phone: "+123 456 7895",
       role: "Joint Secretary",
     },
     {
-      name: "Sarah Brown",
+      name: "Richa Mishra",
       email: "sarah@example.com",
       phone: "+123 456 7896",
       role: "Joint Secretary",
@@ -103,103 +97,41 @@ const Footer = ({ isSidebarOpen }) => {
 
   return (
     <footer
-      className={`w-full bg-gradient-2 text-background-light pt-8 pb-4 px-4 mt-auto relative transition-all duration-300 ease-in-out border-t border-primary-orange/30 ${sidebarMargin}`}
+      className={`w-full bg-gradient-2 text-background-light pt-8 pb-4 px-4 mt-auto lg:pl-20 md:pl-20 xl:pl-20 relative transition-all duration-300 ease-in-out border-t border-primary-orange/30 ${sidebarMargin}`}
     >
       <div
         className="flex flex-col md:flex-row max-w-full gap-6 
         md:gap-4 lg:gap-6 xl:gap-8 
-        md:pl-[30px] md:pr-[15px] lg:pl-[50px] lg:pr-[25px] xl:pl-[60px] xl:pr-[30px]"
+        md:pl-4 md:pr-4 lg:pl-4 lg:pr-4 xl:pl-4 xl:pr-4"
       >
-        {/* Logo Section */}
-        <div className="flex flex-col items-center md:w-[15%] lg:w-[12%] xl:w-[14%]">
-          <img
-            src={logo}
-            alt="Logo"
-            onClick={handleScrollToTop}
-            className="w-20 md:w-14 lg:w-18 xl:w-20 h-auto object-contain cursor-pointer hover:opacity-80 transition-opacity"
-          />
-          <img
-            src={hindiLogo}
-            alt="Hindi Logo"
-            className="w-120 md:w-82 lg:w-88 xl:w-90 h-auto object-contain "
-          />
-        </div>
-
-        {/* Icons and Address Section */}
-        <div className="flex flex-col items-center md:w-[25%] lg:w-[19%] xl:w-[20%]">
-          <div
-            className={`flex items-center justify-center ${iconSpacing} 
-            mt-8 md:mt-6 lg:mt-12 mb-4 md:mb-4 lg:mb-8`}
-          >
-            <a
-              href="https://www.facebook.com/abhyudaya.mmmut/"
-              className="text-white hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r from-blue-400 to-blue-600 transform hover:scale-110 transition-all hover:shadow-glow p-1"
-            >
-              <FaFacebookF size={iconSize} />
-            </a>
-            <a
-              href="https://www.instagram.com/abhyudaya.mmmut/?hl=en"
-              className="text-white hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r from-pink-500 via-purple-500 to-orange-400 transform hover:scale-110 transition-all hover:shadow-glow p-1"
-            >
-              <FaInstagram size={iconSize} />
-            </a>
-            <a
-              href="https://www.youtube.com/@abhyudayammmut1045"
-              className="text-white hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r from-red-500 to-red-700 transform hover:scale-110 transition-all hover:shadow-glow p-1"
-            >
-              <FaYoutube size={iconSize} />
-            </a>
-            <a
-              href="https://www.youtube.com/@abhyudayammmut1045"
-              className="text-white hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r from-blue-500 to-blue-700 transform hover:scale-110 transition-all hover:shadow-glow p-1"
-            >
-              <FaLinkedinIn size={iconSize} />
-            </a>
-            <a
-              href="mailto:abhyudayammmut@gmail.com"
-              className="text-white hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r from-yellow-400 to-red-500 transform hover:scale-110 transition-all hover:shadow-glow p-1"
-            >
-              <FaEnvelope size={iconSize} />
-            </a>
-          </div>
-          <div className="w-full text-center bg-gradient-to-r from-purple-500/30 to-pink-500/30 backdrop-blur-sm p-3 rounded-lg border border-white/20 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl">
-            <h3 className="font-bold text-base mb-2 bg-clip-text text-transparent bg-gradient-to-r from-yellow-300 to-pink-300">
-              Find Us Here! 🎯
-            </h3>
-            <div className="space-y-1">
-              <p className="text-xs font-medium text-white/90 hover:text-white transition-colors">
-                Madan Mohan Malaviya University of Technology
-              </p>
-              <p className="text-xs font-medium text-white/80 hover:text-white transition-colors">
-                Deoria Road, Gorakhpur ✨
-              </p>
-              <p className="text-xs font-medium text-white/80 hover:text-white transition-colors">
-                Uttar Pradesh - 273010 🌟
-              </p>
-            </div>
+        {/* YouTube Section */}
+        <div className="flex flex-col w-full md:w-1/3 lg:w-1/3 xl:w-1/3">
+          <div className="rounded-lg overflow-hidden flex-1 h-[250px] md:h-[240px] lg:h-[250px]">
+            <iframe
+              src="https://www.youtube.com/embed/5pzCzYzePjw"
+              className="w-full h-[250px] md:h-[240px] lg:h-[250px] rounded-xl shadow-lg"
+              style={{ border: 0 }}
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen=""
+            ></iframe>
           </div>
         </div>
 
         {/* Map Section */}
-        <div className="flex flex-col md:w-[28%] lg:w-[31%] xl:w-[32%]">
+        <div className="flex flex-col w-full md:w-1/3 lg:w-1/3 xl:w-1/3">
           <div className="rounded-lg overflow-hidden flex-1 h-[250px] md:h-[240px] lg:h-[250px]">
-          <iframe
-  src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1791.2985797825392!2d83.4331276!3d26.7314295!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39915ca3e2aa136b%3A0xc039bdf0211338a9!2sMMM%20University%20of%20Technology!5e0!3m2!1sen!2sin!4v1710001234567"
-  className="w-full h-[250px] md:h-[240px] lg:h-[250px] rounded-xl shadow-lg"
-  style={{ border: 0 }}
-  allowFullScreen=""
-  referrerPolicy="no-referrer-when-downgrade"
-></iframe>
-
-
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1791.2985797825392!2d83.4331276!3d26.7314295!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39915ca3e2aa136b%3A0xc039bdf0211338a9!2sMMM%20University%20of%20Technology!5e0!3m2!1sen!2sin!4v1710001234567"
+              className="w-full h-[250px] md:h-[240px] lg:h-[250px] rounded-xl shadow-lg"
+              style={{ border: 0 }}
+              allowFullScreen=""
+              referrerPolicy="no-referrer-when-downgrade"
+            ></iframe>
           </div>
         </div>
 
         {/* Contact Cards Section */}
-        <div
-          className="flex flex-col md:w-[28%] lg:w-[31%] xl:w-[32%]
-          md:pr-[15px] lg:pr-[30px] xl:pr-[40px]"
-        >
+        <div className="flex flex-col w-full md:w-1/3 lg:w-1/3 xl:w-1/3">
           <div className="grid grid-cols-2 gap-2 md:gap-2 lg:gap-3 w-full h-[250px] md:h-[240px] lg:h-[250px]">
             {contacts.map((person, index) => (
               <div
@@ -207,10 +139,10 @@ const Footer = ({ isSidebarOpen }) => {
                 className={`text-center flex flex-col items-center justify-between bg-white/5 backdrop-blur-sm p-2 md:p-2 lg:p-3 rounded-lg hover:bg-white/10 transition-all duration-300 border border-white/20`}
               >
                 <div>
-                  <p className="font-semibold text-sm md:text-xs lg:text-sm mb-1">
+                  <p className="font-semibold text-6 md:text-6 lg:text-8 mb-1">
                     {person.name}
                   </p>
-                  <p className="text-xs md:text-[10px] lg:text-xs text-gray-400 mb-2">
+                  <p className="text-5 md:text-5 lg:text-6 text-gray-400 mb-2">
                     {person.role}
                   </p>
                 </div>
@@ -239,11 +171,39 @@ const Footer = ({ isSidebarOpen }) => {
       </div>
 
       {/* Copyright Section */}
-      <div className="text-center mt-8 pt-4 border-t border-white/20 text-sm text-primary-softGold">
-        <p>
-          © {new Date().getFullYear()} Abhyudaya MMMUT. All rights reserved.
-        </p>
-        <p className="mt-1">An Enigmatic Ensemble</p>
+      <div className="flex justify-between items-center mt-8 pt-4 border-t border-white/20 text-sm text-primary-softGold">
+        <div className="flex space-x-4 pl-2">
+          <a
+            href="https://www.facebook.com/abhyudaya.mmmut/"
+            className="text-white hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r from-blue-400 to-blue-600 transform hover:scale-110 transition-all hover:shadow-glow p-1"
+          >
+            <FaFacebookF size={iconSize} />
+          </a>
+          <a
+            href="https://www.instagram.com/abhyudaya.mmmut/?hl=en"
+            className="text-white hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r from-pink-500 via-purple-500 to-orange-400 transform hover:scale-110 transition-all hover:shadow-glow p-1"
+          >
+            <FaInstagram size={iconSize} />
+          </a>
+          <a
+            href="https://www.youtube.com/@abhyudayammmut1045"
+            className="text-white hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r from-blue-500 to-blue-700 transform hover:scale-110 transition-all hover:shadow-glow p-1"
+          >
+            <FaLinkedinIn size={iconSize} />
+          </a>
+          <a
+            href="mailto:abhyudayammmut@gmail.com"
+            className="text-white hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r from-yellow-400 to-red-500 transform hover:scale-110 transition-all hover:shadow-glow p-1"
+          >
+            <FaEnvelope size={iconSize} />
+          </a>
+        </div>
+        <div className="text-right">
+          <p>
+            © {new Date().getFullYear()} Abhyudaya MMMUT. All rights reserved.
+          </p>
+          <p className="mt-1">An Enigmatic Ensemble</p>
+        </div>
       </div>
     </footer>
   );
