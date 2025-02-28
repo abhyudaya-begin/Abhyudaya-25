@@ -30,13 +30,16 @@ const Members = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, [lastScrollY]);
 
+  // Filter team members by year
+  const finalYearMembers = teamData.filter(member => member.year === "final");
+  const thirdYearMembers = teamData.filter(member => member.year === "third");
+  const secondYearMembers = teamData.filter(member => member.year === "second");
+
   return (
     <div 
-      className="min-h-screen bg-cover bg-center bg-fixed"
+      className="min-h-screen"
       style={{
-        backgroundImage: `url('https://vvlelkzbqhcamsmkhteb.supabase.co/storage/v1/object/sign/chandan-project/bgg.jpg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJjaGFuZGFuLXByb2plY3QvYmdnLmpwZyIsImlhdCI6MTczOTgyNzU1MCwiZXhwIjoxNzcxMzYzNTUwfQ.4VeNkAL4of01Q7BXyW7Xe7XEqDEJ1VsLTF83WZkaLlU')`,
-        backgroundColor: 'rgba(0, 0, 0, 0.5)',
-        backgroundBlendMode: 'overlay'
+        backgroundColor: '#120c0f'
       }}
     >
       <div className="relative">
@@ -78,21 +81,71 @@ const Members = () => {
 
         {/* Main Content */}
         <div className="relative">
-          <div className="container mx-auto px-4 py-12">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-16 p-4 border-red-600">
-              {teamData.map((person, index) => (
-                <div
-                  key={person.name}
-                  className="animate-fade-up hover:z-10 p-4"
-                  style={{
-                    animationDelay: `${index * 100}ms`
-                  }}
-                >
-                  <TeamCards member={person} />
-                </div>
-              ))}
+          {/* Final Year Section */}
+          {finalYearMembers.length > 0 && (
+            <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
+              <h2 className="text-5xl font-extrabold text-center mb-12 bg-gradient-to-r from-blue-400 to-purple-600 bg-clip-text text-transparent drop-shadow-lg transform hover:scale-105 transition-transform duration-300 font-['Poppins']">
+                Final Year
+              </h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-16 gap-y-20 px-4 sm:px-6 lg:px-8">
+                {finalYearMembers.map((person, index) => (
+                  <div
+                    key={`final-${person.name}`}
+                    className="animate-fade-up hover:z-10 p-6"
+                    style={{
+                      animationDelay: `${index * 100}ms`
+                    }}
+                  >
+                    <TeamCards member={person} />
+                  </div>
+                ))}
+              </div>
             </div>
-          </div>
+          )}
+
+          {/* Third Year Section */}
+          {thirdYearMembers.length > 0 && (
+            <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
+              <h2 className="text-5xl font-extrabold text-center mb-12 bg-gradient-to-r from-blue-400 to-purple-600 bg-clip-text text-transparent drop-shadow-lg transform hover:scale-105 transition-transform duration-300 font-['Poppins']">
+                Third Year
+              </h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-16 gap-y-20 px-4 sm:px-6 lg:px-8">
+                {thirdYearMembers.map((person, index) => (
+                  <div
+                    key={`third-${person.name}`}
+                    className="animate-fade-up hover:z-10 p-6"
+                    style={{
+                      animationDelay: `${index * 100}ms`
+                    }}
+                  >
+                    <TeamCards member={person} />
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* Second Year Section */}
+          {secondYearMembers.length > 0 && (
+            <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
+              <h2 className="text-5xl font-extrabold text-center mb-12 bg-gradient-to-r from-blue-400 to-purple-600 bg-clip-text text-transparent drop-shadow-lg transform hover:scale-105 transition-transform duration-300 font-['Poppins']">
+                Second Year
+              </h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-16 gap-y-20 px-4 sm:px-6 lg:px-8">
+                {secondYearMembers.map((person, index) => (
+                  <div
+                    key={`second-${person.name}`}
+                    className="animate-fade-up hover:z-10 p-6"
+                    style={{
+                      animationDelay: `${index * 100}ms`
+                    }}
+                  >
+                    <TeamCards member={person} />
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
         </div>
       </div>
     </div>
