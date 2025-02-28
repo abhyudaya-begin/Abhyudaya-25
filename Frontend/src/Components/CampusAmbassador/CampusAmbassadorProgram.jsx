@@ -1,399 +1,285 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
+import { motion } from "framer-motion";
 
-// Main Campus Ambassador Component
-const CampusAmbassadorProgram = () => {
-  const [isCA, setIsCA] = useState(false);
-  const [activeTab, setActiveTab] = useState('about');
-  
-  // Simulate checking if user is a CA (would connect to your auth system)
-  useEffect(() => {
-    // Replace with actual authentication logic
-    const checkIfUserIsCA = () => {
-      // Mock implementation - would be replaced with actual API call
-      const mockUserIsCA = localStorage.getItem('userIsCA') === 'true';
-      setIsCA(mockUserIsCA);
-    };
-    
-    checkIfUserIsCA();
-  }, []);
+export default function CampusAmbassadorProgram() {
+  const [activeTab, setActiveTab] = useState("what");
+
+  const tabs = [
+    { id: "what", label: "What is CA?" },
+    { id: "perks", label: "Perks & Benefits" },
+    { id: "leaderboard", label: "Leaderboard" }
+  ];
+
+  // Mock data for leaderboard
+  const leaderboardData = [
+    { rank: 1, name: "Priya Sharma", college: "IIT Delhi", points: 1250 },
+    { rank: 2, name: "Rahul Kumar", college: "NIT Trichy", points: 1120 },
+    { rank: 3, name: "Ananya Patel", college: "BITS Pilani", points: 980 },
+    { rank: 4, name: "Rohan Joshi", college: "VIT Vellore", points: 875 },
+    { rank: 5, name: "Neha Singh", college: "IIIT Hyderabad", points: 820 },
+  ];
+
+  // Animation variants
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: { 
+      opacity: 1,
+      transition: { 
+        duration: 0.5,
+        when: "beforeChildren",
+        staggerChildren: 0.1
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      transition: { duration: 0.4 }
+    }
+  };
+
+  const tabVariants = {
+    hidden: { opacity: 0, x: -10 },
+    visible: { opacity: 1, x: 0 }
+  };
+
+  const contentVariants = {
+    hidden: { opacity: 0 },
+    visible: { opacity: 1, transition: { duration: 0.3 } }
+  };
 
   return (
-    <div className="max-w-6xl mx-auto p-4 bg-transparent rounded-lg shadow-md">
-      {/* Tabs Navigation */}
-      <div className="flex border-b mb-6">
-        <TabButton 
-          active={activeTab === 'about'} 
-          onClick={() => setActiveTab('about')}
-          label="About CA Program"
-        />
-        <TabButton 
-          active={activeTab === 'benefits'} 
-          onClick={() => setActiveTab('benefits')}
-          label="Benefits & Rewards"
-        />
-        <TabButton 
-          active={activeTab === 'responsibilities'} 
-          onClick={() => setActiveTab('responsibilities')}
-          label="Responsibilities"
-        />
-        {isCA && (
-          <TabButton 
-            active={activeTab === 'dashboard'} 
-            onClick={() => setActiveTab('dashboard')}
-            label="My Dashboard"
-          />
-        )}
-      </div>
-      
-      {/* Tab Content */}
-      <div className="py-4">
-        {activeTab === 'about' && <AboutProgram />}
-        {activeTab === 'benefits' && <BenefitsRewards />}
-        {activeTab === 'responsibilities' && <Responsibilities />}
-        {activeTab === 'dashboard' && <CADashboard />}
-        
-        {/* Show application CTA if not a CA and not viewing dashboard */}
-        {!isCA && activeTab !== 'dashboard' && (
-          <ApplicationCTA setIsCA={setIsCA} setActiveTab={setActiveTab} />
-        )}
-      </div>
-    </div>
-  );
-};
+    <motion.div 
+      className="min-h-screen bg-gradient-to-br from-blue-900 to-black text-white py-12 px-4 sm:px-6 lg:px-8"
+      initial="hidden"
+      animate="visible"
+      variants={containerVariants}
+    >
+      <div className="max-w-5xl mx-auto">
+        {/* Header */}
+        <motion.div 
+          className="text-center mb-12"
+          variants={itemVariants}
+        >
+          <h1 className="text-4xl sm:text-5xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-blue-300 to-purple-400">
+            Campus Ambassador Program
+          </h1>
+          <p className="text-lg text-blue-200 max-w-3xl mx-auto">
+            Represent Abhyudaya'25 at your college and unlock amazing opportunities
+          </p>
+        </motion.div>
 
-// Tab Button Component
-const TabButton = ({ active, onClick, label }) => (
-  <button
-    className={`px-4 py-2 font-medium text-sm border-b-2 focus:outline-none ${
-      active 
-        ? 'border-blue-500 text-blue-600' 
-        : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
-    }`}
-    onClick={onClick}
-  >
-    {label}
-  </button>
-);
-
-// About Program Component
-const AboutProgram = () => (
-  <div>
-    <h2 className="text-2xl font-bold mb-4">Campus Ambassador Program</h2>
-    <p className="mb-4">
-      Our Campus Ambassador Program is designed to connect passionate students with our organization.
-      As a CA, you'll represent our brand on your campus, organize events, spread awareness,
-      and gain valuable professional experience.
-    </p>
-    
-    <div className="grid md:grid-cols-3 gap-6 mt-8">
-      <FeatureCard 
-        title="Leadership Development" 
-        description="Build leadership and communication skills by organizing events and leading campus initiatives."
-        icon="👑"
-      />
-      <FeatureCard 
-        title="Network Expansion" 
-        description="Connect with industry professionals, alumni, and fellow CAs from other institutions."
-        icon="🌐"
-      />
-      <FeatureCard 
-        title="Resume Builder" 
-        description="Add valuable experience to your resume and receive a certificate upon successful completion."
-        icon="📄"
-      />
-    </div>
-  </div>
-);
-
-// Benefits & Rewards Component
-const BenefitsRewards = () => (
-  <div>
-    <h2 className="text-2xl font-bold mb-4">Benefits & Rewards</h2>
-    <p className="mb-6">
-      Our Campus Ambassadors receive exclusive benefits and rewards for their contribution and dedication.
-    </p>
-    
-    <div className="grid md:grid-cols-3 gap-6">
-      <FeatureCard 
-        title="Financial Incentives" 
-        description="Earn stipends, commissions, and performance-based bonuses for achieving targets."
-        icon="💰"
-      />
-      <FeatureCard 
-        title="Exclusive Access" 
-        description="Get early access to new features, products, and attend exclusive webinars and workshops."
-        icon="🔑"
-      />
-      <FeatureCard 
-        title="Recognition" 
-        description="Outstanding ambassadors will be featured on our website and social media channels."
-        icon="🏆"
-      />
-    </div>
-  </div>
-);
-
-// Responsibilities Component
-const Responsibilities = () => (
-  <div>
-    <h2 className="text-2xl font-bold mb-4">CA Responsibilities</h2>
-    <p className="mb-6">
-      Campus Ambassadors are expected to fulfill the following responsibilities:
-    </p>
-    
-    <div className="grid md:grid-cols-3 gap-6">
-      <FeatureCard 
-        title="Campus Outreach" 
-        description="Promote our platform through presentations, word-of-mouth, and campus events."
-        icon="🗣️"
-      />
-      <FeatureCard 
-        title="Event Organization" 
-        description="Plan and execute workshops, seminars, and other events on campus."
-        icon="📅"
-      />
-      <FeatureCard 
-        title="Content Creation" 
-        description="Create and share content about our platform on social media and campus channels."
-        icon="📱"
-      />
-    </div>
-  </div>
-);
-
-// Dashboard Component (shown only if user is a CA)
-const CADashboard = () => (
-  <div className="space-y-6">
-    <h2 className="text-2xl font-bold">Your CA Dashboard</h2>
-    
-    <div className="grid md:grid-cols-2 gap-6">
-      <div className="bg-gray-50 p-4 rounded-lg">
-        <h3 className="font-bold text-lg mb-2">Performance Metrics</h3>
-        <div className="space-y-4">
-          <MetricItem label="Referrals" value="23" target="30" />
-          <MetricItem label="Events Organized" value="2" target="4" />
-          <MetricItem label="Content Pieces" value="7" target="10" />
+        {/* Tabs Navigation */}
+        <div className="bg-blue-900/30 backdrop-blur-sm rounded-t-lg p-1 mb-1 border-b border-blue-700/50 flex flex-wrap">
+          {tabs.map((tab, index) => (
+            <motion.button
+              key={tab.id}
+              onClick={() => setActiveTab(tab.id)}
+              className={`py-3 px-4 sm:px-6 text-sm sm:text-base font-medium rounded-t-lg transition-all duration-300 ${
+                activeTab === tab.id
+                  ? "bg-blue-600 text-white"
+                  : "text-blue-300 hover:text-white hover:bg-blue-800/50"
+              }`}
+              variants={tabVariants}
+              transition={{ delay: index * 0.1 }}
+              whileHover={{ y: -2 }}
+              whileTap={{ scale: 0.97 }}
+            >
+              {tab.label}
+            </motion.button>
+          ))}
         </div>
-      </div>
-      
-      <div className="bg-gray-50 p-4 rounded-lg">
-        <h3 className="font-bold text-lg mb-2">Upcoming Tasks</h3>
-        <ul className="space-y-2">
-          <TaskItem 
-            title="Submit monthly report" 
-            dueDate="March 5, 2025"
-            priority="high"
-          />
-          <TaskItem 
-            title="Organize campus workshop" 
-            dueDate="March 15, 2025"
-            priority="medium"
-          />
-          <TaskItem 
-            title="Social media campaign" 
-            dueDate="March 20, 2025"
-            priority="low"
-          />
-        </ul>
-      </div>
-    </div>
-    
-    <div className="bg-gray-50 p-4 rounded-lg mt-6">
-      <h3 className="font-bold text-lg mb-2">Resources & Materials</h3>
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-        <ResourceCard title="Presentation Templates" />
-        <ResourceCard title="Promotion Posters" />
-        <ResourceCard title="Email Templates" />
-        <ResourceCard title="Brand Guidelines" />
-      </div>
-    </div>
-  </div>
-);
 
-// Application CTA Component (shown if user is not a CA)
-const ApplicationCTA = ({ setIsCA, setActiveTab }) => {
-  const [showForm, setShowForm] = useState(false);
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    university: '',
-    year: '',
-    motivation: ''
-  });
-  
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value
-    });
-  };
-  
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Simulate form submission (replace with actual API call)
-    console.log("Form submitted:", formData);
-    // Mock setting the user as a CA
-    localStorage.setItem('userIsCA', 'true');
-    setIsCA(true);
-    setActiveTab('dashboard');
-  };
-  
-  return (
-    <div className="mt-8 bg-blue-50 p-6 rounded-lg">
-      {!showForm ? (
-        <div className="text-center">
-          <h3 className="text-xl font-bold mb-3">Join Our Campus Ambassador Program</h3>
-          <p className="mb-4">Become a leader on your campus, gain valuable experience, and earn rewards!</p>
-          <button 
-            onClick={() => setShowForm(true)}
-            className="px-6 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition"
-          >
-            Apply Now
-          </button>
-        </div>
-      ) : (
-        <div>
-          <h3 className="text-xl font-bold mb-4">Campus Ambassador Application</h3>
-          <form onSubmit={handleSubmit} className="space-y-4">
-            <div className="grid md:grid-cols-2 gap-4">
-              <div>
-                <label className="block text-sm font-medium mb-1">Full Name</label>
-                <input
-                  type="text"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleInputChange}
-                  className="w-full p-2 border rounded-md"
-                  required
-                />
-              </div>
-              <div>
-                <label className="block text-sm font-medium mb-1">Email Address</label>
-                <input
-                  type="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleInputChange}
-                  className="w-full p-2 border rounded-md"
-                  required
-                />
-              </div>
-              <div>
-                <label className="block text-sm font-medium mb-1">University/College</label>
-                <input
-                  type="text"
-                  name="university"
-                  value={formData.university}
-                  onChange={handleInputChange}
-                  className="w-full p-2 border rounded-md"
-                  required
-                />
-              </div>
-              <div>
-                <label className="block text-sm font-medium mb-1">Year of Study</label>
-                <select
-                  name="year"
-                  value={formData.year}
-                  onChange={handleInputChange}
-                  className="w-full p-2 border rounded-md"
-                  required
+        {/* Content Area */}
+        <motion.div 
+          className="bg-blue-900/20 backdrop-blur-sm rounded-b-lg p-6 min-h-[400px] border border-blue-700/30"
+          variants={itemVariants}
+          layout
+        >
+          {/* What is CA? */}
+          {activeTab === "what" && (
+            <motion.div 
+              className="space-y-6"
+              initial="hidden"
+              animate="visible"
+              variants={contentVariants}
+              key="what"
+            >
+              <motion.div 
+                className="bg-gradient-to-r from-blue-800/50 to-purple-900/50 p-6 rounded-lg border border-blue-500/30"
+                variants={itemVariants}
+              >
+                <h2 className="text-2xl sm:text-3xl font-bold mb-4">Become the Face of Abhyudaya'25</h2>
+                <p className="text-blue-100 mb-6">
+                  As a Campus Ambassador, you'll be the official representative of Abhyudaya'25 at your college. 
+                  You'll help spread the word about our events, coordinate with your peers, and be our connection 
+                  to talented students at your institution.
+                </p>
+                <p className="text-blue-100 mb-6">
+                  This program is designed to enhance your leadership, marketing, and communication skills while 
+                  expanding your network and offering exclusive advantages.
+                </p>
+                <h3 className="text-xl font-semibold mb-3 text-blue-300">Responsibilities:</h3>
+                <ul className="list-disc pl-5 text-blue-100 space-y-2 mb-8">
+                  <li>Promote Abhyudaya'25 events at your college</li>
+                  <li>Coordinate registrations and participation</li>
+                  <li>Organize pre-event activities</li>
+                  <li>Create awareness through social media</li>
+                  <li>Provide feedback to improve our reach</li>
+                </ul>
+                <motion.button 
+                  className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white font-bold py-3 px-8 rounded-lg shadow-lg hover:shadow-blue-500/50"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.98 }}
+                  transition={{ type: "spring", stiffness: 400, damping: 17 }}
                 >
-                  <option value="">Select Year</option>
-                  <option value="1">1st Year</option>
-                  <option value="2">2nd Year</option>
-                  <option value="3">3rd Year</option>
-                  <option value="4">4th Year</option>
-                  <option value="5+">5+ Year</option>
-                </select>
-              </div>
-            </div>
-            <div>
-              <label className="block text-sm font-medium mb-1">Why do you want to be a Campus Ambassador?</label>
-              <textarea
-                name="motivation"
-                value={formData.motivation}
-                onChange={handleInputChange}
-                rows="4"
-                className="w-full p-2 border rounded-md"
-                required
-              />
-            </div>
-            <div className="flex justify-end space-x-3">
-              <button
-                type="button"
-                onClick={() => setShowForm(false)}
-                className="px-4 py-2 border rounded-md hover:bg-gray-50"
+                  Apply Now
+                </motion.button>
+              </motion.div>
+            </motion.div>
+          )}
+
+          {/* Perks & Benefits */}
+          {activeTab === "perks" && (
+            <motion.div 
+              className="grid grid-cols-1 md:grid-cols-2 gap-6"
+              initial="hidden"
+              animate="visible"
+              variants={contentVariants}
+              key="perks"
+            >
+              {[
+                {
+                  title: "Official Certificate",
+                  description: "Receive an official certificate recognizing your contribution to Abhyudaya'25",
+                  icon: "🏆"
+                },
+                {
+                  title: "Free Merchandise",
+                  description: "Get exclusive Abhyudaya'25 merchandise including T-shirts and goodies",
+                  icon: "👕"
+                },
+                {
+                  title: "Priority Access",
+                  description: "Enjoy VIP access to all events and workshops during the fest",
+                  icon: "🎟️"
+                },
+                {
+                  title: "Networking Opportunities",
+                  description: "Connect with industry professionals and expand your network",
+                  icon: "🤝"
+                },
+                {
+                  title: "Leadership Development",
+                  description: "Enhance your leadership, marketing, and communication skills",
+                  icon: "📈"
+                },
+                {
+                  title: "Cash Incentives",
+                  description: "Earn cash rewards based on your performance and referrals",
+                  icon: "💰"
+                }
+              ].map((perk, index) => (
+                <motion.div 
+                  key={index}
+                  className="bg-gradient-to-br from-blue-800/40 to-purple-900/40 p-5 rounded-lg border border-blue-500/30"
+                  variants={itemVariants}
+                  whileHover={{ scale: 1.05, backgroundColor: "rgba(59, 130, 246, 0.2)" }}
+                  transition={{ type: "spring", stiffness: 300, damping: 15 }}
+                >
+                  <div className="text-4xl mb-3">{perk.icon}</div>
+                  <h3 className="text-xl font-semibold mb-2 text-blue-300">{perk.title}</h3>
+                  <p className="text-blue-100">{perk.description}</p>
+                </motion.div>
+              ))}
+            </motion.div>
+          )}
+
+          {/* Leaderboard */}
+          {activeTab === "leaderboard" && (
+            <motion.div 
+              className="space-y-6"
+              initial="hidden"
+              animate="visible"
+              variants={contentVariants}
+              key="leaderboard"
+            >
+              <motion.h2 
+                className="text-2xl font-bold mb-6 text-center text-blue-300"
+                variants={itemVariants}
               >
-                Cancel
-              </button>
-              <button
-                type="submit"
-                className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700"
+                Top Performing Campus Ambassadors
+              </motion.h2>
+              <motion.div 
+                className="overflow-x-auto"
+                variants={itemVariants}
               >
-                Submit Application
-              </button>
-            </div>
-          </form>
-        </div>
-      )}
-    </div>
-  );
-};
+                <table className="min-w-full divide-y divide-blue-700">
+                  <thead className="bg-blue-900/50">
+                    <tr>
+                      <th className="px-6 py-4 text-left text-sm font-semibold text-blue-200 uppercase tracking-wider">Rank</th>
+                      <th className="px-6 py-4 text-left text-sm font-semibold text-blue-200 uppercase tracking-wider">Name</th>
+                      <th className="px-6 py-4 text-left text-sm font-semibold text-blue-200 uppercase tracking-wider">College</th>
+                      <th className="px-6 py-4 text-left text-sm font-semibold text-blue-200 uppercase tracking-wider">Points</th>
+                    </tr>
+                  </thead>
+                  <tbody className="bg-blue-800/20 divide-y divide-blue-700">
+                    {leaderboardData.map((entry, index) => (
+                      <motion.tr 
+                        key={index} 
+                        className="transition-colors hover:bg-blue-700/30"
+                        initial={{ opacity: 0, y: 10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: index * 0.1 }}
+                        whileHover={{ backgroundColor: "rgba(59, 130, 246, 0.2)" }}
+                      >
+                        <td className="px-6 py-4 whitespace-nowrap">
+                          <div className={`flex items-center justify-center w-8 h-8 rounded-full ${
+                            entry.rank === 1 ? "bg-yellow-500" :
+                            entry.rank === 2 ? "bg-gray-300" :
+                            entry.rank === 3 ? "bg-yellow-700" : "bg-blue-700"
+                          } text-white font-bold`}>
+                            {entry.rank}
+                          </div>
+                        </td>
+                        <td className="px-6 py-4 whitespace-nowrap text-blue-100 font-medium">{entry.name}</td>
+                        <td className="px-6 py-4 whitespace-nowrap text-blue-200">{entry.college}</td>
+                        <td className="px-6 py-4 whitespace-nowrap font-bold text-blue-300">{entry.points}</td>
+                      </motion.tr>
+                    ))}
+                  </tbody>
+                </table>
+              </motion.div>
+              <motion.div 
+                className="text-center mt-8"
+                variants={itemVariants}
+              >
+                <p className="text-blue-300 mb-4">Don't see your name here yet?</p>
+                <p className="text-blue-200 mb-6">Complete more tasks and climb the leaderboard!</p>
+                <motion.button 
+                  className="bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-6 rounded-lg"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.98 }}
+                >
+                  View Full Leaderboard
+                </motion.button>
+              </motion.div>
+            </motion.div>
+          )}
+        </motion.div>
 
-// Reusable Card Components
-const FeatureCard = ({ title, description, icon }) => (
-  <div className="p-4 border rounded-lg bg-white shadow-sm hover:shadow-md transition">
-    <div className="text-3xl mb-3">{icon}</div>
-    <h3 className="font-bold text-lg mb-2">{title}</h3>
-    <p className="text-gray-600">{description}</p>
-  </div>
-);
-
-const MetricItem = ({ label, value, target }) => {
-  const progress = (parseInt(value) / parseInt(target)) * 100;
-  
-  return (
-    <div>
-      <div className="flex justify-between mb-1">
-        <span className="text-sm font-medium">{label}</span>
-        <span className="text-sm font-medium">{value}/{target}</span>
+        {/* Call to Action */}
+        <motion.div 
+          className="mt-12 text-center"
+          variants={itemVariants}
+        >
+          <p className="text-blue-300 mb-2">Applications closing soon! Join the community of campus leaders.</p>
+          <p className="text-blue-400 text-sm mb-6">Questions? Contact us at campus@abhyudaya.in</p>
+        </motion.div>
       </div>
-      <div className="w-full bg-gray-200 rounded-full h-2">
-        <div 
-          className="bg-blue-600 h-2 rounded-full" 
-          style={{ width: `${Math.min(progress, 100)}%` }}
-        />
-      </div>
-    </div>
+    </motion.div>
   );
-};
-
-const TaskItem = ({ title, dueDate, priority }) => {
-  const priorityColors = {
-    high: 'bg-red-100 text-red-800',
-    medium: 'bg-yellow-100 text-yellow-800',
-    low: 'bg-green-100 text-green-800'
-  };
-  
-  return (
-    <li className="flex items-center bg-transparent  justify-between p-2 hover:bg-gray-100 rounded">
-      <div>
-        <h4 className="font-medium">{title}</h4>
-        <p className="text-sm text-gray-500">Due: {dueDate}</p>
-      </div>
-      <span className={`text-xs px-2 py-1 rounded-full ${priorityColors[priority]}`}>
-        {priority.charAt(0).toUpperCase() + priority.slice(1)}
-      </span>
-    </li>
-  );
-};
-
-const ResourceCard = ({ title }) => (
-  <div className="p-3 border rounded-lg bg-white text-center hover:shadow-md transition cursor-pointer">
-    <div className="text-xl mb-2">📄</div>
-    <p className="text-sm font-medium">{title}</p>
-  </div>
-);
-
-export default CampusAmbassadorProgram;
+}
