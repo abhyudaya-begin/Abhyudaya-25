@@ -1,21 +1,45 @@
-
-const mongoose = require('mongoose')
+import mongoose, { Schema } from "mongoose";
 
 // User Schema
-const userSchema = new mongoose.Schema(
+const userSchema = new Schema(
   {
-    userName: {
+    fullName: {
       type: String,
       required: true,
       trim: true,
     },
-    // email, phone, school/clg, stream, referallID, isAdmin, isCampusAmbassador
-    // eventsParticipated : array of events -> type -> objects
-  
+    email: {
+      type: String,
+      required: true,
+      unique: true,
+      trim: true,
+    },
+    dob: {
+      type: Date,
+      required: true,
+    },
+    password: {
+      type: String,
+      required: true,
+      minLength: 6,
+    },
+    institution: {
+      type: String,
+      required: true,
+      trim: true,
+    },
+    phoneNumber:{
+      type:Number,
+      required:true,
+      unique:true
+    },
+    eventsParticipated: [
+      {
+        type: String, // Store eventId as a reference
+      },
+    ],
   },
   { timestamps: true }
 );
 
-const Users = mongoose.model("users", userSchema);
-
-module.exports = {Users}
+export const User = mongoose.model("User", userSchema);
