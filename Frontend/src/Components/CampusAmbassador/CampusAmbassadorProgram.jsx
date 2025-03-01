@@ -16,7 +16,7 @@ export default function CampusAmbassadorProgram() {
     { rank: 2, name: "Rahul Kumar", college: "NIT Trichy", points: 1120 },
     { rank: 3, name: "Ananya Patel", college: "BITS Pilani", points: 980 },
     { rank: 4, name: "Rohan Joshi", college: "VIT Vellore", points: 875 },
-    { rank: 5, name: "Neha Singh", college: "IIIT Hyderabad", points: 820 },
+    { rank: 5, name: "Nehanish Singh", college: "IIIT Hyderabad", points: 820 },
   ];
 
   // Animation variants
