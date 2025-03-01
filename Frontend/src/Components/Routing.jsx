@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import IndexHome from "./homepage/Index-home";
- 
+import ContactUs from "./Contact/ContactUs";
 import Members from "./Team/Members";
 import CampusAmbassadorProgram from "./CampusAmbassador/CampusAmbassadorProgram";
 import AuthForm from "./Profile/AuthForm";
@@ -35,6 +35,7 @@ function Routing() {
       <Route path="/team" element={ <Members/>} />
       <Route path="/campus-ambassador" element={ <CampusAmbassadorProgram/>} />
       <Route path="/profile" element={< ProfileRoute/>} />
+      <Route path="/contact" element={<ContactUs/>}/>
     </Routes>
     </div>
     // <>
