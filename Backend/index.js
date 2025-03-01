@@ -13,7 +13,7 @@ dotenv.config();
 Connection(); // for connecting DB
 
 const corsOptions = {
-  origin: [process.env.APPLICATION_URL, "http://localhost:8000"],
+  origin: process.env.APPLICATION_URL,
   credentials: true
 };
 
