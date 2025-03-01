@@ -1,13 +1,13 @@
 const express = require("express");
 const { ApiError } = require("../utils/ApiError");
-const { asyncHandler } = require("../utils/asyncHandler");
+
 
 
 const app = express();
 app.use(express.json());
 
-const generateUser = asyncHandler(async (req, res) => {
-  const { fullName, dob } = req.body;
+const generateUser = async (fullName, dob) => {
+ 
 
   if (!fullName || !dob) {
     throw new ApiError(400, "Name and DoB are required");
@@ -26,7 +26,7 @@ const generateUser = asyncHandler(async (req, res) => {
 
   const username = generateUsername(fullName, dob);
 
-  res.json({ username });
-});
+  return username
+};
 
 module.exports =  { generateUser };

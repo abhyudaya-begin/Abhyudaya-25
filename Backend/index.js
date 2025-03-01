@@ -1,33 +1,33 @@
 const express = require("express");
-const mongoose = require("mongoose");
 const eventRouter = require("./Routers/Events");
 const userRouter = require("./Routers/User");
 const VerificationRouter = require("./Routers/Verification");
+const { Connection } = require("./Connection");
+const { attachUserWithTokenVerification} = require("./authentication/UserAuth");
+const PORT = process.env.PORT || 8000;
 const dotenv = require("dotenv");
+const { checkUser } = require("./authentication/Middleware");
 dotenv.config();
 
-// ..................................................................
-// Connect()
-mongoose
-  .connect(process.env.MONGO_URL)
-  .then(() => {
-    console.log("Mongodb connected");
-  })
-  .catch((e) => console.log(e));
+Connection(); // for connecting DB
 
+// app creation
 const app = express();
+
+// setting middlewares here.
 app.use(express.json());
-//  1st route
+app.use(attachUserWithTokenVerification);
+
+// Ping request testing
 app.get("/", (req, res) => {
   res.send("Ping from the server !");
 });
 
-app.use("/events", eventRouter); // Aditi
-app.use("/user", userRouter); // Aditi
-app.use("/verify", VerificationRouter);
-
+app.use("/events", eventRouter);
+app.use("/user", userRouter);
+app.use("/verify", checkUser,  VerificationRouter);
 
 // ....................................................................
-app.listen(8000, () => {
-  console.log("Server Running at Port " + 8000);
+app.listen(PORT, () => {
+  console.log("Server Running at Port " + PORT);
 });
