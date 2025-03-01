@@ -6,15 +6,22 @@ const { Connection } = require("./Connection");
 const { attachUserWithTokenVerification} = require("./authentication/UserAuth");
 const PORT = process.env.PORT || 8000;
 const dotenv = require("dotenv");
+const cors = require("cors");
 const { checkUser } = require("./authentication/Middleware");
 dotenv.config();
 
 Connection(); // for connecting DB
 
+const corsOptions = {
+  origin: process.env.APPLICATION_URL,
+  credentials: true
+};
+
 // app creation
 const app = express();
 
 // setting middlewares here.
+app.use(cors(corsOptions));
 app.use(express.json());
 app.use(attachUserWithTokenVerification);
 
