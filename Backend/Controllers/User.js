@@ -1,151 +1,188 @@
-const { ApiError } = require("../utils/ApiError");
-const { asyncHandler } = require("../utils/asyncHandler");
-const { User } = require("../Models/User");
-const { Events } = require("../Models/Events");
-const { generateUser } = require("./username");
-const jwt = require("jsonwebtoken");
+const { ApiError } = require("../utils/ApiError.js");
+const { User } = require("../Models/User.js");
+const { Events } = require("../Models/Events.js");
+const { generateUser } = require("./username.js");
+const bcrypt = require("bcryptjs");
 
-username = generateUser();
-// Register User
-const registerUser = asyncHandler(async (req, res) => {
-  const { fullName, email, password, username } = req.body;
 
-  if (
-    ![fullName, email, password, username].every(
-      (field) => field && field.trim() !== ""
-    )
-  ) {
-    throw new ApiError(400, "All fields are required");
+const registerUser = async (req, res) => {
+  try {
+    const { fullName, email, password, username } = req.body;
+
+    if (
+      ![fullName, email, password, username].every((field) => field?.trim())
+    ) {
+      return res.status(400).json(new ApiError(400, "All fields are required"));
+    }
+
+    const userExist = await User.findOne({ $or: [{ email }, { username }] });
+
+    if (userExist) {
+      return res.status(409).json(new ApiError(409, "User already exists"));
+    }
+
+    const hashedPassword = await bcrypt.hash(password, 10);
+    const user = await User.create({
+      fullName,
+      email,
+      password: hashedPassword,
+      username: generateUser(),
+    });
+
+    return res
+      .status(201)
+      .json(new ApiResponse(201, user, "User registered successfully"));
+  } catch (error) {
+    return res
+      .status(500)
+      .json(new ApiError(500, "Something went wrong while registering"));
   }
-
-  const userExist = await User.findOne({ $or: [{ email }, { username }] });
-
-  if (userExist) {
-    throw new ApiError(409, "User already exists");
-  }
-
-  const user = await User.create({
-    fullName,
-    email,
-    password,
-    username: username.toLowerCase(),
-  });
-  if (!user) {
-    throw new ApiError(500, "Something went wrong while registering");
-  }
-
-  return res.status(201).json({
-    status: 200,
-    message: "User registered successfully",
-    user,
-  });
-});
+};
 
 // Delete User
-const deleteUser = asyncHandler(async (req, res) => {
-  const { email, username } = req.body;
+const deleteUser = async (req, res) => {
+  try {
+    const { email, username } = req.body;
 
-  if (!email && !username) {
-    throw new ApiError(400, "Email or Username is required to delete a user");
+    if (!email && !username) {
+      return res
+        .status(400)
+        .json(
+          new ApiError(400, "Email or Username is required to delete a user")
+        );
+    }
+
+    const removeUser = await User.findOneAndDelete({
+      $or: [{ email }, { username }],
+    });
+
+    if (!removeUser) {
+      return res.status(404).json(new ApiError(404, "User not found"));
+    }
+
+    return res
+      .status(200)
+      .json(new ApiResponse(200, {}, "User deleted successfully"));
+  } catch (error) {
+    return res.status(500).json(new ApiError(500, "Something went wrong!"));
   }
-
-  const removeUser = await User.findOneAndDelete({
-    $or: [{ email }, { username }],
-  });
-
-  if (!removeUser) {
-    throw new ApiError(404, "User not found");
-  }
-
-  return res.status(200).json({ message: "User deleted successfully" });
-});
+};
 
 // Update User Details
-const updateUser = asyncHandler(async (req, res) => {
-  const { email, username, updateData } = req.body;
+const updateUser = async (req, res) => {
+  try {
+    const { email, username, updateData } = req.body;
 
-  if (!email && !username) {
-    throw new ApiError(
-      400,
-      "Email or Username is required to update user details"
+    if (!email && !username) {
+      return res
+        .status(400)
+        .json(
+          new ApiError(
+            400,
+            "Email or Username is required to update user details"
+          )
+        );
+    }
+
+    if (!updateData || Object.keys(updateData).length === 0) {
+      return res.status(400).json(new ApiError(400, "Update data is required"));
+    }
+
+    const user = await User.findOneAndUpdate(
+      { $or: [{ email }, { username }] },
+      { $set: updateData },
+      { new: true, runValidators: true }
     );
+
+    if (!user) {
+      return res.status(404).json(new ApiError(404, "User not found"));
+    }
+
+    return res
+      .status(200)
+      .json(
+        new ApiResponse(200, user, "User information updated successfully")
+      );
+  } catch (error) {
+    return res.status(500).json(new ApiError(500, "Something went wrong!"));
   }
-
-  const user = await User.findOneAndUpdate(
-    { $or: [{ email }, { username }] },
-    { $set: updateData },
-    { new: true }
-  );
-
-  if (!user) {
-    throw new ApiError(404, "User not found");
-  }
-
-  return res.status(200).json({ message: "User updated successfully", user });
-});
+};
 
 // Event Registration
+const eventRegister = async (req, res) => {
+  try {
+    const { email, eventId } = req.body;
 
-const eventRegister = asyncHandler(async (req, res) => {
-  const { email, eventId } = req.body;
+    if (!email || !eventId) {
+      return res
+        .status(400)
+        .json(new ApiError(400, "Email and Event ID are required"));
+    }
 
-  if (!email || !eventId) {
-    throw new ApiError(400, "Email and Event ID are required");
+    const user = await User.findOne({ email });
+    const event = await Events.findOne({ eventId });
+
+    if (!user) {
+      return res.status(404).json(new ApiError(404, "User not found"));
+    }
+    if (!event) {
+      return res.status(404).json(new ApiError(404, "Event not found"));
+    }
+
+    if (user.eventsParticipated?.includes(eventId)) {
+      return res
+        .status(400)
+        .json(new ApiError(400, "User already registered for this event"));
+    }
+
+    user.eventsParticipated = [...(user.eventsParticipated || []), eventId];
+    await user.save();
+
+    return res
+      .status(200)
+      .json(
+        new ApiResponse(200, user, "User registered for event successfully")
+      );
+  } catch (error) {
+    return res.status(500).json(new ApiError(500, "Something went wrong!"));
   }
-
-  const user = await User.findOne({ email });
-  const event = await Events.findOne({ eventId });
-
-  if (!user) {
-    throw new ApiError(404, "User not found");
-  }
-  if (!event) {
-    throw new ApiError(404, "Event not found");
-  }
-
-  if (!user.eventsParticipated) {
-    user.eventsParticipated = [];
-  }
-
-  if (user.eventsParticipated.includes(eventId)) {
-    throw new ApiError(400, "User already registered for this event");
-  }
-
-  user.eventsParticipated.push(eventId);
-  await user.save();
-
-  return res
-    .status(200)
-    .json({ message: "Event registration successful", user });
-});
+};
 
 // Unregister Event
-const unregisterEvent = asyncHandler(async (req, res) => {
-  const { email, eventId } = req.body;
+const unregisterEvent = async (req, res) => {
+  try {
+    const { email, eventId } = req.body;
 
-  if (!email || !eventId) {
-    throw new ApiError(400, "Email and Event ID are required");
+    if (!email || !eventId) {
+      return res
+        .status(400)
+        .json(new ApiError(400, "Email and Event ID are required"));
+    }
+
+    const user = await User.findOne({ email });
+
+    if (!user) {
+      return res.status(404).json(new ApiError(404, "User not found"));
+    }
+
+    user.eventsParticipated = user.eventsParticipated?.filter(
+      (event) => event !== eventId
+    );
+    await user.save();
+
+    return res
+      .status(200)
+      .json(
+        new ApiResponse(
+          200,
+          user,
+          `User unregistered successfully from event ${eventId}`
+        )
+      );
+  } catch (error) {
+    return res.status(500).json(new ApiError(500, "Something went wrong!"));
   }
-
-  const user = await User.findOne({ email });
-  if (!user) {
-    throw new ApiError(404, "User not found");
-  }
-
-  user.eventsParticipated = user.eventsParticipated.filter(
-    (event) => event !== eventId
-  );
-  await user.save();
-
-  return res
-    .status(200)
-    .json({ message: `Unregistered from event ${eventId}`, user });
-});
-
-module.exports = {
-  registerUser,
-  deleteUser,
-  updateUser,
-  eventRegister,
-  unregisterEvent,
 };
+
+module.exports  = { registerUser, deleteUser, updateUser, eventRegister, unregisterEvent };
+

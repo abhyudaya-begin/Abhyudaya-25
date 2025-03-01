@@ -1,4 +1,4 @@
-const  mongoose  = require("mongoose");
+const mongoose = require("mongoose");
 
 const eventSchema = new mongoose.Schema(
   {
@@ -63,5 +63,5 @@ const eventSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
- const Events = mongoose.model("Events", eventSchema);
- module.exports = {Events};
+const Events = mongoose.model("Events", eventSchema);
+module.exports = { Events };

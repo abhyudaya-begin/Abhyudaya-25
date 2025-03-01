@@ -2,6 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const eventRouter = require("./Routers/Events");
 const userRouter = require("./Routers/User");
+const VerificationRouter = require("./Routers/Verification");
 const dotenv = require("dotenv");
 dotenv.config();
 
@@ -23,6 +24,7 @@ app.get("/", (req, res) => {
 
 app.use("/events", eventRouter); // Aditi
 app.use("/user", userRouter); // Aditi
+app.use("/verify", VerificationRouter);
 
 
 // ....................................................................

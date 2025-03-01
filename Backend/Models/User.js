@@ -28,14 +28,14 @@ const userSchema = new Schema(
       required: true,
       trim: true,
     },
-    phoneNumber: {
-      type: Number,
-      required: true,
-      unique: true,
+    phoneNumber:{
+      type:Number,
+      required:true,
+      unique:true
     },
     eventsParticipated: [
       {
-        type: [String], // Store eventId as a reference
+        type: String, // Store eventId as a reference
       },
     ],
   },
