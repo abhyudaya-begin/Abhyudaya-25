@@ -1,21 +1,18 @@
 const { Router } = require("express");
-const { deleteUser, eventRegister, registerUser, unregisterEvent, updateUser } = require("../Controllers/User");
-const { generateUser } = require("../Controllers/username");
-
-
+const { deleteUser, eventRegister, registerUser, unregisterEvent, updateUser, getUsers , Login} = require("../Controllers/User");
+const { checkAdmin, checkUser } = require("../authentication/Middleware");
 
 const userRouter=Router();
 
 
-userRouter.post("/register", registerUser);
+userRouter.post("/", registerUser);
+userRouter.get("/",  Login);
+userRouter.get("/all",checkAdmin,  getUsers);
+userRouter.delete("/", checkAdmin, deleteUser);
+userRouter.put("/",checkUser,  updateUser);
+userRouter.post("/unregisterEvent", checkUser,  unregisterEvent);
+userRouter.post("/eventRegister", checkUser, eventRegister);
 
-userRouter.get("/register", registerUser);
-
-userRouter.delete("/deleteUser", deleteUser);
-userRouter.post("/update", updateUser);
-userRouter.post("/unregisterEvent", unregisterEvent);
-userRouter.post("/eventRegister", eventRegister);
-userRouter.get("/username",generateUser);
 
 
 module.exports =  userRouter;

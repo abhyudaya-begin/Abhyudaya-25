@@ -1,59 +1,140 @@
-const { ApiError } = require("../utils/ApiError.js");
+const { ApiError } = require("../utils/ApiError");
+const ApiResponse = require("../utils/ApiResponse"); // Adjust the path if needed
+
 const { User } = require("../Models/User.js");
 const { Events } = require("../Models/Events.js");
 const { generateUser } = require("./username.js");
 const bcrypt = require("bcryptjs");
 
-
+// [ABH_ID, fullName, email, phoneNumber, dob, password, institution]
 const registerUser = async (req, res) => {
   try {
-    const { fullName, email, password, username } = req.body;
+    const { fullName, email, phoneNumber, dob, password, institution } =
+      req.body;
 
     if (
-      ![fullName, email, password, username].every((field) => field?.trim())
+      ![fullName, email, phoneNumber, dob, password, institution].every(
+        (field) => (typeof field === "string" ? field.trim() : field)
+      )
     ) {
       return res.status(400).json(new ApiError(400, "All fields are required"));
     }
 
-    const userExist = await User.findOne({ $or: [{ email }, { username }] });
+    const userExist = await User.findOne({ $or: [{ email }, { phoneNumber }] });
 
     if (userExist) {
       return res.status(409).json(new ApiError(409, "User already exists"));
     }
 
+    const dobFormatted = new Date(dob).toISOString().split("T")[0];
+
     const hashedPassword = await bcrypt.hash(password, 10);
     const user = await User.create({
+      ABH_ID: await generateUser(fullName, dob),
       fullName,
       email,
+      phoneNumber,
+      dob: dobFormatted,
       password: hashedPassword,
-      username: generateUser(),
+      institution,
     });
 
     return res
       .status(201)
       .json(new ApiResponse(201, user, "User registered successfully"));
   } catch (error) {
+    console.log(error);
     return res
       .status(500)
       .json(new ApiError(500, "Something went wrong while registering"));
   }
 };
 
+
+const Login = async (req, res) => {
+  try {
+    const { email, ABH_ID, password } = req.body;
+
+    if ((!email && !ABH_ID) || !password) {
+      return res.status(400).json(new ApiError(400, "Email/ABH_ID and Password are required"));
+    }
+
+    const user = await User.findOne(email ? { email } : { ABH_ID });
+
+    if (!user) {
+      return res.status(404).json(new ApiError(404, "User not found"));
+    }
+
+    const isMatch = await bcrypt.compare(password, user.password);
+    if (!isMatch) {
+      return res.status(400).json(new ApiError(400, "Invalid credentials"));
+    }
+
+    const token = generateToken(user);
+
+    res.cookie("user", token, {
+      httpOnly: true,
+      maxAge: 7 * 24 * 60 * 60 * 1000, // 7 days
+    });
+
+    return res.status(200).json(new ApiResponse(200, user, "Login successful"));
+  } catch (error) {
+    return res.status(500).json(new ApiError(500, "Something went wrong!"));
+  }
+};
+
+
+// get All Users
+// [eventsParticipated, ABH_ID, fullName, email, phoneNumber, institution]
+const getUsers = async (req, res) => {
+  try {
+    const startIndex = parseInt(req.query.startIndex) || 0;
+    const limit = parseInt(req.query.limit) || 9;
+    const order = req.query.order;
+    const sortDirection = order === "asc" ? 1 : -1;
+
+    let query = {
+      ...(req.body.fullName && { fullName: req.body.fullName }),
+      ...(req.body.ABH_ID && { ABH_ID: req.body.ABH_ID }),
+      ...(req.body.email && { email: req.body.email }),
+      ...(req.body.phoneNumber && { phoneNumber: req.body.phoneNumber }),
+      ...(req.body.eventsParticipated &&
+        req.body.eventsParticipated !== "All" && {
+          eventsParticipated: req.body.eventsParticipated,
+        }),
+      ...(req.body.institution && { institution: req.body.institution }),
+    };
+
+    let Users = await User.find(query)
+      .populate("eventsParticipated") // Populating the referenced events
+      .sort({ createdAt: sortDirection })
+      .skip(startIndex)
+      .limit(limit);
+
+    res.status(200).json({
+      Users,
+    });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: "Internal Server Error" });
+  }
+};
+
 // Delete User
 const deleteUser = async (req, res) => {
   try {
-    const { email, username } = req.body;
+    const { email, ABH_ID } = req.body;
 
-    if (!email && !username) {
+    if (!email && !ABH_ID) {
       return res
         .status(400)
         .json(
-          new ApiError(400, "Email or Username is required to delete a user")
+          new ApiError(400, "Email or ABH_ID is required to delete a user")
         );
     }
 
     const removeUser = await User.findOneAndDelete({
-      $or: [{ email }, { username }],
+      $or: [{ email }, { ABH_ID }],
     });
 
     if (!removeUser) {
@@ -64,6 +145,7 @@ const deleteUser = async (req, res) => {
       .status(200)
       .json(new ApiResponse(200, {}, "User deleted successfully"));
   } catch (error) {
+    console.log(error);
     return res.status(500).json(new ApiError(500, "Something went wrong!"));
   }
 };
@@ -71,25 +153,28 @@ const deleteUser = async (req, res) => {
 // Update User Details
 const updateUser = async (req, res) => {
   try {
-    const { email, username, updateData } = req.body;
+    const { email, ABH_ID, ...updateData } = req.body;
+    
 
-    if (!email && !username) {
+    if (!email && !ABH_ID) {
+    
       return res
         .status(400)
-        .json(
-          new ApiError(
-            400,
-            "Email or Username is required to update user details"
-          )
-        );
+        .json(new ApiError(400, "Email or ABH_ID is required to update user details"));
     }
 
     if (!updateData || Object.keys(updateData).length === 0) {
       return res.status(400).json(new ApiError(400, "Update data is required"));
     }
+   
+
+  
+    delete updateData.ABH_ID;
+    delete updateData.phoneNumber;
+    delete updateData.email;
 
     const user = await User.findOneAndUpdate(
-      { $or: [{ email }, { username }] },
+      { $or: [{ email }, { ABH_ID }] },
       { $set: updateData },
       { new: true, runValidators: true }
     );
@@ -98,33 +183,26 @@ const updateUser = async (req, res) => {
       return res.status(404).json(new ApiError(404, "User not found"));
     }
 
-    return res
-      .status(200)
-      .json(
-        new ApiResponse(200, user, "User information updated successfully")
-      );
+    return res.status(200).json(new ApiResponse(200, user, "User information updated successfully"));
   } catch (error) {
     return res.status(500).json(new ApiError(500, "Something went wrong!"));
   }
 };
 
-// Event Registration
+
 const eventRegister = async (req, res) => {
   try {
-    const { email, eventId } = req.body;
+    const { eventId } = req.body;
 
-    if (!email || !eventId) {
+    if (!eventId) {
       return res
         .status(400)
-        .json(new ApiError(400, "Email and Event ID are required"));
+        .json(new ApiError(400, "Event ID is required"));
     }
 
-    const user = await User.findOne({ email });
+    const user = req.user; // Access user from req object
     const event = await Events.findOne({ eventId });
 
-    if (!user) {
-      return res.status(404).json(new ApiError(404, "User not found"));
-    }
     if (!event) {
       return res.status(404).json(new ApiError(404, "Event not found"));
     }
@@ -135,13 +213,24 @@ const eventRegister = async (req, res) => {
         .json(new ApiError(400, "User already registered for this event"));
     }
 
-    user.eventsParticipated = [...(user.eventsParticipated || []), eventId];
+    user.eventsParticipated.push(eventId);
     await user.save();
+
+    const populatedUser = await User.findById(user._id).populate({
+      path: "eventsParticipated",
+      model: "Events",
+      match: { eventId: { $exists: true } },
+      select: "eventId eventName category",
+    });
 
     return res
       .status(200)
       .json(
-        new ApiResponse(200, user, "User registered for event successfully")
+        new ApiResponse(
+          200,
+          populatedUser,
+          "User registered for event successfully"
+        )
       );
   } catch (error) {
     return res.status(500).json(new ApiError(500, "Something went wrong!"));
@@ -151,31 +240,40 @@ const eventRegister = async (req, res) => {
 // Unregister Event
 const unregisterEvent = async (req, res) => {
   try {
-    const { email, eventId } = req.body;
+    const { eventId } = req.body;
 
-    if (!email || !eventId) {
+    if (!eventId) {
       return res
         .status(400)
-        .json(new ApiError(400, "Email and Event ID are required"));
+        .json(new ApiError(400, "Event ID is required"));
     }
 
-    const user = await User.findOne({ email });
+    const user = req.user;
 
-    if (!user) {
-      return res.status(404).json(new ApiError(404, "User not found"));
+    if (!user.eventsParticipated?.includes(eventId)) {
+      return res
+        .status(400)
+        .json(new ApiError(400, "User is not registered for this event"));
     }
 
-    user.eventsParticipated = user.eventsParticipated?.filter(
+    user.eventsParticipated = user.eventsParticipated.filter(
       (event) => event !== eventId
     );
     await user.save();
+
+    const populatedUser = await User.findById(user._id).populate({
+      path: "eventsParticipated",
+      model: "Events",
+      match: { eventId: { $exists: true } },
+      select: "eventId eventName category",
+    });
 
     return res
       .status(200)
       .json(
         new ApiResponse(
           200,
-          user,
+          populatedUser,
           `User unregistered successfully from event ${eventId}`
         )
       );
@@ -184,5 +282,13 @@ const unregisterEvent = async (req, res) => {
   }
 };
 
-module.exports  = { registerUser, deleteUser, updateUser, eventRegister, unregisterEvent };
 
+module.exports = {
+  registerUser,
+  Login,
+  getUsers,
+  deleteUser,
+  updateUser,
+  eventRegister,
+  unregisterEvent,
+};
