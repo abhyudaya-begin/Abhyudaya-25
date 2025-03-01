@@ -86,7 +86,7 @@ const Sidebar = () => {
       id: "contact",
       icon: <MdContactMail size={20} color="white" />,
       label: "Contact Us",
-      path: "/#",
+      path: "/contact",
     },
     {
       id: "team",
