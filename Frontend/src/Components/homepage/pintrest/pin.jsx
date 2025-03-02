@@ -1,16 +1,19 @@
 import React from "react";
-
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css";
 
 const Pin = ({unique}) => {
-console.log(unique.url)
+console.log(unique)
   return (
-    <div className="relative">
-      <img src={unique.url} className="w-full h-auto" />
-     
-      {/* <div className="absolute bottom-0 left-0 w-full bg-black bg-opacity-50 text-white text-center p-2">
-        {description}
-      </div> */}
-    </div>
+    <div className="relative rounded-lg overflow-hidden">
+    <LazyLoadImage
+      src={unique}
+      alt="Gallery Image"
+      className="w-full h-auto"
+      effect="blur"
+      loading="lazy"
+    />
+  </div>
   );
 };
 
