@@ -1,7 +1,7 @@
 import React from "react";
 import Masonry from "react-masonry-css";
 import Pin from "./pin";
-import axios from "axios";
+
 const photoUrls = [
   "https://bmpwmkwijlrnrrywhqsp.supabase.co/storage/v1/object/sign/Gallery/glimpse1.jpg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJHYWxsZXJ5L2dsaW1wc2UxLmpwZyIsImlhdCI6MTc0MDkzNzM5MSwiZXhwIjoxNzQxMTk2NTkxfQ.HEQnctJ3CoRxaalHYPagIwwUhizaQcofomSRt9yds5g",
   "https://bmpwmkwijlrnrrywhqsp.supabase.co/storage/v1/object/sign/Gallery/glimpse2.jpg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJHYWxsZXJ5L2dsaW1wc2UyLmpwZyIsImlhdCI6MTc0MDkzNzQ1OSwiZXhwIjoxNzQxMTk2NjU5fQ.RAYmii7aRrTnPgRSmdaGKE7RAm66Pcmzf92wuXsg_ps",
