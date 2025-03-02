@@ -3,18 +3,21 @@ import SignInForm from "./SignInForm";
 import SignUpForm from "./SignUpForm";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
+import ProfileCard from "./ProfileCard";
 
 function AuthForm() {
   const [isSignUp, setIsSignUp] = useState(false);
-  const user = useSelector((state) => state.user.user);
+  const  user  = useSelector((state) => state.user.user);
   const navigate = useNavigate();
+  const [showProfile, setShowProfile] = useState(false)
 
-  useEffect(() => {
-    if (user) {
-      navigate("/");
-    }
-  }, [user]);
+  useEffect(()=>{
+    if(user) setShowProfile(true);
+  }, [user])
+ 
 
+  if(showProfile)
+    return <ProfileCard/>
   return (
     <div className="min-h-screen w-full flex items-center justify-center bg-gradient-to-br from-gray-400 to-blue-900 p-4">
       <div className="w-full max-w-md bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl shadow-xl">
