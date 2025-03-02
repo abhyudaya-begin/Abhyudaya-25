@@ -3,7 +3,7 @@ import blackTee from "../../../assets/Logo-images/blackTshirt.jpg";
 
 const FlipCard = ({ image, title, details, price }) => {
   return (
-    <div className="w-full sm:w-1/2 lg:w-1/3 xl:w-1/4 h-[500px] lg:h-[600px] xl:h-[700px] m-4 perspective-[1200px]">
+    <div className="w-full sm:w-1/2 lg:w-1/3 xl:w-1/4 h-[500px] lg:h-[600px] 2xl:h-[600px] m-4 perspective-[1200px]">
       <div className="relative w-full h-full transition-transform duration-1000 ease-in-out transform-style-3d group [transform-style:preserve-3d] hover:[transform:rotateY(180deg)]">
         {/* Front Side */}
           <div className="absolute w-full h-full  overflow-hidden rounded-[5%] bg-gradient-to-b from-gray-700 to-gray-900 shadow-xl flex flex-col items-center justify-center p-4 [backface-visibility:hidden]">
