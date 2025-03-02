@@ -1,112 +1,83 @@
-import { useState } from "react";
-import blackTshirt from '../../../assets/Logo-images/blackTshirt.jpg'
-const tshirts = [
-  {
-    id: 1,
-    name: "Abhyudaya'25 Official Tee",
-    image: blackTshirt,
-    sizes: ["S", "M", "L", "XL"],
-    price: "₹499",
-    description: "The classic Abhyudaya tee with our signature logo."
-  },
-  {
-    id: 2,
-    name: "Abhyudaya'25 Limited Edition Tee",
-    image: blackTshirt,
-    sizes: ["M", "L", "XL"],
-    price: "₹599",
-    description: "Exclusive design, only available during the event."
-  },
-];
+import React from "react";
+import blackTee from "../../../assets/Logo-images/blackTshirt.jpg";
 
-export default function Merchandise() {
-  const [selectedSizes, setSelectedSizes] = useState({});
-  const [hoveredItem, setHoveredItem] = useState(null);
-
-  const handleSizeChange = (id, size) => {
-    setSelectedSizes((prev) => ({ ...prev, [id]: size }));
-  };
-
+const FlipCard = ({ image, title, details, price }) => {
   return (
-    <div className="py-16 px-4 sm:px-6 bg-black text-gray-100">
-      <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-white">Abhyudaya Merchandise</h2>
-          <p className="text-gray-400 max-w-2xl mx-auto">
-            Show your support with our official Abhyudaya'25 merchandise. Limited quantities available.
+    <div className="w-full sm:w-1/2 lg:w-1/3 xl:w-1/4 h-[500px] lg:h-[600px] 2xl:h-[600px] m-4 perspective-[1200px]">
+      <div className="relative w-full h-full transition-transform duration-1000 ease-in-out transform-style-3d group [transform-style:preserve-3d] hover:[transform:rotateY(180deg)]">
+        {/* Front Side */}
+          <div className="absolute w-full h-full  overflow-hidden rounded-[5%] bg-gradient-to-b from-gray-700 to-gray-900 shadow-xl flex flex-col items-center justify-center p-4 [backface-visibility:hidden]">
+            <figure className="relative w-full h-[90%] flex flex-col justify-center items-center">
+              <img
+                src={image}
+                alt={title}
+                className="w-full h-full object-cover shadow-md rounded-[5%] overflow-hidden"
+              />
+            </figure>
+            <figcaption className="text-white text-lg font-bold mt-4 bg-gradient-to-r from-purple-500 to-indigo-500 px-4 py-2 rounded-lg shadow-lg w-full text-center border-2 border-white">
+              {title}
+            </figcaption>
+          </div>
+
+          {/* Back Side */}
+        <div className="absolute w-full h-full rounded-[5%] bg-gradient-to-b from-gray-900 to-black shadow-xl flex flex-col items-center justify-center [transform:rotateY(180deg)] [backface-visibility:hidden] p-4 text-white">
+          <h2 className="text-xl font-extrabold mb-2 text-gray-200 text-center">
+            {title}
+          </h2>
+          <ul className="text-sm opacity-90 space-y-2 px-4 text-center">
+            {details.slice(0, 3).map((detail, index) => (
+              <li key={index} className="list-disc text-gray-300">
+                {detail}
+              </li>
+            ))}
+          </ul>
+          <p className="text-lg font-bold mt-4 text-yellow-400">
+            Price: {price}
           </p>
-        </div>
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10">
-          {tshirts.map((tshirt) => (
-            <div 
-              key={tshirt.id} 
-              className="bg-gray-900 rounded-2xl overflow-hidden border border-gray-800 transition-transform duration-300 hover:border-blue-600"
-              onMouseEnter={() => setHoveredItem(tshirt.id)}
-              onMouseLeave={() => setHoveredItem(null)}
-            >
-              <div className="relative">
-                <img
-                  src={tshirt.image}
-                  alt={tshirt.name}
-                  className="w-full h-56 sm:h-64 object-cover"
-                />
-                {hoveredItem === tshirt.id && (
-                  <div className="absolute inset-0 bg-black bg-gray-900/30 bg-opacity-10 flex items-center justify-center">
-                    <span className="text-white text-lg font-medium px-4 py-2 rounded-full bg-blue-600 bg-opacity-90 cursor-pointer">
-                      View Details
-                    </span>
-                  </div>
-                )}
-              </div>
-              
-              <div className="p-4 sm:p-6">
-                <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-2">
-                  <h3 className="text-xl font-bold text-white mb-1 sm:mb-0">{tshirt.name}</h3>
-                  <span className="text-xl font-bold text-blue-400">{tshirt.price}</span>
-                </div>
-                
-                <p className="text-gray-400 mb-4">{tshirt.description}</p>
-                
-                <div className="mb-4">
-                  <label className="block text-sm font-semibold mb-2 text-gray-300">Select Size:</label>
-                  <div className="flex gap-2">
-                    {tshirt.sizes.map((size) => (
-                      <button
-                        key={size}
-                        className={`h-10 w-10 rounded-full flex items-center justify-center border-2 transition-colors ${
-                          selectedSizes[tshirt.id] === size
-                            ? "border-blue-500 bg-blue-500 text-white"
-                            : "border-gray-700 text-gray-300 hover:border-blue-400"
-                        }`}
-                        onClick={() => handleSizeChange(tshirt.id, size)}
-                      >
-                        {size}
-                      </button>
-                    ))}
-                  </div>
-                </div>
-                
-                <button 
-                  className={`w-full py-3 rounded-xl font-semibold transition-colors ${
-                    selectedSizes[tshirt.id] 
-                      ? "bg-blue-600 text-white hover:bg-blue-700 cursor-pointer" 
-                      : "bg-gray-800 text-gray-500 cursor-not-allowed"
-                  }`}
-                  disabled={!selectedSizes[tshirt.id]}
-                >
-                  {selectedSizes[tshirt.id] ? "Add to Cart" : "Select a Size"}
-                </button>
-              </div>
-            </div>
-          ))}
-        </div>
-        
-        <div className="mt-12 sm:mt-16 text-center">
-          <p className="text-sm text-gray-400 mb-2">Free shipping on all orders above ₹999</p>
-          <p className="text-sm text-gray-400">Limited stock available. Get yours before they're gone!</p>
+          <a href="https://forms.gle/YBM1q9oevFvUYEA29" target="_blank" rel="noreferrer">
+          <button className="mt-3 px-6 py-2 text-white font-semibold bg-gradient-to-r from-yellow-500 to-orange-500 rounded-full hover:from-orange-600 hover:to-yellow-600 transition-all shadow-lg">
+            Buy Now
+          </button>
+          </a>
         </div>
       </div>
     </div>
   );
-}
+};
+
+const FlipCardContainer = () => {
+  const cards = [
+    {
+      image: blackTee,
+      title: "Black  T-Shirt",
+      details: [
+        "100% Cotton",
+        "Unisex Fit",
+        "Available in all sizes",
+        "Premium Quality",
+      ],
+      price: "₹150",
+    },
+    {
+      image: blackTee,
+      title: "White  T-Shirt",
+      details: [
+        "Exclusive Design",
+        "Breathable Fabric",
+        "Machine Washable",
+        "Perfect Fit",
+      ],
+      price: "₹150",
+    },
+  ];
+
+  return (
+    <div className="flex flex-wrap justify-center items-center bg-[#120c0f] min-h-screen p-4 sm:p-12 w-full">
+      {cards.map((card, index) => (
+        <FlipCard key={index} {...card} />
+      ))}
+    </div>
+  );
+};
+
+export default FlipCardContainer;
