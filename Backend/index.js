@@ -13,7 +13,7 @@ dotenv.config();
 Connection(); // for connecting DB
 
 const corsOptions = {
-  origin: process.env.APPLICATION_URL,
+  origin: "https://abhyudaya-25-nine.vercel.app/",
   credentials: true
 };
 
