@@ -13,7 +13,7 @@ dotenv.config();
 Connection(); // for connecting DB
 
 const corsOptions = {
-  origin: "https://abhyudaya-25-nine.vercel.app/",
+  origin: "https://abhyudaya-25-nine.vercel.app", // Remove trailing slash
   credentials: true
 };
 
