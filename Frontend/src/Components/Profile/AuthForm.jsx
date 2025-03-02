@@ -17,7 +17,8 @@ function AuthForm() {
  
 
   if(showProfile)
-    return <ProfileCard/>
+    return <ProfileCard/>;
+  
   return (
     <div className="min-h-screen w-full flex items-center justify-center bg-gradient-to-br from-gray-400 to-blue-900 p-4">
       <div className="w-full max-w-md bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl shadow-xl">
