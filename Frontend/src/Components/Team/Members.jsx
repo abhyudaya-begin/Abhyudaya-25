@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import TeamCards from './TeamCards';
+import FacultyCard from './FacultyCard';
 import teamData from './team.json';
 import { FaUsers } from 'react-icons/fa';
 
@@ -30,7 +31,8 @@ const Members = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, [lastScrollY]);
 
-  // Filter team members by year
+  // Filter members
+  const facultyAdvisors = teamData.filter(member => member.main === "main");
   const finalYearMembers = teamData.filter(member => member.year === "final");
   const thirdYearMembers = teamData.filter(member => member.year === "third");
   const secondYearMembers = teamData.filter(member => member.year === "second");
@@ -81,13 +83,35 @@ const Members = () => {
 
         {/* Main Content */}
         <div className="relative">
+          {/* Faculty Advisors Section */}
+          {facultyAdvisors.length > 0 && (
+            <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
+              <h2 className="text-5xl font-extrabold text-center mb-16 bg-gradient-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent drop-shadow-lg transform hover:scale-105 transition-transform duration-300 font-['Poppins']">
+                Faculty Advisors
+              </h2>
+              <div className="flex justify-center items-center gap-16">
+                {facultyAdvisors.map((advisor, index) => (
+                  <div
+                    key={`advisor-${advisor.name}`}
+                    className="animate-fade-up"
+                    style={{
+                      animationDelay: `${index * 200}ms`
+                    }}
+                  >
+                    <FacultyCard member={advisor} />
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
           {/* Final Year Section */}
           {finalYearMembers.length > 0 && (
             <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
-              <h2 className="text-5xl font-extrabold text-center mb-12 bg-gradient-to-r from-blue-400 to-purple-600 bg-clip-text text-transparent drop-shadow-lg transform hover:scale-105 transition-transform duration-300 font-['Poppins']">
+              <h2 className="text-5xl font-extrabold text-center mb-16 bg-gradient-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent drop-shadow-lg transform hover:scale-105 transition-transform duration-300 font-['Poppins']">
                 Final Year
               </h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-16 gap-y-20 px-4 sm:px-6 lg:px-8">
+              <div className="flex flex-wrap justify-center items-center gap-x-16 gap-y-20 px-4 sm:px-6 lg:px-8">
                 {finalYearMembers.map((person, index) => (
                   <div
                     key={`final-${person.name}`}
@@ -106,10 +130,10 @@ const Members = () => {
           {/* Third Year Section */}
           {thirdYearMembers.length > 0 && (
             <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
-              <h2 className="text-5xl font-extrabold text-center mb-12 bg-gradient-to-r from-blue-400 to-purple-600 bg-clip-text text-transparent drop-shadow-lg transform hover:scale-105 transition-transform duration-300 font-['Poppins']">
+              <h2 className="text-5xl font-extrabold text-center mb-16 bg-gradient-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent drop-shadow-lg transform hover:scale-105 transition-transform duration-300 font-['Poppins']">
                 Third Year
               </h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-16 gap-y-20 px-4 sm:px-6 lg:px-8">
+              <div className="flex flex-wrap justify-center items-center gap-x-16 gap-y-20 px-4 sm:px-6 lg:px-8">
                 {thirdYearMembers.map((person, index) => (
                   <div
                     key={`third-${person.name}`}
@@ -128,10 +152,10 @@ const Members = () => {
           {/* Second Year Section */}
           {secondYearMembers.length > 0 && (
             <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
-              <h2 className="text-5xl font-extrabold text-center mb-12 bg-gradient-to-r from-blue-400 to-purple-600 bg-clip-text text-transparent drop-shadow-lg transform hover:scale-105 transition-transform duration-300 font-['Poppins']">
+              <h2 className="text-5xl font-extrabold text-center mb-16 bg-gradient-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent drop-shadow-lg transform hover:scale-105 transition-transform duration-300 font-['Poppins']">
                 Second Year
               </h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-16 gap-y-20 px-4 sm:px-6 lg:px-8">
+              <div className="flex flex-wrap justify-center items-center gap-x-16 gap-y-20 px-4 sm:px-6 lg:px-8">
                 {secondYearMembers.map((person, index) => (
                   <div
                     key={`second-${person.name}`}
