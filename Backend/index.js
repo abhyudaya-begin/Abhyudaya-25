@@ -11,11 +11,14 @@ const { checkUser } = require("./authentication/Middleware");
 dotenv.config();
 
 Connection(); // for connecting DB
-
 const corsOptions = {
-  origin: "*," ,// Remove trailing slash
-  credentials: true
+  origin: process.env.APPLICATION_URL,
+  credentials: true,
+  methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+  allowedHeaders: "Content-Type,Authorization"
 };
+
+
 
 // app creation
 const app = express();
