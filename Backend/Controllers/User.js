@@ -5,18 +5,20 @@ const { User } = require("../Models/User.js");
 const { Events } = require("../Models/Events.js");
 const { generateUser } = require("./username.js");
 const bcrypt = require("bcryptjs");
+const { generateToken } = require("../authentication/UserAuth.js");
 
 // [ABH_ID, fullName, email, phoneNumber, dob, password, institution]
 const registerUser = async (req, res) => {
   try {
-    const { fullName, email, phoneNumber, dob, password, institution } =
+    const { fullName, email, phoneNumber, dob, password, institution, course, gender  } =
       req.body;
 
     if (
-      ![fullName, email, phoneNumber, dob, password, institution].every(
+      ![fullName, email, phoneNumber, dob, password, institution, course, gender].every(
         (field) => (typeof field === "string" ? field.trim() : field)
       )
     ) {
+     
       return res.status(400).json(new ApiError(400, "All fields are required"));
     }
 
@@ -37,6 +39,7 @@ const registerUser = async (req, res) => {
       dob: dobFormatted,
       password: hashedPassword,
       institution,
+      course, gender
     });
 
     return res
@@ -79,6 +82,8 @@ const Login = async (req, res) => {
 
     return res.status(200).json(new ApiResponse(200, user, "Login successful"));
   } catch (error) {
+    console.log(error);
+    
     return res.status(500).json(new ApiError(500, "Something went wrong!"));
   }
 };

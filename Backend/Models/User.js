@@ -1,9 +1,11 @@
 const mongoose = require("mongoose");
 const { Schema } = mongoose;
 
-// User Schema
-// [ABH_ID, fullName, email, phoneNumber, dob, password, institution]
-// [eventsParticipated ]
+const courseOptions = [
+  "B.Tech", "BCA", "BBA", "MBA", "B.Pharm", "MCA",
+  "Diploma", "B.Com", "BA", "B.Sc", "M.Sc", "Others"
+];
+
 const userSchema = new Schema(
   {
     fullName: {
@@ -30,13 +32,17 @@ const userSchema = new Schema(
     profilePicture: {
       type: String,
     },
+    gender: {
+      type: String,
+      required: true,
+    },
     dob: {
       type: Date,
-      required: [true, "Date of Birth is required"], // Custom message if not provided
+      required: [true, "Date of Birth is required"],
       validate: [
         {
           validator: function (value) {
-            return value < new Date(); // Prevent future dates
+            return value < new Date();
           },
           message: "Date of Birth cannot be in the future",
         },
@@ -48,7 +54,7 @@ const userSchema = new Schema(
             const dayDiff = today.getDate() - value.getDate();
 
             if (monthDiff < 0 || (monthDiff === 0 && dayDiff < 0)) {
-              return age - 1 >= 5; // Adjust age if birthday hasn't occurred yet
+              return age - 1 >= 5;
             }
             return age >= 5;
           },
@@ -56,7 +62,6 @@ const userSchema = new Schema(
         },
       ],
     },
-
     password: {
       type: String,
       required: true,
@@ -67,10 +72,23 @@ const userSchema = new Schema(
       required: true,
       trim: true,
     },
+    course: {
+      type: String,
+      enum: courseOptions,
+      required: true,
+    },
+    paymentStatus: {
+      type: Boolean,
+      default: false,
+    },
+    isAdmin: {
+      type: Boolean,
+      default: false,
+    },
     eventsParticipated: [
       {
-        type: mongoose.Schema.Types.ObjectId, // Store reference to Event model
-        ref: "Events", // Reference the "Events" model
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Events",
       },
     ],
   },
