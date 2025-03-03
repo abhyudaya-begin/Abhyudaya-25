@@ -19,6 +19,7 @@ const IndexHome = () => {
       <Stats/>
       <ArtistSlider />
       <Merchandise/>
+      <PinGrid/>
     
     </div>
   );
