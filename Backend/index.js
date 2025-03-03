@@ -31,7 +31,7 @@ app.use(attachUserWithTokenVerification);
 
 // Ping request testing
 app.get("/", (req, res) => {
-  res.send("Ping from the server!");
+ return  res.send("Ping from the server!");
 });
 
 // All Routers
