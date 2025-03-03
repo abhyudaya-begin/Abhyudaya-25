@@ -23,3 +23,47 @@ a {
 a:hover {
   color: #535bf2;
 }
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Set dark mode as default */
+html {
+  background-color: #000;
+  color: #f3f4f6;
+}
+
+/* Custom scrollbar for dark theme */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1f2937;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #4c1d95;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #6d28d9;
+}
+
+/* Add pulse animation for the register button */
+@keyframes pulse-border {
+  0% {
+    box-shadow: 0 0 0 0 rgba(147, 51, 234, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(147, 51, 234, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(147, 51, 234, 0);
+  }
+}
+
+.pulse-button {
+  animation: pulse-border 2s infinite;
+}

@@ -18,13 +18,14 @@ function SignInForm() {
     resolver: zodResolver(signInSchema),
   });
   const dispatch = useDispatch();
-  const  user  = useSelector((state) => state.user.user);
+  const user = useSelector((state) => state.user.user);
 
-  useEffect(()=>{
-    console.log(user)
-  }, [])
+  useEffect(() => {
+    console.log(user);
+  }, []);
   const onSubmit = async (data) => {
     try {
+      console.log(import.meta.env.VITE_BACKEND_API_URL);
       const res = await axios.post(
         `${import.meta.env.VITE_BACKEND_API_URL}users/login`,
         data,

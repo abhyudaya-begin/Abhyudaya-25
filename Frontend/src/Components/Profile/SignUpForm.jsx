@@ -28,6 +28,7 @@ function SignUpForm() {
 
   const onSubmit = async (data) => {
     try {
+      console.log(import.meta.env.VITE_BACKEND_API_URL)
       await axios.post(`${import.meta.env.VITE_BACKEND_API_URL}users`, data);
       alert("Sign Up Successful");
     } catch {
