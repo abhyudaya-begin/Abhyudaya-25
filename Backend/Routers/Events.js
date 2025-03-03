@@ -7,7 +7,7 @@ const eventRouter = Router();
 // User
 
 // GET : /event
-eventRouter.get("/", getAllEvents);
+eventRouter.get("/all", getAllEvents);
 
 // GET : event/eve_id 
 eventRouter.get("/:id", getEventById);
