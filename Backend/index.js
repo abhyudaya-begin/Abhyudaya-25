@@ -38,7 +38,7 @@ app.use("/test", (req, res)=>   res.send("Ping from the server!"));
 // All Routers
 app.use("/events", eventRouter);
 app.use("/user", userRouter);
-app.use("/verify", checkUser, VerificationRouter);
+app.use("/verify",VerificationRouter);
 
 app.listen(PORT, () => {
   console.log("Server Running at Port " + PORT);
