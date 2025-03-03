@@ -33,7 +33,7 @@ function SignInForm() {
         }
       );
 
-      // dispatch(setUser({ user: res.data.data })); // Dispatch user data to Redux
+      dispatch(setUser({ user: res.data.data })); // Dispatch user data to Redux
       alert("Sign In Successful");
     } catch (error) {
       alert(error.response?.data?.message || "Sign In Failed");

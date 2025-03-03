@@ -28,7 +28,7 @@ function SignUpForm() {
 
   const onSubmit = async (data) => {
     try {
-      await axios.post(`${import.meta.env.VITE_BACKEND_API_URL}user`, data);
+      await axios.post(`${import.meta.env.VITE_BACKEND_API_URL}users`, data);
       alert("Sign Up Successful");
     } catch {
       alert("Sign Up Failed");
