@@ -33,7 +33,7 @@ app.use(attachUserWithTokenVerification);
 app.get("/", (req, res) => {
  return  res.send("Ping from the server!");
 });
-app.use("/test", (req, res)=>   res.send("Ping from the server!"););
+app.use("/test", (req, res)=>   res.send("Ping from the server!"));
 
 // All Routers
 app.use("/events", eventRouter);
