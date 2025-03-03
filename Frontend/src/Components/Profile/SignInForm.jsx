@@ -28,9 +28,7 @@ function SignInForm() {
       const res = await axios.post(
         `https://abhyudaya-25-backend.vercel.app/user/login`,
         data,
-        {
-          withCredentials: true, // This sends cookies to backend
-        }
+
       );
 
       dispatch(setUser({ user: res.data.data })); // Dispatch user data to Redux
