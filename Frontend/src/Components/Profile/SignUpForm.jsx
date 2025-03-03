@@ -28,14 +28,23 @@ function SignUpForm() {
 
   const onSubmit = async (data) => {
     try {
-      console.log(import.meta.env.VITE_BACKEND_API_URL)
-      await axios.post(`${import.meta.env.VITE_BACKEND_API_URL}users`, data);
-      alert("Sign Up Successful");
-    } catch {
-      alert("Sign Up Failed");
+      console.log(import.meta.env.VITE_BACKEND_API_URL);
+      const res = await axios.post(
+        `${import.meta.env.VITE_BACKEND_API_URL}users/`,
+        data,
+        {
+          withCredentials: true, // This sends cookies to backend
+        }
+      );
+
+      dispatch(setUser({ user: res.data.data })); // Dispatch user data to Redux
+      alert("Sign In Successful");
+    } catch (error) {
+      alert(error.response?.data?.message || "Sign up Failed");
+      console.log(error);
     }
-    // 
   };
+
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
