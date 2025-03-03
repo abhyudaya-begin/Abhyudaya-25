@@ -7,7 +7,7 @@ const userRouter=Router();
 
 userRouter.post("/", registerUser);
 userRouter.post("/login",  Login);
-userRouter.get("/all",checkAdmin,  getUsers);
+userRouter.get("/all",   getUsers);
 userRouter.delete("/", checkAdmin, deleteUser);
 userRouter.put("/",checkUser,  updateUser);
 userRouter.post("/unregisterEvent", checkUser,  unregisterEvent);
