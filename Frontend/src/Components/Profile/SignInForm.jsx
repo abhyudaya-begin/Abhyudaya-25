@@ -3,10 +3,10 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
 import axios from "axios";
 import { Mail, Lock } from "lucide-react";
-import toast from "react-hot-toast";
 import { useDispatch, useSelector } from "react-redux";
 import { setUser } from "../Redux/UserSlice";
 import { useEffect } from "react";
+import toast from "react-hot-toast";
 
 const signInSchema = z.object({
   email: z.string().email("Invalid email address"),
@@ -36,10 +36,10 @@ function SignInForm() {
       );
 
       dispatch(setUser({ user: res.data.data })); // Dispatch user data to Redux
-      alert("Sign In Successful");
+      toast.success("Sign In Successful");
     } catch (error) {
-      alert(error.response?.data?.message || "Sign In Failed");
-      console.log(error);
+      toast.error(error.response.data.errorMessage || "Sign In Failed");
+     
     }
   };
 

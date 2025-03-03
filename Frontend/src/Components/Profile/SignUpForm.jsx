@@ -4,6 +4,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import toast from "react-hot-toast";
 import{Calendar, GraduationCap, Mail, Phone, University, User,Lock, Eye,
   EyeOff} from 'lucide-react';
 
@@ -70,11 +71,11 @@ function SignUpForm({ setIsSignUp }) {
         }
       );
 
-      alert("Sign Up Successful");
+      toast.success("Sign Up Successful");
       setIsSignUp(false);
     } catch (error) {
-      alert(error.response?.data?.message || "Sign up Failed");
-      console.log(error);
+      toast.error(error.response.data.errorMessage  || "Sign up Failed");
+    
     }
   };
   const[showPassword, setShowPassword] = useState(false);
