@@ -29,10 +29,10 @@ const getAllEvents = async (req, res) => {
     }
 
     const events = await Events.find(filter);
-    res.status(200).json(events);
+    return res.status(200).json(events);
   } catch (error) {
     console.error(error);
-    res.status(500).json({ error: "Failed to retrieve events" });
+    return res.status(500).json({ error: "Failed to retrieve events" });
   }
 };
 
