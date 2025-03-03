@@ -14,10 +14,9 @@ dotenv.config();
 Connection(); // Connect DB
 
 const corsOptions = {
-  origin: "https://abhyudaya-25-nine.vercel.app",
+  origin: process.env.APPLICATION_URL,
   credentials: true,
-  methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
-  allowedHeaders: "Content-Type,Authorization"
+ 
 };
 
 const app = express();
