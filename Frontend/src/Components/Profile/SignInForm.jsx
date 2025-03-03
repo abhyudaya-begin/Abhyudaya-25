@@ -21,7 +21,7 @@ function SignInForm() {
   const user = useSelector((state) => state.user.user);
 
   useEffect(() => {
-    console.log(user);
+ 
   }, []);
   
   const onSubmit = async (data) => {

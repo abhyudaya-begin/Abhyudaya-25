@@ -1,7 +1,7 @@
 import React from "react";
 import Hero2Section from "./hero2";
 import HeroSection from "./hero";
-import PinGrid from "./pintrest/PinGrid";
+
 import ArtistSlider from "./slider/Slider";
 import CountDown from "./countdown/CountDown";
 import Merchandise from "./merchandise/Merchandise";
@@ -17,9 +17,9 @@ const IndexHome = () => {
       <CountDown />
       {/* <ArtistSlider/> */}
       <Stats/>
-      <ArtistSlider />
+      <ArtistSlider id="artists"/>
       <Merchandise/>
-      <PinGrid/>
+     
     
     </div>
   );

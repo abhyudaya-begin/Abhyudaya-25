@@ -2,10 +2,10 @@ import React from "react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
 
-const Pin = ({unique}) => {
+const GalleryImage = ({unique}) => {
 console.log(unique)
   return (
-    <div className="relative rounded-lg overflow-hidden">
+    <div className="relative rounded-lg overflow-hidden cursor-pointer select-none">
     <LazyLoadImage
       src={unique}
       alt="Gallery Image"
@@ -17,4 +17,4 @@ console.log(unique)
   );
 };
 
-export default Pin;
+export default GalleryImage;
