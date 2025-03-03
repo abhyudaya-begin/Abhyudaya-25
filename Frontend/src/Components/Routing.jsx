@@ -5,6 +5,8 @@ import Members from "./Team/Members";
 import CampusAmbassadorProgram from "./CampusAmbassador/CampusAmbassadorProgram";
 import AuthForm from "./Profile/AuthForm";
 import ProfileRoute from "./Profile/ProfileRoute";
+import Events from "./Events/Events";
+import EventDetail from "./Events/EventDetail";
 // Pages
 
 // You can add these placeholder pages or replace with your actual components
@@ -36,6 +38,8 @@ function Routing() {
       <Route path="/campus-ambassador" element={ <CampusAmbassadorProgram/>} />
       <Route path="/profile" element={< ProfileRoute/>} />
       <Route path="/contact" element={<ContactUs/>}/>
+      <Route path="/events" element={<Events/>}/>
+      <Route path="/events/:id" element={<EventDetail/>}/>
     </Routes>
     </div>
     // <>

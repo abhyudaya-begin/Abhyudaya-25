@@ -1,0 +1,695 @@
+[
+    {
+       "_id": "event001",
+       "eventId": "ART001",
+       "eventName": "Sketching",
+       "description": "An artistic sketching competition.",
+       "category": "Art",
+       "eventType": "Offline",
+       "teamType": "Individual",
+       "noOfRounds": 1,
+       "participationFee": 20,
+       "images": [
+          "https://source.unsplash.com/400x300/?sketching,drawing"
+       ],
+       "rules": [
+          "There is individual participation only.",
+          "Drawing sheet, pencil, and eraser will be provided.",
+          "Duration of the event will be 20 minutes.",
+          "Any artwork, sketching, painting or craft work can be submitted.",
+          "Extra marks will be awarded if the creation depicts a theme.",
+          "The entries must be submitted beforehand.",
+          "Last date to submit the entries is May 4, 2023."
+       ]
+    },
+    {
+       "_id": "event002",
+       "eventId": "QUI001",
+       "eventName": "Quiz",
+       "description": "A general knowledge quiz competition.",
+       "category": "Literature",
+       "eventType": "Offline",
+       "teamType": "Team",
+       "noOfRounds": 3,
+       "participationFee": 20,
+       "images": [
+          "https://source.unsplash.com/400x300/?quiz,competition"
+       ],
+       "rules": [
+          "Two participants per team are allowed.",
+          "The prelims will be a pen and paper test.",
+          "Selected participants from prelims will qualify for the final round.",
+          "The final round will be an audio-visual round."
+       ]
+    },
+    {
+       "_id": "event003",
+       "eventId": "LIT001",
+       "eventName": "Literati",
+       "description": "A literature-based event focusing on writing and comprehension.",
+       "category": "Literature",
+       "eventType": "Offline",
+       "teamType": "Individual",
+       "noOfRounds": 1,
+       "participationFee": 20,
+       "images": [
+          "https://source.unsplash.com/400x300/?books,writing"
+       ],
+       "rules": [
+          "The poem may be in Hindi or English.",
+          "Plagiarism is strictly prohibited.",
+          "The poem may be in Hindi or English.",
+          "For the first round, the participant has to write the poem and mail it in PDF format at abhyudaya.mmm@gmail.com.",
+          "The selected participants will recite their poem on stage at the scheduled time.",
+          "Poems must be original; plagiarism will lead to disqualification."
+       ]
+    },
+    {
+       "_id": "event004",
+       "eventId": "ART002",
+       "eventName": "Graffiti",
+       "description": "A graffiti-making competition to express creativity.",
+       "category": "Art",
+       "eventType": "Offline",
+       "teamType": "Team",
+       "noOfRounds": 1,
+       "participationFee": 20,
+       "images": [
+          "https://source.unsplash.com/400x300/?graffiti,art"
+       ],
+       "rules": [
+          "Teams of 3-5 members are allowed.",
+          "An 8x8 wall with a white base coat will be provided.",
+          "Spray paints (silver, gold, black), enamel paints, chalks, and 3 wall paint brushes will be provided.",
+          "Participants may bring their own materials.",
+          "Duration of the event will be 5 hours.",
+          "The team must submit a hand-drawn abstract on an A3 sheet before the event at abhyudaya.mmm@gmail.com.",
+          "Judging will be based on originality, creativity, neatness, and use of colors."
+       ]
+    },
+    {
+       "_id": "event005",
+       "eventId": "ART003",
+       "eventName": "Kite Runner",
+       "description": "A kite flying and decoration event.",
+       "category": "Art",
+       "eventType": "Offline",
+       "teamType": "Individual",
+       "noOfRounds": 1,
+       "participationFee": 20,
+       "images": [
+          "https://source.unsplash.com/400x300/?kite,sky"
+       ],
+       "rules": [
+          "Two participants per team are allowed.",
+          "Raw materials (kite paper, bamboo sticks, thread, and glue) will be provided.",
+          "Participants may bring their own decorative materials.",
+          "Duration of the event will be 30 minutes.",
+          "Participants must design their kites and make them fly.",
+          "Judging will be based on creativity, design, neatness, and flight performance."
+       ]
+    },
+    {
+       "_id": "event006",
+       "eventId": "DEB002",
+       "eventName": "House of Commons",
+       "description": "A debate competition simulating parliamentary discussions.",
+       "category": "Literature",
+       "eventType": "Offline",
+       "teamType": "Team",
+       "noOfRounds": 2,
+       "participationFee": 20,
+       "images": [
+          "https://source.unsplash.com/400x300/?debate,parliament"
+       ],
+       "rules": [
+          "The preliminary round will be a Group Discussion round.",
+          "8 members will qualify for the final round and participate in a simulated parliamentary session.",
+          "Teams will be divided into a Ruling and an Opposition party. Important position will be allotted to the members during the session.",
+          "A bill will be provided and the session would be prorogued by passing or failing the bill.",
+          "Winners will be selected based on debate quality and argument strength."
+       ]
+    },
+    {
+       "_id": "event007",
+       "eventId": "SPO002",
+       "eventName": "Feder Fete",
+       "description": "A sports-based fun event.",
+       "category": "Other",
+       "eventType": "Offline",
+       "teamType": "Team",
+       "noOfRounds": 2,
+       "participationFee": 20,
+       "images": [
+          "https://source.unsplash.com/400x300/?sports,event"
+       ],
+       "rules": [
+          "A team can have a minimum of 4 and a maximum of 6 members.",
+          "Teams must submit an abstract of their stall idea before the event on abhyudaya.mmm@gmail.com in accordance with the abstract format posted on our Facebook page. The teams need to mention the following points while submitting their entries for the game stall Feder Fete of Abhyudaya 2024: Name for the stall Name, Branch, Year and Contact of team members Amenities required Rules (for gaming sta Image for dummy setup for better illustration The winner wil be selected on the basis of Innovation and plausibility.",
+          "The stall's revenue will be split 70% for participants and 30% for Team Abhyudaya.",
+          "Team Abhyudaya reserves the right to remove any inappropriate stalls."
+       ]
+    },
+    {
+       "_id": "event008",
+       "eventId": "CRA002",
+       "eventName": "Making Glance",
+       "description": "A short video-making competition capturing the essence of Abhyudaya.",
+       "category": "Other",
+       "eventType": "Offline",
+       "teamType": "Team",
+       "noOfRounds": 1,
+       "participationFee": 20,
+       "images": [
+          "https://source.unsplash.com/400x300/?video,filmmaking"
+       ],
+       "rules": [
+          "Team size: 3 members.",
+          "Video duration should be between 1 to 3 minutes.",
+          "Use of karaoke as well as instruments is allowed.",
+          "Any audio-editing or auto-tuning application will result in disqualification.",
+          "Judging will be based on 40% likes and 60% content quality."
+       ]
+    },
+    {
+       "_id": "event009",
+       "eventId": "DRA002",
+       "eventName": "Nukkad Natak",
+       "description": "A street play competition highlighting social issues.",
+       "category": "Dramatics",
+       "eventType": "Offline",
+       "teamType": "Team",
+       "noOfRounds": 2,
+       "participationFee": 20,
+       "images": [
+          "https://source.unsplash.com/400x300/?theatre,play"
+       ],
+       "rules": [
+          "A team can have 8-20 participants (including music accompanists).",
+          "Performance duration: 20-25 minutes.",
+          "The entire performance can be in Hindi or English or can be bilingual.    However, short snippets in other languages are allowed.",
+          "There are extra points if the play depicts a theme and clearly illustrates the message. ",
+          "Use of electronic devices, microphones, and makeup is prohibited.",
+          "Judging will be based on storytelling, voice modulation, acting, and creativity."
+       ]
+    },
+    {
+       "_id": "event010",
+       "eventId": "ART004",
+       "eventName": "Splash",
+       "description": "ABHYUDAYA's spectacular Rangoli making event",
+       "category": "Art",
+       "eventType": "Offline",
+       "teamType": "Individual",
+       "noOfRounds": 1,
+       "participationFee": 20,
+       "images": [
+          "https://source.unsplash.com/400x300/?painting,art"
+       ],
+       "rules": [
+          "Two participants per team are allowed",
+          "Three colour powders (red, yellow and green), sand and sawdust will be provided.",
+          "You are free to bring your own materials.",
+          "Duration of the event will be 60 minutes."
+       ]
+    },
+    {
+       "_id": "event011",
+       "eventId": "ART005",
+       "eventName": "Lively Facets",
+       "description": "A face-painting competition to showcase artistic creativity.",
+       "category": "Art",
+       "eventType": "Offline",
+       "teamType": "Individual",
+       "noOfRounds": 1,
+       "participationFee": 20,
+       "images": [
+          "https://source.unsplash.com/400x300/?face-painting,art"
+       ],
+       "rules": [
+          "Two participants per team are allowed.",
+          "Paints and brushes will be provided to the participants.",
+          "Participants are free to bring their own materials.",
+          "Duration of the event is 60 minutes."
+       ]
+    },
+    {
+       "_id": "event012",
+       "eventId": "ART006",
+       "eventName": "Art Gallery",
+       "description": "An exhibition-style event for showcasing various art forms.",
+       "category": "Art",
+       "eventType": "Offline",
+       "teamType": "Individual",
+       "noOfRounds": 1,
+       "participationFee": 20,
+       "images": [
+          "https://source.unsplash.com/400x300/?art,exhibition"
+       ],
+       "rules": [
+          "Any artwork, sketching, painting or craft work can be submitted.",
+          "Extra marks will be awarded if the creation depicts a theme.",
+          "The entries must be submitted beforehand.",
+          "Last date to submit the entries is."
+       ]
+    },
+    {
+       "_id": "event013",
+       "eventId": "ART007",
+       "eventName": "Impressions",
+       "description": "Embrace the art of self-expression with tattoo making! ",
+       "category": "Art",
+       "eventType": "Offline",
+       "teamType": "Team",
+       "noOfRounds": 1,
+       "participationFee": 20,
+       "images": [
+          "https://source.unsplash.com/400x300/?hand-painting,art"
+       ],
+       "rules": [
+          "Time limit: 20 min.",
+          " Two participants per team are allowed.",
+          "Sketch pens of any two colours will be provided.",
+          " You are free to bring your own materials"
+       ]
+    },
+    {
+       "_id": "event014",
+       "eventId": "ART008",
+       "eventName": "Pallette the Closet",
+       "description": "A fabric painting competition on wearable textiles.",
+       "category": "Art",
+       "eventType": "Offline",
+       "teamType": "Individual",
+       "noOfRounds": 1,
+       "participationFee": 20,
+       "images": [
+          "https://source.unsplash.com/400x300/?fabric-painting,art"
+       ],
+       "rules": [
+          "Participants must bring their own fabric.",
+          "Designs should be wearable."
+       ]
+    },
+    {
+       "_id": "event015",
+       "eventId": "MUS001",
+       "eventName": "Raga",
+       "description": "A classical singing competition.",
+       "category": "Music",
+       "eventType": "Offline",
+       "teamType": "Individual",
+       "noOfRounds": 2,
+       "participationFee": 20,
+       "images": [
+          "https://source.unsplash.com/400x300/?music,singing"
+       ],
+       "rules": [
+          "PRELIMS - Time limit: 2-3 minutes to set the instrument and further 3 minutes for performance.",
+          "FINALS- The participant will be given total 8 minutes to empty stage i.e. performing all sort of on-stage tasks. On stage performance should not be less than 5 minutes.",
+          " Participants can have a maximum of 3 accompanists playing along as a team.",
+          " Use of synthesizer tracks (karaoke) is allowed.",
+          "Judgment will be based on tone, raag, rhythm, tempo, and song selection."
+       ]
+    },
+    {
+       "_id": "event016",
+       "eventId": "DAN001",
+       "eventName": "Boogie Thrill",
+       "description": "A solo dance competition showcasing freestyle moves.",
+       "category": "Dance",
+       "eventType": "Offline",
+       "teamType": "Individual",
+       "noOfRounds": 2,
+       "participationFee": 20,
+       "images": [
+          "https://source.unsplash.com/400x300/?dance,performance"
+       ],
+       "rules": [
+          "Time limit: 3 minutes.",
+          "Props and background music allowed.",
+          "Judgment will be based on choreography, expression, synchronization, and innovation."
+       ]
+    },
+    {
+       "_id": "event017",
+       "eventId": "ART009",
+       "eventName": "Glittering Hands",
+       "description": "A hand-decoration competition using glitter and henna.",
+       "category": "Art",
+       "eventType": "Offline",
+       "teamType": "Individual",
+       "noOfRounds": 1,
+       "participationFee": 20,
+       "images": [
+          "https://source.unsplash.com/400x300/?mehndi,hand-art"
+       ],
+       "rules": [
+          "Time limit: 45 minutes.",
+          "Only natural dyes allowed.",
+          "One mehndi cone will be provided to each team.",
+          "One member per team will apply henna to their teammate."
+       ]
+    },
+    {
+       "_id": "event018",
+       "eventId": "ART010",
+       "eventName": "Brush Hour",
+       "description": "A speed painting competition.",
+       "category": "Art",
+       "eventType": "Offline",
+       "teamType": "Individual",
+       "noOfRounds": 1,
+       "participationFee": 20,
+       "images": [
+          "https://source.unsplash.com/400x300/?speed-painting,art"
+       ],
+       "rules": [
+          "Individual participation only.",
+          "Watercolors, chart paper, and brushes will be provided.",
+          "Duration of the event: 40 minutes."
+       ]
+    },
+    {
+       "_id": "event019",
+       "eventId": "ART011",
+       "eventName": "Hair Styling",
+       "description": "A creative hair-styling competition.",
+       "category": "Art",
+       "eventType": "Offline",
+       "teamType": "Individual",
+       "noOfRounds": 1,
+       "participationFee": 20,
+       "images": [
+          "https://source.unsplash.com/400x300/?hair-styling,fashion"
+       ],
+       "rules": [
+          "Time limit: 20 minutes.",
+          "Hairpins for girls and gel for boys will be provided.",
+          "Participants may bring their own materials.",
+          "Extra marks will be awarded if the style depicts a theme."
+       ]
+    },
+    {
+       "_id": "event020",
+       "eventId": "MUS002",
+       "eventName": "Goonj",
+       "description": "A group singing competition.",
+       "category": "Music",
+       "eventType": "Offline",
+       "teamType": "Team",
+       "noOfRounds": 2,
+       "participationFee": 20,
+       "images": [
+          "https://source.unsplash.com/400x300/?choir,singing"
+       ],
+       "rules": [
+          "You will be given a time period of 2-3 minutes to set the instruments (if any) and further 3 minutes for the performance. The participants qualifying this round will be performing in the FINALS.",
+          "Songs should be performed acapella or with minimal instruments."
+       ]
+    },
+    {
+       "_id": "event021",
+       "eventId": "MUS003",
+       "eventName": "Proelium",
+       "description": "A battle-of-the-bands style musical competition.",
+       "category": "Music",
+       "eventType": "Offline",
+       "teamType": "Team",
+       "noOfRounds": 2,
+       "participationFee": 20,
+       "images": [
+          "https://source.unsplash.com/400x300/?band,music"
+       ],
+       "rules": [
+          "Each band gets 20 minutes from 'empty stage to empty stage'.",
+          "A maximum of 8 and a minimum of 4 performers (vocalists & instrumentalists) are allowed.",
+          "A 5-piece standard drum set will be provided; other instruments must be brought by the participants.",
+          "Use of synthesizer tracks and octa pad is strictly forbidden.",
+          "Plagiarism is not tolerated and will lead to immediate disqualification.",
+          "Self-composed music can be performed.",
+          "Judging will be based on composition, tempo, rhythm, tuning, and originality."
+       ]
+    },
+    {
+       "_id": "event022",
+       "eventId": "LIT002",
+       "eventName": "Archiving Emotions",
+       "description": "A poetry and storytelling event focusing on emotional depth.",
+       "category": "Literature",
+       "eventType": "Offline",
+       "teamType": "team",
+       "noOfRounds": 1,
+       "participationFee": 20,
+       "images": [
+          "https://source.unsplash.com/400x300/?poetry,storytelling"
+       ],
+       "rules": [
+          "Two participants per team are allowed.",
+          "Time limit: 20 minutes per performance.",
+          " A theme for the card will be given on the spot."
+       ]
+    },
+    {
+       "_id": "event023",
+       "eventId": "DRA006",
+       "eventName": "Gracing Gestures",
+       "description": "A mime competition focusing on expressions and gestures.",
+       "category": "Dramatics",
+       "eventType": "Offline",
+       "teamType": "Team",
+       "noOfRounds": 2,
+       "participationFee": 20,
+       "images": [
+          "https://source.unsplash.com/400x300/?mime,drama"
+       ],
+       "rules": [
+          "Team size: 3 to 12 members.",
+          "Time limit: 5 to 10 minutes (includes stage setup and clearance).",
+          "No dialogues, lip-sync, or backstage narration allowed.",
+          "Face painting and costumes are allowed but not considered as props.",
+          "Background music is allowed but must not contain any words.",
+          "Negative points for exceeding time limit.",
+          "Acts must not contain obscene, disrespectful gestures.",
+          "Judging criteria: Storytelling, voice modulation, acting, and creativity."
+       ]
+    },
+    {
+       "_id": "event024",
+       "eventId": "OTH003",
+       "eventName": "Rising Star",
+       "description": "A talent hunt competition for showcasing any unique skill.",
+       "category": "Other",
+       "eventType": "Online",
+       "teamType": "Individual",
+       "noOfRounds": 1,
+       "participationFee": 20,
+       "images": [
+          "https://source.unsplash.com/400x300/?talent-show,performance"
+       ],
+       "rules": [
+          "Participants must record and submit a video exhibiting their talent.",
+          "Videos will be posted on the official page.",
+          "Judgment is based on 50% likes on the post and 50% content quality.",
+          "Top performers will get direct entry into the stage events of Abhyudaya."
+       ]
+    },
+    {
+       "_id": "event025",
+       "eventId": "DAN002",
+       "eventName": "Raider Zone",
+       "description": "A high-energy group dance competition.",
+       "category": "Dance",
+       "eventType": "Offline",
+       "teamType": "Team",
+       "noOfRounds": 2,
+       "participationFee": 20,
+       "images": [
+          "https://source.unsplash.com/400x300/?group-dance,performance"
+       ],
+       "rules": [
+          "Team size: 5 to 20 members.",
+          "Performance time: 8 to 10 minutes.",
+          "Props are allowed but must be approved by organizers.",
+          "Use of fluid, flames, powders, or any hazardous material is strictly prohibited.",
+          "Judging will be based on choreography, synchronization, and innovation."
+       ]
+    },
+    {
+       "_id": "event026",
+       "eventId": "DAN003",
+       "eventName": "Street Sync",
+       "description": "A street dance battle with freestyle moves.",
+       "category": "Dance",
+       "eventType": "Offline",
+       "teamType": "Team",
+       "noOfRounds": 2,
+       "participationFee": 20,
+       "images": [
+          "https://source.unsplash.com/400x300/?street-dance,hiphop"
+       ],
+       "rules": [
+          "Team size: 5 to 10 members.",
+          "Format: Sequential knockouts, with the last two teams facing off in the final.",
+          "Each battle segment lasts 60 seconds.",
+          "Negative points for exceeding the time limit.",
+          "Participants must submit a playlist of five songs for shuffling.",
+          "Judging will be based on choreography, technique, synchronization, and creativity."
+       ]
+    },
+    {
+       "_id": "event027",
+       "eventId": "ART012",
+       "eventName": "Glare the Earthenware",
+       "description": "A pottery decoration and painting competition.",
+       "category": "Art",
+       "eventType": "Offline",
+       "teamType": "Individual",
+       "noOfRounds": 1,
+       "participationFee": 20,
+       "images": [
+          "https://source.unsplash.com/400x300/?pottery,art"
+       ],
+       "rules": [
+          "Participants must bring their own pottery piece.",
+          "Time limit: 1 hour.",
+          "Judging based on creativity, neatness, and use of colors."
+       ]
+    },
+    {
+       "_id": "event028",
+       "eventId": "MUS004",
+       "eventName": "Chhote Ustad",
+       "description": "A singing competition for young talents.",
+       "category": "Music",
+       "eventType": "Offline",
+       "teamType": "Individual",
+       "noOfRounds": 2,
+       "participationFee": 20,
+       "images": [
+          "https://source.unsplash.com/400x300/?kids-singing,competition"
+       ],
+       "rules": [
+          "Participants must be below 18 years.",
+          "Time limit: 3 minutes per song.",
+          "Judging based on voice quality, rhythm, and performance."
+       ]
+    },
+    {
+       "_id": "event029",
+       "eventId": "LIT003",
+       "eventName": "Literati",
+       "description": "A literary quiz competition testing knowledge on literature.",
+       "category": "Literature",
+       "eventType": "Offline",
+       "teamType": "Team",
+       "noOfRounds": 2,
+       "participationFee": 20,
+       "images": [
+          "https://source.unsplash.com/400x300/?books,quiz"
+       ],
+       "rules": [
+          "Teams of 2-4 members.",
+          "Questions will cover poetry, novels, and authors.",
+          "Format includes multiple-choice and buzzer rounds."
+       ]
+    },
+    {
+       "_id": "event030",
+       "eventId": "QUIZ001",
+       "eventName": "Quiz",
+       "description": "A general knowledge and current affairs quiz competition.",
+       "category": "Litrature",
+       "eventType": "Offline",
+       "teamType": "Team",
+       "noOfRounds": 2,
+       "participationFee": 20,
+       "images": [
+          "https://source.unsplash.com/400x300/?quiz,competition"
+       ],
+       "rules": [
+          "Two participants per team are allowed.",
+          "The prelims will be a pen-and-paper test.",
+          "Selected participants from prelims will qualify for the final round."
+       ]
+    },
+    {
+       "_id": "event031",
+       "eventId": "ART013",
+       "eventName": "Sketching",
+       "description": "An art competition focusing on creative sketching skills.",
+       "category": "Art",
+       "eventType": "Offline",
+       "teamType": "Individual",
+       "noOfRounds": 1,
+       "participationFee": 20,
+       "images": [
+          "https://source.unsplash.com/400x300/?sketching,art"
+       ],
+       "rules": [
+          "There is individual participation only.",
+          "Drawing sheet, pencil, and eraser will be provided.",
+          "Duration of the event will be 20 minutes.",
+          "Any artwork, sketching, painting, or craft work can be submitted.",
+          "Extra marks will be awarded if the creation depicts a theme.",
+          "The entries must be submitted beforehand.",
+          "Last date to submit the entries is May 4, 2023."
+       ]
+    },
+    {
+       "_id": "event032",
+       "eventId": "ART014",
+       "eventName": "Impressions",
+       "description": "A painting competition where participants express their impressions of a given theme.",
+       "category": "Art",
+       "eventType": "Offline",
+       "teamType": "Individual",
+       "noOfRounds": 1,
+       "participationFee": 20,
+       "images": [
+          "https://source.unsplash.com/400x300/?painting,art"
+       ],
+       "rules": [
+          "Two participants per team are allowed.",
+          "Three color powders (red, yellow, and green), sand, and sawdust will be provided.",
+          "Participants are free to bring their own materials.",
+          "Duration of the event will be 60 minutes."
+       ]
+    },
+    {
+       "_id": "event033",
+       "eventId": "ART015",
+       "eventName": "Art Gallery",
+       "description": "An exhibition-style event where participants display their best artwork.",
+       "category": "Art",
+       "eventType": "Offline",
+       "teamType": "Individual",
+       "noOfRounds": 1,
+       "participationFee": 20,
+       "images": [
+          "https://source.unsplash.com/400x300/?gallery,art"
+       ],
+       "rules": [
+          "Participants must submit original artwork.",
+          "Multiple categories are available for entry."
+       ]
+    },
+    {
+       "_id": "event034",
+       "eventId": "ART016",
+       "eventName": "Pallette the Closet",
+       "description": "A fashion-based art competition focusing on costume design and creativity.",
+       "category": "Art",
+       "eventType": "Offline",
+       "teamType": "Individual",
+       "noOfRounds": 1,
+       "participationFee": 20,
+       "images": [
+          "https://source.unsplash.com/400x300/?fashion,design"
+       ],
+       "rules": [
+          "Participants must create a wearable design.",
+          "Duration of the event will be 2 hours."
+       ]
+    }
+ ]

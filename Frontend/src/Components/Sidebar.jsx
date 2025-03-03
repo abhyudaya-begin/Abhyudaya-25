@@ -68,7 +68,7 @@ const Sidebar = () => {
       id: "event",
       icon: <FaCalendarCheck size={20} color="white" />,
       label: "Event",
-      path: "/event",
+      path: "/events",
     },
     {
       id: "campus-ambassador",
