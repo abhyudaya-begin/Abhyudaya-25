@@ -26,12 +26,14 @@ function SignInForm() {
   const onSubmit = async (data) => {
     try {
       const res = await axios.post(
-        `https://abhyudaya-25-backend.vercel.app/user/login`,
+        `${import.meta.env.VITE_BACKEND_API_URL}user/login`,
         data,
-
+        {
+          withCredentials: true, // This sends cookies to backend
+        }
       );
 
-      dispatch(setUser({ user: res.data.data })); // Dispatch user data to Redux
+      // dispatch(setUser({ user: res.data.data })); // Dispatch user data to Redux
       alert("Sign In Successful");
     } catch (error) {
       alert(error.response?.data?.message || "Sign In Failed");
