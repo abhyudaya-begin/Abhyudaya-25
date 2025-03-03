@@ -2,6 +2,30 @@ import React from "react";
 import Masonry from "react-masonry-css";
 import Pin from "./pin";
 
+const photoUrls = [
+  "https://bmpwmkwijlrnrrywhqsp.supabase.co/storage/v1/object/sign/Gallery/glimpse1.jpg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJHYWxsZXJ5L2dsaW1wc2UxLmpwZyIsImlhdCI6MTc0MDkzNzM5MSwiZXhwIjoxNzQxMTk2NTkxfQ.HEQnctJ3CoRxaalHYPagIwwUhizaQcofomSRt9yds5g",
+  "https://bmpwmkwijlrnrrywhqsp.supabase.co/storage/v1/object/sign/Gallery/glimpse2.jpg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJHYWxsZXJ5L2dsaW1wc2UyLmpwZyIsImlhdCI6MTc0MDkzNzQ1OSwiZXhwIjoxNzQxMTk2NjU5fQ.RAYmii7aRrTnPgRSmdaGKE7RAm66Pcmzf92wuXsg_ps",
+  "https://bmpwmkwijlrnrrywhqsp.supabase.co/storage/v1/object/sign/Gallery/glimpse3.jpg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJHYWxsZXJ5L2dsaW1wc2UzLmpwZyIsImlhdCI6MTc0MDkzNzQ3NywiZXhwIjoxODM1NTQ1NDc3fQ.4XQFvOd_rlWovOhyAOD7qFC9Aq264zwygY0MbHv7tgU",
+  "https://bmpwmkwijlrnrrywhqsp.supabase.co/storage/v1/object/sign/Gallery/glimpse4.jpg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJHYWxsZXJ5L2dsaW1wc2U0LmpwZyIsImlhdCI6MTc0MDkzNzUyNywiZXhwIjoxODM1NTQ1NTI3fQ.8a_9Ty-RpNs0bazmZjH4zk2vUlpXGXWvk-SveDfDjjk",
+  "https://bmpwmkwijlrnrrywhqsp.supabase.co/storage/v1/object/sign/Gallery/glimpse5.jpg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJHYWxsZXJ5L2dsaW1wc2U1LmpwZyIsImlhdCI6MTc0MDkzNzU1MiwiZXhwIjoxODM1NTQ1NTUyfQ.ZzeaeWg-MB3Zv4KaNqHuoEZ7Vo7TD06R1hHiJvNu33c",
+  "https://bmpwmkwijlrnrrywhqsp.supabase.co/storage/v1/object/sign/Gallery/glimpse6.jpg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJHYWxsZXJ5L2dsaW1wc2U2LmpwZyIsImlhdCI6MTc0MDkzNzU3NCwiZXhwIjoxODM1NTQ1NTc0fQ.NnsNTlRT1IAICBCvjf7_LckHkq4bByNntgrne5AwWrQ",
+  "https://bmpwmkwijlrnrrywhqsp.supabase.co/storage/v1/object/sign/Gallery/glimpse7.jpg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJHYWxsZXJ5L2dsaW1wc2U3LmpwZyIsImlhdCI6MTc0MDkzNzU5NiwiZXhwIjoxODM1NTQ1NTk2fQ.NytqXGjSHuEHDdpyoymaHtktZEblt1eVBdkkOZMmON0",
+  "https://bmpwmkwijlrnrrywhqsp.supabase.co/storage/v1/object/sign/Gallery/glimpse8.jpg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJHYWxsZXJ5L2dsaW1wc2U4LmpwZyIsImlhdCI6MTc0MDkzNzYyMSwiZXhwIjoxODM1NTQ1NjIxfQ.XFzBbHJ1r0UeLsSzEpOv4MlEorg9hENczWWIGqBQAv0",
+  "https://bmpwmkwijlrnrrywhqsp.supabase.co/storage/v1/object/sign/Gallery/glimpse9.jpg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJHYWxsZXJ5L2dsaW1wc2U5LmpwZyIsImlhdCI6MTc0MDkzNzM0OSwiZXhwIjoxODM1NTQ1MzQ5fQ.D0ef73htECXIaMnNH-CYp3qZc0Um3rwgM07kVZ4Xvug",
+  "https://bmpwmkwijlrnrrywhqsp.supabase.co/storage/v1/object/sign/Gallery/glimpse10.jpg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJHYWxsZXJ5L2dsaW1wc2UxMC5qcGciLCJpYXQiOjE3NDA5Mzc2NjMsImV4cCI6MTgzNTU0NTY2M30.UbwZsGPvgiA8WAu-PpIxTkFifqphT98esgXxQCXlhJE",
+  "https://bmpwmkwijlrnrrywhqsp.supabase.co/storage/v1/object/sign/Gallery/glimpse11.jpg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJHYWxsZXJ5L2dsaW1wc2UxMS5qcGciLCJpYXQiOjE3NDA5Mzc2ODMsImV4cCI6MTgzNTU0NTY4M30.wty7zDr8xxRlN6L_ddf3WarjzFDEZFF_Kp9A21MGpxY",
+  "https://bmpwmkwijlrnrrywhqsp.supabase.co/storage/v1/object/sign/Gallery/glimpse12.jpg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJHYWxsZXJ5L2dsaW1wc2UxMi5qcGciLCJpYXQiOjE3NDA5Mzc3MTQsImV4cCI6MTgzNTU0NTcxNH0.UJN95cJ6D9iiryFMoQ0nCm6nhSDZYU7fdGc31k7VNIw",
+  "https://bmpwmkwijlrnrrywhqsp.supabase.co/storage/v1/object/sign/Gallery/glimpse13.jpg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJHYWxsZXJ5L2dsaW1wc2UxMy5qcGciLCJpYXQiOjE3NDA5Mzc3MzgsImV4cCI6MTgzNTU0NTczOH0.QS_zRhGRJiPDJ4QYAKu1IHWS8-FiTtz3UEYjCwxHeh0",
+  "https://bmpwmkwijlrnrrywhqsp.supabase.co/storage/v1/object/sign/Gallery/glimpse14.jpg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJHYWxsZXJ5L2dsaW1wc2UxNC5qcGciLCJpYXQiOjE3NDA5Mzc3NTQsImV4cCI6MTg2NzA4MTc1NH0.Qc712I3fLMluHJBtIuH00Q2VHdYuSrElIBgO9mjXRDQ",
+  "https://bmpwmkwijlrnrrywhqsp.supabase.co/storage/v1/object/sign/Gallery/glimpse15.jpg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJHYWxsZXJ5L2dsaW1wc2UxNS5qcGciLCJpYXQiOjE3NDA5Mzc3NzIsImV4cCI6MTgzNTU0NTc3Mn0.JHxdbVDIFF5uEVtGkr0jzGrc-egORrej4GHNHTCksIo",
+  "https://bmpwmkwijlrnrrywhqsp.supabase.co/storage/v1/object/sign/Gallery/glimpse16.jpg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJHYWxsZXJ5L2dsaW1wc2UxNi5qcGciLCJpYXQiOjE3NDA5Mzc3OTEsImV4cCI6MTgzNTU0NTc5MX0.Jr5ZIcOaoqbEyAgRFQ1X-_XbInubKAe3QLCMiuKj9HE",
+  "https://bmpwmkwijlrnrrywhqsp.supabase.co/storage/v1/object/sign/Gallery/glimpse17.jpg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJHYWxsZXJ5L2dsaW1wc2UxNy5qcGciLCJpYXQiOjE3NDA5Mzc4MTEsImV4cCI6MTgzNTU0NTgxMX0.Daa7NNWhESE3_qDL6z3KmqX6JEO0LoOs1uGdSmQpLXE",
+  "https://bmpwmkwijlrnrrywhqsp.supabase.co/storage/v1/object/sign/Gallery/glimpse18.jpg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJHYWxsZXJ5L2dsaW1wc2UxOC5qcGciLCJpYXQiOjE3NDA5Mzc4MzIsImV4cCI6MTgzNTU0NTgzMn0.mBDB5pH-A0tmPIBU0wL6jJUGF24Lupm6DQKI7E0eV8E",
+  "https://bmpwmkwijlrnrrywhqsp.supabase.co/storage/v1/object/sign/Gallery/glimpse19.jpg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJHYWxsZXJ5L2dsaW1wc2UxOS5qcGciLCJpYXQiOjE3NDA5Mzc4NTIsImV4cCI6MTgzNTU0NTg1Mn0.Sdy_vn5DqYbTePMIZutxuj4LJAFgR5WlroBUukYjUXE",
+  "https://bmpwmkwijlrnrrywhqsp.supabase.co/storage/v1/object/sign/Gallery/glimpse20.jpg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJHYWxsZXJ5L2dsaW1wc2UyMC5qcGciLCJpYXQiOjE3NDA5Mzc4NzEsImV4cCI6MTgzNTU0NTg3MX0.7h-4MYPuhPnU5sJOQspuBbjVImkQIeiT8Yoi1OQsobw",
+  "https://bmpwmkwijlrnrrywhqsp.supabase.co/storage/v1/object/sign/Gallery/glimpse21.jpg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJHYWxsZXJ5L2dsaW1wc2UyMS5qcGciLCJpYXQiOjE3NDA5Mzc4OTYsImV4cCI6MTgzNTU0NTg5Nn0.57_7o0CRSW39LzXWT7FQBel_5COunEyMKC04pAt9prI",
+  "https://bmpwmkwijlrnrrywhqsp.supabase.co/storage/v1/object/sign/Gallery/glimpse22.jpg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJHYWxsZXJ5L2dsaW1wc2UyMi5qcGciLCJpYXQiOjE3NDA5Mzc5MTIsImV4cCI6MTgzNTU0NTkxMn0.xzFKEMXcFkysJmJQMdD2fauh1h_zWRFNBZ0gocbL98Y"
+];
 
 
 
@@ -15,17 +39,19 @@ const PinGrid = () => {
 
   return (
     <div className="bg-[#120c0f]">
-      <h1 className="text-center text-2xl text-gray-600 uppercase mb-4">Gallery</h1>
+      <h1 className="text-center text-2xl text-gray-600 uppercase mb-4 ">
+        Gallery
+      </h1>
       <div>
         {photoUrls && (
           <Masonry
             breakpointCols={breakpoints}
-            className="flex -ml-4 p-4"
-            columnClassName="pl-4 bg-clip-padding"
+            className="flex -ml-6 p-6 mb-8"
+            columnClassName="pl-6 bg-clip-padding"
           >
-            {/* {photoUrls.map((photo, index) => (
-              <Pin key={index} unique  = { photo} />
-            ))} */}
+            {photoUrls.map((photo, index) => (
+              <Pin key={index} unique={photo} />
+            ))}
           </Masonry>
         )}
       </div>
