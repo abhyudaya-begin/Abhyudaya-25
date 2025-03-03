@@ -13,12 +13,12 @@ eventRouter.get("/all", getAllEvents);
 eventRouter.get("/:id", getEventById);
 
 //Admin
-eventRouter.post("/", checkAdmin,  createEvent);
+eventRouter.post("/",   createEvent);
 //Admin
 eventRouter.put("/:id", checkAdmin,  updateEvent);
 
 // admin
-eventRouter.delete("/:id", checkAdmin,  deleteEvent);
+eventRouter.delete("/:id",  deleteEvent);
 //  post ->events add
 
 module.exports =  eventRouter;

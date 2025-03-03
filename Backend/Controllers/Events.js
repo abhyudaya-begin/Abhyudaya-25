@@ -5,6 +5,7 @@ const { v4: uuidv4 } = require("uuid");
 // Get all events
 const getAllEvents = async (req, res) => {
   try {
+  
     const startIndex = parseInt(req.query.startIndex) || 0;
    
     const order = req.query.order;
@@ -40,7 +41,7 @@ const getAllEvents = async (req, res) => {
     res.status(200).json({
       status: true,
       message: "Events fetched successfully",
-      data: events,
+      events: events,
     });
   } catch (error) {
     console.error("Error in getAllEvents:", error);
