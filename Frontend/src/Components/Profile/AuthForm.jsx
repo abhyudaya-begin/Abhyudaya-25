@@ -14,6 +14,9 @@ function AuthForm() {
   useEffect(()=>{
     if(user) setShowProfile(true);
   }, [user])
+  useEffect(()=>{
+    
+  }, [setIsSignUp]);
  
 
   if(showProfile)
@@ -41,7 +44,7 @@ function AuthForm() {
             {isSignUp ? "SIGN UP" : "LOG IN"}
           </h1>
 
-          {isSignUp ? <SignUpForm /> : <SignInForm />}
+          {isSignUp ? <SignUpForm setIsSignUp = {setIsSignUp}/> : <SignInForm />}
         </div>
       </div>
     </div>

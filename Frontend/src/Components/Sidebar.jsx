@@ -145,11 +145,12 @@ const Sidebar = () => {
 
       {/* Sidebar */}
       <div
-        ref={sidebarRef}
-        className={`sidebar overflow-y-scroll fixed top-0 left-0 h-screen bg-gray-900 z-40  transition-all duration-300 ease-in-out   ${
-          isSidebarOpen ? "translate-x-0" : "-translate-x-full"
-        } ${isMobile ? "w-64" : "w-20 md:translate-x-0"}`}
-      >
+  ref={sidebarRef}
+  className={`sidebar overflow-y-auto overflow-x-hidden fixed top-0 left-0 h-screen bg-gray-900 z-40 transition-all duration-300 ease-in-out ${
+    isSidebarOpen ? "translate-x-0" : "-translate-x-full"
+  } ${isMobile ? "w-64" : "w-20 md:translate-x-0"}`}
+>
+
         {/* Logo/Brand area */}
         <div className="flex justify-center items-center h-16 border-b border-gray-700">
           <h1
@@ -191,7 +192,7 @@ const Sidebar = () => {
                       {item.label}
                     </span>
                   ) : (
-                    <span className="absolute left-full ml-2 px-2 py-1 bg-gray-700 text-xs text-white rounded opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-opacity whitespace-nowrap">
+                    <span className="absolute left-full ml-2 px-2 py-1 bg-gray-700 text-xs text-white rounded opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-opacity whitespace-nowrap ">
                       {item.label}
                     </span>
                   )}

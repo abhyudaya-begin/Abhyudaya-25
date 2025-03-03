@@ -1,8 +1,4 @@
-import React from "react";
-import Masonry from "react-masonry-css";
-import Pin from "./pin";
-import axios from "axios";
-const photoUrls = [
+export const photoUrls = [
   "https://bmpwmkwijlrnrrywhqsp.supabase.co/storage/v1/object/sign/Gallery/glimpse1.jpg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJHYWxsZXJ5L2dsaW1wc2UxLmpwZyIsImlhdCI6MTc0MDkzNzM5MSwiZXhwIjoxNzQxMTk2NTkxfQ.HEQnctJ3CoRxaalHYPagIwwUhizaQcofomSRt9yds5g",
   "https://bmpwmkwijlrnrrywhqsp.supabase.co/storage/v1/object/sign/Gallery/glimpse2.jpg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJHYWxsZXJ5L2dsaW1wc2UyLmpwZyIsImlhdCI6MTc0MDkzNzQ1OSwiZXhwIjoxNzQxMTk2NjU5fQ.RAYmii7aRrTnPgRSmdaGKE7RAm66Pcmzf92wuXsg_ps",
   "https://bmpwmkwijlrnrrywhqsp.supabase.co/storage/v1/object/sign/Gallery/glimpse3.jpg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJHYWxsZXJ5L2dsaW1wc2UzLmpwZyIsImlhdCI6MTc0MDkzNzQ3NywiZXhwIjoxODM1NTQ1NDc3fQ.4XQFvOd_rlWovOhyAOD7qFC9Aq264zwygY0MbHv7tgU",
@@ -26,37 +22,3 @@ const photoUrls = [
   "https://bmpwmkwijlrnrrywhqsp.supabase.co/storage/v1/object/sign/Gallery/glimpse21.jpg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJHYWxsZXJ5L2dsaW1wc2UyMS5qcGciLCJpYXQiOjE3NDA5Mzc4OTYsImV4cCI6MTgzNTU0NTg5Nn0.57_7o0CRSW39LzXWT7FQBel_5COunEyMKC04pAt9prI",
   "https://bmpwmkwijlrnrrywhqsp.supabase.co/storage/v1/object/sign/Gallery/glimpse22.jpg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJHYWxsZXJ5L2dsaW1wc2UyMi5qcGciLCJpYXQiOjE3NDA5Mzc5MTIsImV4cCI6MTgzNTU0NTkxMn0.xzFKEMXcFkysJmJQMdD2fauh1h_zWRFNBZ0gocbL98Y"
 ];
-
-
-
-const PinGrid = () => {
-  const breakpoints = {
-    default: 4,
-    1200: 3,
-    900: 2,
-    600: 1,
-  };
-
-  return (
-    <div className="bg-[#120c0f]">
-      <h1 className="text-center text-2xl text-gray-600 uppercase mb-4 ">
-        Gallery
-      </h1>
-      <div>
-        {photoUrls && (
-          <Masonry
-            breakpointCols={breakpoints}
-            className="flex -ml-6 p-6 mb-8"
-            columnClassName="pl-6 bg-clip-padding"
-          >
-            {photoUrls.map((photo, index) => (
-              <Pin key={index} unique={photo} />
-            ))}
-          </Masonry>
-        )}
-      </div>
-    </div>
-  );
-};
-
-export default PinGrid;
