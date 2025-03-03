@@ -26,7 +26,7 @@ function SignInForm() {
   const onSubmit = async (data) => {
     try {
       const res = await axios.post(
-        `${import.meta.env.VITE_BACKEND_API_URL}user/login`,
+        `${import.meta.env.VITE_BACKEND_API_URL}users/login`,
         data,
         {
           withCredentials: true, // This sends cookies to backend
