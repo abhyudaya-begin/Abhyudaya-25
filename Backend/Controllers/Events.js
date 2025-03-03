@@ -5,36 +5,53 @@ const { v4: uuidv4 } = require("uuid");
 // Get all events
 const getAllEvents = async (req, res) => {
   try {
-    let filter = {};
-    const {
-      category,
-      eventType,
-      minPrize,
-      maxPrize,
-      teamType,
-      noOfRounds,
-      eventName,
-    } = req.query;
+    const startIndex = parseInt(req.query.startIndex) || 0;
+   
+    const order = req.query.order;
+    const sortDirection = order === "asc" ? 1 : -1;
 
-    if (category) filter.category = category;
-    if (eventType) filter.eventType = eventType;
-    if (teamType) filter.teamType = teamType;
-    // if (eventName) filter.eventName = eventName;
-    if (eventName) filter.eventName = { $regex: eventName, $options: "i" };
-    if (noOfRounds) filter.noOfRounds = Number(noOfRounds);
-    if (minPrize || maxPrize) {
-      filter.prize = {};
-      if (minPrize) filter.prize.$gte = Number(minPrize);
-      if (maxPrize) filter.prize.$lte = Number(maxPrize);
+    let query = {
+      ...(req.query.category && { category: req.query.category }),
+      ...(req.query.eventType && { eventType: req.query.eventType }),
+      ...(req.query.teamType && { teamType: req.query.teamType }),
+      ...(req.query.eventName && {
+        eventName: { $regex: req.query.eventName, $options: "i" },
+      }),
+      ...(req.query.noOfRounds && {
+        noOfRounds: Number(req.query.noOfRounds),
+      }),
+    };
+
+    if (req.query.minPrize || req.query.maxPrize) {
+      query.participationFee = {};
+      if (req.query.minPrize)
+        query.participationFee.$gte = Number(req.query.minPrize);
+      if (req.query.maxPrize)
+        query.participationFee.$lte = Number(req.query.maxPrize);
     }
 
-    const events = await Events.find(filter);
-    return res.status(200).json(events);
+    console.log("Query:", query);
+
+    const events = await Events.find(query)
+      .sort({ createdAt: sortDirection })
+      .skip(startIndex)
+   
+
+    res.status(200).json({
+      status: true,
+      message: "Events fetched successfully",
+      data: events,
+    });
   } catch (error) {
-    console.error(error);
-    return res.status(500).json({ error: "Failed to retrieve events" });
+    console.error("Error in getAllEvents:", error);
+    res.status(500).json({
+      status: false,
+      message: "Internal Server Error",
+      error: error.message,
+    });
   }
 };
+
 
 // Get event by ID
 const getEventById = async (req, res) => {
