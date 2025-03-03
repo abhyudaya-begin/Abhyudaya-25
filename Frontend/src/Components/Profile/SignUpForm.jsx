@@ -33,6 +33,7 @@ function SignUpForm() {
     } catch {
       alert("Sign Up Failed");
     }
+    // 
   };
 
   return (
