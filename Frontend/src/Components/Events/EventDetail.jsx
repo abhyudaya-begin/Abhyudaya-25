@@ -43,7 +43,7 @@ const EventDetail = () => {
       } catch (error) {
         console.error("Error fetching events:", error);
         if (isMounted) {
-          setError(error.message || "Failed to load events");
+          setError( "Failed to load events");
           setEvent(); // Set empty array on error
         }
       } finally {
