@@ -3,7 +3,7 @@ const { Schema } = mongoose;
 
 const courseOptions = [
   "B.Tech", "BCA", "BBA", "MBA", "B.Pharm", "MCA",
-  "Diploma", "B.Com", "BA", "B.Sc", "M.Sc", "Others"
+  "Diploma", "B.Com", "BA", "B.Sc", "M.Sc", "Others", "Phd"
 ];
 
 const userSchema = new Schema(

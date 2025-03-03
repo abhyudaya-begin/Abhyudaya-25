@@ -10,13 +10,29 @@ const { generateToken } = require("../authentication/UserAuth.js");
 // [ABH_ID, fullName, email, phoneNumber, dob, password, institution]
 const registerUser = async (req, res) => {
   try {
-    const { fullName, email, phoneNumber, dob, password, institution, course, gender  } =
-      req.body;
+    const {
+      fullName,
+      email,
+      phoneNumber,
+      dob,
+      password,
+      institution,
+      course,
+      gender,
+    } = req.body;
+
 
     if (
-      ![fullName, email, phoneNumber, dob, password, institution, course, gender].every(
-        (field) => (typeof field === "string" ? field.trim() : field)
-      )
+      ![
+        fullName,
+        email,
+        phoneNumber,
+        dob,
+        password,
+        institution,
+        course,
+        gender,
+      ].every((field) => (typeof field === "string" ? field.trim() : field))
     ) {
      
       return res.status(400).json(new ApiError(400, "All fields are required"));
@@ -39,7 +55,8 @@ const registerUser = async (req, res) => {
       dob: dobFormatted,
       password: hashedPassword,
       institution,
-      course, gender
+      course,
+      gender,
     });
 
     return res
@@ -53,13 +70,14 @@ const registerUser = async (req, res) => {
   }
 };
 
-
 const Login = async (req, res) => {
   try {
     const { email, ABH_ID, password } = req.body;
 
     if ((!email && !ABH_ID) || !password) {
-      return res.status(400).json(new ApiError(400, "Email/ABH_ID and Password are required"));
+      return res
+        .status(400)
+        .json(new ApiError(400, "Email/ABH_ID and Password are required"));
     }
 
     const user = await User.findOne(email ? { email } : { ABH_ID });
@@ -83,11 +101,10 @@ const Login = async (req, res) => {
     return res.status(200).json(new ApiResponse(200, user, "Login successful"));
   } catch (error) {
     console.log(error);
-    
+
     return res.status(500).json(new ApiError(500, "Something went wrong!"));
   }
 };
-
 
 // get All Users
 // [eventsParticipated, ABH_ID, fullName, email, phoneNumber, institution]
@@ -159,21 +176,22 @@ const deleteUser = async (req, res) => {
 const updateUser = async (req, res) => {
   try {
     const { email, ABH_ID, ...updateData } = req.body;
-    
 
     if (!email && !ABH_ID) {
-    
       return res
         .status(400)
-        .json(new ApiError(400, "Email or ABH_ID is required to update user details"));
+        .json(
+          new ApiError(
+            400,
+            "Email or ABH_ID is required to update user details"
+          )
+        );
     }
 
     if (!updateData || Object.keys(updateData).length === 0) {
       return res.status(400).json(new ApiError(400, "Update data is required"));
     }
-   
 
-  
     delete updateData.ABH_ID;
     delete updateData.phoneNumber;
     delete updateData.email;
@@ -188,21 +206,22 @@ const updateUser = async (req, res) => {
       return res.status(404).json(new ApiError(404, "User not found"));
     }
 
-    return res.status(200).json(new ApiResponse(200, user, "User information updated successfully"));
+    return res
+      .status(200)
+      .json(
+        new ApiResponse(200, user, "User information updated successfully")
+      );
   } catch (error) {
     return res.status(500).json(new ApiError(500, "Something went wrong!"));
   }
 };
-
 
 const eventRegister = async (req, res) => {
   try {
     const { eventId } = req.body;
 
     if (!eventId) {
-      return res
-        .status(400)
-        .json(new ApiError(400, "Event ID is required"));
+      return res.status(400).json(new ApiError(400, "Event ID is required"));
     }
 
     const user = req.user; // Access user from req object
@@ -248,9 +267,7 @@ const unregisterEvent = async (req, res) => {
     const { eventId } = req.body;
 
     if (!eventId) {
-      return res
-        .status(400)
-        .json(new ApiError(400, "Event ID is required"));
+      return res.status(400).json(new ApiError(400, "Event ID is required"));
     }
 
     const user = req.user;
@@ -286,7 +303,6 @@ const unregisterEvent = async (req, res) => {
     return res.status(500).json(new ApiError(500, "Something went wrong!"));
   }
 };
-
 
 module.exports = {
   registerUser,
