@@ -35,7 +35,7 @@ app.get("/", (req, res) => {
 });
 
 // All Routers
-app.use("/events", eventRouter);
+app.use("/events",()=>console.log("eventRouter") );
 app.use("/user", userRouter);
 app.use("/verify", checkUser, VerificationRouter);
 
