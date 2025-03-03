@@ -36,6 +36,7 @@ app.get("/", (req, res) => {
 app.use("/test", (req, res)=>   res.send("Ping from the server!"));
 
 // All Routers
+app.use("/sample", eventRouter);
 app.use("/events", eventRouter);
 app.use("/user", userRouter);
 app.use("/verify",VerificationRouter);
