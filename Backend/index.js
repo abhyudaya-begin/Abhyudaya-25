@@ -37,7 +37,7 @@ app.get("/", (req, res) => {
 
 // All Routers
 app.use("/events", eventRouter);
-app.use("/user", userRouter);
+app.use("/users", userRouter);
 app.use("/verify",VerificationRouter);
 
 app.listen(PORT, () => {
