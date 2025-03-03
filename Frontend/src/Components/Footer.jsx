@@ -171,7 +171,7 @@ const Footer = ({ isSidebarOpen }) => {
       </div>
 
       {/* Copyright Section */}
-      <div className="flex justify-between items-center mt-8 pt-4 border-t border-white/20 text-sm text-primary-softGold">
+      <div className="flex justify-between items-center mt-8 pt-4 border-t border-white/20 text-sm text-primary-softGold flex-wrap">
         <div className="flex space-x-4 pl-2">
           <a
             href="https://www.facebook.com/abhyudaya.mmmut/"
