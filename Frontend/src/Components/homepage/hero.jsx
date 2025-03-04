@@ -1,11 +1,12 @@
 import React from "react";
+import { motion } from "framer-motion"; // Import Framer Motion
 
 // assets
 import Vdo from "../../assets/Landing/vdo.mp4";
 import smallLogoSrc from "../../assets/Landing/mmmut.png";
 import Abhyudaya from "../../assets/Logo-images/Abhyudaya-combined.png";
 
-function HeroSection() {
+const HeroSection = () => {
   return (
     <div className="relative w-full h-screen overflow-hidden">
       <div className="absolute inset-0 flex items-center justify-center">
@@ -23,18 +24,28 @@ function HeroSection() {
 
         {/* Abhyudaya Logo & Date */}
         <div className="relative z-10 flex flex-col items-center justify-center w-full h-full space-y-6">
-          <img
-            className="sm:w-3/4 w-full h-auto animate-ease-out"
-            src={Abhyudaya}
-            alt="Abhyudaya Logo"
-          />
 
+       
+        {/* Darkened overlay */}
+        <div className="relative z-10 grid place-items-center overflow-hidden">
+          <motion.img
+            className="sm:w-3/4 w-full h-auto"
+            src={Abhyudaya}
+            alt="Small Abhyudaya Logo"
+            initial={{ y: -100, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 1 }}
+          />
+        
+
+
+           
 <h1 className="text-xl sm:text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-serif text-white tracking-wide uppercase text-center">
   <span className="bg-gradient-to-r from-[#f7d77f] to-[#b58b3b] bg-clip-text text-transparent drop-shadow-lg">
     March 04 - March 06, 2024
   </span>
 </h1>
-
+ 
         </div>
 
         {/* MMMUT Logo in Top Right Corner */}
@@ -44,8 +55,9 @@ function HeroSection() {
           alt="MMMUT Logo"
         />
       </div>
+      </div>
     </div>
   );
-}
+};
 
 export default HeroSection;
