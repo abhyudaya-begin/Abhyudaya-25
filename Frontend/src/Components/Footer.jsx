@@ -63,28 +63,28 @@ const Footer = ({ isSidebarOpen }) => {
 
   const contacts = [
     {
-      name: "Shivam Rai",
-      email: "alex@example.com",
-      phone: "+123 456 7895",
-      role: "Joint Secretary",
+      name: "Aryan Singh",
+      email: "abhyudaya.mmmut@gmail.com",
+      phone: "+91-9369756579",
+      role: "Cultural Secretary",
     },
     {
-      name: "Richa Mishra",
-      email: "sarah@example.com",
-      phone: "+123 456 7896",
-      role: "Joint Secretary",
-    },
-    {
-      name: "David Lee",
-      email: "david@example.com",
-      phone: "+123 456 7897",
+      name: "Arsh Singh",
+      email: "abhyudaya.mmmut@gmail.com",
+      phone: "+91-7317439179",
       role: "Sponsorship Head",
     },
     {
-      name: "Lisa Chen",
-      email: "lisa@example.com",
-      phone: "+123 456 7898",
-      role: "PR Head",
+      name: "Satish Kumar",
+      email: "abhyudaya.mmmut@gmail.com",
+      phone: "+123 456 7897",
+      role: "Public Relations Head",
+    },
+    {
+      name: "Pritish Tomar",
+      email: "abhyudaya.mmmut@gmail.com",
+      phone: "+919520405332",
+      role: "Technical Lead",
     },
   ];
 
@@ -107,13 +107,15 @@ const Footer = ({ isSidebarOpen }) => {
         {/* YouTube Section */}
         <div className="flex flex-col w-full md:w-1/3 lg:w-1/3 xl:w-1/3">
           <div className="rounded-lg overflow-hidden flex-1 h-[250px] md:h-[240px] lg:h-[250px]">
-            <iframe
-              src="https://www.youtube.com/embed/5pzCzYzePjw"
-              className="w-full h-[250px] md:h-[240px] lg:h-[250px] rounded-xl shadow-lg"
-              style={{ border: 0 }}
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowFullScreen=""
-            ></iframe>
+          <iframe
+  src="https://www.youtube.com/embed/5pzCzYzePjw"
+  className="w-full h-[250px] md:h-[240px] lg:h-[250px] rounded-xl shadow-lg"
+  style={{ border: 0 }}
+  allow=" web-share; fullscreen"
+  allowFullScreen={true}  
+></iframe>
+
+
           </div>
         </div>
 
@@ -171,7 +173,7 @@ const Footer = ({ isSidebarOpen }) => {
       </div>
 
       {/* Copyright Section */}
-      <div className="flex justify-between items-center mt-8 pt-4 border-t border-white/20 text-sm text-primary-softGold flex-wrap">
+      <div className="flex sm:justify-between justify-center gap-3 items-center mt-8 pt-4 border-t border-white/20 text-sm text-primary-softGold flex-wrap">
         <div className="flex space-x-4 pl-2">
           <a
             href="https://www.facebook.com/abhyudaya.mmmut/"
@@ -198,7 +200,10 @@ const Footer = ({ isSidebarOpen }) => {
             <FaEnvelope size={iconSize} />
           </a>
         </div>
-        <div className="text-right">
+        <div>
+          <p className="text-md ">Designed with ❤️ by <span className="text-blue-500">Abhyudaya </span>.</p>
+        </div>
+        <div className="sm:text-right text-center sm:text-md text-xs">
           <p>
             © {new Date().getFullYear()} Abhyudaya MMMUT. All rights reserved.
           </p>
