@@ -4,6 +4,7 @@ import { motion } from "framer-motion"; // Import Framer Motion
 // assets
 import Vdo from "../../assets/Landing/vdo.mp4";
 import smallLogoSrc from "../../assets/Landing/mmmut.png";
+import { Link } from "react-router-dom";
 import Abhyudaya from "../../assets/Logo-images/Abhyudaya-combined.png";
 import { useSelector } from "react-redux";
 
@@ -49,11 +50,15 @@ const HeroSection = () => {
 </h1>
 
 {!user && (
+  <Link to="/profile">
   <div className="mt-4 flex items-center justify-center gap-x-6 md:hidden flex">
+    
     <span className="rounded-full bg-gradient-to-r from-purple-300 to-indigo-300 px-6 py-3 text-md text-gray-900 font-semibold shadow-sm hover:from-purple-600 hover:to-indigo-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 hover:text-gray-100 focus-visible:outline-indigo-400 transition-all duration-300 cursor-pointer">
       Register Now
     </span>
+    
   </div>
+  </Link>
 )}
 
  

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Menu, X } from "lucide-react";
 import Abhyudaya from "../../assets/Logo-images/Abhyudaya-combined.png"
 import { useSelector } from "react-redux";
-
+import { Link } from "react-router-dom";
 export default function Hero2Section() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const  user  = useSelector((state) => state.user.user);
@@ -40,11 +40,15 @@ export default function Hero2Section() {
         
           { !user &&
 
-            <div className="mt-4 flex items-center justify-center gap-x-6">
-            <span className="rounded-full bg-gradient-to-r from-purple-300 to-indigo-300 px-6 py-3 text-md text-gray-900 font-semibold  shadow-sm hover:from-purple-600 hover:to-indigo-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2  hover:text-gray-100 focus-visible:outline-indigo-400 transition-all duration-300 cursor-pointer">
-              Register Now
-            </span>
-          </div>
+<Link to="/profile">
+<div className="mt-4 flex items-center justify-center gap-x-6 md:hidden flex">
+  
+  <span className="rounded-full bg-gradient-to-r from-purple-300 to-indigo-300 px-6 py-3 text-md text-gray-900 font-semibold shadow-sm hover:from-purple-600 hover:to-indigo-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 hover:text-gray-100 focus-visible:outline-indigo-400 transition-all duration-300 cursor-pointer">
+    Register Now
+  </span>
+  
+</div>
+</Link>
           }
           <div className="mt-16">
             <div className="relative">
