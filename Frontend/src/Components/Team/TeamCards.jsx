@@ -1,75 +1,55 @@
 import React, { useState } from 'react';
-import { FaLinkedin, FaInstagram, FaEnvelope, FaGithub } from 'react-icons/fa';
+import { FaLinkedin, FaInstagram, FaEnvelope } from 'react-icons/fa';
 
 function TeamCards({ member }) {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
     <div 
-      className="relative w-72 h-96 mx-auto"
+      className="relative w-40 h-52 mx-auto flex justify-center items-center"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
       {/* Bottom white card with name and icons */}
-      <div className="absolute inset-0 w-full h-full rounded-xl bg-white shadow-lg">
-        {/* Name and position section with minimal spacing */}
-        <div className="absolute bottom-1 left-0 right-0 px-8 pt-6 group">
-          <h3 className="text-2xl font-bold text-gray-800 relative overflow-hidden text-center mb-0
+      <div className="absolute inset-0 w-full h-full rounded-lg bg-white flex flex-col justify-center items-center">
+        <div className="absolute bottom-1 left-0 right-0 px-3 pt-2 group">
+          <h3 className="text-sm font-bold text-gray-800 text-center mb-0 
             hover:text-blue-600 transition-colors duration-300
             before:content-[''] before:absolute before:w-full before:h-full 
-            before:bg-gradient-to-r before:from-transparent before:via-white/70 before:to-transparent
             before:-translate-x-full hover:before:translate-x-full before:transition-transform
             before:duration-700 before:transform group-hover:scale-105">
             {member.name}
           </h3>
-          <p className="text-md text-gray-600 transform transition-all duration-300 text-center -mt-1
+          <p className="text-xs font-bold text-gray-600 text-center -mt-1 transform transition-all duration-300
             group-hover:text-blue-500 group-hover:translate-y-1">
             {member.position}
           </p>
+          
         </div>
 
-        {/* Social handles on right with further reduced padding */}
-        <div className="absolute right-1 top-1/2 -translate-y-1/2 flex flex-col gap-4">
+        <div className="absolute right-1 top-1/2 -translate-y-1/2 flex flex-col gap-2">
           {member.linkedin && (
-            <a 
-              href={member.linkedin} 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="text-black-900 hover:text-blue-600 transition-all duration-300 transform hover:scale-110 hover:-translate-x-1"
-            >
-              <FaLinkedin size={30} />
+            <a href={member.linkedin} target="_blank" rel="noopener noreferrer"
+              className="text-black-900 hover:text-blue-600 transition-all duration-300 transform hover:scale-110 hover:-translate-x-1">
+              <FaLinkedin size={14} />
             </a>
           )}
           {member.insta && (
-            <a 
-              href={member.insta}
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="text-black-900 hover:text-pink-600 transition-all duration-300 transform hover:scale-110 hover:-translate-x-1"
-            >
-              <FaInstagram size={30} />
+            <a href={member.insta} target="_blank" rel="noopener noreferrer"
+              className="text-black-900 hover:text-pink-600 transition-all duration-300 transform hover:scale-110 hover:-translate-x-1">
+              <FaInstagram size={14} />
             </a>
           )}
-          <a 
-            href={`mailto:${member.gmail}`}
-            className="text-black-900 hover:text-red-600 transition-all duration-300 transform hover:scale-110 hover:-translate-x-1"
-          >
-            <FaEnvelope size={30} />
-          </a>
-          <a 
-            href={member.github}
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="text-black-900 hover:text-blue-600 transition-all duration-300 transform hover:scale-110 hover:-translate-x-1"
-          >
-            <FaGithub size={30} />
+          <a href={`mailto:${member.gmail}`}
+            className="text-black-900 hover:text-red-600 transition-all duration-300 transform hover:scale-110 hover:-translate-x-1">
+            <FaEnvelope size={14} />
           </a>
         </div>
       </div>
 
-      {/* Main card with image that slides */}
+      {/* Main card with image */}
       <div 
-        className={`absolute inset-0 w-full h-full bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 transform border-2 border-red-600
+        className={`absolute inset-0 w-full h-full bg-white rounded-lg overflow-hidden transition-all duration-300 transform
           ${isHovered ? '-translate-x-[15%] -translate-y-[15%]' : ''}`}
       >
         <div className="relative w-full h-full">
@@ -78,12 +58,10 @@ function TeamCards({ member }) {
             alt={member.name}
             className="w-full h-full object-cover"
           />
-          {/* Optional gradient overlay */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
         </div>
       </div>
     </div>
   );
 }
 
-export default TeamCards; 
+export default TeamCards;

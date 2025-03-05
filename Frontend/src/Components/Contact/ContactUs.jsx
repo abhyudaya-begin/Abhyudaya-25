@@ -51,7 +51,7 @@ const ContactUs = () => {
 
             <div className="flex gap-3 sm:gap-4 flex-wrap justify-center mt-4 ">
               <a
-                href="https://www.instagram.com/thefriendlycouch"
+                href="https://www.instagram.com/Abhyudaya.mmmut/"
                 className="floating-animation flex items-center gap-2 sm:gap-3 text-white px-4 py-2 rounded-full transition-all duration-300 shadow-lg min-w-[140px] sm:min-w-[160px] text-sm sm:text-base bg-[#E4405F] hover:bg-[#D92D52]"
               >
                 <FaInstagram className="text-xl sm:text-2xl flex-shrink-0" />

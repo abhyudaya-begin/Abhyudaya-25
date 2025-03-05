@@ -35,8 +35,7 @@ export default function Hero2Section() {
            
          
           <p className="mt-6 text-lg leading-8 text-indigo-100 max-w-2xl mx-auto">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa
-            obcaecati molestiae nulla facere quo consequuntur vitae blanditiis.
+          Step into a vibrant celebration where India's timeless heritage meets modern style. Abhyudaya,'an Enigmatic Ensemble' is a kaleidoscopic fusion of tradition and innovation, where ancient rhythms, contemporary beats, and vibrant colors come alive. Join us on this mesmerizing journey of discovery and creativity!
           </p>
         
           { !user &&
