@@ -5,8 +5,10 @@ import { motion } from "framer-motion"; // Import Framer Motion
 import Vdo from "../../assets/Landing/vdo.mp4";
 import smallLogoSrc from "../../assets/Landing/mmmut.png";
 import Abhyudaya from "../../assets/Logo-images/Abhyudaya-combined.png";
+import { useSelector } from "react-redux";
 
 const HeroSection = () => {
+   const  user  = useSelector((state) => state.user.user);
   return (
     <div className="relative w-full h-screen overflow-hidden">
       <div className="absolute inset-0 flex items-center justify-center">
@@ -40,11 +42,20 @@ const HeroSection = () => {
 
 
            
-<h1 className="text-xl sm:text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-serif text-white tracking-wide uppercase text-center">
+<h1 className=" text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-serif text-white tracking-wide uppercase text-center">
   <span className="bg-gradient-to-r from-[#f7d77f] to-[#b58b3b] bg-clip-text text-transparent drop-shadow-lg">
-    March 04 - March 06, 2024
+    APRIL 04 - APRIL 06, 2024
   </span>
 </h1>
+
+{!user && (
+  <div className="mt-4 flex items-center justify-center gap-x-6 md:hidden flex">
+    <span className="rounded-full bg-gradient-to-r from-purple-300 to-indigo-300 px-6 py-3 text-md text-gray-900 font-semibold shadow-sm hover:from-purple-600 hover:to-indigo-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 hover:text-gray-100 focus-visible:outline-indigo-400 transition-all duration-300 cursor-pointer">
+      Register Now
+    </span>
+  </div>
+)}
+
  
         </div>
 

@@ -3,10 +3,10 @@ import { motion, useAnimation } from "framer-motion";
 import CountUp from "react-countup";
 
 const statsData = [
-  { value: 700, label: "Colleges", suffix: "+" },
-  { value: 2, label: "Prize Pool", suffix: "M+" },
-  { value: 60, label: "Events", suffix: "+" },
-  { value: 80000, label: "Footfall", suffix: "+" },
+  { value: 50, label: "Institutes", suffix: "+" },
+  { value: 4, label: "Prize Pool", suffix: "L+" },
+  { value: 45, label: "Events", suffix: "+" },
+  { value: 45, label: "Footfall", suffix: "K+" },
 ];
 
 export default function Stats() {
