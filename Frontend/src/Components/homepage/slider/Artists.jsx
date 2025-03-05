@@ -47,7 +47,7 @@ const ArtistSection = () => {
               className="w-full h-full object-cover"
             />
             <motion.div
-              className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center text-white text-2xl font-semibold opacity-0 hover:opacity-100 transition-opacity duration-500"
+              className="absolute  inset-0 bg-black bg-opacity-50 flex items-center justify-center text-white text-2xl font-semibold opacity-0 hover:opacity-100 transition-opacity duration-500 uppercase"
               whileHover={{ backdropFilter: "blur(10px)" }}
             >
               {artist.name}

@@ -1,20 +1,15 @@
-[
-  {
-    "name": "Vice President 1",
-    "position": "Vice President",
-    "imgLink": "https://vvlelkzbqhcamsmkhteb.supabase.co/storage/v1/object/sign/chandan-project/cgpic.jpg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJjaGFuZGFuLXByb2plY3QvY2dwaWMuanBnIiwiaWF0IjoxNzM5ODI5NTU4LCJleHAiOjE3NzEzNjU1NTh9.nh9HHn3iics56blUbIZbaX_bZ9dIAuaog0f4qWQLHOA",
-    "gmail": "vp1@gmail.com",
-    "linkedin": "https://linkedin.com/vp1",
-    "insta": "https://instagram.com/vp1"
-  },
-  {
-    "name": "Vice President 2",
-    "position": "Vice President",
-    "imgLink": "https://vvlelkzbqhcamsmkhteb.supabase.co/storage/v1/object/sign/chandan-project/cgpic.jpg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJjaGFuZGFuLXByb2plY3QvY2dwaWMuanBnIiwiaWF0IjoxNzM5ODI5NTU4LCJleHAiOjE3NzEzNjU1NTh9.nh9HHn3iics56blUbIZbaX_bZ9dIAuaog0f4qWQLHOA",
-    "gmail": "vp2@gmail.com",
-    "linkedin": "https://linkedin.com/vp2",
-    "insta": "https://instagram.com/vp2"
-  }
+[{
+  "name": "B. K. Pandey",
+  "position": "Chairman, CSA, MMMUT",
+  "imgLink": "https://vvlelkzbqhcamsmkhteb.supabase.co/storage/v1/object/sign/chandan-project/Screenshot%202025-03-03%20152650.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJjaGFuZGFuLXByb2plY3QvU2NyZWVuc2hvdCAyMDI1LTAzLTAzIDE1MjY1MC5wbmciLCJpYXQiOjE3NDA5OTU5NDQsImV4cCI6MTgzNTYwMzk0NH0.lQQdiXGfxzGtaSRsAEK9b8uxv5D2wd59-pXppAmFoAY"
+
+},
+{
+  "name": "Harish CHandra",
+  "position": "Faculty Advisor, CSC, MMMUT",
+  "imgLink": "https://vvlelkzbqhcamsmkhteb.supabase.co/storage/v1/object/sign/chandan-project/Screenshot%202025-03-03%20152650.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJjaGFuZGFuLXByb2plY3QvU2NyZWVuc2hvdCAyMDI1LTAzLTAzIDE1MjY1MC5wbmciLCJpYXQiOjE3NDA5OTU5NDQsImV4cCI6MTgzNTYwMzk0NH0.lQQdiXGfxzGtaSRsAEK9b8uxv5D2wd59-pXppAmFoAY"
+
+}
 ]
     
   
