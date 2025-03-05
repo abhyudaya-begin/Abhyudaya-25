@@ -1,4 +1,4 @@
-export const Artist = [
+export const artistsData = [
   {
     name: "AKASH DUBAY",
     link: "https://bmpwmkwijlrnrrywhqsp.supabase.co/storage/v1/object/sign/Artist/Akash_dubay.jpg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJBcnRpc3QvQWthc2hfZHViYXkuanBnIiwiaWF0IjoxNzQxMDEyNjAxLCJleHAiOjE4MzU2MjA2MDF9.wrinnFRRyQbEcq_pYctN1NXla3i-Gw9DF3b29PgAIms",
@@ -45,4 +45,4 @@ export const Artist = [
   },
 ];
 
-export default Artist;
+export default artistsData;
