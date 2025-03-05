@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 const Countdown = () => {
   // Set your event date here (format: year, month-1, day, hour, minute, second)
-  const festivalDate = new Date(2025, 4, 4, 0, 0, 0); 
+  const festivalDate = new Date(2025, 4, 3, 0, 0, 0); 
   
   const [timeLeft, setTimeLeft] = useState({
     days: 0,
