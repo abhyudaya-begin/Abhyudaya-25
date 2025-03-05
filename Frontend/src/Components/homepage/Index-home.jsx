@@ -9,7 +9,7 @@ import Stats from "./stats";
 const IndexHome = () => {
   return (
     <div
-      className="flex flex-col select-none overflow-x-hidden gap-30 items-center bg-[#120c0f] text-white"
+      className="flex flex-col select-none overflow-x-hidden gap-30 items-center bg-black text-white"
       
     >
       <HeroSection />
