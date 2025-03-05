@@ -35,7 +35,7 @@ export default function Hero2Section() {
            
          
          <p className="mt-6 text-lg tracking-tight leading-8 text-indigo-200 max-w-4xl mx-auto">
-          Step into a vibrant celebration where India's timeless heritage meets modern style. Abhyudaya,'an Enigmatic Ensemble' is a kaleidoscopic fusion of tradition and innovation, where ancient rhythms, contemporary beats, and vibrant colors come alive. Join us on this mesmerizing journey of discovery and creativity!
+          Step into a vibrant celebration where India's timeless heritage meets modern style. <strong>Abhyudaya</strong>, <span className="uppercase">{ "An Enigmatic Ensemble"}</span> is a kaleidoscopic fusion of tradition and innovation, where ancient rhythms, contemporary beats, and vibrant colors come alive. Join us on this mesmerizing journey of discovery and creativity!
           </p>
         
           { !user &&

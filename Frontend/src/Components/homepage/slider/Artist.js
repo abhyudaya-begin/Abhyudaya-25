@@ -1,10 +1,14 @@
-export const artistsData = [
+const artistsData = [
   {
     name: "AKASH DUBAY",
     link: "https://bmpwmkwijlrnrrywhqsp.supabase.co/storage/v1/object/sign/Artist/Akash_dubay.jpg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJBcnRpc3QvQWthc2hfZHViYXkuanBnIiwiaWF0IjoxNzQxMDEyNjAxLCJleHAiOjE4MzU2MjA2MDF9.wrinnFRRyQbEcq_pYctN1NXla3i-Gw9DF3b29PgAIms",
   },
   {
-    name: "AS Bassi",
+    name: "The KO-रस Band",
+    link: "https://bmpwmkwijlrnrrywhqsp.supabase.co/storage/v1/object/sign/Event/Koras.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJFdmVudC9Lb3Jhcy5wbmciLCJpYXQiOjE3NDExOTEzOTgsImV4cCI6MTgzNTc5OTM5OH0.98u4ynXTJmEv_fk30fuVdtHmp4vZtcObg19OFOyMZ0o",
+  },
+  {
+    name: "Anubhav Singh Bassi",
     link: "https://bmpwmkwijlrnrrywhqsp.supabase.co/storage/v1/object/sign/Artist/AS_bassi.jpg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJBcnRpc3QvQVNfYmFzc2kuanBnIiwiaWF0IjoxNzQxMDEzOTEwLCJleHAiOjE4MzU2MjE5MTB9.0Ce9LxrWMAlBqc0xT9pmlbSe6-bFXDczXt1ljRasXFY",
   },
   {
@@ -29,10 +33,10 @@ export const artistsData = [
   },
   {
     name: "Shambhu Shikhar",
-    link: "https://bmpwmkwijlrnrrywhqsp.supabase.co/storage/v1/object/sign/Artist/Shambhu_shikhar.jpg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJBcnRpc3QvU2hhbWJodV9zaGlrYXIuanBnIiwiaWF0IjoxNzQxMDE0MTYzLCJleHAiOjE4MzU2MjIxNjN9.-JChUaTNln0Us8zNAoPp8CxYAiS5SbhYwNZRBmS0bVE",
+    link: "https://bmpwmkwijlrnrrywhqsp.supabase.co/storage/v1/object/sign/Artist/Shambhu_shikhar.jpg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJBcnRpc3QvU2hhbWJodV9zaGlraGFyLmpwZyIsImlhdCI6MTc0MTE4NDQxNSwiZXhwIjoxODM1NzkyNDE1fQ.Ls26ax08o7vlrVYnE6Jcgq29C2Qhy3-_5f28_gs8b6w",
   },
   {
-    name: "Sloka",
+    name: "Shloka",
     link: "https://bmpwmkwijlrnrrywhqsp.supabase.co/storage/v1/object/sign/Artist/Sloka.jpg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJBcnRpc3QvU2xva2EuanBnIiwiaWF0IjoxNzQxMDE0MjM4LCJleHAiOjE4MzU2MjIyMzh9.YtlASJ0Umr1ggJ7fF-yDfGw5qupZylRySuWi4ptvdHA",
   },
   {

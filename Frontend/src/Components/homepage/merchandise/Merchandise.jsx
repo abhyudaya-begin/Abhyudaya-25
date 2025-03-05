@@ -1,83 +1,78 @@
-import React from "react";
-import blackTee from "../../../assets/Logo-images/blackTshirt.jpg";
+import React, { useState } from "react";
 
-const FlipCard = ({ image, title, details, price }) => {
-  return (
-    <div className="w-full sm:w-1/2 lg:w-1/3 xl:w-1/4 h-[500px] lg:h-[600px] 2xl:h-[600px] m-4 perspective-[1200px]">
-      <div className="relative w-full h-full transition-transform duration-1000 ease-in-out transform-style-3d group [transform-style:preserve-3d] hover:[transform:rotateY(180deg)]">
-        {/* Front Side */}
-          <div className="absolute w-full h-full  overflow-hidden rounded-[5%] bg-gradient-to-b from-gray-700 to-gray-900 shadow-xl flex flex-col items-center justify-center p-4 [backface-visibility:hidden]">
-            <figure className="relative w-full h-[90%] flex flex-col justify-center items-center">
-              <img
-                src={image}
-                alt={title}
-                className="w-full h-full object-cover shadow-md rounded-[5%] overflow-hidden"
-              />
-            </figure>
-            <figcaption className="text-white text-lg font-bold mt-4 bg-gradient-to-r from-purple-500 to-indigo-500 px-4 py-2 rounded-lg shadow-lg w-full text-center border-2 border-white">
-              {title}
-            </figcaption>
-          </div>
+const FlipCard = () => {
+  const [selectedColor, setSelectedColor] = useState("black");
 
-          {/* Back Side */}
-        <div className="absolute w-full h-full rounded-[5%] bg-gradient-to-b from-gray-900 to-black shadow-xl flex flex-col items-center justify-center [transform:rotateY(180deg)] [backface-visibility:hidden] p-4 text-white">
-          <h2 className="text-xl font-extrabold mb-2 text-gray-200 text-center">
-            {title}
-          </h2>
-          <ul className="text-sm opacity-90 space-y-2 px-4 text-center">
-            {details.slice(0, 3).map((detail, index) => (
-              <li key={index} className="list-disc text-gray-300">
-                {detail}
-              </li>
-            ))}
-          </ul>
-          <p className="text-lg font-bold mt-4 text-yellow-400">
-            Price: {price}
-          </p>
-          <a href="https://forms.gle/YBM1q9oevFvUYEA29" target="_blank" rel="noreferrer">
-          <button className="mt-3 px-6 py-2 text-white font-semibold bg-gradient-to-r from-yellow-500 to-orange-500 rounded-full hover:from-orange-600 hover:to-yellow-600 transition-all shadow-lg">
-            Buy Now
-          </button>
-          </a>
-        </div>
-      </div>
-    </div>
-  );
-};
-
-const FlipCardContainer = () => {
-  const cards = [
-    {
-      image: blackTee,
-      title: "Black  T-Shirt",
+  const tshirtDetails = {
+    black: {
+      title: "Black T-Shirt",
       details: [
-        "100% Cotton",
-        "Unisex Fit",
-        "Available in all sizes",
-        "Premium Quality",
+        "100% Premium Cotton",
+        "Classic Unisex Fit",
+        "Available in XS to 2XL",
+        "Premium Quality Stitching",
       ],
-      price: "₹150",
+      image:
+        "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?auto=format&fit=crop&q=80&w=800",
     },
-    {
-      image: blackTee,
-      title: "White  T-Shirt",
+    white: {
+      title: "White T-Shirt",
       details: [
-        "Exclusive Design",
-        "Breathable Fabric",
+        "Exclusive Premium Design",
+        "Breathable Cotton Fabric",
         "Machine Washable",
-        "Perfect Fit",
+        "Tailored Perfect Fit",
       ],
-      price: "₹150",
+      image:
+        "https://images.unsplash.com/photo-1581655353564-df123a1eb820?auto=format&fit=crop&q=80&w=800",
     },
-  ];
+  };
 
   return (
-    <div className="flex flex-wrap justify-center items-center bg-[#120c0f] min-h-screen p-4 sm:p-12 w-full">
-      {cards.map((card, index) => (
-        <FlipCard key={index} {...card} />
-      ))}
+    <div className="min-h-screen w-full flex flex-col items-center justify-center bg-gradient-to-r from-gray-900 via-purple-900 to-black p-10">
+      <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white text-center mb-10">
+        Join us <span className="text-cyan-100">'The ABH Community'</span>
+        
+      </h2>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-16 w-full max-w-[1500px]">
+        {["black", "white"].map((color) => (
+          <div
+            key={color}
+            className={`rounded-2xl overflow-hidden shadow-2xl p-2  sm:w-full bg-gradient-to-br from-gray-800 to-gray-700 hover:scale-105 transition-transform duration-500 ${
+              selectedColor === color ? "ring-2 sm:ring-3  ring-purple-400" : ""
+            }`}
+            onClick={() => setSelectedColor(color)}
+          >
+            <img
+              src={tshirtDetails[color].image}
+              alt={tshirtDetails[color].title}
+              className="w-full h-[250px] sm:h-[400px] object-cover rounded-lg mb-6"
+              loading="lazy"
+            />
+            <h3 className="text-2xl sm:text-3xl font-bold text-white text-center">
+              {tshirtDetails[color].title}
+            </h3>
+            <p className="text-yellow-400 text-center text-lg sm:text-xl font-bold mt-2">
+             <strike>₹400</strike> 
+            </p>
+            <p className="text-gray-100 text-center text-lg sm:text-xl font-bold mt-2">
+             ₹311 /-
+            </p>
+          </div>
+        ))}
+      </div>
+
+      <a
+        href="https://forms.gle/YBM1q9oevFvUYEA29"
+        target="_blank"
+        rel="noreferrer"
+        className="mt-12 py-2 sm:py-4 px-5 sm:px-10 bg-white text-gray-900 text-lg sm:text-xl font-bold rounded-xl shadow-lg hover:bg-gray-800 hover:text-gray-100 transition-transform transform hover:scale-105"
+      >
+        Buy Now
+      </a>
     </div>
   );
 };
 
-export default FlipCardContainer;
+export default FlipCard;
