@@ -4,9 +4,7 @@ import LeaderCard from "./LeaderCard";
 import SubLeaderCard from "./SubLeaderCard";
 import leaderData from "./leader.json";
 import subleaderData from "./subleader.json";
-import headmemberData from "./headmember.json";
-import techTeamData from "./techTeam.json";
-import otherMemberData from "./OtherMember.json";
+
 import teamsData from "./Team";
 import Abhyudaya from "../../assets/Logo-images/Abhyudaya.png";
 
