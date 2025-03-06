@@ -3,16 +3,18 @@ import { motion } from "framer-motion";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
 export default function CAApplicationPopup({ isOpen, onClose, onSuccess }) {
   const [loading, setLoading] = useState(false);
-  const user = useSelector(state=> state.user.user.user);
+  const user = useSelector(state=> state.user.user) || null;
+  const navigate = useNavigate();
   
   // 🔹 Hardcoded user data (Replace this with API call when backend is ready)
   const [formData, setFormData] = useState({
-    fullName: user.fullName,
-    email: user.email,
-    college: user.institution
+    fullName: user?.user.fullName,
+    email: user?.user.email,
+    college: user?.user.institution
   });
 
   
@@ -38,6 +40,11 @@ export default function CAApplicationPopup({ isOpen, onClose, onSuccess }) {
     }, 1000);
   };
 
+  if(!user){
+    toast.error("Please login first!");
+    navigate('/profile');
+    return null;
+  }
   if (!isOpen) return null;
 
   return (
