@@ -18,6 +18,7 @@
     "@material-tailwind/react": "^2.1.10",
     "@mui/icons-material": "^6.4.6",
     "@reduxjs/toolkit": "^2.6.0",
+    "@supabase/supabase-js": "^2.49.1",
     "@tailwindcss/postcss": "^4.0.7",
     "axios": "^1.8.1",
     "framer-motion": "^12.4.7",

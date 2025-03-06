@@ -3,53 +3,79 @@ import { Check, Copy, IndianRupee } from "lucide-react";
 import { useDispatch } from "react-redux";
 import { logout } from "../Redux/UserSlice";
 import { useSelector } from "react-redux";
-// const user = {
-//   name: "Pritish Tomar",
-//   email: "pritishn@example.com",
-//   phone: "9876543210",
-//   course: "B Tech",
-//   gender: "Male",
-//   graduationYear: "2025",
-//   dob: "15 Aug 2001",
-//   image: "https://via.placeholder.com/100",
-//   paymentStatus: "Paid",
-//   events: [
-//     { name: "Rising Star", price: "299" },
-//     { name: "Chote Ustaad", price: "199" },
-//     { name: "Photoholics", price: "199"},
-//   ],
-// };
+ import { supabase } from "./Supabse";
 
-const generateReferralId = (name, number) => {
-  if (!name || !number) return "INVALID_INPUT";
-  const namePart = name.replace(/\s+/g, "").substring(0, 4).toUpperCase();
-  const numberPart = number.slice(-4);
-  return `${namePart}${numberPart}`;
-};
+
+// const generateReferralId = (name, number) => {
+//   if (!name || !number) return "INVALID_INPUT";
+//   const namePart = name.replace(/\s+/g, "").substring(0, 4).toUpperCase();
+//   const numberPart = number.slice(-4);
+//   return `${namePart}${numberPart}`;
+
+// };
 
 const ProfileCard = () => {
   const user = useSelector(state=> state.user.user.user) ;
    
   const [copied, setCopied] = useState(false);
-  const [image, setImage] = useState(user.image);
+  const [image, setImage] = useState(null);
+  // console.log(user.image);
+  
+  const [uploading, setUploading] = useState(false);
   const fileInputRef = useRef(null);
-  const referralId = generateReferralId(user.name, user.phone);
+  // const referralId = generateReferralId(user.name, user.phone);
   useEffect(() => {
     console.log(user);
   }, [user]);
   const handleCopy = () => {
-    navigator.clipboard.writeText(referralId);
+    navigator.clipboard.writeText(user.ABH_ID);
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
   };
 
-  const handleImageUpload = (event) => {
+  const handleImageUpload = async (event) => {
+    console.log(event)
     const file = event.target.files?.[0];
-    if (file) {
-      const imageUrl = URL.createObjectURL(file);
-      setImage(imageUrl);
+    if (!file) return;
+
+    setUploading(true);
+
+    const fileExt = file.name.split(".").pop();
+    const fileName = `${user.fullName}-${Date.now()}.${fileExt}`;
+    const filePath = `profiles/${fileName}`;
+
+    // Upload image to Supabase storage
+    const { data, error } = await supabase.storage
+      .from("Profile_picture")
+      .upload(filePath, file);
+     
+    if (error) {
+      console.error("Image upload failed:", error.message);
+      setUploading(false);
+      return;
     }
+
+    // Get public URL of the uploaded image
+    const { publicUrl } = supabase.storage
+      .from("profile-pictures")
+      .getPublicUrl(filePath).data;
+
+    setImage(publicUrl); // Update UI with new image
+
+    // Save image URL to backend
+    // await fetch("https://your-backend-api.com/update-profile", {
+    //   method: "POST",
+    //   headers: {
+    //     "Content-Type": "application/json",
+    //   },
+    //   body: JSON.stringify({ userId: user.id, imageUrl: publicUrl }),
+    // });
+
+    // setUploading(false);
+    // console.log("Image successfully uploaded:", publicUrl);
   };
+
+  
 
   const triggerFileInput = () => {
     fileInputRef.current?.click();
@@ -61,6 +87,11 @@ const ProfileCard = () => {
     dispatch(logout()); // Dispatch Redux logout action
     window.location.reload(); // Reload to reflect logout state
   };
+   user.dob= new Date(user.dob).toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  });
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-900 to-[#6A1B9A] p-4">
@@ -69,11 +100,11 @@ const ProfileCard = () => {
           {/* Left: Profile Details */}
           <div className="w-full md:w-1/2 bg-white/20 p-6 rounded-lg">
             <div className="flex items-center gap-4">
-              {/* <img
-                src="./assets/Logo-images/Abhyudaya.png"
+              <img
+                src={image}
                 alt={user.fullName}
                 className="w-24 h-24 rounded-full border-4 border-white/30 shadow-lg"
-              /> */}
+              />
               <button
                 onClick={triggerFileInput}
                 className="p-1 bg-white/30 hover:bg-white/20 transition"
@@ -135,7 +166,7 @@ const ProfileCard = () => {
 
             {/* Referral ID */}
             <div className="mt-5 flex items-center justify-between p-3 bg-white/20 rounded-lg text-sm">
-              <span className="text-white">Referral ID: {referralId}</span>
+              <span className="text-white">Referral ID: {user.ABH_ID}</span>
               <button
                 onClick={handleCopy}
                 className="p-2 hover:bg-white/30 rounded-full transition"
@@ -163,7 +194,7 @@ const ProfileCard = () => {
               Registered Events
             </h3>
 
-            {user.eventsParticipated? (
+            {user.eventsParticipated.length!==0? (
               <div className="space-y-4">
                 {user.eventsParticipated.map((event) => (
                   <div
