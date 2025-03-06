@@ -77,6 +77,7 @@ const Send = async (req, res) => {
 //..........................Verify.......................................
 
 const Verify = (req, res) => {
+  // console.log(req);
   const email = req.body.email;
   const otp = req.body.otp;
   const record = otps[email];

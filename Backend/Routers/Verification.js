@@ -5,6 +5,6 @@ const VerificationRouter = Router();
 
 
 VerificationRouter.post("/email", Send);
-VerificationRouter.get("/email", Verify);
+VerificationRouter.post("/verify", Verify);
 
 module.exports = VerificationRouter;
