@@ -3,7 +3,7 @@ import { Check, Copy, IndianRupee } from "lucide-react";
 import { useDispatch } from "react-redux";
 import { logout } from "../Redux/UserSlice";
 import { useSelector } from "react-redux";
- import { supabase } from "./Supabse";
+//  import { supabase } from "./Supabse";
 
 
 // const generateReferralId = (name, number) => {
@@ -34,33 +34,33 @@ const ProfileCard = () => {
   };
 
   const handleImageUpload = async (event) => {
-    console.log(event)
-    const file = event.target.files?.[0];
-    if (!file) return;
+    // console.log(event)
+    // const file = event.target.files?.[0];
+    // if (!file) return;
 
-    setUploading(true);
+    // setUploading(true);
 
-    const fileExt = file.name.split(".").pop();
-    const fileName = `${user.fullName}-${Date.now()}.${fileExt}`;
-    const filePath = `profiles/${fileName}`;
+    // const fileExt = file.name.split(".").pop();
+    // const fileName = `${user.fullName}-${Date.now()}.${fileExt}`;
+    // const filePath = `profiles/${fileName}`;
 
-    // Upload image to Supabase storage
-    const { data, error } = await supabase.storage
-      .from("Profile_picture")
-      .upload(filePath, file);
+    // // Upload image to Supabase storage
+    // const { data, error } = await supabase.storage
+    //   .from("Profile_picture")
+    //   .upload(filePath, file);
      
-    if (error) {
-      console.error("Image upload failed:", error.message);
-      setUploading(false);
-      return;
-    }
+    // if (error) {
+    //   console.error("Image upload failed:", error.message);
+    //   setUploading(false);
+    //   return;
+    // }
 
-    // Get public URL of the uploaded image
-    const { publicUrl } = supabase.storage
-      .from("profile-pictures")
-      .getPublicUrl(filePath).data;
+    // // Get public URL of the uploaded image
+    // const { publicUrl } = supabase.storage
+    //   .from("profile-pictures")
+    //   .getPublicUrl(filePath).data;
 
-    setImage(publicUrl); // Update UI with new image
+    // setImage(publicUrl); // Update UI with new image
 
     // Save image URL to backend
     // await fetch("https://your-backend-api.com/update-profile", {
