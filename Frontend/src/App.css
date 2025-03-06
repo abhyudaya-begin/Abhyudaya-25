@@ -5,6 +5,11 @@
 :root {
   --sidebar-width: 0px; /* Set a default sidebar width */
 }
+/* App.css */
+html {
+  scroll-behavior: smooth;
+}
+
 
 footer {
   margin-bottom: 0;

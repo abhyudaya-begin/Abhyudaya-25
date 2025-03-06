@@ -57,7 +57,7 @@ const Members = () => {
         <h2 className="text-3xl md:text-5xl mt-24  font-bold text-white text-center mb-12 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-transparent bg-clip-text animate-pulse">
           Team Abhyudaya 
         </h2>
-        <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-15">
+        <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4  gap-4 sm:gap-15">
           {teamsData.map((person, index) => (
             <div
               key={index}
