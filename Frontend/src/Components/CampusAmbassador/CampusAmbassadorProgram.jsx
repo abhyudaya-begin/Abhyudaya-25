@@ -7,6 +7,8 @@ import WhatIsCA from "./WhatIsCA";
 import PerksAndBenefits from "./PerksAndBenifits";
 import Leaderboard from "./LeaderBoard";
 import CallToAction from "./CallToAction";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css"; // Import styles for toast
 
 export default function CampusAmbassadorProgram() {
   const [activeTab, setActiveTab] = useState("what");
@@ -69,7 +71,11 @@ export default function CampusAmbassadorProgram() {
           layout
         >
           {activeTab === "what" && (
-            <WhatIsCA contentVariants={contentVariants} itemVariants={itemVariants} />
+            <WhatIsCA 
+              contentVariants={contentVariants} 
+              itemVariants={itemVariants} 
+              setActiveTab={setActiveTab}  // Pass setActiveTab to switch tabs
+            />
           )}
 
           {activeTab === "perks" && (
@@ -84,6 +90,8 @@ export default function CampusAmbassadorProgram() {
         {/* Call to Action */}
         <CallToAction itemVariants={itemVariants} />
       </div>
+      {/* 🔹 Add ToastContainer here for notifications */}
+      <ToastContainer />
     </motion.div>
   );
 }
