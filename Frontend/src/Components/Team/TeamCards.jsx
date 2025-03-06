@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { FaLinkedin, FaInstagram, FaEnvelope } from "react-icons/fa";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 function TeamCards({ member }) {
   const [isHovered, setIsHovered] = useState(false);
@@ -66,7 +67,7 @@ function TeamCards({ member }) {
           ${isHovered ? "-translate-x-[15%] -translate-y-[15%]" : ""}`}
       >
         <div className="relative w-full h-full">
-          <img
+          <LazyLoadImage
             src={member.Photo}
             alt={member.Name}
             className="w-full h-full object-cover"
