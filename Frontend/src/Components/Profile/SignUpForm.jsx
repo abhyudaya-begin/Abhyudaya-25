@@ -98,7 +98,7 @@ function SignUpForm({ setIsSignUp }) {
   const sendMail = async () => {
     
     try {
-  
+    
     
 
       const res = await axios.post(
@@ -115,8 +115,12 @@ function SignUpForm({ setIsSignUp }) {
         toast.success("OTP sent successfully");
       }
     } catch(err) {
-      console.log(err);
+      if(email===" "){
+        toast.error("Email is required")
+       }
+      else{
       toast.error("Email Already Exists!");
+      }
     }
   };
   
@@ -147,10 +151,15 @@ function SignUpForm({ setIsSignUp }) {
             {/* Email Input */}
             <input
               {...register("email")}
+              type="email"
+              required
               placeholder="Email"
               className="w-full pl-10 pr-3 py-2 bg-white/10 hover:shadow-md border border-white/20 rounded-lg text-white placeholder:text-white/60 focus:outline-none focus:ring-2 focus:ring-pink-400"
             />
           </div>
+          {errors.email && (
+          <p className="text-red-500 text-sm">{errors.email.message}</p>
+        )}
           {/* Verify Button */}
           <button
       type="button"
@@ -174,9 +183,7 @@ function SignUpForm({ setIsSignUp }) {
         </div>
 
         {/* Error Message */}
-        {errors.email && (
-          <p className="text-red-500 text-sm">{errors.email.message}</p>
-        )}
+     
       </div>
 
       <div className="space-y-1">
