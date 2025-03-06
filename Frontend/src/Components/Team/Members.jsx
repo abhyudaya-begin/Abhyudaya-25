@@ -54,10 +54,10 @@ const Members = () => {
         </div>
 
         <div className="border mt-8"></div>
-        <h2 className="text-3xl md:text-5xl mt-24  font-bold text-white text-center mb-12 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-transparent bg-clip-text animate-pulse">
-          Team Abhyudaya 
+        <h2 className="text-3xl md:text-5xl mt-24  font-bold text-white text-center mb-24 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-transparent bg-clip-text animate-pulse">
+          Team Abhyudaya
         </h2>
-        <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4  gap-4 sm:gap-15">
+        <div className="grid grid-cols-1 xs:grid-cols-2 min-[520px]:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-5 gap-15 sm:gap-15">
           {teamsData.map((person, index) => (
             <div
               key={index}
