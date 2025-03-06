@@ -19,6 +19,7 @@ const registerUser = async (req, res) => {
       institution,
       course,
       gender,
+      referallId
     } = req.body;
 
 
@@ -44,11 +45,22 @@ const registerUser = async (req, res) => {
       return res.status(409).json(new ApiError(409, "User already exists"));
     }
 
+    if(referallId)
+    {
+
+      const referallIdExist = User.find({ABH_ID : referallId});
+      
+      if (!referallIdExist) {
+        return res.status(409).json(new ApiError(404, "This Referall Id does not exist!"));
+      }
+    }
+
+
     const dobFormatted = new Date(dob).toISOString().split("T")[0];
 
     const hashedPassword = await bcrypt.hash(password, 10);
     const user = await User.create({
-      ABH_ID: await generateUser(fullName, dob),
+      ABH_ID: await generateUser(fullName, phoneNumber),
       fullName,
       email,
       phoneNumber,
@@ -57,6 +69,7 @@ const registerUser = async (req, res) => {
       institution,
       course,
       gender,
+      referallId
     });
 
     return res

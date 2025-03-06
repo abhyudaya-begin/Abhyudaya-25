@@ -85,6 +85,28 @@ const userSchema = new Schema(
       type: Boolean,
       default: false,
     },
+    referallId: {
+      type: String,
+    },
+    isCampusAmbassador: {
+      type: Boolean,
+      default: false,
+    },
+    referrals: {
+      type: [String], // Array of ABH_ID strings
+      validate: {
+        validator: function (value) {
+          // Only validate if referrals are provided
+          if (value && value.length > 0) {
+            return this.isCampusAmbassador;
+          }
+          return true; // Allow empty or undefined referrals
+        },
+        message: "Only Campus Ambassadors can have referrals",
+      },
+      default: undefined, // Make sure it's undefined if not provided
+    },
+    
     eventsParticipated: [
       {
         type: mongoose.Schema.Types.ObjectId,

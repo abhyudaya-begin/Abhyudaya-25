@@ -2,41 +2,20 @@ import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { useSelector } from "react-redux";
 
 export default function CAApplicationPopup({ isOpen, onClose, onSuccess }) {
   const [loading, setLoading] = useState(false);
+  const user = useSelector(state=> state.user.user.user);
   
   // 🔹 Hardcoded user data (Replace this with API call when backend is ready)
   const [formData, setFormData] = useState({
-    fullName: "John Doe",
-    email: "johndoe@example.com",
-    college: "XYZ University"
+    fullName: user.fullName,
+    email: user.email,
+    college: user.institution
   });
 
-  // 🔹 Fetch user data when backend is available
-  /*
-  useEffect(() => {
-    async function fetchUserData() {
-      try {
-        const response = await fetch("https://your-backend-api.com/user", {
-          method: "GET",
-          credentials: "include" // If using cookies for auth
-        });
-        const data = await response.json();
-        setFormData({
-          fullName: data.fullName || "",
-          email: data.email || "",
-          college: data.college || ""
-        });
-      } catch (error) {
-        console.error("Error fetching user data:", error);
-      }
-    }
-    
-    fetchUserData();
-  }, []);
-  */
-
+  
   const handleSubmit = (e) => {
     e.preventDefault();
     setLoading(true);
@@ -77,7 +56,7 @@ export default function CAApplicationPopup({ isOpen, onClose, onSuccess }) {
             placeholder="Full Name" 
             className="w-full px-3 py-2 border rounded" 
             readOnly 
-            required 
+            disabled={true}
           />
           <input 
             type="email" 
@@ -85,7 +64,7 @@ export default function CAApplicationPopup({ isOpen, onClose, onSuccess }) {
             placeholder="Email" 
             className="w-full px-3 py-2 border rounded" 
             readOnly 
-            required 
+            disabled={true}
           />
           <input 
             type="text" 
@@ -93,7 +72,7 @@ export default function CAApplicationPopup({ isOpen, onClose, onSuccess }) {
             placeholder="College Name" 
             className="w-full px-3 py-2 border rounded" 
             readOnly 
-            required 
+            disabled={true}
           />
           <button 
             type="submit" 
