@@ -15,7 +15,9 @@ import {
   Lock,
   Eye,
   EyeOff,
+  Check
 } from "lucide-react";
+import Otp from "./Otp";
 
 const courses = [
   "B.Tech",
@@ -43,8 +45,7 @@ const signUpSchema = z
     email: z.string().email("Invalid email address"),
     phoneNumber: z
       .string()
-      .min(10, "Phone number must be at least 10 characters")
-      .max(10, "Phone number must be at most 10 characters"),
+      .regex(/^\d{10}$/, "Phone number must be exactly 10 digits"),
     institution: z.string().nonempty("Institution is required"),
     gender: z.string().nonempty("Gender can't be empty"),
     dob: z.string().nonempty("Date of Birth is required"),
@@ -59,14 +60,20 @@ const signUpSchema = z
   });
 
 function SignUpForm({ setIsSignUp }) {
+    const [showPassword, setShowPassword] = useState(false);
+    const [showOtp, setShowOtp] = useState(false);
+    const [isOTPOpen, setIsOTPOpen] = useState(false);
+    const [verified, setVerified] = useState(false);
   const navigate = useNavigate();
   const {
     register,
     handleSubmit,
     formState: { errors },
+    watch,
   } = useForm({
     resolver: zodResolver(signUpSchema),
   });
+  const email = watch("email", " "); // Get email value from form
 
   const onSubmit = async (data) => {
     console.log(data);
@@ -88,7 +95,31 @@ function SignUpForm({ setIsSignUp }) {
       toast.error(error.response.data.errorMessage || "Sign up Failed");
     }
   };
-  const [showPassword, setShowPassword] = useState(false);
+  const sendMail = async () => {
+    
+    try {
+  
+    
+
+      const res = await axios.post(
+        `${import.meta.env.VITE_BACKEND_API_URL}verify/email`,
+        {email},
+        {
+          withCredentials: true,
+        }
+      );
+      if (res.status) {
+        setIsOTPOpen(true);
+        // console.log(isOTPOpen)
+        setShowOtp(true);
+        toast.success("OTP sent successfully");
+      }
+    } catch(err) {
+      console.log(err);
+      toast.error("Email Already Exists!");
+    }
+  };
+  
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
@@ -106,15 +137,43 @@ function SignUpForm({ setIsSignUp }) {
         )}
       </div>
 
-      <div className="space-y-1">
-        <div className="relative">
-          <Mail className="absolute left-3 top-3 h-5 w-5 text-white/60" />
-          <input
-            {...register("email")}
-            placeholder="Email"
-            className="w-full px-10 py-2 bg-white/10 hover:shadow-md border border-white/20 rounded-lg text-white placeholder:text-white/60 focus:outline-none focus:ring-2 focus:ring-pink-400"
-          />
+     
+      <div className="space-y-2">
+        <div className="flex items-center space-x-2">
+          <div className="relative w-full">
+            {/* Email Icon */}
+            <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-white/60" />
+
+            {/* Email Input */}
+            <input
+              {...register("email")}
+              placeholder="Email"
+              className="w-full pl-10 pr-3 py-2 bg-white/10 hover:shadow-md border border-white/20 rounded-lg text-white placeholder:text-white/60 focus:outline-none focus:ring-2 focus:ring-pink-400"
+            />
+          </div>
+          {/* Verify Button */}
+          <button
+      type="button"
+      onClick={sendMail}
+      disabled={verified}
+      className={`px-4 py-2 rounded-lg transition ${
+        verified
+          ? "bg-green-500 text-white cursor-default"
+          : "bg-blue-500 text-white hover:bg-blue-600"
+      }`}
+    >
+      {verified ? <Check size={20} /> : "Verify"}
+    </button>
+         {/* { console.log(email)} */}
+          {isOTPOpen && (
+            <Otp
+              props={{ setShowOtp, showOtp, email, setVerified }}
+              onClose={() => setIsOTPOpen(false)}
+            />
+          )}
         </div>
+
+        {/* Error Message */}
         {errors.email && (
           <p className="text-red-500 text-sm">{errors.email.message}</p>
         )}
@@ -273,7 +332,15 @@ function SignUpForm({ setIsSignUp }) {
 
       <button
         type="submit"
-        className="w-full bg-gradient-to-r from-pink-500 to-purple-500 p-2 rounded-lg text-white hover:from-pink-600 hover:to-purple-600"
+        disabled={!verified}
+        className={`w-full p-2 rounded-lg text-white transition-all 
+    ${
+      verified
+        ? "bg-gradient-to-r from-pink-500 to-purple-500 hover:from-pink-600 hover:to-purple-600"
+        : "bg-gray-400 cursor-not-allowed"
+    }
+  `
+}
       >
         Sign Up
       </button>

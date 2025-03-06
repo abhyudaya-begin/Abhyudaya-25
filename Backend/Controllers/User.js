@@ -48,7 +48,7 @@ const registerUser = async (req, res) => {
     if(referallId)
     {
 
-      const referallIdExist = User.find({ABH_ID : referallId});
+      const referallIdExist = await User.find({ABH_ID : referallId});
       
       if (!referallIdExist) {
         return res.status(409).json(new ApiError(404, "This Referall Id does not exist!"));
