@@ -87,11 +87,13 @@ const ProfileCard = () => {
     dispatch(logout()); // Dispatch Redux logout action
     window.location.reload(); // Reload to reflect logout state
   };
-   user.dob= new Date(user.dob).toLocaleDateString("en-US", {
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-  });
+  
+const dob = new Date(user.dob).toLocaleDateString("en-US", {
+  year: "numeric",
+  month: "long",
+  day: "numeric",
+});
+
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-900 to-[#6A1B9A] p-4">
@@ -146,7 +148,7 @@ const ProfileCard = () => {
               </p>
               <p>
                 <span className="font-bold text-blue-300">Date of Birth:</span>{" "}
-                {user.dob}
+                {dob}
               </p>
               <p>
                 <span className="font-bold text-blue-300">Payment Status:</span>

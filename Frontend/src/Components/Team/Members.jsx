@@ -36,7 +36,7 @@ const Members = () => {
 
       <div className="relative z-10 container mx-auto px-4 py-12">
         <div className="text-center mb-16">
-          <h1 className="text-5xl md:text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 animate-gradient-x">
+          <h1 className="text-5xl  md:text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 animate-gradient-x">
             About Us
           </h1>
         </div>
