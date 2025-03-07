@@ -45,8 +45,8 @@ const Members = () => {
           <LeaderCard member={leaderData} />
         </div>
 
-        <div className="flex justify-center">
-          <div className="grid grid-cols-1 md:grid-cols-2 md:gap-30 gap-12 mt-12">
+        <div className="flex justify-center mt-20">
+          <div className="grid grid-cols-1 md:grid-cols-2 md:gap-60 gap-12 mt-12">
             {subleaderData.map((leader, index) => (
               <SubLeaderCard key={index} faculty={leader} />
             ))}

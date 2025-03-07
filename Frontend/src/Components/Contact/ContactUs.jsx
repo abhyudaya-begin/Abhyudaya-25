@@ -24,7 +24,7 @@ const ContactUs = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-[#E2E8F0] to-[#CBD5E0] flex items-center justify-center p-4 sm:p-8 md:p-12 lg:p-16 xl:p-24">
+    <div className="min-h-screen  bg-black/60 flex items-center justify-center p-4 sm:p-8 md:p-12 lg:p-16 xl:p-24">
       <div className="w-full max-w-6xl mx-4 sm:mx-8 md:mx-12 lg:mx-16 xl:mx-24 flex flex-col md:flex-row rounded-3xl overflow-hidden shadow-2xl">
         {/* Left Section */}
         <div className="w-full md:w-1/2 bg-[#2d1b42]  p-6 sm:p-8 md:p-10 lg:p-12 flex flex-col items-center">
@@ -53,6 +53,7 @@ const ContactUs = () => {
               <a
                 href="https://www.instagram.com/Abhyudaya.mmmut/"
                 className="floating-animation flex items-center gap-2 sm:gap-3 text-white px-4 py-2 rounded-full transition-all duration-300 shadow-lg min-w-[140px] sm:min-w-[160px] text-sm sm:text-base bg-[#E4405F] hover:bg-[#D92D52]"
+                target="_blank"
               >
                 <FaInstagram className="text-xl sm:text-2xl flex-shrink-0" />
                 <span className="whitespace-nowrap font-semibold tracking-wide text-white">
@@ -61,8 +62,9 @@ const ContactUs = () => {
               </a>
 
               <a
-                href="https://wa.me/919205025183"
+                href="https://whatsapp.com/channel/0029VaGSSJQGJP8AijZRD62j"
                 className="floating-animation flex items-center gap-2 sm:gap-3 bg-[#25D366] text-white px-4 py-2 rounded-full transition-all duration-300 shadow-lg min-w-[140px] sm:min-w-[160px] text-sm sm:text-base hover:bg-[#1EBE5C]"
+                target="_blank"
               >
                 <FaWhatsapp className="text-xl sm:text-2xl flex-shrink-0" />
                 <span className="whitespace-nowrap font-semibold tracking-wide text-white">

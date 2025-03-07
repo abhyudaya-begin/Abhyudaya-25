@@ -10,7 +10,7 @@ const teamsData = [
     Photo: "https://bmpwmkwijlrnrrywhqsp.supabase.co/storage/v1/object/sign/Team/Aryan_Singh.jpg?token"
   },
   {
-    Position : "Technical Head",
+    Position : null,
     Name: "Pritish Tomar",
     Year: "Final Year",
     Branch: "IT",
@@ -20,13 +20,13 @@ const teamsData = [
     Photo: "https://bmpwmkwijlrnrrywhqsp.supabase.co/storage/v1/object/sign/Team/Pritish_Tomar%20(1).jpg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJUZWFtL1ByaXRpc2hfVG9tYXIgKDEpLmpwZyIsImlhdCI6MTc0MTM1NjUxMCwiZXhwIjoxODM1OTY0NTEwfQ.rJzZecxGvrfWCISWtup3YQ4hcbxtm2rQhpFzw2kvNmI"
   },
   {
-    Position : "Fine Art Head",
+    Position : null,
     Name: "Tushar Gupta",
     Year: "Final Year",
     Branch: "ECE",
     EmailId: "guptatushar015@gmail.com",
     LinkedInId: "https://www.linkedin.com/in/tushar-gupta-s/",
-    InstaId: "___tushargupta",
+    InstaId: "https://www.instagram.com/___tushargupta/",
     Photo: "https://bmpwmkwijlrnrrywhqsp.supabase.co/storage/v1/object/sign/Team/Tushar_Gupta.jpg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJUZWFtL1R1c2hhcl9HdXB0YS5qcGciLCJpYXQiOjE3NDEzNTY1NDgsImV4cCI6MTgzNTk2NDU0OH0.lSsKCnvdv6IqCSfd5hAU-8oqX1UYCyX2ooNX2IOMWRs"
   },
 
@@ -171,44 +171,44 @@ const teamsData = [
     Photo: "https://bmpwmkwijlrnrrywhqsp.supabase.co/storage/v1/object/sign/Team/Sumit_Kumar.jpg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJUZWFtL1N1bWl0X0t1bWFyLmpwZyIsImlhdCI6MTc0MTA3NTE1MCwiZXhwIjoxODM1NjgzMTUwfQ.FPFlfvYGTRXW0ZJDYBWwzKAiaTFjKfkSp3A8UKNesIk"
   },
   {
-    "Position ": "EX",
-    "Name": "Shivam Rai ",
-    "Year": "3rd Year",
-    "Branch": "CSE",
-    "Email ID": "shivamraianil@gmail.com",
-    "LinkedIn ID": "https://www.linkedin.com/in/shivam-rai-a64b84298",  
-    "Insta ID": "https://www.instagram.com/shivam_rai_2299?igsh=dm5scjJpOHYwOGdx",
-    "Photo": "https://bmpwmkwijlrnrrywhqsp.supabase.co/storage/v1/object/sign/Team/Shivam_rai.jpg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJUZWFtL1NoaXZhbV9yYWkuanBnIiwiaWF0IjoxNzQxMzU2MjU1LCJleHAiOjE4MzU5NjQyNTV9.u1hcmZWXKyW1kDLSpQMXjjECJ9l0FVE2SolH7tWdIPQ"
+    Position : null,
+    Name: "Shivam Rai ",
+    Year: "3rd Year",
+    Branch: "CSE",
+    EmailId: "shivamraianil@gmail.com",
+    LinkedInId: "https://www.linkedin.com/in/shivam-rai-a64b84298",  
+    InstaId: "shivam_rai_2299",
+    Photo: "https://bmpwmkwijlrnrrywhqsp.supabase.co/storage/v1/object/sign/Team/Shivam_rai.jpg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJUZWFtL1NoaXZhbV9yYWkuanBnIiwiaWF0IjoxNzQxMzU2MjU1LCJleHAiOjE4MzU5NjQyNTV9.u1hcmZWXKyW1kDLSpQMXjjECJ9l0FVE2SolH7tWdIPQ"
   },
   {
-    "Position ": "EX",
-    "Name": "Akshat Saxena",
-    "Year": "3rd Year",
-    "Branch": "IT",
-    "Email ID": "akshatsaxena.work1@gmail.com",
-    "LinkedIn ID" : "https://www.linkedin.com/in/akshat-saxena-26073a229?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-    "Insta ID": "https://www.instagram.com/i.akshatsaxena?igsh=MXMwYzlzYW9xcTZjYg==",
-    "Photo": "https://bmpwmkwijlrnrrywhqsp.supabase.co/storage/v1/object/sign/Team/Akshat_saxena.jpg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJUZWFtL0Frc2hhdF9zYXhlbmEuanBnIiwiaWF0IjoxNzQxMzU2MzYwLCJleHAiOjE3NDE2MTU1NjB9.bPQ4L5Mb22rkMYVdKd7mFMdlXuTDT9iKDvmrbo9gG90"
+    Position : null,
+    Name: "Akshat Saxena",
+    Year: "3rd Year",
+    Branch: "IT",
+    EmailId: "akshatsaxena.work1@gmail.com",
+    LinkedInId : "https://www.linkedin.com/in/akshat-saxena-26073a229?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+    InstaId: "i.akshatsaxena",
+    Photo: "https://bmpwmkwijlrnrrywhqsp.supabase.co/storage/v1/object/sign/Team/Akshat_saxena.jpg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJUZWFtL0Frc2hhdF9zYXhlbmEuanBnIiwiaWF0IjoxNzQxMzU2MzYwLCJleHAiOjE3NDE2MTU1NjB9.bPQ4L5Mb22rkMYVdKd7mFMdlXuTDT9iKDvmrbo9gG90"
   },
   {
-    "Position ": "EX",
-    "Name": "Shreyas Kumar",
-    "Year": "3rd Year",
-    "Branch": "CSE",
-    "Email ID": "shreyaskumar0411@gmail.com",
-    "LinkedIn ID" : "https://www.linkedin.com/in/shreyas-kumar-416093230?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-    "Insta ID": "https://www.instagram.com/shreyas_kumar_411?igsh=MTRubzhld2Mxcng5Mw==",
-    "Photo": "https://bmpwmkwijlrnrrywhqsp.supabase.co/storage/v1/object/sign/Team/Shreyas_Kumar.jpg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJUZWFtL1NocmV5YXNfS3VtYXIuanBnIiwiaWF0IjoxNzQxMzU2MzkzLCJleHAiOjE4MzU5NjQzOTN9.ubUHEVHSDlbbaT6S9LlOAYEriSojiZgdWUDSnaTkEYQ"
-  },+
+    Position : null,
+    Name: "Shreyas Kumar",
+    Year: "3rd Year",
+    Branch: "CSE",
+    EmailId: "shreyaskumar0411@gmail.com",
+    LinkedInId : "https://www.linkedin.com/in/shreyas-kumar-416093230?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+    InstaId: "shreyas_kumar_411",
+    Photo: "https://bmpwmkwijlrnrrywhqsp.supabase.co/storage/v1/object/sign/Team/Shreyas_Kumar.jpg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJUZWFtL1NocmV5YXNfS3VtYXIuanBnIiwiaWF0IjoxNzQxMzU2MzkzLCJleHAiOjE4MzU5NjQzOTN9.ubUHEVHSDlbbaT6S9LlOAYEriSojiZgdWUDSnaTkEYQ"
+  },
   {
-    "Position ": "EX",
-    "Name": "Harshit Pandey ",
-    "Year": "3rd Year",
-    "Branch": "Mech",
-    "Email ID": "harshitpandey8719@gmail.com",
-    "LinkedIn ID": "http://www.linkedin.com/in/harshit-pandit",
-    "Insta ID": "harshit__panditt",
-    "Photo": "https://bmpwmkwijlrnrrywhqsp.supabase.co/storage/v1/object/sign/Team/Harshit_Pandey.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJUZWFtL0hhcnNoaXRfUGFuZGV5LnBuZyIsImlhdCI6MTc0MTA3NDQwNywiZXhwIjoxODM1NjgyNDA3fQ.HXVQvXedA97ZPgfCouBIND1jTrmCacQZWUyFzt-0jcE"
+    Position : null,
+    Name: "Harshit Pandey ",
+    Year: "3rd Year",
+    Branch: "Mech",
+    EmailId: "harshitpandey8719@gmail.com",
+    LinkedInId: "http://www.linkedin.com/in/harshit-pandit",
+    InstaId: "harshit__panditt",
+    Photo: "https://bmpwmkwijlrnrrywhqsp.supabase.co/storage/v1/object/sign/Team/Harshit_Pandey.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJUZWFtL0hhcnNoaXRfUGFuZGV5LnBuZyIsImlhdCI6MTc0MTA3NDQwNywiZXhwIjoxODM1NjgyNDA3fQ.HXVQvXedA97ZPgfCouBIND1jTrmCacQZWUyFzt-0jcE"
   },
   {
     Position: "Executive member ",

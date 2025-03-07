@@ -1,14 +1,15 @@
 import { createClient } from "@supabase/supabase-js";
 import { useState } from "react";
 
-// Create Supabase client only once
-const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
-const supabaseKey = import.meta.env.VITE_SUPABASE_KEY;
-const supabase = createClient(supabaseUrl, supabaseKey);
+
 
 export const useSupabaseUpload = () => {
   const [error, setError] = useState(null);
+  // Create Supabase client only once
+const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
+const supabaseKey = import.meta.env.VITE_SUPABASE_KEY;
 
+  const supabase = createClient(supabaseUrl, supabaseKey);
   const uploadImage = async (file, userId = 'default') => {
     if (!file) {
       throw new Error("No file provided");

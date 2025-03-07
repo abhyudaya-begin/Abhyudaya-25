@@ -5,11 +5,12 @@ function SubLeaderCard({ faculty }) {
     <div className="max-w-sm bg-white rounded-xl shadow-lg overflow-hidden text-center">
       {/* Image Section */}
       <img
-        src={faculty.imgLink}
-        alt={faculty.name}
-        loading="lazy"
-        className="w-full h-64 object-cover"
-      />
+  src={faculty.imgLink}
+  alt={faculty.name}
+  loading="lazy" 
+  className="w-full h-64 object-cover  hover:scale-105 transition duration-300 ease-in-out"
+/>
+
 
       {/* Name and Position Section */}
       <div className="p-4">
