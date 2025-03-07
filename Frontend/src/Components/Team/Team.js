@@ -340,16 +340,7 @@ const teamsData = [
     InstaId: "https://www.instagram.com/madhurgaur_",
     Photo: "https://bmpwmkwijlrnrrywhqsp.supabase.co/storage/v1/object/sign/Team/MPSG.jpeg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJUZWFtL01QU0cuanBlZyIsImlhdCI6MTc0MTA3NDU3MSwiZXhwIjoxODM1NjgyNTcxfQ.myIJPCWrxZSNuaECFigwLrehxPdXM5avQ-Oo7oqQfrU"
   },
-  {
-    Position: "Executive member ",
-    Name: "Vidhi Gupta",
-    Year: "3rd Year",
-    Branch: "CSE",
-    EmailId: "vidhi.mmmut@gmail.com",
-    LinkedInId: "temporarily restricted",
-    InstaId: "Vidhi__8479",
-    Photo: "https://bmpwmkwijlrnrrywhqsp.supabase.co/storage/v1/object/sign/Team/Vidhi_Gupta.jpg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJUZWFtL1ZpZGhpX0d1cHRhLmpwZyIsImlhdCI6MTc0MTA3NTI2NSwiZXhwIjoxODM1NjgzMjY1fQ.vq5chaiXekTIqhGjilGzHfo8A2TExztrrfTa9jDaGcw"
-  },
+  
   {
     Position: "Executive member ",
     Name: "Ayushi Tiwari",
@@ -439,6 +430,16 @@ const teamsData = [
     LinkedInId: "Srishti Singh ",
     InstaId: "Srishti_singh.25",
     Photo: "https://bmpwmkwijlrnrrywhqsp.supabase.co/storage/v1/object/sign/Team/Srishti_Singh.jpg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJUZWFtL1NyaXNodGlfU2luZ2guanBnIiwiaWF0IjoxNzQxMDc1MDkxLCJleHAiOjE4MzU2ODMwOTF9.T8GPfyAzcCUs_vrMDGUHQqoEM0DFBy6XF6P5gBvZC-U"
+  },
+  {
+    Position: "Executive member ",
+    Name: "Vidhi Gupta",
+    Year: "3rd Year",
+    Branch: "CSE",
+    EmailId: "vidhi.mmmut@gmail.com",
+    LinkedInId: "temporarily restricted",
+    InstaId: "Vidhi__8479",
+    Photo: "https://bmpwmkwijlrnrrywhqsp.supabase.co/storage/v1/object/sign/Team/Vidhi_Gupta.jpg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJUZWFtL1ZpZGhpX0d1cHRhLmpwZyIsImlhdCI6MTc0MTA3NTI2NSwiZXhwIjoxODM1NjgzMjY1fQ.vq5chaiXekTIqhGjilGzHfo8A2TExztrrfTa9jDaGcw"
   },
   {
     Position: "Executive member ",
