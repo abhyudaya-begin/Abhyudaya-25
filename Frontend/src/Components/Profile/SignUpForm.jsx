@@ -15,9 +15,11 @@ import {
   Lock,
   Eye,
   EyeOff,
-  Check
+  Check,
 } from "lucide-react";
 import Otp from "./Otp";
+import { useRef } from "react";
+import ProfileImageUploader from "./ProfileImageUploader";
 
 const courses = [
   "B.Tech",
@@ -34,7 +36,7 @@ const courses = [
   "Others",
 ];
 
-const genderoption = ["Male", "Female", " Prefer not to say", "others"];
+const genderOptions = ["Male", "Female", "Prefer not to say", "Others"];
 
 const signUpSchema = z
   .object({
@@ -50,7 +52,7 @@ const signUpSchema = z
     gender: z.string().nonempty("Gender can't be empty"),
     dob: z.string().nonempty("Date of Birth is required"),
     course: z.string().nonempty("Course is required"),
-    referallId: z.string(),
+    referralId: z.string().optional(), // Fixed typo
     password: z.string().min(8, "Password must be at least 8 characters"),
     confirmPassword: z.string(),
   })
@@ -60,10 +62,11 @@ const signUpSchema = z
   });
 
 function SignUpForm({ setIsSignUp }) {
-    const [showPassword, setShowPassword] = useState(false);
-    const [showOtp, setShowOtp] = useState(false);
-    const [isOTPOpen, setIsOTPOpen] = useState(false);
-    const [verified, setVerified] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
+  const [isOTPOpen, setIsOTPOpen] = useState(false);
+  const [verified, setVerified] = useState(false);
+  const [image, setImage] = useState("https://placehold.co/100x100"); // Default Image
+
   const navigate = useNavigate();
   const {
     register,
@@ -73,17 +76,21 @@ function SignUpForm({ setIsSignUp }) {
   } = useForm({
     resolver: zodResolver(signUpSchema),
   });
-  const email = watch("email", " "); // Get email value from form
+  const email = watch("email", ""); // Get email value from form, fixed empty space
 
   const onSubmit = async (data) => {
-    console.log(data);
     try {
       const { confirmPassword, ...filteredData } = data;
 
-      console.log(import.meta.env.VITE_BACKEND_API_URL);
+      // Include the image URL in the submission data
+      const userDataWithImage = {
+        ...filteredData,
+        profileImage: image,
+      };
+
       const res = await axios.post(
         `${import.meta.env.VITE_BACKEND_API_URL}users/`,
-        filteredData,
+        userDataWithImage,
         {
           withCredentials: true, // This sends cookies to backend
         }
@@ -92,41 +99,41 @@ function SignUpForm({ setIsSignUp }) {
       toast.success("Sign Up Successful");
       setIsSignUp(false);
     } catch (error) {
-      toast.error(error.response.data.errorMessage || "Sign up Failed");
+      toast.error(error.response?.data?.errorMessage || "Sign up Failed");
     }
   };
+
   const sendMail = async () => {
-    
     try {
-    
-    
+      if (!email) {
+        toast.error("Please enter your email");
+        return;
+      }
 
       const res = await axios.post(
         `${import.meta.env.VITE_BACKEND_API_URL}verify/email`,
-        {email},
+        { email },
         {
           withCredentials: true,
         }
       );
       if (res.status) {
         setIsOTPOpen(true);
-        // console.log(isOTPOpen)
-        setShowOtp(true);
         toast.success("OTP sent successfully");
       }
-    } catch(err) {
-      if(email===" "){
-        toast.error("Email is required")
-       }
-      else{
-      toast.error("Email Already Exists!");
+    } catch (err) {
+      if (!email.trim()) {
+        toast.error("Email is required");
+      } else {
+        toast.error("Email Already Exists!");
       }
     }
   };
-  
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
+      <ProfileImageUploader image={image} setImage={setImage} />
+
       <div className="space-y-1">
         <div className="relative">
           <User className="absolute left-3 top-3 h-5 w-5 text-white/60" />
@@ -141,14 +148,10 @@ function SignUpForm({ setIsSignUp }) {
         )}
       </div>
 
-     
       <div className="space-y-2">
         <div className="flex items-center space-x-2">
           <div className="relative w-full">
-            {/* Email Icon */}
             <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-white/60" />
-
-            {/* Email Input */}
             <input
               {...register("email")}
               type="email"
@@ -157,33 +160,28 @@ function SignUpForm({ setIsSignUp }) {
               className="w-full pl-10 pr-3 py-2 bg-white/10 hover:shadow-md border border-white/20 rounded-lg text-white placeholder:text-white/60 focus:outline-none focus:ring-2 focus:ring-pink-400"
             />
           </div>
-          {errors.email && (
+          <button
+            type="button"
+            onClick={sendMail}
+            disabled={verified}
+            className={`px-4 py-2 rounded-lg transition ${
+              verified
+                ? "bg-green-500 text-white cursor-default"
+                : "bg-blue-500 text-white hover:bg-blue-600"
+            }`}
+          >
+            {verified ? <Check size={20} /> : "Verify"}
+          </button>
+        </div>
+        {errors.email && (
           <p className="text-red-500 text-sm">{errors.email.message}</p>
         )}
-          {/* Verify Button */}
-          <button
-      type="button"
-      onClick={sendMail}
-      disabled={verified}
-      className={`px-4 py-2 rounded-lg transition ${
-        verified
-          ? "bg-green-500 text-white cursor-default"
-          : "bg-blue-500 text-white hover:bg-blue-600"
-      }`}
-    >
-      {verified ? <Check size={20} /> : "Verify"}
-    </button>
-         {/* { console.log(email)} */}
-          {isOTPOpen && (
-            <Otp
-              props={{ setShowOtp, showOtp, email, setVerified }}
-              onClose={() => setIsOTPOpen(false)}
-            />
-          )}
-        </div>
-
-        {/* Error Message */}
-     
+        {isOTPOpen && (
+          <Otp
+            props={{ email, setVerified }}
+            onClose={() => setIsOTPOpen(false)}
+          />
+        )}
       </div>
 
       <div className="space-y-1">
@@ -222,7 +220,7 @@ function SignUpForm({ setIsSignUp }) {
             className="w-full px-10 py-2 bg-white/10 hover:shadow-md border border-white/20 rounded-lg text-white placeholder:text-white/60 focus:outline-none focus:ring-2 focus:ring-pink-400"
           >
             <option value="">Select Gender</option>
-            {genderoption.map((gender) => (
+            {genderOptions.map((gender) => (
               <option
                 className="w-full p-2 rounded-lg bg-black/60 text-white outline-none"
                 key={gender}
@@ -276,26 +274,22 @@ function SignUpForm({ setIsSignUp }) {
             } // Set max date to 5 years ago
           />
         </div>
-
-     
-
         {errors.dob && (
           <p className="text-red-500 text-sm">{errors.dob.message}</p>
         )}
       </div>
 
-
-      <div className="space-y-1 ">
-          <div className="relative">
-            <User className="absolute left-3 top-3 h-5 w-5 text-white/60" />
-            <input
-             type="text"
-              placeholder="Referall Id ABCD-1234 (Optional)" 
-              {...register("referallId")}
-              className="w-full px-10 py-2 bg-white/10 border hover:shadow-md border-white/20 rounded-lg text-white placeholder:text-white/60 focus:outline-none focus:ring-2 focus:ring-pink-400"
-            />
-          </div>
+      <div className="space-y-1">
+        <div className="relative">
+          <User className="absolute left-3 top-3 h-5 w-5 text-white/60" />
+          <input
+            type="text"
+            placeholder="Referral Id ABCD-1234 (Optional)"
+            {...register("referralId")}
+            className="w-full px-10 py-2 bg-white/10 border hover:shadow-md border-white/20 rounded-lg text-white placeholder:text-white/60 focus:outline-none focus:ring-2 focus:ring-pink-400"
+          />
         </div>
+      </div>
 
       <div className="space-y-1">
         <div className="relative">
@@ -322,7 +316,6 @@ function SignUpForm({ setIsSignUp }) {
       <div className="space-y-1">
         <div className="relative">
           <Lock className="absolute left-3 top-3 h-5 w-5 text-white/60" />
-
           <input
             type="password"
             {...register("confirmPassword")}
@@ -341,13 +334,11 @@ function SignUpForm({ setIsSignUp }) {
         type="submit"
         disabled={!verified}
         className={`w-full p-2 rounded-lg text-white transition-all 
-    ${
-      verified
-        ? "bg-gradient-to-r from-pink-500 to-purple-500 hover:from-pink-600 hover:to-purple-600"
-        : "bg-gray-400 cursor-not-allowed"
-    }
-  `
-}
+        ${
+          verified
+            ? "bg-gradient-to-r from-pink-500 to-purple-500 hover:from-pink-600 hover:to-purple-600"
+            : "bg-gray-400 cursor-not-allowed"
+        }`}
       >
         Sign Up
       </button>

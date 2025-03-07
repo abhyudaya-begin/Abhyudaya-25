@@ -58,12 +58,7 @@ const Sidebar = () => {
       label: "Gallery",
       path: "/gallery",
     },
-    {
-      id: "artists",
-      icon: <PiMicrophoneStageFill size={20} color="white" />,
-      label: "Artists",
-      path: "/#",
-    },
+   
     {
       id: "event",
       icon: <FaCalendarCheck size={20} color="white" />,
@@ -76,12 +71,7 @@ const Sidebar = () => {
       label: "Campus Ambassador",
       path: "/campus-ambassador",
     },
-    {
-      id: "clothes",
-      icon: <FaTshirt size={20} color="white" />,
-      label: "Merchandise",
-      path: "/#",
-    },
+   
     {
       id: "contact",
       icon: <MdContactMail size={20} color="white" />,
@@ -91,8 +81,8 @@ const Sidebar = () => {
     {
       id: "team",
       icon: <RiTeamFill size={20} color="white" />,
-      label: "Our Team",
-      path: "/team",
+      label: "About us",
+      path: "/about",
     },
   ];
 
