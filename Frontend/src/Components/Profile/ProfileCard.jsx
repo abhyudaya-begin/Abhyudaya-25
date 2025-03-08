@@ -18,11 +18,10 @@ const ProfileCard = () => {
   const user = useSelector(state=> state.user.user.user) ;
    
   const [copied, setCopied] = useState(false);
-  const [image, setImage] = useState(null);
+
   // console.log(user.image);
   
-  const [uploading, setUploading] = useState(false);
-  const fileInputRef = useRef(null);
+
   // const referralId = generateReferralId(user.name, user.phone);
   useEffect(() => {
     console.log(user);
@@ -33,53 +32,10 @@ const ProfileCard = () => {
     setTimeout(() => setCopied(false), 2000);
   };
 
-  const handleImageUpload = async (event) => {
-    // console.log(event)
-    // const file = event.target.files?.[0];
-    // if (!file) return;
-
-    // setUploading(true);
-
-    // const fileExt = file.name.split(".").pop();
-    // const fileName = `${user.fullName}-${Date.now()}.${fileExt}`;
-    // const filePath = `profiles/${fileName}`;
-
-    // // Upload image to Supabase storage
-    // const { data, error } = await supabase.storage
-    //   .from("Profile_picture")
-    //   .upload(filePath, file);
-     
-    // if (error) {
-    //   console.error("Image upload failed:", error.message);
-    //   setUploading(false);
-    //   return;
-    // }
-
-    // // Get public URL of the uploaded image
-    // const { publicUrl } = supabase.storage
-    //   .from("profile-pictures")
-    //   .getPublicUrl(filePath).data;
-
-    // setImage(publicUrl); // Update UI with new image
-
-    // Save image URL to backend
-    // await fetch("https://your-backend-api.com/update-profile", {
-    //   method: "POST",
-    //   headers: {
-    //     "Content-Type": "application/json",
-    //   },
-    //   body: JSON.stringify({ userId: user.id, imageUrl: publicUrl }),
-    // });
-
-    // setUploading(false);
-    // console.log("Image successfully uploaded:", publicUrl);
-  };
 
   
 
-  const triggerFileInput = () => {
-    fileInputRef.current?.click();
-  };
+
 
   const dispatch = useDispatch();
 
@@ -103,23 +59,13 @@ const dob = new Date(user.dob).toLocaleDateString("en-US", {
           <div className="w-full md:w-1/2 bg-white/20 p-6 rounded-lg">
             <div className="flex items-center gap-4">
               <img
-                src={image}
+                src={user.profilePicture}
                 alt={user.fullName}
                 className="w-24 h-24 rounded-full border-4 border-white/30 shadow-lg"
               />
-              <button
-                onClick={triggerFileInput}
-                className="p-1 bg-white/30 hover:bg-white/20 transition"
-              >
-                Upload Image
-              </button>
-              <input
-                type="file"
-                ref={fileInputRef}
-                onChange={handleImageUpload}
-                className="hidden"
-                accept="image/*"
-              />
+           
+             
+             
             </div>
 
             <div className="mt-4 text-white/80 space-y-2">

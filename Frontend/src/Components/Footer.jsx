@@ -97,7 +97,7 @@ const Footer = ({ isSidebarOpen }) => {
 
   return (
     <footer
-      className={`w-full bg-gradient-2 text-background-light pt-8 pb-4 px-4 mt-auto lg:pl-20 md:pl-20 xl:pl-20 relative transition-all duration-300 ease-in-out border-t border-primary-orange/30 ${sidebarMargin}`}
+      className={`w-full bg-gradient-2 text-background-light pt-8 pb-4 px-4 mt-auto lg:pl-20 md:pl-20 xl:pl-20 relative transition-all duration-300 ease-in-out  border-primary-orange/30 ${sidebarMargin} bg-gray-900`}
     >
       <div
         className="flex flex-col md:flex-row max-w-full gap-6 
@@ -138,10 +138,10 @@ const Footer = ({ isSidebarOpen }) => {
             {contacts.map((person, index) => (
               <div
                 key={index}
-                className={`text-center flex flex-col items-center justify-between bg-white/5 backdrop-blur-sm p-2 md:p-2 lg:p-3 rounded-lg hover:bg-white/10 transition-all duration-300 border border-white/20`}
+                className={`text-center flex flex-col items-center justify-between bg-white/5 backdrop-blur-sm p-2 md:p-2 lg:p-3 rounded-lg  hover:bg-white/10 transition-all duration-300 border border-white/20`}
               >
                 <div>
-                  <p className="font-semibold text-6 md:text-sm sm:text-8 lg:text-md mb-1">
+                  <p className="font-semibold text-6 md:text-sm sm:text-8 lg:text-md mb-1 mt-2">
                     {person.name}
                   </p>
                   <p className="text-5 md:text-xs lg:text-sm sm:text-6 text-gray-400 mb-2">
@@ -163,7 +163,7 @@ const Footer = ({ isSidebarOpen }) => {
                     href={`tel:${person.phone}`}
                     className="text-white hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r from-blue-400 to-blue-600 transform hover:scale-110 transition-all hover:shadow-glow p-1"
                   >
-                    <FaPhone size={iconSize} />
+                    <FaPhone size={17}  />
                   </a>
                 </div>
               </div>

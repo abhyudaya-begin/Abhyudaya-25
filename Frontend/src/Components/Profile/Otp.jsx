@@ -1,122 +1,155 @@
-import React, { useState, useRef, useEffect } from 'react';
-import { Button } from '@material-tailwind/react';
-import axios from 'axios';
-import toast from 'react-hot-toast';
+import React, { useState, useEffect, useRef } from "react";
+import axios from "axios";
+import toast from "react-hot-toast";
 
-const Otp = ({ props}) => {
-  const {setShowOtp, showOtp, email, setVerified} = props;
-  const [otp, setOtp] = useState(new Array(4).fill(''));
-  const otpRef = useRef(null);
-  const [loading, setLoading] = useState(false);
-  // console.log(email);
+function Otp({ props, onClose }) {
+  const { email, setVerified } = props;
+  const [otp, setOtp] = useState(["", "", "", ""]);
+  const [timer, setTimer] = useState(60);
+  const [canResend, setCanResend] = useState(false);
+  const inputRefs = useRef([]);
 
-  // Handle OTP Input
-  const handleChange = (element, index) => {
-    if (!/^\d$/.test(element.value)) return;
+  // Set up timer
+  useEffect(() => {
+    if (timer > 0) {
+      const interval = setInterval(() => {
+        setTimer((prevTimer) => prevTimer - 1);
+      }, 1000);
+      return () => clearInterval(interval);
+    } else {
+      setCanResend(true);
+    }
+  }, [timer]);
+
+  // Handle OTP input change
+  const handleChange = (e, index) => {
+    const value = e.target.value;
     
-    setOtp((prevOtp) => prevOtp.map((d, idx) => (idx === index ? element.value : d)));
-
-    // Move focus to next input
-    if (element.nextSibling) element.nextSibling.focus();
+    // Only allow numbers
+    if (!/^\d*$/.test(value)) return;
+    
+    // Update the OTP array
+    const newOtp = [...otp];
+    newOtp[index] = value.slice(0, 1); // Ensure only one character
+    setOtp(newOtp);
+    
+    // Auto-focus next input if value is entered
+    if (value && index < 5) {
+      inputRefs.current[index + 1].focus();
+    }
   };
 
-  // Close OTP Modal on Click Outside
-  useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (otpRef.current && !otpRef.current.contains(event.target)) {
-        setOtp(new Array(4).fill(''));
-        setShowOtp(false);
-      }
-    };
-    
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
-  }, [setShowOtp]);
+  // Handle key press for backspace
+  const handleKeyDown = (e, index) => {
+    if (e.key === "Backspace" && !otp[index] && index > 0) {
+      inputRefs.current[index - 1].focus();
+    }
+  };
 
-  // OTP Verification Handler
-  const verifyHandler = async () => {
-    const otpByUser = otp.join('');
-
-    if (otpByUser.length < 4) {
-      toast.error("Please fill in all the OTP fields!");
+  // Handle OTP verification
+  const verifyOtp = async () => {
+    const otpString = otp.join("");
+    if (otpString.length !== 4) {
+      toast.error("Please enter all 6 digits");
       return;
     }
 
-    setLoading(true);
-    
     try {
-     
-      const data={email:email,otp:otpByUser}
-      console.log(data);
-      const res = await axios.post(`${import.meta.env.VITE_BACKEND_API_URL}verify/verify`,
-        data
-
+      const res = await axios.post(
+        `${import.meta.env.VITE_BACKEND_API_URL}verify/email`,
+        { 
+          email, 
+          otp: otpString 
+        },
+        {
+          withCredentials: true,
+        }
       );
+      
+      toast.success("Email verified successfully!");
+      setVerified(true);
+      onClose();
+    } catch (err) {
+      toast.error(err.response?.data?.errorMessage || "Invalid OTP");
+    }
+  };
 
-      if (res.status === 200) {
-        toast.success(res.data.message);
-        setVerified(true);
-        setShowOtp(false);
-      }
-    } catch (error) {
-    console.log(error);
-    
-      toast.error("Incorrect OTP entered");
-      setOtp(new Array(4).fill(''));
-    } finally {
-      setLoading(false);
+  // Handle OTP resend
+  const resendOtp = async () => {
+    try {
+      const res = await axios.post(
+        `${import.meta.env.VITE_BACKEND_API_URL}verify/email`,
+        { email },
+        {
+          withCredentials: true,
+        }
+      );
+      
+      setTimer(60);
+      setCanResend(false);
+      toast.success("OTP resent successfully");
+    } catch (err) {
+      toast.error("Failed to resend OTP");
     }
   };
 
   return (
-    <>
-      {showOtp && (
-  <div
-    ref={otpRef}
-    className="relative w-full max-w-md mx-auto p-6 bg-white rounded-2xl shadow-lg z-30"
-  >
-    {/* Title */}
-    <h1 className="text-gray-800 font-semibold text-xl text-center">
-      Please enter the OTP sent to your email:
-    </h1>
-
-    {/* Image */}
-    <div className="flex justify-center my-4">
-      <img
-        src="/assets/Logo-images/Abhyudaya.png"
-        alt="OTP"
-        className="h-24 w-auto"
-        onError={(e) => (e.currentTarget.src = "https://via.placeholder.com/100")}
-      />
+    <div className="fixed inset-0 flex items-center justify-center bg-transparent bg-opacity-10 z-50">
+      <div className="bg-gray-900 p-6 rounded-lg w-96 max-w-full shadow-xl border border-white/20">
+        <h2 className="text-2xl text-white font-bold mb-4 text-center">
+          Email Verification
+        </h2>
+        <p className="text-white/70 mb-4 text-center">
+          Enter the 4-digit code sent to<br />
+          <span className="font-semibold text-white">{email}</span>
+        </p>
+        
+        <div className="flex justify-center gap-2 mb-6">
+          {otp.map((digit, index) => (
+            <input
+              key={index}
+              ref={(el) => (inputRefs.current[index] = el)}
+              type="text"
+              value={digit}
+              onChange={(e) => handleChange(e, index)}
+              onKeyDown={(e) => handleKeyDown(e, index)}
+              className="w-10 h-12 text-center text-xl font-bold bg-white/10 text-white border border-white/20 rounded-md focus:outline-none focus:ring-2 focus:ring-pink-400"
+              maxLength={1}
+            />
+          ))}
+        </div>
+        
+        <div className="flex flex-col gap-3">
+          <button
+            onClick={verifyOtp}
+            className="w-full p-2 rounded-lg bg-gradient-to-r from-pink-500 to-purple-500 text-white font-semibold hover:from-pink-600 hover:to-purple-600 transition cursor-pointer"
+          >
+            Verify OTP
+          </button>
+          
+          {canResend ? (
+            <button
+              onClick={resendOtp}
+              className="w-full p-2 rounded-lg bg-white/10 text-white hover:bg-white/20 transition"
+            >
+              Resend OTP
+            </button>
+          ) : (
+            <p className="text-white/70 text-center">
+              Resend OTP in {timer} seconds
+            </p>
+          )}
+          
+          <button
+            onClick={onClose}
+            className="w-full p-2 rounded-lg bg-transparent text-white/70 hover:text-white border border-white/20 hover:bg-white/10 transition cursor-pointer"
+          >
+            Cancel
+          </button>
+        </div>
+      </div>
     </div>
-
-    {/* OTP Inputs */}
-    <div className="flex justify-center gap-2 my-4">
-      {otp.map((data, index) => (
-        <input
-          key={index}
-          type="text"
-          maxLength={1}
-          className="w-12 h-12 text-center text-lg border-2 border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-          value={data}
-          onChange={(e) => handleChange(e.target, index)}
-          onFocus={(e) => e.target.select()}
-        />
-      ))}
-    </div>
-
-    {/* Verify Button */}
-    <button
-      onClick={verifyHandler}
-      disabled={loading}
-      className="w-full py-3 text-white font-semibold text-lg bg-blue-600 hover:bg-blue-700 rounded-lg transition-all duration-300 disabled:bg-gray-400"
-    >
-      {loading ? "Verifying..." : "Verify"}
-    </button>
-  </div>
-)}
-</>
   );
-} 
+}
 
 export default Otp;

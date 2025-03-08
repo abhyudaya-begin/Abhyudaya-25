@@ -53,12 +53,13 @@ const FlipCard = () => {
             <h3 className="text-2xl sm:text-3xl font-bold text-white text-center">
               {tshirtDetails[color].title}
             </h3>
-            <p className="text-yellow-400 text-center text-lg sm:text-xl font-bold mt-2">
-             <strike>₹400</strike> 
-            </p>
-            <p className="text-gray-100 text-center text-lg sm:text-xl font-bold mt-2">
-             ₹311 /-
-            </p>
+            <div className="text-center flex justify-center gap-4">
+
+        
+            <span className=" text-yellow-400 text-center text-lg sm:text-xl font-bold mt-2">
+             ₹311/-
+            </span>
+            </div>
           </div>
         ))}
       </div>

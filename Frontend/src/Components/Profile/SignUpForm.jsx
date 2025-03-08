@@ -20,6 +20,7 @@ import {
 import Otp from "./Otp";
 import { useRef } from "react";
 import ProfileImageUploader from "./ProfileImageUploader";
+import uploadImage from "./SupabaseUpload";
 
 const courses = [
   "B.Tech",
@@ -52,7 +53,7 @@ const signUpSchema = z
     gender: z.string().nonempty("Gender can't be empty"),
     dob: z.string().nonempty("Date of Birth is required"),
     course: z.string().nonempty("Course is required"),
-    referralId: z.string().optional(), // Fixed typo
+    referralId: z.string().optional(),
     password: z.string().min(8, "Password must be at least 8 characters"),
     confirmPassword: z.string(),
   })
@@ -65,7 +66,8 @@ function SignUpForm({ setIsSignUp }) {
   const [showPassword, setShowPassword] = useState(false);
   const [isOTPOpen, setIsOTPOpen] = useState(false);
   const [verified, setVerified] = useState(false);
-  const [image, setImage] = useState("https://placehold.co/100x100"); // Default Image
+  const [image, setImage] = useState(null); // Default Image
+  const [imageUpdated, setIMageUpdated] = useState(false);
 
   const navigate = useNavigate();
   const {
@@ -75,17 +77,40 @@ function SignUpForm({ setIsSignUp }) {
     watch,
   } = useForm({
     resolver: zodResolver(signUpSchema),
+    mode: "onSubmit",
   });
-  const email = watch("email", ""); // Get email value from form, fixed empty space
+  const email = watch("email", "");
+
+  const tryUploadingToSupabase = async (fullName) => {
+    try {
+      if (imageUpdated) {
+        const imageUrl = await uploadImage(image, fullName);
+        setImage(imageUrl);
+        toast.success("Image uploaded successfully!");
+      }
+    } catch (err) {
+      console.error("Error during image upload:", err);
+      toast.error("Image upload failed!");
+    }
+  };
 
   const onSubmit = async (data) => {
     try {
+      if(!image)
+      {
+        toast.error("Please upload image first!");
+        return;
+      }
       const { confirmPassword, ...filteredData } = data;
+      const { fullName, ...restAll } = filteredData;
+
+      await tryUploadingToSupabase(fullName);
+      console.log(image);
 
       // Include the image URL in the submission data
       const userDataWithImage = {
         ...filteredData,
-        profileImage: image,
+        profilePicture: image,
       };
 
       const res = await axios.post(
@@ -99,8 +124,18 @@ function SignUpForm({ setIsSignUp }) {
       toast.success("Sign Up Successful");
       setIsSignUp(false);
     } catch (error) {
+      console.log(error);
       toast.error(error.response?.data?.errorMessage || "Sign up Failed");
     }
+  };
+
+  const handleFormError = (errors) => {
+    // Display the first error as a toast message
+    const errorValues = Object.values(errors);
+    if (errorValues.length > 0) {
+      toast.error(errorValues[0].message);
+    }
+    return false;
   };
 
   const sendMail = async () => {
@@ -131,8 +166,13 @@ function SignUpForm({ setIsSignUp }) {
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
-      <ProfileImageUploader image={image} setImage={setImage} />
+    <form onSubmit={handleSubmit(onSubmit, handleFormError)} className="space-y-4">
+      <ProfileImageUploader
+        image={image}
+        setImage={setImage}
+        setIMageUpdated={setIMageUpdated}
+      
+      />
 
       <div className="space-y-1">
         <div className="relative">
@@ -141,41 +181,44 @@ function SignUpForm({ setIsSignUp }) {
             {...register("fullName")}
             placeholder="Full Name"
             className="w-full px-10 py-2 bg-white/10 hover:shadow-md border border-white/20 rounded-lg text-white placeholder:text-white/60 focus:outline-none focus:ring-2 focus:ring-pink-400"
+            required
           />
         </div>
-        {errors.fullName && (
-          <p className="text-red-500 text-sm">{errors.fullName.message}</p>
-        )}
       </div>
 
       <div className="space-y-2">
         <div className="flex items-center space-x-2">
-          <div className="relative w-full">
-            <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-white/60" />
-            <input
-              {...register("email")}
-              type="email"
-              required
-              placeholder="Email"
-              className="w-full pl-10 pr-3 py-2 bg-white/10 hover:shadow-md border border-white/20 rounded-lg text-white placeholder:text-white/60 focus:outline-none focus:ring-2 focus:ring-pink-400"
-            />
-          </div>
-          <button
-            type="button"
-            onClick={sendMail}
-            disabled={verified}
-            className={`px-4 py-2 rounded-lg transition ${
-              verified
-                ? "bg-green-500 text-white cursor-default"
-                : "bg-blue-500 text-white hover:bg-blue-600"
-            }`}
+          <div
+            className={`relative w-full flex rounded-lg ${
+              verified &&
+              "bg-gradient-to-r from-transparent to-green-500/80 opacity-75"
+            } `}
           >
-            {verified ? <Check size={20} /> : "Verify"}
-          </button>
+            <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-white/60" />
+            <div className="group flex w-full pl-10 pr-3 bg-white/10 hover:shadow-md border border-white/20 rounded-lg text-white focus-within:ring-2 focus-within:ring-pink-400">
+              <input
+                {...register("email")}
+                type="email"
+                required
+                placeholder="Email"
+                disabled={verified}
+                className={`text-white w-full placeholder:text-white/60 rounded-lg focus:outline-none bg-transparent disabled:bg-transparent hover:bg-transparent `}
+              />
+              <button
+                type="button"
+                onClick={sendMail}
+                disabled={verified}
+                className={`ml-auto px-4 py-2 rounded-lg transition ${
+                  verified
+                    ? "text-white cursor-default"
+                    : "hover:text-gray-800 cursor-pointer text-gray-300"
+                }`}
+              >
+                {verified ? <Check size={25} color="white" /> : "Verify"}
+              </button>
+            </div>
+          </div>
         </div>
-        {errors.email && (
-          <p className="text-red-500 text-sm">{errors.email.message}</p>
-        )}
         {isOTPOpen && (
           <Otp
             props={{ email, setVerified }}
@@ -184,156 +227,117 @@ function SignUpForm({ setIsSignUp }) {
         )}
       </div>
 
-      <div className="space-y-1">
-        <div className="relative">
-          <Phone className="absolute left-3 top-3 h-5 w-5 text-white/60" />
-          <input
-            {...register("phoneNumber")}
-            placeholder="Phone Number"
-            className="w-full px-10 py-2 bg-white/10 hover:shadow-md border border-white/20 rounded-lg text-white placeholder:text-white/60 focus:outline-none focus:ring-2 focus:ring-pink-400"
-          />
-        </div>
-        {errors.phoneNumber && (
-          <p className="text-red-500 text-sm">{errors.phoneNumber.message}</p>
-        )}
+      <div className="relative">
+        <Phone className="absolute left-3 top-3 h-5 w-5 text-white/60" />
+        <input
+          {...register("phoneNumber")}
+          placeholder="Phone Number"
+          className="w-full px-10 py-2 bg-white/10 hover:shadow-md border border-white/20 rounded-lg text-white placeholder:text-white/60 focus:outline-none focus:ring-2 focus:ring-pink-400"
+        />
       </div>
 
-      <div className="space-y-1">
-        <div className="relative">
-          <University className="absolute left-3 top-3 h-5 w-5 text-white/60" />
-          <input
-            {...register("institution")}
-            placeholder="Enter College name"
-            className="w-full px-10 py-2 bg-white/10 hover:shadow-md border border-white/20 rounded-lg text-white placeholder:text-white/60 focus:outline-none focus:ring-2 focus:ring-pink-400"
-          />
-        </div>
-        {errors.institution && (
-          <p className="text-red-500 text-sm">{errors.institution.message}</p>
-        )}
+      <div className="relative">
+        <University className="absolute left-3 top-3 h-5 w-5 text-white/60" />
+        <input
+          {...register("institution")}
+          placeholder="Enter College name"
+          className="w-full px-10 py-2 bg-white/10 hover:shadow-md border border-white/20 rounded-lg text-white placeholder:text-white/60 focus:outline-none focus:ring-2 focus:ring-pink-400"
+        />
       </div>
 
-      <div className="space-y-1">
-        <div className="relative">
-          <User className="absolute left-3 top-3 h-5 w-5 text-white/60" />
-          <select
-            {...register("gender")}
-            className="w-full px-10 py-2 bg-white/10 hover:shadow-md border border-white/20 rounded-lg text-white placeholder:text-white/60 focus:outline-none focus:ring-2 focus:ring-pink-400"
-          >
-            <option value="">Select Gender</option>
-            {genderOptions.map((gender) => (
-              <option
-                className="w-full p-2 rounded-lg bg-black/60 text-white outline-none"
-                key={gender}
-                value={gender}
-              >
-                {gender}
-              </option>
-            ))}
-          </select>
-        </div>
-        {errors.gender && (
-          <p className="text-red-500 text-sm">{errors.gender.message}</p>
-        )}
+      <div className="relative">
+        <User className="absolute left-3 top-3 h-5 w-5 text-white/60" />
+        <select
+          {...register("gender")}
+          className="w-full px-10 py-2 bg-white/10 hover:shadow-md border border-white/20 rounded-lg text-white placeholder:text-white/60 focus:outline-none focus:ring-2 focus:ring-pink-400"
+        >
+          <option value="">Select Gender</option>
+          {genderOptions.map((gender) => (
+            <option
+              className="w-full p-2 rounded-lg bg-black/60 text-white outline-none"
+              key={gender}
+              value={gender}
+            >
+              {gender}
+            </option>
+          ))}
+        </select>
       </div>
 
-      <div className="space-y-1">
-        <div className="relative">
-          <GraduationCap className="absolute left-3 top-3 h-5 w-5 text-white/60" />
-          <select
-            {...register("course")}
-            className="w-full px-10 py-2 bg-white/10 hover:shadow-md border border-white/20 rounded-lg text-white placeholder:text-white/60 focus:outline-none focus:ring-2 focus:ring-pink-400"
-          >
-            <option value="">Select Course</option>
-            {courses.map((course) => (
-              <option
-                className="w-full p-2 rounded-lg bg-black/60 text-white outline-none"
-                key={course}
-                value={course}
-              >
-                {course}
-              </option>
-            ))}
-          </select>
-        </div>
-        {errors.course && (
-          <p className="text-red-500 text-sm">{errors.course.message}</p>
-        )}
+      <div className="relative">
+        <GraduationCap className="absolute left-3 top-3 h-5 w-5 text-white/60" />
+        <select
+          {...register("course")}
+          className="w-full px-10 py-2 bg-white/10 hover:shadow-md border border-white/20 rounded-lg text-white placeholder:text-white/60 focus:outline-none focus:ring-2 focus:ring-pink-400"
+        >
+          <option value="">Select Course</option>
+          {courses.map((course) => (
+            <option
+              className="w-full p-2 rounded-lg bg-black/60 text-white outline-none"
+              key={course}
+              value={course}
+            >
+              {course}
+            </option>
+          ))}
+        </select>
       </div>
 
-      <div className="space-y-1">
-        <div className="relative">
-          <Calendar className="absolute left-3 top-3 h-5 w-5 text-white/60" />
-          <input
-            type="date"
-            {...register("dob")}
-            className="w-full px-10 py-2 bg-white/10 hover:shadow-md border border-white/20 rounded-lg text-white placeholder:text-white/60 focus:outline-none focus:ring-2 focus:ring-pink-400"
-            max={
-              new Date(new Date().setFullYear(new Date().getFullYear() - 5))
-                .toISOString()
-                .split("T")[0]
-            } // Set max date to 5 years ago
-          />
-        </div>
-        {errors.dob && (
-          <p className="text-red-500 text-sm">{errors.dob.message}</p>
-        )}
+      <div className="relative">
+        <Calendar className="absolute left-3 top-3 h-5 w-5 text-white/60" />
+        <input
+          type="date"
+          {...register("dob")}
+          className="w-full px-10 py-2 bg-white/10 hover:shadow-md border border-white/20 rounded-lg text-white placeholder:text-white/60 focus:outline-none focus:ring-2 focus:ring-pink-400"
+          max={
+            new Date(new Date().setFullYear(new Date().getFullYear() - 5))
+              .toISOString()
+              .split("T")[0]
+          } // Set max date to 5 years ago
+        />
       </div>
 
-      <div className="space-y-1">
-        <div className="relative">
-          <User className="absolute left-3 top-3 h-5 w-5 text-white/60" />
-          <input
-            type="text"
-            placeholder="Referral Id ABCD-1234 (Optional)"
-            {...register("referralId")}
-            className="w-full px-10 py-2 bg-white/10 border hover:shadow-md border-white/20 rounded-lg text-white placeholder:text-white/60 focus:outline-none focus:ring-2 focus:ring-pink-400"
-          />
-        </div>
+      <div className="relative">
+        <User className="absolute left-3 top-3 h-5 w-5 text-white/60" />
+        <input
+          type="text"
+          placeholder="Referral Id ABCD-1234 (Optional)"
+          {...register("referralId")}
+          className="w-full px-10 py-2 bg-white/10 border hover:shadow-md border-white/20 rounded-lg text-white placeholder:text-white/60 focus:outline-none focus:ring-2 focus:ring-pink-400"
+        />
       </div>
 
-      <div className="space-y-1">
-        <div className="relative">
-          <Lock className="absolute left-3 top-3 h-5 w-5 text-white/60" />
-          <input
-            type={showPassword ? "text" : "password"}
-            placeholder="Password"
-            {...register("password")}
-            className="w-full px-10 py-2 bg-white/10 border hover:shadow-md border-white/20 rounded-lg text-white placeholder:text-white/60 focus:outline-none focus:ring-2 focus:ring-pink-400"
-          />
-          <button
-            type="button"
-            className="absolute right-3 top-3 text-white/60"
-            onClick={() => setShowPassword(!showPassword)}
-          >
-            {showPassword ? <EyeOff /> : <Eye />}
-          </button>
-        </div>
-        {errors.password && (
-          <p className="text-red-500 text-sm">{errors.password.message}</p>
-        )}
+      <div className="relative">
+        <Lock className="absolute left-3 top-3 h-5 w-5 text-white/60" />
+        <input
+          type={showPassword ? "text" : "password"}
+          placeholder="Password"
+          {...register("password")}
+          className="w-full px-10 py-2 bg-white/10 border hover:shadow-md border-white/20 rounded-lg text-white placeholder:text-white/60 focus:outline-none focus:ring-2 focus:ring-pink-400"
+        />
+        <button
+          type="button"
+          className="absolute right-3 top-3 text-white/60"
+          onClick={() => setShowPassword(!showPassword)}
+        >
+          {showPassword ? <EyeOff /> : <Eye />}
+        </button>
       </div>
 
-      <div className="space-y-1">
-        <div className="relative">
-          <Lock className="absolute left-3 top-3 h-5 w-5 text-white/60" />
-          <input
-            type="password"
-            {...register("confirmPassword")}
-            placeholder="Confirm Password"
-            className="w-full px-10 py-2 bg-white/10 hover:shadow-md border border-white/20 rounded-lg text-white placeholder:text-white/60 focus:outline-none focus:ring-2 focus:ring-pink-400"
-          />
-        </div>
-        {errors.confirmPassword && (
-          <p className="text-red-500 text-sm">
-            {errors.confirmPassword.message}
-          </p>
-        )}
+      <div className="relative">
+        <Lock className="absolute left-3 top-3 h-5 w-5 text-white/60" />
+        <input
+          type="password"
+          {...register("confirmPassword")}
+          placeholder="Confirm Password"
+          className="w-full px-10 py-2 bg-white/10 hover:shadow-md border border-white/20 rounded-lg text-white placeholder:text-white/60 focus:outline-none focus:ring-2 focus:ring-pink-400"
+        />
       </div>
 
       <button
         type="submit"
         disabled={!verified}
-        className={`w-full p-2 rounded-lg text-white transition-all 
+        className={`cursor-pointer w-full p-2 rounded-lg text-white transition-all 
         ${
           verified
             ? "bg-gradient-to-r from-pink-500 to-purple-500 hover:from-pink-600 hover:to-purple-600"

@@ -11,7 +11,8 @@ import { useSelector } from "react-redux";
 const HeroSection = () => {
    const  user  = useSelector((state) => state.user.user);
   return (
-    <div className="relative w-full h-screen overflow-hidden">
+    <div className="relative w-full h-screen overflow-hidden shadow-[0_10px_20px_rgb(0,0,0)] transition duration-300 ease-in-out">
+
       <div className="absolute inset-0 flex items-center justify-center">
         {/* Background Video */}
         <video
