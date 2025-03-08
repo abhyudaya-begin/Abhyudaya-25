@@ -12,10 +12,6 @@ import Gallery from "./Gallery/Gallery";
 // Pages
 
 
-const Services = () => (
-  <div className="p-4 bg-white rounded-lg shadow">Services Page Content</div>
-);
-
 function Routing() {
   return (
     <div
@@ -28,7 +24,6 @@ function Routing() {
 
       <Routes>
         <Route path="/" element={<IndexHome />} />
-        <Route path="/services" element={<Services />} />
         <Route path="/about" element={<Members />} />
         <Route
           path="/campus-ambassador"
@@ -45,9 +40,7 @@ function Routing() {
         
       </Routes>
     </div>
-    // <>
-    // Hello
-    // </>
+  
   );
 }
 

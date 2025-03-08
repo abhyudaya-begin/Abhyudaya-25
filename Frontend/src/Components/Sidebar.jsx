@@ -24,7 +24,17 @@ const Sidebar = () => {
     const handleResize = () => {
       const mobile = window.innerWidth < 768;
       setIsMobile(mobile);
-      setIsSidebarOpen(!mobile);
+      setIsSidebarOpen(!mobile); 
+
+      
+        const width = sidebarRef.current.offsetWidth;
+        
+       
+        document.documentElement.style.setProperty(
+          "--sidebar-width",
+          mobile ? "0px" : `${width}px`
+        );
+      
     };
 
     window.addEventListener("resize", handleResize);
@@ -65,7 +75,7 @@ const Sidebar = () => {
       {/* Overlay for mobile */}
       {isMobile && isSidebarOpen && (
         <div
-          className="fixed inset-0 bg-black bg-opacity-50 z-30 transition-opacity duration-300"
+          className="fixed inset-0 bg-[rgba(0,0,0,0.4)] z-30 transition-opacity duration-300 "
           onClick={toggleSidebar}
         />
       )}
@@ -73,7 +83,7 @@ const Sidebar = () => {
       {/* Sidebar */}
       <div
         ref={sidebarRef}
-        className={`overflow-y-auto overflow-x-hidden fixed top-0 left-0 h-screen bg-gray-900 z-40 transition-all duration-300 ease-in-out ${
+        className={`sidebar overflow-y-auto overflow-x-hidden fixed top-0 left-0 h-screen bg-gray-900 z-40 transition-all duration-300 ease-in-out ${
           isSidebarOpen ? "translate-x-0" : "-translate-x-full"
         } ${isMobile ? "w-64" : "w-20 md:translate-x-0"}`}
       >
