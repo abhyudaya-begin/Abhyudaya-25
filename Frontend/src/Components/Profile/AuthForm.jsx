@@ -4,6 +4,7 @@ import SignUpForm from "./SignUpForm";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import ProfileCard from "./ProfileCard";
+import Abhyudaya from "../../assets/Logo-images/Abhyudaya.png";
 
 function AuthForm() {
   const [isSignUp, setIsSignUp] = useState(false);
@@ -28,7 +29,7 @@ function AuthForm() {
         <div className="p-6 space-y-4">
           <div className="flex items-center justify-between">
             <img
-              src="../src/assets/Logo-images/Abhyudaya.png"
+              src ={Abhyudaya}
               alt="Abhyudaya"
               className="h-8 w-auto"
             />
