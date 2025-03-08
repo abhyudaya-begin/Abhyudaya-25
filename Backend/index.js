@@ -7,6 +7,7 @@ const { attachUserWithTokenVerification } = require("./authentication/UserAuth")
 const PORT = process.env.PORT || 8000;
 const dotenv = require("dotenv");
 const cors = require("cors");
+const cookieParser = require("cookie-parser");
 const { checkUser } = require("./authentication/Middleware");
 
 dotenv.config();
@@ -24,7 +25,7 @@ const app = express();
 // Enable CORS globally
 app.use(cors(corsOptions));
 app.options("*", cors(corsOptions)); // This will handle preflight requests for all routes
-
+app.use(cookieParser());
 app.use(express.json());
 app.use(attachUserWithTokenVerification);
 

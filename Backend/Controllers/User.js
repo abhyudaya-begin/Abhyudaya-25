@@ -37,7 +37,7 @@ const registerUser = async (req, res) => {
         profilePicture
       ].every((field) => (typeof field === "string" ? field.trim() : field))
     ) {
-     console.log(profilePicture)
+    
       return res.status(400).json(new ApiError(400, "All fields are required"));
     }
 
@@ -191,7 +191,9 @@ const deleteUser = async (req, res) => {
 // Update User Details
 const updateUser = async (req, res) => {
   try {
+    
     const { email, ABH_ID, ...updateData } = req.body;
+  
 
     if (!email && !ABH_ID) {
       return res
@@ -319,6 +321,8 @@ const unregisterEvent = async (req, res) => {
     return res.status(500).json(new ApiError(500, "Something went wrong!"));
   }
 };
+
+
 
 module.exports = {
   registerUser,

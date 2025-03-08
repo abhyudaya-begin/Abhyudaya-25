@@ -1,30 +1,30 @@
-const jwt = require("jsonwebtoken");
-const dotenv = require("dotenv");
-dotenv.config();
-
-
 
 // middleware for attaching per request
+const jwt = require("jsonwebtoken");
+const dotenv = require("dotenv");
+
+dotenv.config();
+
+// Middleware for attaching user from token
 const attachUserWithTokenVerification = async (req, res, next) => {
-    try {
-      const token = req.cookies?.user; // Get token from cookie
-  
-      if (token) {
-        const decoded = jwt.verify(token, process.env.USERNAME_SECRET);
-  
-        if (decoded) {
-          req.user = { ...decoded }; // Attach only token data to req.user
-        }
-      }
-    } catch (error) {
-      req.user = null; // Clear user if token is invalid
+  try {
+    const token = req.cookies?.user; // ✅ Corrected (req.cookies instead of req.cookie)
+
+    if (!token) return next(); // If no token, continue without modifying req.user
+
+    const decoded = jwt.verify(token, process.env.USERNAME_SECRET);
+    if (decoded) {
+      req.user = decoded; // ✅ Directly attach decoded payload
     }
-  
-    next(); // Proceed regardless of token verification
-  };
+  } catch (error) {
+    req.user = null; // Clear user if token is invalid
+  }
+
+  next(); // Proceed regardless of token verification
+};
 
 
-  
+
 
 const generateToken = (user) => {
   const payload = {
