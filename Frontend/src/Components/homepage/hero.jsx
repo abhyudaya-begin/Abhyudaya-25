@@ -9,7 +9,7 @@ import Abhyudaya from "../../assets/Logo-images/Abhyudaya-combined.png";
 import { useSelector } from "react-redux";
 
 const HeroSection = () => {
-   const  user  = useSelector((state) => state.user.user);
+   const  user  = useSelector((state) => state.user);
   return (
     <div className="relative w-full h-screen overflow-hidden shadow-[0_10px_20px_rgb(0,0,0)] transition duration-300 ease-in-out">
 
