@@ -5,7 +5,7 @@ import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 export default function Hero2Section() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const  user  = useSelector((state) => state.user.user);
+  const  user  = useSelector((state) => state.user);
 
   return (
     <div className="relative overflow-hidden ">
