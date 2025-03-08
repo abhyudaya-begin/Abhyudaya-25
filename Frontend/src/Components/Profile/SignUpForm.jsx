@@ -34,6 +34,7 @@ const courses = [
   "BA",
   "B.Sc",
   "M.Sc",
+  "PhD",
   "Others",
 ];
 
