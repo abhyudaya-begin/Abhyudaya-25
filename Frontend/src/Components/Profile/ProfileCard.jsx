@@ -128,7 +128,7 @@ const ProfileCard = () => {
               Registered Events
             </h3>
 
-            {user.eventsParticipated.length !== 0 ? (
+            {user.eventsParticipated?.length !== 0 ? (
               <div className="space-y-4">
                 {user.eventsParticipated.map((event) => (
                   <div
