@@ -2,6 +2,7 @@ const {ApiError} = require("../utils/ApiError");
 
 // Middleware to check if user exists in req.user
 const checkUser = (req, res, next) => {
+ 
   if (!req.user) {
     return res.status(401).json(new ApiError(401, "Unauthorized: User not logged in"));
   }
