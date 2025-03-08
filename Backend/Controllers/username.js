@@ -18,6 +18,11 @@ const generateUser = async (fullName, phone) => {
   }
 
   const generateUsername = (fullName, phone) => {
+    if(fullName.length < 4)
+    {
+      fullName+="---";
+    }
+
     const namePart = fullName.slice(0, 4).toUpperCase();
     const phonePart = phone.replace(/-/g, "").slice(-4); // Get last 4 digits
     return `${namePart}${phonePart}`;

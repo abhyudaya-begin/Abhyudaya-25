@@ -19,7 +19,8 @@ const registerUser = async (req, res) => {
       institution,
       course,
       gender,
-      referallId
+      referallId,
+      profilePicture
     } = req.body;
 
 
@@ -33,9 +34,10 @@ const registerUser = async (req, res) => {
         institution,
         course,
         gender,
+        profilePicture
       ].every((field) => (typeof field === "string" ? field.trim() : field))
     ) {
-     
+     console.log(profilePicture)
       return res.status(400).json(new ApiError(400, "All fields are required"));
     }
 
@@ -69,7 +71,8 @@ const registerUser = async (req, res) => {
       institution,
       course,
       gender,
-      referallId
+      referallId,
+      profilePicture
     });
 
     return res

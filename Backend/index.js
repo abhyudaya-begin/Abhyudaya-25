@@ -30,7 +30,7 @@ app.use(attachUserWithTokenVerification);
 
 // Ping request testing
 app.get("/", (req, res) => {
- return  res.send("Ping from the server!");
+ return  res.send({error: "The requested URL is not accessible!"});
 });
 
 
