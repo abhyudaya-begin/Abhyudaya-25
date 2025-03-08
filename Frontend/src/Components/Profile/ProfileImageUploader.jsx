@@ -22,7 +22,7 @@ function ProfileImageUploader({ image, setImage, setIMageUpdated }) {
   };
 
   return (
-    <div className="flex items-center gap-4">
+    <div className="flex items-center justify-between px-4">
       <img
         src={tempImage}
         alt="Profile"

@@ -1,17 +1,16 @@
-import { configureStore , combineReducers} from '@reduxjs/toolkit';
-import userReducer from './UserSlice';  // Adjust the path as needed
-import themeReducer from './themeSlice'
-import { persistReducer, persistStore } from 'redux-persist';
-import storage from 'redux-persist/lib/storage';
-
+import { configureStore, combineReducers } from "@reduxjs/toolkit";
+import userReducer from "./UserSlice";  // Adjust path
+import themeReducer from "./themeSlice";
+import { persistReducer, persistStore } from "redux-persist";
+import storage from "redux-persist/lib/storage";
 
 const rootReducer = combineReducers({
-  user: userReducer,
+  user: userReducer,   // `user` state will now be stored at `state.user`
   theme: themeReducer,
 });
 
 const persistConfig = {
-  key: 'root',
+  key: "root",
   storage,
   version: 1,
 };

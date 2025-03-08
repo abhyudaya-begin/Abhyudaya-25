@@ -2,15 +2,17 @@
 import React, { useState } from 'react'; 
 import { motion } from "framer-motion";
 import CAApplicationPopup from './CAApplicationPopup';
+import { useSelector } from 'react-redux';
 
 export default function WhatIsCA({ contentVariants, itemVariants, setActiveTab }) {
   const [isCAApplicationPopupOpen, setIsCAApplicationPopupOpen] = useState(false);
-  const [isRegistered, setIsRegistered] = useState(false); // Track registration status
+  const user = useSelector(state=> state.user);
+  const [isRegistered, setIsRegistered] = useState(user?.isCampusAmbassador || false); 
 
   // Function to handle successful registration
   const handleSuccess = () => {
-    setIsRegistered(true); // Update state when registration is successful
-    setIsCAApplicationPopupOpen(false); // Close popup after success
+    setIsRegistered(true); 
+    setIsCAApplicationPopupOpen(false); 
   };
 
   return (

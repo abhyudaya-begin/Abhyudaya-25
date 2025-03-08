@@ -5,7 +5,6 @@ import { logout } from "../Redux/UserSlice";
 import { useSelector } from "react-redux";
 //  import { supabase } from "./Supabse";
 
-
 // const generateReferralId = (name, number) => {
 //   if (!name || !number) return "INVALID_INPUT";
 //   const namePart = name.replace(/\s+/g, "").substring(0, 4).toUpperCase();
@@ -15,12 +14,10 @@ import { useSelector } from "react-redux";
 // };
 
 const ProfileCard = () => {
-  const user = useSelector(state=> state.user.user.user) ;
-   
-  const [copied, setCopied] = useState(false);
+  const user = useSelector((state) => state.user);
 
-  // console.log(user.image);
-  
+
+  const [copied, setCopied] = useState(false);
 
   // const referralId = generateReferralId(user.name, user.phone);
   useEffect(() => {
@@ -32,24 +29,18 @@ const ProfileCard = () => {
     setTimeout(() => setCopied(false), 2000);
   };
 
-
-  
-
-
-
   const dispatch = useDispatch();
 
   const handleLogout = () => {
     dispatch(logout()); // Dispatch Redux logout action
     window.location.reload(); // Reload to reflect logout state
   };
-  
-const dob = new Date(user.dob).toLocaleDateString("en-US", {
-  year: "numeric",
-  month: "long",
-  day: "numeric",
-});
 
+  const dob = new Date(user.dob).toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  });
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-900 to-[#6A1B9A] p-4">
@@ -63,9 +54,6 @@ const dob = new Date(user.dob).toLocaleDateString("en-US", {
                 alt={user.fullName}
                 className="w-24 h-24 rounded-full border-4 border-white/30 shadow-lg"
               />
-           
-             
-             
             </div>
 
             <div className="mt-4 text-white/80 space-y-2">
@@ -87,9 +75,7 @@ const dob = new Date(user.dob).toLocaleDateString("en-US", {
                 {user.gender}
               </p>
               <p>
-                <span className="font-bold text-blue-300">
-                  institution:
-                </span>{" "}
+                <span className="font-bold text-blue-300">institution:</span>{" "}
                 {user.institution}
               </p>
               <p>
@@ -142,7 +128,7 @@ const dob = new Date(user.dob).toLocaleDateString("en-US", {
               Registered Events
             </h3>
 
-            {user.eventsParticipated.length!==0? (
+            {user.eventsParticipated.length !== 0 ? (
               <div className="space-y-4">
                 {user.eventsParticipated.map((event) => (
                   <div

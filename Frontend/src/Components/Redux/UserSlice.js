@@ -2,26 +2,12 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const userSlice = createSlice({
   name: "user",
-  initialState: {
-    user: null,
-    isLoading: false,
-  },
+  initialState: null, // Store user object directly
   reducers: {
-    // Set user when logging in
-    setUser: (state, action) => {
-      state.user = action.payload;
-    },
-    // Set loading state
-    setLoading: (state, action) => {
-      state.isLoading = action.payload;
-    },
-    // Logout user
-    logout: (state) => {
-      state.user = null; // Clear user data
-      localStorage.removeItem("authToken"); // Remove token from localStorage
-    },
+    setUser: (state, action) => action.payload, // Store user directly
+    logout: () => null, // Reset state on logout
   },
 });
 
-export const { setUser, setLoading, logout } = userSlice.actions;
+export const { setUser, logout } = userSlice.actions;
 export default userSlice.reducer;

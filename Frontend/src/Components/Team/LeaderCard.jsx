@@ -4,7 +4,7 @@ function LeaderCard({ member }) {
   return (
     <div className="w-full max-w-3xl flex items-center flex-col md:flex-row bg-white rounded-xl shadow-lg overflow-hidden">
       {/* Image Section */}
-      <div className="md:w-3/7 w-full h-full max-h-[400px]">
+      <div className="md:w-3/7 w-full h-full max-h-[460px]">
         <img
           src={member.imgLink}
           alt={member.name}
