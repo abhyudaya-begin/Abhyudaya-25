@@ -8,6 +8,8 @@ import {
   FaTimes,
   FaUser,
 } from "react-icons/fa";
+import { GoSponsorTiers } from "react-icons/go";
+
 import { IoMdPhotos } from "react-icons/io";
 import { PiMicrophoneStageFill } from "react-icons/pi";
 import { MdContactMail } from "react-icons/md";
@@ -18,7 +20,7 @@ const Sidebar = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(window.innerWidth >= 768);
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
   const sidebarRef = useRef(null);
-  
+  const [active, setActive] = useState( null);
   useEffect(() => {
     const handleResize = () => {
       const mobile = window.innerWidth < 768;
@@ -66,6 +68,12 @@ const Sidebar = () => {
       path: "/events",
     },
     {
+      id: "sponsors",
+      icon: <GoSponsorTiers size={25} color="white" />,
+      label: "Our Sponsors",
+      path: "/sponsors",
+    },
+    {
       id: "campus-ambassador",
       icon: <FaUserGraduate size={20} color="white" />,
       label: "Campus Ambassador",
@@ -101,6 +109,7 @@ const Sidebar = () => {
       ) {
         setIsSidebarOpen(false);
       }
+      console.log(location.pathname)
     };
 
     document.addEventListener("mousedown", handleClickOutside);
@@ -170,10 +179,12 @@ const Sidebar = () => {
                   className={`flex items-center ${
                     isMobile ? "px-4" : "justify-center"
                   } py-3 rounded-lg transition-colors relative group ${
-                    location.pathname === item.path
+                    location.pathname === `/${item.path}`
                       ? "bg-gray-700 text-white"
                       : "text-gray-300 hover:bg-gray-700 hover:text-white"
-                  }`}
+                  } `}
+
+
                 >
                   <span className="text-current">{item.icon}</span>
 

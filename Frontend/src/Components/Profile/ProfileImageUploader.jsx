@@ -1,11 +1,10 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useDeferredValue, useEffect } from "react";
 import toast from "react-hot-toast";
-import { useSupabaseUpload } from "./useSupabaseUpload";
 
-function ProfileImageUploader({ image, setImage }) {
+function ProfileImageUploader({ image, setImage, setIMageUpdated }) {
   const [uploading, setUploading] = useState(false);
+  const [tempImage, setTempImage] = useState("https://placehold.co/100x100");
   const fileInputRef = useRef(null);
-  const { uploadImage } = useSupabaseUpload();
 
   const triggerFileInput = () => {
     fileInputRef.current?.click();
@@ -15,24 +14,17 @@ function ProfileImageUploader({ image, setImage }) {
     const avatarFile = event.target.files[0]; // Get the selected file
     if (!avatarFile) return;
 
-    setUploading(true); // Start loading indicator
+    const imageUrl = URL.createObjectURL(avatarFile); // Convert file to URL
+    setImage(avatarFile);
+    setTempImage(imageUrl);
 
-    try {
-      const imageUrl = await uploadImage(avatarFile);
-      setImage(imageUrl); // Update image state to show uploaded image
-      toast.success("Image uploaded successfully!");
-    } catch (err) {
-      console.error("Error during image upload:", err);
-      toast.error("Image upload failed!");
-    } finally {
-      setUploading(false);
-    }
+    setIMageUpdated(true);
   };
 
   return (
     <div className="flex items-center gap-4">
       <img
-        src={image}
+        src={tempImage}
         alt="Profile"
         className="w-24 h-24 rounded-full border-4 border-white/30 shadow-lg object-cover"
       />
@@ -50,6 +42,7 @@ function ProfileImageUploader({ image, setImage }) {
         onChange={handleImageUpload}
         className="hidden"
         accept="image/*"
+      
       />
     </div>
   );
