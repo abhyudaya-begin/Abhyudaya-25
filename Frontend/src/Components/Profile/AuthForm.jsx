@@ -8,7 +8,7 @@ import Abhyudaya from "../../assets/Logo-images/Abhyudaya.png";
 
 function AuthForm() {
   const [isSignUp, setIsSignUp] = useState(false);
-  const  user  = useSelector((state) => state.user.user);
+  const  user  = useSelector((state) => state.user);
   const navigate = useNavigate();
   const [showProfile, setShowProfile] = useState(false)
 

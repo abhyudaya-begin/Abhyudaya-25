@@ -5,7 +5,7 @@ import axios from "axios";
 import { Mail, Lock } from "lucide-react";
 import { useDispatch, useSelector } from "react-redux";
 import { setUser } from "../Redux/UserSlice";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import toast from "react-hot-toast";
 
 const signInSchema = z.object({
@@ -14,18 +14,17 @@ const signInSchema = z.object({
 });
 
 function SignInForm() {
+  const [clicked, setClicked] = useState(false);
   const { register, handleSubmit } = useForm({
     resolver: zodResolver(signInSchema),
   });
   const dispatch = useDispatch();
-  const user = useSelector((state) => state.user.user);
-
-  useEffect(() => {
- 
-  }, []);
   
+  useEffect(() => {}, []);
+
   const onSubmit = async (data) => {
     try {
+      setClicked(true);
       console.log(import.meta.env.VITE_BACKEND_API_URL);
       const res = await axios.post(
         `${import.meta.env.VITE_BACKEND_API_URL}users/login`,
@@ -34,12 +33,13 @@ function SignInForm() {
           withCredentials: true, // This sends cookies to backend
         }
       );
-
-      dispatch(setUser({ user: res.data.data })); // Dispatch user data to Redux
+      
+      dispatch(setUser( res.data.data )); // Dispatch user data to Redux
       toast.success("Sign In Successful");
     } catch (error) {
       toast.error(error.response.data.errorMessage || "Sign In Failed");
-     
+    } finally {
+      setClicked(false);
     }
   };
 
@@ -63,6 +63,7 @@ function SignInForm() {
         />
       </div>
       <button
+        disabled={clicked}
         type="submit"
         className="w-full bg-gradient-to-r from-pink-500 to-purple-500 p-2 rounded-lg text-white hover:from-pink-600 hover:to-purple-600"
       >

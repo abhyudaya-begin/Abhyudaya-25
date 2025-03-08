@@ -69,6 +69,8 @@ function SignUpForm({ setIsSignUp }) {
   const [verified, setVerified] = useState(false);
   const [image, setImage] = useState(null); // Default Image
   const [imageUpdated, setIMageUpdated] = useState(false);
+  const [clicked, setClicked] = useState(false);
+  const [clickedForEmail, setClickedForEmail] = useState(false);
 
   const navigate = useNavigate();
   const {
@@ -102,6 +104,7 @@ function SignUpForm({ setIsSignUp }) {
         toast.error("Please upload image first!");
         return;
       }
+      setClicked(true);
       const { confirmPassword, ...filteredData } = data;
       const { fullName, ...restAll } = filteredData;
 
@@ -128,6 +131,9 @@ function SignUpForm({ setIsSignUp }) {
       console.log(error);
       toast.error(error.response?.data?.errorMessage || "Sign up Failed");
     }
+    finally{
+      setClicked(false);
+    }
   };
 
   const handleFormError = (errors) => {
@@ -141,10 +147,12 @@ function SignUpForm({ setIsSignUp }) {
 
   const sendMail = async () => {
     try {
+      setClickedForEmail(true);
       if (!email) {
         toast.error("Please enter your email");
         return;
       }
+    
 
       const res = await axios.post(
         `${import.meta.env.VITE_BACKEND_API_URL}verify/email`,
@@ -163,6 +171,9 @@ function SignUpForm({ setIsSignUp }) {
       } else {
         toast.error("Email Already Exists!");
       }
+    }
+    finally{
+      setClickedForEmail(false)
     }
   };
 
@@ -202,7 +213,7 @@ function SignUpForm({ setIsSignUp }) {
                 type="email"
                 required
                 placeholder="Email"
-                disabled={verified}
+                disabled={verified || clickedForEmail}
                 className={`text-white w-full placeholder:text-white/60 rounded-lg focus:outline-none bg-transparent disabled:bg-transparent hover:bg-transparent `}
               />
               <button
@@ -288,6 +299,7 @@ function SignUpForm({ setIsSignUp }) {
         <Calendar className="absolute left-3 top-3 h-5 w-5 text-white/60" />
         <input
           type="date"
+          
           {...register("dob")}
           className="w-full px-10 py-2 bg-white/10 hover:shadow-md border border-white/20 rounded-lg text-white placeholder:text-white/60 focus:outline-none focus:ring-2 focus:ring-pink-400"
           max={
@@ -337,7 +349,8 @@ function SignUpForm({ setIsSignUp }) {
 
       <button
         type="submit"
-        disabled={!verified}
+        disabled={!verified || clicked}
+        
         className={`cursor-pointer w-full p-2 rounded-lg text-white transition-all 
         ${
           verified
