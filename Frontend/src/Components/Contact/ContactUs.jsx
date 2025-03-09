@@ -24,7 +24,7 @@ const ContactUs = () => {
   };
 
   return (
-    <div className="min-h-screen  bg-black/60 flex items-center justify-center p-4 sm:p-8 md:p-12 lg:p-16 xl:p-24">
+    <div className="min-h-screen  bg-[#120c0f] flex items-center justify-center p-4 sm:p-8 md:p-12 lg:p-16 xl:p-24">
       <div className="w-full max-w-6xl mx-4 sm:mx-8 md:mx-12 lg:mx-16 xl:mx-24 flex flex-col md:flex-row rounded-3xl overflow-hidden shadow-2xl">
         {/* Left Section */}
         <div className="w-full md:w-1/2 bg-[#2d1b42]  p-6 sm:p-8 md:p-10 lg:p-12 flex flex-col items-center">
