@@ -4,9 +4,9 @@ const teamsData = [
     "Name": "Aryan Singh",
     "Year": "Final Year",
     "Branch": "CSE",
-    "EmailId": "",
-    "LinkedInId": "https://www.linkedin.com/in/aryan-singh-7b1b3b228",
-    "InstaId": "aryansingh_071v6c4l0c5s6j7",
+    "Email ID": "",
+    "LinkedIn ID": "https://www.linkedin.com/in/aryan-singh-7b1b3b228",
+    "Insta ID": "https://www.instagram.com/aryansingh_07?igshid=1v6c4l0c5s6j7",
     "Photo": "https://bmpwmkwijlrnrrywhqsp.supabase.co/storage/v1/object/sign/Team/Aryan_Singh.jpg?token"
   },
   {
@@ -14,19 +14,19 @@ const teamsData = [
     "Name": "Pritish Tomar",
     "Year": "Final Year",
     "Branch": "IT",
-    "EmailId": "pritishtomar2004@gmail.com",
-    "LinkedInId": "https://www.linkedin.com/in/pritish-tomar/",
-    "InstaId": "pritiish.tomar/",
-    "Photo": "https://i.ibb.co/W4qPk80b/Pritish-tomar.jpg"
+    "Email ID": "pritishtomar2004@gmail.com",
+    "LinkedIn ID": "https://www.linkedin.com/in/pritish-tomar/",
+    "Insta ID": "https://www.instagram.com/pritiish.tomar/",
+    "Photo": "https://i.postimg.cc/YqZvNgGS/Pritish-tomar.jpg"
   },
   {
     "Position ": null,
     "Name": "Tushar Gupta",
     "Year": "Final Year",
     "Branch": "ECE",
-    "EmailId": "guptatushar015@gmail.com",
-    "LinkedInId": "https://www.linkedin.com/in/tushar-gupta-s/",
-    "InstaId": "___tushargupta/",
+    "Email ID": "guptatushar015@gmail.com",
+    "LinkedIn ID": "https://www.linkedin.com/in/tushar-gupta-s/",
+    "Insta ID": "https://www.instagram.com/___tushargupta/",
     "Photo": "https://i.ibb.co/bgkXZ07c/Whats-App-Image-2025-03-10-at-15-58-08-43dc2cbf.jpg"
   },
 
@@ -38,7 +38,7 @@ const teamsData = [
     EmailId: "jayant24sha@gmail.com",
     LinkedInId: "linkedin.com/in/jayant24dec",
     InstaId: "jayant24dec",
-    Photo: "https://i.ibb.co/Y7Tz0vP6/Jayant-Lal.jpg"
+    Photo: "https://i.postimg.cc/dQndCLj7/Jayant-Lal.jpg"
   },
   {
     Position: "Executive member ",
@@ -48,7 +48,7 @@ const teamsData = [
     EmailId: "ishanmishra.1614@gmail.com",
     LinkedInId: "https://www.linkedin.com/in/ishan-mishra-ab108b228/",
     InstaId: "_i.mishra_",
-    Photo: "https://i.ibb.co/Y7HjtxnK/Ishan-Mishra.jpg"
+    Photo: "https://i.postimg.cc/sDNhnq8s/Ishan-Mishra.jpg"
   },
   {
     Position: "Executive member ",
@@ -58,7 +58,7 @@ const teamsData = [
     EmailId: "mayankjaiswal0308@gmail.com",
     LinkedInId: "https://www.linkedin.com/in/mayank-jaiswal-071b47255",
     InstaId: "mayankjaiswal0308",
-    Photo: "https://i.ibb.co/7xWYn2SB/Mayank-Jaiswal.jpg"
+    Photo: "https://i.postimg.cc/TP8Wxmfs/Mayank-Jaiswal.jpg"
   },
   {
     Position: "Executive member ",
@@ -68,7 +68,7 @@ const teamsData = [
     EmailId: "kumarakshay99808@gmail.com",
     LinkedInId: "Akshay kumar",
     InstaId: "ax.shayy__",
-    Photo: "https://i.ibb.co/hFwsTCV1/Akshay-Kumar.jpg"
+    Photo: "https://i.postimg.cc/sxPTPyKj/Akshay-Kumar.jpg"
   },
   {
     Position: "Executive member ",
@@ -78,7 +78,7 @@ const teamsData = [
     EmailId: "ankursvansha@gmail.com",
     LinkedInId: "",
     InstaId: "a.vansha",
-    Photo: "https://i.ibb.co/Y4b8QJcH/Ankur-Vansha.jpg"
+    Photo: "https://i.postimg.cc/gjKKXskr/Ankur-Vansha.jpg"
   },
   {
     Position: "Executive member ",
@@ -87,8 +87,8 @@ const teamsData = [
     Branch: "CSE",
     EmailId: "saanvigupta174@gmail.com",
     LinkedInId: "....",
-    InstaId: "saanviii17",
-    Photo: "https://i.ibb.co/pvyFbfqJ/Saanvi-Gupta.jpg"
+    InstaId: "https://www.instagram.com/saanviii17?igsh=dDkyZWpidnM0d2lq",
+    Photo: "https://i.postimg.cc/5yjtLNfv/Saanvi-Gupta.jpg"
   },
   {
     Position: "Executive member ",
@@ -98,7 +98,7 @@ const teamsData = [
     EmailId: "harshitamishra912@gmail.com ",
     LinkedInId: "https://www.linkedin.com/in/harshita-mishra-66108b228/",
     InstaId: "_harrshhitaa_",
-    Photo: "https://i.ibb.co/ynYz2jkq/Harshita-Mishra.jpg"
+    Photo: "https://i.postimg.cc/k4m8QSHS/Harshita-Mishra.jpg"
   },
   {
     Position: "Executive member ",
@@ -106,9 +106,9 @@ const teamsData = [
     Year: "Final Year",
     Branch: "CE",
     EmailId: "pandeyrobinhoodbrile@gmail.com",
-    LinkedInId: "https://www.linkedin.com/in",
-    InstaId: "robinhood__beast/",
-    Photo: "https://i.ibb.co/wht9xK4v/Aryan-Raj-Pandey.jpg"
+    LinkedInId: "",
+    InstaId: "",
+    Photo: "https://i.postimg.cc/m28wTm55/Aryan-Raj-Pandey.jpg"
 
   },
   {
@@ -118,18 +118,18 @@ const teamsData = [
     Branch: "IT",
     EmailId: "awantikakrishna16@gmail.com",
     LinkedInId: "https://www.linkedin.com/in/awantika-krishna-422101228",
-    InstaId: "i_want_tika.22",
-    Photo: "https://i.ibb.co/qMjbvYRy/Awantika-Krishna.jpg"
+    InstaId: "https://www.instagram.com/i_want_tika.22?igsh=aGplNDF5cm1kM3c0",
+    Photo: "https://i.postimg.cc/rptCCMFB/Awantika-Krishna.jpg"
   },
   {
     Position: "Executive member ",
-    Name: "Vanshika Verma",
+    Name: "Vandhika Verma",
     Year: "Final Year",
     Branch: "B.pharma",
-    EmailId: "vanshikav",
-    LinkedInId: "https://www.linkedin.com/in/vanshika-verma-115323230/",
-    InstaId: "vanshiika.verma",
-    Photo: "https://i.ibb.co/jkd4bB0t/Vanshika-Verma.jpg "
+    EmailId: "",
+    LinkedInId: "",
+    InstaId: "",
+    Photo: "https://i.postimg.cc/c1VKww8L/Vanshika-Verma.jpg"
   },
   {
     Position: "Executive member ",
@@ -138,8 +138,8 @@ const teamsData = [
     Branch: "EE",
     EmailId: "yuvrajvaibhav71@gmail.com ",
     LinkedInId: "https://www.linkedin.com/in/akanksha-pal-855696230",
-    InstaId: "akankshaaa_17",
-    Photo: "https://i.ibb.co/4nvdvvtq/Akanksha-Pal.jpg"
+    InstaId: "https://www.instagram.com/akankshaaa_17_?igsh=MWc0ejgxbmdpczIxdA==",
+    Photo: "https://i.postimg.cc/nL5Sp3CJ/Akanksha-Pal.jpg"
   },
   {
     Position: "Executive member ",
@@ -149,7 +149,7 @@ const teamsData = [
     EmailId: "satishkumar00k@gmail.com",
     LinkedInId: "https://linkedin.com/in/satishkumar-263290235",
     InstaId: "Satish8569kumar ",
-    Photo: "https://i.ibb.co/fd4mBRsr/Satish-Kumar.jpg"
+    Photo: "https://i.postimg.cc/k59Xwyn7/Satish-Kumar.jpg"
   },
   {
     Position: "Executive member ",
@@ -159,7 +159,7 @@ const teamsData = [
     EmailId: "rahulsingh914491@gmail.com",
     LinkedInId: "rahulsingh108",
     InstaId: "rahulunscripted_",
-    Photo: "https://i.ibb.co/HDxdPch3/Rahul-Singh.jpg"
+    Photo: "https://i.postimg.cc/xdyqS4sk/Rahul-Singh.jpg"
   },
   {
     Position: "Executive member ",
@@ -169,7 +169,7 @@ const teamsData = [
     EmailId: "lavanyagupta844@gmail.com",
     LinkedInId: "www.linkedin.com/in/lavanya-gupta-b20089228",
     InstaId: "lav.anyagupta",
-    Photo: "https://i.ibb.co/KjHNMPLg/Lavanya-Gupta.jpg"
+    Photo: "https://i.postimg.cc/L8gZGvKf/Lavanya-Gupta.jpg"
   },
   {
     Position: "Executive member ",
@@ -178,8 +178,8 @@ const teamsData = [
     Branch: "CSE",
     EmailId: "khwaabjaiswal2902@gmail.com",
     LinkedInId: "https://www.linkedin.com/in/khwaab-jaiswal?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-    InstaId: "khwaab.jais",
-    Photo: "https://i.ibb.co/HfxPHhxB/khwaab-jaiswal.jpg"
+    InstaId: "https://www.instagram.com/khwaab.jais?igsh=MTB2cmNlNGVwaGtqYg==",
+    Photo: "https://i.postimg.cc/J4nX5Mpp/khwaab-jaiswal.jpg"
   },
   {
     Position: "Executive member ",
@@ -189,47 +189,37 @@ const teamsData = [
     EmailId: "sumitwatson69@gmail.com",
     LinkedInId: "www.linkedin.com/in/sumit-kumar-bbb38b230",
     InstaId: "watson.sumit",
-    Photo: "https://i.ibb.co/6cFz2Y7h/Sumit-Kumar.jpg"
+    Photo: "https://i.postimg.cc/C1506P9p/Sumit-Kumar.jpg"
   },
   {
     "Position ": null,
     "Name": "Shivam Rai ",
     "Year": "3rd Year",
     "Branch": "CSE",
-    "EmailId": "shivamraianil@gmail.com",
-    "LinkedInId": "https://www.linkedin.com/in/shivam-rai-a64b84298",  
-    "InstaId": "shivam_rai_2299",
-    "Photo": "https://i.ibb.co/NnT1LwdT/Shivam-rai.jpg"
+    "Email ID": "shivamraianil@gmail.com",
+    "LinkedIn ID": "https://www.linkedin.com/in/shivam-rai-a64b84298",  
+    "Insta ID": "https://www.instagram.com/shivam_rai_2299?igsh=dm5scjJpOHYwOGdx",
+    "Photo": "https://i.postimg.cc/SKrQPzsC/Shivam-rai.jpg"
   },
   {
     "Position ": null,
     "Name": "Akshat Saxena",
     "Year": "3rd Year",
     "Branch": "IT",
-    "EmailId": "akshatsaxena.work1@gmail.com",
-    "LinkedInId" : "https://www.linkedin.com/in/akshat-saxena-26073a229?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-    "InstaId": "i.akshatsaxena==",
-    "Photo": "https://i.ibb.co/Myq3jkR1/Akshat-saxena.jpg"
+    "Email ID": "akshatsaxena.work1@gmail.com",
+    "LinkedIn ID" : "https://www.linkedin.com/in/akshat-saxena-26073a229?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+    "Insta ID": "https://www.instagram.com/i.akshatsaxena?igsh=MXMwYzlzYW9xcTZjYg==",
+    "Photo": "https://i.postimg.cc/MKxP6MKv/Akshat-saxena.jpg"
   },
   {
     "Position ": null,
     "Name": "Shreyas Kumar",
     "Year": "3rd Year",
     "Branch": "CSE",
-    "EmailId": "shreyaskumar0411@gmail.com",
-    "LinkedInId" : "https://www.linkedin.com/in/shreyas-kumar-416093230?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-    "InstaId": "shreyas_kumar_411==",
-    "Photo": "https://i.ibb.co/xqqqDVtj/Shreyas-Kumar.jpg"
-  },
-  {
-    "Position ": null,
-    "Name": "Harshit Pandey ",
-    "Year": "3rd Year",
-    "Branch": "Mech",
-    "EmailId": "harshitpandey8719@gmail.com",
-    "LinkedInId": "http://www.linkedin.com/in/harshit-pandit",
-    "InstaId": "harshit__panditt",
-    "Photo": "https://i.ibb.co/4gs8vg6k/Harshit-Pandey.png"
+    "Email ID": "shreyaskumar0411@gmail.com",
+    "LinkedIn ID" : "https://www.linkedin.com/in/shreyas-kumar-416093230?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+    "Insta ID": "https://www.instagram.com/shreyas_kumar_411?igsh=MTRubzhld2Mxcng5Mw==",
+    "Photo": "https://i.postimg.cc/0QXkkR7N/Shreyas-Kumar.jpg"
   },
   {
     Position: "Executive member ",
@@ -239,7 +229,7 @@ const teamsData = [
     EmailId: "sengarvishwadeep@gmail.com",
     LinkedInId: "Vishwadeep Singh",
     InstaId: "heyyvishu",
-    Photo: "https://i.ibb.co/WWWSnQyb/vishwadeep-singh.jpg"
+    Photo: "https://i.postimg.cc/bvBY8fxw/vishwadeep-singh.jpg"
   },
   {
     Position: "Executive member ",
@@ -258,8 +248,8 @@ const teamsData = [
     Branch: "I.T",
     EmailId: "vivekmanitripathy@gmail.com",
     LinkedInId: "https://www.linkedin.com/in/vivek-mani-tripathy-429177223?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-    InstaId: "iamvmt==",
-    Photo: "https://i.ibb.co/DHrtvKVW/VMT.jpg"
+    InstaId: "https://www.instagram.com/iamvmt?igsh=MTVzYjMxb3Rra3JjMw==",
+    Photo: "https://i.postimg.cc/5t09Z2Fr/VMT.jpg"
   },
   {
     Position: "Executive member ",
@@ -269,7 +259,7 @@ const teamsData = [
     EmailId: "divyanshgupta764@gmail.com",
     LinkedInId: "https://www.linkedin.com/in/divyansh-gupta-b9a435249",
     InstaId: "__the_divyansh123__",
-    Photo: "https://i.ibb.co/dsHHqttf/Divyansh-Gupta.jpg"
+    Photo: "https://i.postimg.cc/NGx8xNBj/Divyansh-Gupta.jpg"
   },
   {
     Position: "Executive member ",
@@ -279,7 +269,7 @@ const teamsData = [
     EmailId: "jayants8767@gmail.com",
     LinkedInId: "https://www.linkedin.com/in/jayant-singh-a36a96266",
     InstaId: "None",
-    Photo: "https://i.ibb.co/BVcrdF04/Jayant-Singh.jpg"
+    Photo: "https://i.postimg.cc/8ck63SNP/Jayant-Singh.jpg"
   },
   {
     Position: "Executive member ",
@@ -288,8 +278,8 @@ const teamsData = [
     Branch: "CSE",
     EmailId: "ashishraj93865@gmail.com",
     LinkedInId: "https://www.linkedin.com/in/ashish-raj-482a47255?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-    InstaId: "ashishraj6219",
-    Photo: "https://i.ibb.co/JRF8qR1T/Ashish-Raj.png"
+    InstaId: "https://www.instagram.com/ashishraj6219?igsh=Zmp3anhzY3RudTQ5",
+    Photo: "https://i.postimg.cc/52ymywcN/Ashish-Raj.png"
   },
   {
     Position: "Executive member ",
@@ -298,8 +288,8 @@ const teamsData = [
     Branch: "CE",
     EmailId: "aasthasingh7754@gmail.com",
     LinkedInId: "https://in.linkedin.com/",
-    InstaId: "accounts/login/?hl=en",
-    Photo: "https://i.ibb.co/JWtP9Y3f/Aastha-Singh.jpg"
+    InstaId: "https://www.instagram.com/accounts/login/?hl=en",
+    Photo: "https://i.postimg.cc/NjdPPstL/Aastha-Singh.jpg"
   },
   {
     Position: "Executive member ",
@@ -309,7 +299,7 @@ const teamsData = [
     EmailId: "amaryadrmk9936@gmail.com",
     LinkedInId: "Amar Yadav ",
     InstaId: "amaryadav7146",
-    Photo: "https://i.ibb.co/1JmnkqLQ/Amar-Yadav.jpg"
+    Photo: "https://i.postimg.cc/gkDMnzn4/Amar-Yadav.jpg"
   },
   {
     Position: "Executive member ",
@@ -319,7 +309,7 @@ const teamsData = [
     EmailId: "abhyodayasingh00@gmail.com",
     LinkedInId: "https://www.linkedin.com/in/abhyodaya-pratap-singh-895190258",
     InstaId: "abhi.7.i",
-    Photo: "https://i.ibb.co/jkYdnZ3p/Abhyodaya-Singh.jpg"
+    Photo: "https://i.postimg.cc/pXYSzQ1f/Abhyodaya-Singh.jpg"
   },
   {
     Position: "Executive member ",
@@ -329,7 +319,7 @@ const teamsData = [
     EmailId: "Vkotak.007@gmail.com",
     LinkedInId: "https://www.linkedin.com/in/vishal-kotak-0a532625b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
     InstaId: "Kotak.vishal__",
-    Photo: "https://i.ibb.co/DDjKsVVj/Vishal-Kotak.jpg"
+    Photo: "https://i.postimg.cc/fTnLJs63/Vishal-Kotak.jpg"
   },
   {
     Position: "Executive member ",
@@ -339,7 +329,7 @@ const teamsData = [
     EmailId: "Hhss7331@gmail.com",
     LinkedInId: "https://www.linkedin.com/in/harsh-singh-642793203?trk=contact-info",
     InstaId: "Harsh_singh0617",
-    Photo: "https://i.ibb.co/zT6WqwsW/harsh-singh.jpg"
+    Photo: "https://i.postimg.cc/kgLW5zFf/harsh-singh.jpg"
   },
   {
     Position: "Executive member ",
@@ -349,7 +339,7 @@ const teamsData = [
     EmailId: "abherabhi1230@gmail.com",
     LinkedInId: "https://www.linkedin.com/in/arun-kumar-508722276",
     InstaId: "arukumar6094",
-    Photo: "https://i.ibb.co/7Nr9f8hx/Arun-Kumar.jpg"
+    Photo: "https://i.postimg.cc/v87hNYLM/Arun-Kumar.jpg"
   },
   {
     Position: "Executive member ",
@@ -358,8 +348,8 @@ const teamsData = [
     Branch: "CSE",
     EmailId: "madhurgaur9140@gmail.com",
     LinkedInId: "https://www.linkedin.com/in/madhur-gaur-mmmut/",
-    InstaId: "madhurgaur_",
-    Photo: "https://i.ibb.co/1fwJT0fK/MPSG.jpg"
+    InstaId: "https://www.instagram.com/madhurgaur_",
+    Photo: "https://i.postimg.cc/FRNdd4fg/MPSG.jpg"
   },
   {
     Position: "Executive member ",
@@ -369,7 +359,7 @@ const teamsData = [
     EmailId: "vidhi.mmmut@gmail.com",
     LinkedInId: "temporarily restricted",
     InstaId: "Vidhi__8479",
-    Photo: "https://i.ibb.co/Y7xV4Mq9/Vidhi-Gupta.jpg"
+    Photo: "https://i.postimg.cc/fW3tVByP/Vidhi-Gupta.jpg"
   },
   {
     Position: "Executive member ",
@@ -379,7 +369,7 @@ const teamsData = [
     EmailId: "taayushi446@gmail.com",
     LinkedInId: "https://in.linkedin.com/in/ayushi-tiwari-338721281",
     InstaId: "taayushi520",
-    Photo: "https://i.ibb.co/nNNVdQZm/Ayushi-Tiwari.jpgA"
+    Photo: "https://i.postimg.cc/d122p6Cn/Ayushi-Tiwari.jpg"
   },
   {
     Position: "Executive member ",
@@ -389,7 +379,7 @@ const teamsData = [
     EmailId: "aadreeka03@gmail.com",
     LinkedInId: "aadrika-barnwal",
     InstaId: "aadreeeka ",
-    Photo: "https://i.ibb.co/PzwGr4ds/Aadreeka-Barnwal.jpg"
+    Photo: "https://i.postimg.cc/t4qM51LL/Aadreeka-Barnwal.jpg"
   },
   {
     Position: "Executive member ",
@@ -399,7 +389,7 @@ const teamsData = [
     EmailId: "realakshitaupadhyay@gmail.com",
     LinkedInId: "Akshita Upadhyay ",
     InstaId: "_.akshita._1409",
-    Photo: "https://i.ibb.co/CKQ09xmv/Akshita-Upadhyay.jpg"
+    Photo: "https://i.postimg.cc/x8Vsbqvp/Akshita-Upadhyay.jpg"
   },
   {
     Position: "Executive member ",
@@ -409,7 +399,7 @@ const teamsData = [
     EmailId: "theyash03@gmail.com",
     LinkedInId: "https://www.linkedin.com/in/yash-pratap-singh-905499249?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
     InstaId: "www.instagram.com",
-    Photo: "https://i.ibb.co/4b6DHsz/Yash-Pratap-Singh.jpg"
+    Photo: "https://i.postimg.cc/XqwnwZTr/Yash-Pratap-Singh.jpg"
   },
   {
     Position: "Executive member ",
@@ -418,8 +408,8 @@ const teamsData = [
     Branch: "EE",
     EmailId: "dipendras135@gmail.com",
     LinkedInId: "https://www.linkedin.com/in/dipendra-singh-573446264?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-    InstaId: "dip.x.music",
-    Photo: "https://i.ibb.co/8DyS5dHJ/Dipendra-Singh.jpg"
+    InstaId: "https://www.instagram.com/dip.x.music?igsh=OTF3cGRubW5nYzBj",
+    Photo: "https://i.postimg.cc/g2xvmmRx/Dipendra-Singh.jpg"
   },
   {
     Position: "Executive member ",
@@ -429,7 +419,7 @@ const teamsData = [
     EmailId: "ritikbind487@gmail.com",
     LinkedInId: "https://www.linkedin.com/in/ritikbind15",
     InstaId: "ritik.j3",
-    Photo: "https://i.ibb.co/9342zWnL/Ritik-Kumar.webp"
+    Photo: "https://i.postimg.cc/C5txNTK2/Ritik-Kumar.webpsaa"
   },
   {
     Position: "Executive member ",
@@ -439,7 +429,7 @@ const teamsData = [
     EmailId: "Computer Science and Engineering branch",
     LinkedInId: "https://www.linkedin.com/in/prisha-agrawal-813417278/",
     InstaId: "prishaaa_agrawal",
-    Photo: "https://i.ibb.co/BHj6KwBg/Prisha-Agrawal.jpg"
+    Photo: "hhttps://i.postimg.cc/2jHb6gCh/Prisha-Agrawal.jpg"
   },
   {
     Position: "Executive member ",
@@ -449,7 +439,7 @@ const teamsData = [
     EmailId: "nandininm1109@gmail.com",
     LinkedInId: "Nandini Mishra",
     InstaId: "_nan_dinii",
-    Photo: "https://i.ibb.co/rRVx1Hjf/Nandini-Mishra.jpg"
+    Photo: "https://i.postimg.cc/Fs7fJGKq/Nandini-Mishra.jpg"
   },
   {
     Position: "Executive member ",
@@ -459,7 +449,7 @@ const teamsData = [
     EmailId: "shivmpl71727@gmail.com",
     LinkedInId: "www.linkedin.com/in/shivampalofficial13",
     InstaId: "none",
-    Photo: "https://i.ibb.co/tMY0qNrS/Shivam-Pal.jpg"
+    Photo: "https://i.postimg.cc/2jXymvxx/Shivam-Pal.jpg"
   },
   {
     Position: "Executive member ",
@@ -469,7 +459,7 @@ const teamsData = [
     EmailId: "srishtisingh25ss@gmail.com",
     LinkedInId: "Srishti Singh ",
     InstaId: "Srishti_singh.25",
-    Photo: "https://i.ibb.co/LdDP5qb3/Srishti-Singh.jpg"
+    Photo: "https://i.postimg.cc/G3NL6Rc7/Srishti-Singh.jpg"
   },
   {
     Position: "Executive member ",
@@ -478,8 +468,8 @@ const teamsData = [
     Branch: "IT",
     EmailId: "vermaanshika1001@gmail.com",
     LinkedInId: "https://www.linkedin.com/in/anshika-verma-137165257?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-    InstaId: "_anshikaverma23",
-    Photo: "https://i.ibb.co/gZsMX5MB/Anshika-Verma.jpg"
+    InstaId: "https://www.instagram.com/_anshikaverma23?igsh=d2Y1aDQyc3MzdzFo",
+    Photo: "https://i.postimg.cc/d1r6vvb2/Anshika-Verma.jpg"
   },
   {
     Position: "Executive member ",
@@ -488,8 +478,8 @@ const teamsData = [
     Branch: "ECE",
     EmailId: "raoritika313@gmail.com",
     LinkedInId: "https://www.linkedin.com/in/ritika-rao-a6a447257?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-    InstaId: "ritikarao2352",
-    Photo: "https://i.ibb.co/15wvpht/Ritika-rao.jpg"
+    InstaId: "https://www.instagram.com/ritikarao2352?igsh=emk5Mmdrbmxncmdm",
+    Photo: "https://i.postimg.cc/htmf2jT1/Ritika-rao.jpg"
   },
   {
     Position: "Executive member ",
@@ -498,8 +488,8 @@ const teamsData = [
     Branch: "IT",
     EmailId: "yashikardam240@gmail.com",
     LinkedInId: "https://www.linkedin.com/in/yashi-kardam-81288a25b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-    InstaId: "yashiiii24_/profilecard/",
-    Photo: "https://i.ibb.co/dsCLSf0F/Yashi-Kardam.jpg"
+    InstaId: "https://www.instagram.com/yashiiii24_/profilecard/?igsh=ZDlmNjE5Yjl4czc0",
+    Photo: "https://i.postimg.cc/Kz3G8pfr/Yashi-Kardam.jpg"
   },
   {
     Position: "Executive member ",
@@ -509,7 +499,7 @@ const teamsData = [
     EmailId: "samyakj0507@gmail.com",
     LinkedInId: "https://www.linkedin.com/in/samyakjain507?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
     InstaId: "justt.samyak",
-    Photo: "https://i.ibb.co/SXPzwLV5/Samyak-Jain.jpg"
+    Photo: "https://i.postimg.cc/NMdMKrvB/Samyak-Jain.jpg"
   },
   {
     Position: "Executive member ",
@@ -519,7 +509,7 @@ const teamsData = [
     EmailId: "sonu86517630@gmail.com",
     LinkedInId: "Sonu Kumar ",
     InstaId: "ace._.sonu07",
-    Photo: "https://i.ibb.co/5WDYqY8L/sonu-kumar.jpg"
+    Photo: "https://i.postimg.cc/j2GRfHg0/sonu-kumar.jpg"
   },
   {
     Position: "Executive member ",
@@ -528,8 +518,8 @@ const teamsData = [
     Branch: "E.C.E",
     EmailId: "aditisharma3749@gmail.com",
     LinkedInId: "https://www.linkedin.com/in/aditi-sharma-2a01a3308?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-    InstaId: "aditi.rs.3112==",
-    Photo: "https://i.ibb.co/Y4fZ8B0c/Aditi-Sharma.jpg"
+    InstaId: "https://www.instagram.com/aditi.rs.3112?igsh=MXNqa3BmcWM3eDFnZw==",
+    Photo: "https://i.postimg.cc/TPhNzz20/Aditi-Sharma.jpg"
   },
   {
     Position: "Executive Member",
@@ -538,8 +528,8 @@ const teamsData = [
     Branch: "E.E",
     EmailId: "imabhishek@gmail.com",
     LinkedInId: "https://www.linkedin.com/in/abhishek-kumar-nigam-665925294/",
-    InstaId: "imabhishek40/",
-    Photo: "https://i.ibb.co/8n4Qrqnb/AKN.png"
+    InstaId: "https://www.instagram.com/imabhishek40/",
+    Photo: "https://i.postimg.cc/nVqSfYxy/AKN.png"
   },
   {
     Position: "Executive member ",
@@ -548,8 +538,8 @@ const teamsData = [
     Branch: "CSE",
     EmailId: "cgupta7068@gmail.com",
     LinkedInId: "https://www.linkedin.com/in/chandan-gupta-90576229b/?originalSubdomain=in",
-    InstaId: "__chandan__gupta/",
-    Photo: "https://i.ibb.co/3mYM7Lmr/Chandan-Gupta.jpg"
+    InstaId: "https://www.instagram.com/__chandan__gupta/",
+    Photo: "https://i.postimg.cc/vTGrsnLy/Chandan-Gupta.jpg"
   },
   {
     Position: "Executive member ",
@@ -559,7 +549,7 @@ const teamsData = [
     EmailId: "arav8172@gmail.com",
     LinkedInId: "alok-kumar-6374aa299",
     InstaId: "alok_k.775",
-    Photo: "https://i.ibb.co/7NzLzsFh/Alok-kumar.png"
+    Photo: "https://i.postimg.cc/43rPrnS4/Alok-kumar.png"
   },
   
   {
@@ -569,8 +559,8 @@ const teamsData = [
     Branch: "IT",
     EmailId: "yadavinayak0@gmail.com",
     LinkedInId: "https://www.linkedin.com/in/vinayak-yadav-79a6a0294?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-    InstaId: "vinayak_y0/profilecard/==",
-    Photo: "https://i.ibb.co/20mzK5YP/VINAYAK-YADAV.jpg"
+    InstaId: "https://www.instagram.com/vinayak_y0/profilecard/?igsh=MTNlNnpzdm1jZDE3Zg==",
+    Photo: "https://i.postimg.cc/8PM7HchB/VINAYAK-YADAV.jpg"
   },
   {
     Position: "Executive member ",
@@ -579,8 +569,8 @@ const teamsData = [
     Branch: "C.S.E",
     EmailId: "yashvardhanojha8217@gmail.com",
     LinkedInId: "https://www.linkedin.com/in/yashvardhan-ojha-b5b325287?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-    InstaId: "yashvardhan.ojha",
-    Photo: "https://i.ibb.co/7tPdRcZH/Yashvarshan-Ojha.jpg"
+    InstaId: "https://www.instagram.com/yashvardhan.ojha?igsh=YWZlc2lqbDd1b3Bi",
+    Photo: "https://i.postimg.cc/1Xx9n0Yx/Yashvarshan-Ojha.jpg "
   },
   {
     Position: "Executive member ",
@@ -590,7 +580,7 @@ const teamsData = [
     EmailId: "shatakshi.srivastava188@gmail.com",
     LinkedInId: "None ",
     InstaId: "shatakshi.srivastava188",
-    Photo: "https://i.ibb.co/v4Np2Npp/Shatakshi-Srivastav.jpg"
+    Photo: "https://i.postimg.cc/9F6fwhKR/Shatakshi-Srivastav.jpg"
   },
   {
     Position: "Executive member ",
@@ -600,7 +590,7 @@ const teamsData = [
     EmailId: "vaishnavi.rai2648@gmail.com",
     LinkedInId: "vaishnavi-rai-540b41294",
     InstaId: "vaishnavirai2409",
-    Photo: "https://i.ibb.co/kz44V91/Vaishnavi-Rai.jpg"
+    Photo: "https://i.postimg.cc/s1dRxVx3/Vaishnavi-Rai.jpg"
   },
   {
     Position: "Executive member ",
@@ -610,7 +600,7 @@ const teamsData = [
     EmailId: "sv84826@gmail.com",
     LinkedInId: "shashikant-vishwakarma-8737b2293",
     InstaId: "_shashikant97_",
-    Photo: "https://i.ibb.co/0RYGyZmm/Shashikant-Vishwakarma.jpg"
+    Photo: "https://i.postimg.cc/CLB1K1Pp/Shashikant-Vishwakarma.jpg"
   },
   {
     Position: "EXECUTIVE MEMBER",
@@ -620,7 +610,7 @@ const teamsData = [
     EmailId: "aviralmaster@gmail.com",
     LinkedInId: "https://www.linkedin.com/in/aviral-omar-763878294?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
     InstaId: "aviral.xy",
-    Photo: "https://i.ibb.co/Tqqj0DTt/Aviral-Omar.jpg"
+    Photo: "https://i.postimg.cc/HxD06RrV/Aviral-Omar.jpg"
   },
   {
     Position: "Executive member ",
@@ -630,7 +620,7 @@ const teamsData = [
     EmailId: "Vaibhav910yadav@gmail.com",
     LinkedInId: "https://www.linkedin.com/in/vishal-yadav-278627275",
     InstaId: "vishalmmmut27",
-    Photo: "https://i.ibb.co/Fq5WbNZT/Vishal-Yadav.jpg"
+    Photo: "https://i.postimg.cc/Vk4LGC5M/Vishal-Yadav.jpg"
   },
   {
     Position: "Executive member ",
@@ -640,7 +630,7 @@ const teamsData = [
     EmailId: "arnavmishra68@gmail.com",
     LinkedInId: "https://www.linkedin.com/in/arnav-mishra-0246b9235",
     InstaId: "arnavamoghofficial",
-    Photo: "https://i.ibb.co/RT48dKKy/Arav-Mishra.jpg"
+    Photo: "https://i.postimg.cc/xT05rwtm/Arav-Mishra.jpg"
   },
   {
     Position: "Executive member ",
@@ -650,7 +640,7 @@ const teamsData = [
     EmailId: "sudhanshu4169@gmail.com",
     LinkedInId: "www.linkedin.com/in/sudhanshu-yadav-2023031072ee",
     InstaId: "5udh.anshu",
-    Photo: "https://i.ibb.co/GQG92wdd/Sudhanshu-Yadav.jpg"
+    Photo: "https://i.postimg.cc/T3vRYc5n/Sudhanshu-Yadav.jpg"
   },
   {
     Position: "Executive member ",
@@ -660,7 +650,7 @@ const teamsData = [
     EmailId: "vishusrivastava0415@gmail.com ",
     LinkedInId: "https://in.linkedin.com/in/vishu-srivastava-882109134",
     InstaId: "vishus0415",
-    Photo: "https://i.ibb.co/21D2wp94/Vishu-Srivastava.png"
+    Photo: "https://i.postimg.cc/L8m83T42/Vishu-Srivastava.png"
   },
   {
     Position: "Executive member ",
@@ -670,7 +660,7 @@ const teamsData = [
     EmailId: "snehilsaxena2903@gmail.com",
     LinkedInId: "https://www.linkedin.com/in/snehil-saxena-b541a4264/",
     InstaId: "snehil341",
-    Photo: "https://i.ibb.co/bgZRJ7yn/Snehil-Saxena.jpg"
+    Photo: "https://i.postimg.cc/Rh3MqsTL/Snehil-Saxena.jpg"
   },
   {
     Position: "Executive member ",
@@ -679,8 +669,8 @@ const teamsData = [
     Branch: "ECE(IoT)",
     EmailId: "mani.anju2005@gmail.com",
     LinkedInId: "https://www.linkedin.com/in/anju-mani-50725827b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-    InstaId: "anju_mani07",
-    Photo: "https://i.ibb.co/kgbBF1S4/Anju-Mani.jpg"
+    InstaId: "https://www.instagram.com/anju_mani07?igsh=MWt4d3A2c2llcjh5",
+    Photo: "https://i.postimg.cc/3wy9S29b/Anju-Mani.jpg"
   },
   {
     Position: "Executive member ",
@@ -690,7 +680,7 @@ const teamsData = [
     EmailId: "aj3223743@gmail.com",
     LinkedInId: "Ajay Kumar ",
     InstaId: "ajay_ak00",
-    Photo: "https://i.ibb.co/fV4HvC5f/Ajay.jpg"
+    Photo: "https://i.postimg.cc/W3kW30kJ/Ajay.jpg"
   },
   {
     Position: "Executive member ",
@@ -699,8 +689,8 @@ const teamsData = [
     Branch: "BBA",
     EmailId: "rishriofficial@gmail.com",
     LinkedInId: "https://www.linkedin.com/in/ritesh-srivastava-59825626b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-    InstaId: "_riteshsrivastava_",
-    Photo: "https://i.ibb.co/Z18Pr2WJ/Ritesh-Srivastava.jpg"
+    InstaId: "https://www.instagram.com/_riteshsrivastava_?igsh=eWZkZG82a3h6djNy",
+    Photo: "https://i.postimg.cc/MG8XNSY2/Ritesh-Srivastava.jpg"
   },
   {
     Position: "Executive member ",
@@ -710,7 +700,7 @@ const teamsData = [
     EmailId: "amitchaurasiya1002@gmail.com",
     LinkedInId: "https://www.linkedin.com/in/amit-chaurasiya-aab24a294",
     InstaId: "_a.m.i.t_30",
-    Photo: "https://i.ibb.co/8DtMgz4Z/Amit-Chaurasiya.jpg"
+    Photo: "https://i.postimg.cc/nhh3mymx/Amit-Chaurasiya.jpg"
   },
   {
     Position: "Executive member ",
@@ -720,7 +710,7 @@ const teamsData = [
     EmailId: "himanshumishra64402@gmail.com ",
     LinkedInId: "Himanshu mishra",
     InstaId: "h_m_n_s_u_",
-    Photo: "https://i.ibb.co/G4R8bRcN/Himanshu-mishra.png"
+    Photo: "https://i.postimg.cc/cJYwthFZ/Himanshu-mishra.png"
   },
   
   {
@@ -731,7 +721,7 @@ const teamsData = [
     EmailId: "patelanuraag143@gmail.com",
     LinkedInId: "Anurag Gangwar ",
     InstaId: "_anrggg1",
-    Photo: "https://i.ibb.co/hJ1RtM5p/Anurag-Gangwar.jpg"
+    Photo: "https://i.postimg.cc/8cGHz9Gq/Anurag-Gangwar.jpg"
   },
   {
     Position: "Executive member ",
@@ -741,7 +731,7 @@ const teamsData = [
     EmailId: "iamsengar1114@gmail.com",
     LinkedInId: "Shreyansh Singh Sengar ",
     InstaId: "_.sengar.shreyansh06._",
-    Photo: "https://i.ibb.co/j9kjt1k1/Shreyansh.jpg"
+    Photo: "https://i.postimg.cc/cL7dK8f2/Shreyansh.jpg"
   },
   {
     Position: "Executive member ",
@@ -750,8 +740,8 @@ const teamsData = [
     Branch: "IT",
     EmailId: "pranavmishra2791939@gmail.com",
     LinkedInId: "https://www.linkedin.com/in/pranav-mishra-8a7908294?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-    InstaId: "er._pranav_mishra==",
-    Photo: "https://i.ibb.co/8DWQTSSq/Pranav-Mishra.png"
+    InstaId: "https://www.instagram.com/er._pranav_mishra?igsh=MXR1bjc3MGU4bzR4MA==",
+    Photo: "https://i.postimg.cc/C56zQncm/Pranav-Mishra.png"
   },
   {
     Position: "Executive member ",
@@ -761,7 +751,7 @@ const teamsData = [
     EmailId: "pragya12070@gmail.com",
     LinkedInId: "Pragya Kumari ",
     InstaId: "sowhatpraxya",
-    Photo: "https://i.ibb.co/pvhqpN4C/Pragya.jpg"
+    Photo: "https://i.postimg.cc/sXmB5N7F/Pragya.jpg"
   },
   {
     Position: "Executive member ",
@@ -771,7 +761,7 @@ const teamsData = [
     EmailId: "appuutkarsh@gmail.com",
     LinkedInId: "Utkarsh Pandey ",
     InstaId: "utkarsh.pandey18",
-    Photo: "https://i.ibb.co/XkNsdsDM/Utkarsh-Pandey.jpg"
+    Photo: "https://i.postimg.cc/hjYnF8qz/Utkarsh-Pandey.jpg"
   },
   {
     Position: "Executive member ",
@@ -780,8 +770,8 @@ const teamsData = [
     Branch: "CE",
     EmailId: "shreepandey1305@gmail.com",
     LinkedInId: "https://www.linkedin.com/in/shristi-pandey-452078294?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-    InstaId: "hey.shristii_==",
-    Photo: "https://i.ibb.co/cSbz1KFS/Shristi-Pandey.jpg"
+    InstaId: "https://www.instagram.com/hey.shristii_?igsh=MWwyMWtrcGVueWg1cA==",
+    Photo: "https://i.postimg.cc/GhyLCftc/Shristi-Pandey.jpg"
   },
   {
     Position: "Executive member ",
@@ -790,8 +780,8 @@ const teamsData = [
     Branch: "IT",
     EmailId: "babootashreya@gmail.com",
     LinkedInId: "https://www.linkedin.com/in/shreya-baboota-233352282?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-    InstaId: "shreya_baboota",
-    Photo: "https://i.ibb.co/Z50wyps/Shreya-Baboota.jpg"
+    InstaId: "https://www.instagram.com/shreya_baboota?igsh=cWxvdjVyb203d25j",
+    Photo: "https://i.postimg.cc/Z565rQzf/Shreya-Baboota.jpg"
   },
   {
     Position: "Executive member ",
@@ -801,7 +791,7 @@ const teamsData = [
     EmailId: "ashmisingh4002@gmail.com",
     LinkedInId: "https://www.linkedin.com/in/ashmi-singh-b9141a294?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
     InstaId: "_ashmisingh_25",
-    Photo: "https://i.ibb.co/XrK8xNHc/ASHMI-SINGH.jpg"
+    Photo: "https://i.postimg.cc/qvFx3z0c/ASHMI-SINGH.jpg"
   },
   {
     Position: "Executive member ",
@@ -811,7 +801,7 @@ const teamsData = [
     EmailId: "tanayakaushik21@gmail.com",
     LinkedInId: "TANAYA KAUSHIK",
     InstaId: "tanaya_kaushik",
-    Photo: "https://i.ibb.co/svW5SZ0p/Tanya.jpg"
+    Photo: "https://i.postimg.cc/VND1gQGF/Tanya.jpg"
   },
   {
     Position: "Executive member ",
@@ -821,7 +811,7 @@ const teamsData = [
     EmailId: "msdpratap07@gmail.com",
     LinkedInId: "Ravikant Tripathi ",
     InstaId: "ravisamrat_108",
-    Photo: "https://i.ibb.co/PvWDDwqM/PRAVEEN-YADAV.jpg"
+    Photo: "https://i.postimg.cc/2y51G771/PRAVEEN-YADAV.jpg"
   },
   {
     Position: "Executive member ",
@@ -830,8 +820,8 @@ const teamsData = [
     Branch: "CHEMICAL",
     EmailId: "ptaruna182@gmail.com",
     LinkedInId: "https://www.linkedin.com/in/taruna-patel-a72159322?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-    InstaId: "taruna_._patel",
-    Photo: "https://i.ibb.co/8LH7zndK/Taruna-Patel.jpg"
+    InstaId: "https://www.instagram.com/taruna_._patel?igsh=dHk4aWltZjRmbGps",
+    Photo: "https://i.postimg.cc/xd0nLTRC/Taruna-Patel.jpg"
   },
   {
     Position: "Executive member ",
@@ -841,7 +831,7 @@ const teamsData = [
     EmailId: "vaibhavsingh000085@gmail.com",
     LinkedInId: "ABCD",
     InstaId: "ABCD",
-    Photo: "https://i.ibb.co/MkVvRSY4/VAIBHAV-SINGH.jpg"
+    Photo: "https://i.postimg.cc/fy0NM3wH/VAIBHAV-SINGH.jpg"
   },
   {
     Position: "Executive member ",
@@ -851,7 +841,7 @@ const teamsData = [
     EmailId: "divyanshrathorz@gmail.com",
     LinkedInId: "https://www.linkedin.com/in/divyansh-singh-rathore-a69489271?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
     InstaId: "divyansh.rathore.2005",
-    Photo: "https://i.ibb.co/4b2kDfQ/Divyansh-Singh-Rathore.jpg"
+    Photo: "https://i.postimg.cc/kGwxX5fb/Divyansh-Singh-Rathore.jpg"
   },
   {
     Position: "Executive member ",
@@ -861,7 +851,7 @@ const teamsData = [
     EmailId: "gauravishwakarma2@gmail.com",
     LinkedInId: "Gaurav Vishwakarma",
     InstaId: "Not applicable",
-    Photo: "https://i.ibb.co/ZzWNHnkd/GAURAV-VISHWAKARMA.jpg"
+    Photo: "https://i.postimg.cc/rFF1ZSwC/GAURAV-VISHWAKARMA.jpg"
   },
   {
     Position: "Executive member ",
@@ -870,8 +860,8 @@ const teamsData = [
     Branch: "ECE",
     EmailId: "shrestha01gupta@gmail.com",
     LinkedInId: ".",
-    InstaId: "shrestha_30.09==",
-    Photo: "https://i.ibb.co/hJNd0DxH/Shrestha-Gupta.jpg"
+    InstaId: "https://www.instagram.com/shrestha_30.09?igsh=MTZ4bnZicDNub25kNQ==",
+    Photo: "https://i.postimg.cc/rmwy2F0b/Shrestha-Gupta.jpg"
   },
   {
     Position: "Executive member ",
@@ -881,7 +871,7 @@ const teamsData = [
     EmailId: "jagritithakur175@gmail.com",
     LinkedInId: "https://linkedin.com/in/jagriti-singh-22bb742a0",
     InstaId: "jagritiisingh_",
-    Photo: "https://i.ibb.co/h1Dkkq5W/Jagriti.jpg"
+    Photo: "https://i.postimg.cc/RhPHxDZ1/Jagriti.jpg"
   }
 ]
 
