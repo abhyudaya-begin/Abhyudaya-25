@@ -1,7 +1,10 @@
 import React from 'react';
 import EventCard from './EventCard';
+import { useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 
 const EventGrid = ({ events }) => {
+
   if (events?.length === 0) {
     return (
       <div className="text-center py-16 text-lg text-gray-400">

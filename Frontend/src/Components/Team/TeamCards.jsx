@@ -16,7 +16,7 @@ function TeamCards({ member }) {
         <div className="absolute bottom-1 left-0 right-0 px-3 pt-2 group">
           <h3
             className="text-md font-bold text-gray-800 text-center mb-0 
-            hover:text-blue-600 transition-colors duration-300
+            hover:text-gray-900 transition-colors duration-300
             before:content-[''] before:absolute before:w-full before:h-full 
             before:-translate-x-full hover:before:translate-x-full before:transition-transform
             before:duration-700 before:transform group-hover:scale-102 truncate"
@@ -39,7 +39,7 @@ function TeamCards({ member }) {
               rel="noopener noreferrer"
               className="text-black-900 hover:text-blue-600 transition-all duration-300 transform hover:scale-110 hover:-translate-x-1"
             >
-              <FaLinkedin size={20} />
+              <FaLinkedin size={20} color="#641504" />
             </a>
           )}
           {member.InstaId && (
@@ -49,14 +49,14 @@ function TeamCards({ member }) {
               rel="noopener noreferrer"
               className="text-black-900 hover:text-pink-600 transition-all duration-300 transform hover:scale-110 hover:-translate-x-1"
             >
-              <FaInstagram size={20} />
+              <FaInstagram size={20} color="#641504" />
             </a>
           )}
           <a
             href={`mailto:${member.EmailId}`}
             className="text-black-900 hover:text-red-600 transition-all duration-300 transform hover:scale-110 hover:-translate-x-1"
           >
-            <FaEnvelope size={20} />
+            <FaEnvelope size={20} color="#641504" />
           </a>
         </div>
       </div>

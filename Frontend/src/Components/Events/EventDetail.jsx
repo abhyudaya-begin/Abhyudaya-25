@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { useParams, Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import EventRegPopUp from './EventRegPopUp';
+import { useSelector } from 'react-redux';
 
 const EventDetail = () => {
   const { id } = useParams();
@@ -10,6 +11,9 @@ const EventDetail = () => {
   const [error, setError] = useState(null);
   const [isEventRegPopUpOpen, setIsEventRegPopUpOpen] = useState(false);
   const [isRegistered, setIsRegistered] = useState(false);
+  
+  const user = useSelector(state=>state.user);
+  const navigate = useNavigate();
 
   useEffect(() => {
     let isMounted = true;
@@ -174,7 +178,7 @@ const EventDetail = () => {
           isOpen={isEventRegPopUpOpen}
           onClose={() => setIsEventRegPopUpOpen(false)}
           onSuccess={handleSuccess}
-          teamType={event.teamType}
+          event={event}
         />
       )}
     </div>
