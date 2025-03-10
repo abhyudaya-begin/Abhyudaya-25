@@ -70,7 +70,9 @@ function TeamCards({ member }) {
           <LazyLoadImage
             src={member.Photo}
             alt={member.Name}
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover  "
+          
+            loading="lazy"
           />
         </div>
       </div>
