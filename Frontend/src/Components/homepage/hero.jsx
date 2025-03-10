@@ -22,7 +22,7 @@ const HeroSection = () => {
           loop
           muted
           playsInline
-          preload="none"
+          
         />
 
         {/* Gradient Overlay */}
