@@ -1,51 +1,52 @@
 const artistsData = [
   {
     name: "AKASH DUBAY",
-    link: "https://i.ibb.co/gF7K08hv/Akash-dubay.jpg",
+    link: "https://i.postimg.cc/4420Vqd7/Akash-dubay.jpg"
+
   },
   {
     name: "The KO-रस Band",
-    link: "https://i.ibb.co/vCT77kj0/Koras.png",
+    link: "https://i.postimg.cc/5yDpTcYs/Koras.png",
   },
   {
     name: "Anubhav Singh Bassi",
-    link: "https://i.ibb.co/LDbMVSK2/AS-bassi.png",
+    link: "https://i.postimg.cc/63jMV49J/AS-bassi.png",
   },
   {
     name: "Bharat band",
-    link: "https://i.ibb.co/Ld7ht6mr/BHarat-band.png",
+    link: "https://i.postimg.cc/fT3rKCtH/BHarat-band.png",
   },
   {
     name: "DJ FAIZAN",
-    link: "https://i.ibb.co/QvpvZZKS/DJ-faizan.png",
+    link: "https://i.postimg.cc/tgzSTmwg/DJ-faizan.png",
   },
   {
     name: "DJ Sid",
-    link: "https://i.ibb.co/8nsK01cc/DJ-Sid.png",
+    link: "https://i.postimg.cc/vmy2GdPj/DJ-Sid.png",
   },
   {
     name: "Gajendra Verma",
-    link: "https://i.ibb.co/3mjfvLvP/Gajendra-verma.jpg",
+    link: "https://i.postimg.cc/0jzcV5Q6/Gajendra-verma.jpg",
   },
   {
     name: "Pratyush Chaubey",
-    link: "https://i.ibb.co/5h3qhmrB/Pratyush-Chaubey.png",
+    link: "https://i.postimg.cc/dQfWLCHG/Pratyush-Chaubey.png",
   },
   {
     name: "Shambhu Shikhar",
-    link: "https://i.ibb.co/S4VRvX1J/Shambhu-shikhar.jpg",
+    link: "https://i.postimg.cc/kXtT85zz/Shambhu-shikhar.jpg",
   },
   {
     name: "Shloka",
-    link: "https://i.ibb.co/0y2ZX8zB/Sloka.jpg",
+    link: "https://i.postimg.cc/JzVPQLWn/Sloka.jpg",
   },
   {
     name: "The Puzzl",
-    link: "https://i.ibb.co/gLDJzdNZ/The-puzzl.png",
+    link: "https://i.postimg.cc/y8mnQbVT/The-puzzl.png",
   },
   {
     name: "Unity Band",
-    link: "https://i.ibb.co/pBwfHCff/Unity-band.png",
+    link: "https://i.postimg.cc/nLT2Z99j/Unity-band.png",
   },
 ];
 
