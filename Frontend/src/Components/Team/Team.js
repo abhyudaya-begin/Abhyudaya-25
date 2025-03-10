@@ -123,7 +123,7 @@ const teamsData = [
   },
   {
     Position: "Executive member ",
-    Name: "Vandhika Verma",
+    Name: "Vanshika Verma",
     Year: "Final Year",
     Branch: "B.pharma",
     EmailId: "vanshikav411@gmail.com",
