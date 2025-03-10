@@ -1,5 +1,6 @@
 import React from "react";
 import sponsorsData from "./SponsorData";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 const Sponsors = () => {
   return (
@@ -23,7 +24,7 @@ const Sponsors = () => {
             key={index}
             className="rounded  p-4 w-[90%] text-center transition-transform duration-300 hover:scale-105 hover:shadow-lg hover:shadow-blue-500/50 mx-auto"
           >
-            <img
+            <LazyLoadImage
               src={sponsor["spon-link"]}
               alt={sponsor.name}
               className="mx-auto rounded aspect-[3/2] mb-2 w-full h-auto object-contain"

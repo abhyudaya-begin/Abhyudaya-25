@@ -13,8 +13,8 @@ const IndexHome = () => {
       className="flex flex-col select-none overflow-x-hidden gap-30 items-center bg-black text-white"
     >
       <HeroSection />
-      <Hero2Section /> 
       <SponsorSlider /> {/* Move the new component */}
+      <Hero2Section /> 
       <CountDown />
       {/* <ArtistSlider/> */}
       <Stats/>

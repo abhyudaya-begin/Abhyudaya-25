@@ -20,6 +20,7 @@ function Routing() {
         paddingLeft: "calc(var(--sidebar-width) + 0px)", // Ensure px unit
         width: "100%",
       }}
+      className="min-h-screen bg-gray-900"
     >
       <Toaster />
 
