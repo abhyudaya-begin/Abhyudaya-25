@@ -51,7 +51,7 @@ const Sidebar = () => {
     { id: "profile", icon: <FaUser size={20} color="white"/>, label: "Profile", path: "/profile" },
     { id: "gallery", icon: <IoMdPhotos size={20} color="white"/>, label: "Gallery", path: "/gallery" },
     { id: "event", icon: <FaCalendarCheck size={20} color="white"/>, label: "Event", path: "/events" },
-    { id: "sponsors", icon: <GoSponsorTiers size={25} color="white"/>, label: "Our Sponsors", path: "/sponsors" },
+    { id: "sponsors", icon: <GoSponsorTiers size={25} color="white"/>, label: "Our Sponsors", path: "/Sponsors" },
     { id: "campus-ambassador", icon: <FaUserGraduate size={20} color="white"/>, label: "Campus Ambassador", path: "/campus-ambassador" },
     { id: "contact", icon: <MdContactMail size={20} color="white"/>, label: "Contact Us", path: "/contact" },
     { id: "team", icon: <RiTeamFill size={20} color="white"/>, label: "About us", path: "/about" },

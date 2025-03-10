@@ -9,6 +9,7 @@ import Events from "./Events/Events";
 import EventDetail from "./Events/EventDetail";
 import { Toaster } from "react-hot-toast";
 import Gallery from "./Gallery/Gallery";
+import Sponsors from "./Sponsors/Sponsors";
 // Pages
 
 
@@ -30,6 +31,7 @@ function Routing() {
           element={<CampusAmbassadorProgram />}
         />
         <Route path="/gallery" element={<Gallery />} />
+        <Route path="/Sponsors" element={<Sponsors />} />
         <Route path="/profile" element={<ProfileRoute />} />
         <Route path="/contact" element={<ContactUs />} />
         <Route path="/events" element={<Events />} />
