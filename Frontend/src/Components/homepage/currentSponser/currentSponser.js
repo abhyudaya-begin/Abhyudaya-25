@@ -1,21 +1,19 @@
 const currentSponsors = [
   {
     name: "SADHU-TVS",
-    image: "https://i.ibb.co/PzhVPwk8/TVS.png"
-
-
+    image: "https://i.postimg.cc/rssBQD0V/Biknaer-Wala.png"
   },
   {
     name: "BikanerVala",
-    image: "https://i.ibb.co/TBh1SGCh/Biknaer-Wala.png",
+    image: "https://i.postimg.cc/jjQY50Yb/SBI.png",
   },
   {
     name: "Shararat",
-    image: "https://i.ibb.co/rfRdXqXC/Shararat.png",
+    image: "https://i.postimg.cc/hj2FLLGZ/Shararat.png",
   },
   {
     name: "SBI",
-    image: "https://i.ibb.co/qMgcmnYX/SBI.png",
+    image: "https://i.postimg.cc/ZRbtv7Jy/TVS.png",
   },
  
 ];

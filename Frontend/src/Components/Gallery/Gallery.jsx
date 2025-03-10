@@ -2,7 +2,7 @@ import React from "react";
 import Masonry from "react-masonry-css";
 import GalleryImage from "./GalleryImage";
 import axios from "axios";
-import { photoUrls } from "./PhotoUrls";
+import  photoUrls  from "./PhotoUrls";
 
 
 const Gallery = () => {
