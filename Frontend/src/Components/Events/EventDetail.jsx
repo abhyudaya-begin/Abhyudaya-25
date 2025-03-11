@@ -90,17 +90,17 @@ const EventDetail = () => {
       <div className="max-w-7xl mx-auto px-4 py-8 sm:px-6 lg:px-8">
         <h1 className="text-4xl font-extrabold text-purple-400 sm:text-5xl text-center mb-4">
           <span className="bg-clip-text text-transparent bg-gradient-to-r from-pink-300 via-purple-200 to-indigo-100 animate-pulse">
-            {event.eventName}
+            {event.name}
           </span>
         </h1>
 
         <div className="bg-gray-800 rounded-2xl overflow-hidden border border-gray-700 shadow-lg shadow-black/50">
           <div className="md:flex">
             <div className="md:w-1/2">
-              {event.images && event.images.length > 0 ? (
+              {event.link ? (
                 <div
-                  className="h-64 md:h-full bg-cover bg-center"
-                  style={{ backgroundImage: `url(${event.images[0]})` }}
+                  className="h-64 md:h-full bg-cover bg-center "
+                  style={{ backgroundImage: `url(${event.link})` }}
                 />
               ) : (
                 <div className="h-64 md:h-full bg-gray-900 flex items-center justify-center">
@@ -119,7 +119,7 @@ const EventDetail = () => {
                 </span>
               </div>
 
-              <h1 className="text-3xl font-bold text-gray-100 mb-4">{event.description}</h1>
+              <h1 className="text-lg font-semibold text-gray-300 mb-4">{event.description}</h1>
 
               <div className="grid grid-cols-2 gap-4 mb-8">
                 <div className="bg-gray-900 p-4 rounded-lg border border-gray-700">
