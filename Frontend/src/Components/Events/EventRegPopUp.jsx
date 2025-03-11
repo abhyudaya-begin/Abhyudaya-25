@@ -5,10 +5,11 @@ import toast from "react-hot-toast";
 const EventRegPopUp = ({ isOpen, onClose, onSuccess, event }) => {
   const user = useSelector((state) => state.user);
   const navigate = useNavigate();
-  const [name] = useState(user.fullName || "");
+
 
   useEffect(() => {
     if (!user) {
+    console.log("hii");
       navigate("/profile");
     }
   }, [user, navigate]);
@@ -35,7 +36,7 @@ const EventRegPopUp = ({ isOpen, onClose, onSuccess, event }) => {
         <div className="bg-gray-100 p-4 rounded-lg mb-4">
           <h3 className="text-md font-semibold text-gray-700">Event Details</h3>
           <p className="text-gray-600">
-            <strong>Event:</strong> {event?.eventName}
+            <strong>Event:</strong> {event?.name}
           </p>
           <p className="text-gray-600">
             <strong>Category:</strong> {event?.category}
