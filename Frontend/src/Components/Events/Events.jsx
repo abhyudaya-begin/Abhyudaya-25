@@ -5,6 +5,7 @@ import axios from 'axios';
 
 const Events = () => {
   const [activeCategory, setActiveCategory] = useState('All');
+  const [allEvents, setAllEvents] = useState([]);
   const [filteredEvents, setFilteredEvents] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -12,18 +13,18 @@ const Events = () => {
   // Extract unique categories
   const categories = ['All', 'Art', 'Dance', 'Music', 'Dramatics', 'Literature', 'Other'];
   
+  // Fetch all events once
   useEffect(() => {
     let isMounted = true;
     
-    const fetchEvents = async () => {
+    const fetchAllEvents = async () => {
       try {
         setLoading(true);
         setError(null);
         
-        const category = activeCategory === 'All' ? "" : activeCategory;
-        const url = `${import.meta.env.VITE_BACKEND_API_URL}events/all?category=${category}`;
+        const url = `${import.meta.env.VITE_BACKEND_API_URL}events/all`;
         
-        console.log("Fetching from URL:", url);
+        console.log("Fetching all events from URL:", url);
         
         const response = await axios.get(url, {
           withCredentials: true
@@ -31,25 +32,25 @@ const Events = () => {
         
         // Make sure component is still mounted before updating state
         if (isMounted) {
-          console.log("API Response:", response);
+          let eventsData = [];
           
           if (response.data && Array.isArray(response.data)) {
-            setFilteredEvents(response.data);
+            eventsData = response.data;
           } else if (response.data) {
-            // Handle case where data exists but isn't an array
-            console.warn("Response data is not an array:", response.data);
-            setFilteredEvents(Array.isArray(response.data.events) ? response.data.events : []);
+            eventsData = Array.isArray(response.data.events) ? response.data.events : [];
           } else {
-            // Handle empty response
             console.warn("Empty response data");
-            setFilteredEvents([]);
           }
+          
+          setAllEvents(eventsData);
+          setFilteredEvents(eventsData); // Initially show all events
         }
       } catch (error) {
         console.error("Error fetching events:", error);
         if (isMounted) {
           setError("Failed to load events");
-          setFilteredEvents([]); // Set empty array on error
+          setAllEvents([]);
+          setFilteredEvents([]);
         }
       } finally {
         if (isMounted) {
@@ -58,14 +59,28 @@ const Events = () => {
       }
     };
     
-    fetchEvents();
+    fetchAllEvents();
     
     // Cleanup function to prevent state updates after unmount
     return () => {
       isMounted = false;
     };
-  }, [activeCategory]);
- 
+  }, []); // Empty dependency array means this runs once on mount
+  
+  // Filter events when category changes
+  useEffect(() => {
+    if (activeCategory === 'All') {
+      setFilteredEvents(allEvents);
+    } else {
+      setFilteredEvents(allEvents.filter(event => event.category === activeCategory));
+    }
+  }, [activeCategory, allEvents]);
+  
+  const handleCategoryChange = (category) => {
+    setActiveCategory(category);
+  };
+
+  
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-900 to-black text-gray-100">
       <div className="max-w-7xl mx-auto px-4 py-12 sm:px-6 lg:px-8">
