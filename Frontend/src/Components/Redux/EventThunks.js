@@ -8,9 +8,10 @@ export const fetchEvents = createAsyncThunk(
   "events/fetchEvents",
   async (_, { rejectWithValue }) => {
     try {
-      const response = await axios.get(`${import.meta.env.VITE_BACKEND_API_URL}users/fetchEvents`, {
-        withCredentials: true, // This sends cookies to backend
+      const response = axios.get(`${import.meta.env.VITE_BACKEND_API_URL}users/fetchEvents`, {
+        withCredentials: true, // Ensures cookies are sent
       });
+      
      
       return response.data; // Expecting { eventsPending: {...}, eventsPaid: {...} }
     } catch (error) {
