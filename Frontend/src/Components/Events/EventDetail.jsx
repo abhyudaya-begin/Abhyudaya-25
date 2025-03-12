@@ -3,7 +3,7 @@ import { useParams, Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import toast from "react-hot-toast";
 import EventRegPopUp from './EventRegPopUp';
-import { useSelector,useDispatch } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { removeEvent } from "../Redux/EventSlice"; 
 
 const EventDetail = () => {
@@ -14,16 +14,10 @@ const EventDetail = () => {
   const [isEventRegPopUpOpen, setIsEventRegPopUpOpen] = useState(false);
 
   const dispatch = useDispatch();
-  const user = useSelector(state=>state.user);
-  const events = useSelector((state) => state.events.events);
-  const handleUnregister = () => {
-    dispatch(removeEvent(event.eventId));
-    toast.success("Unregistered successfully!");
-  };
+  const user = useSelector(state => state.user);
+  const processingEvents = useSelector(state => state.events.processing);
+
   const navigate = useNavigate();
-    
-    
-  
 
   useEffect(() => {
     let isMounted = true;
@@ -34,27 +28,18 @@ const EventDetail = () => {
         setError(null);
 
         const url = `${import.meta.env.VITE_BACKEND_API_URL}events/${id}`;
-
         console.log("Fetching from URL:", url);
 
-        const response = await axios.get(url, {
-          withCredentials: true
-        });
+        const response = await axios.get(url, { withCredentials: true });
 
         if (isMounted) {
           console.log("API Response:", response.data);
-
-          if (response.data) {
-            setEvent(response.data);
-          } else {
-            console.warn("Empty response data");
-            setEvent(null);
-          }
+          setEvent(response.data || null);
         }
       } catch (error) {
-        console.error("Error fetching events:", error);
+        console.error("Error fetching event:", error);
         if (isMounted) {
-          setError("Failed to load events");
+          setError("Failed to load event");
           setEvent(null);
         }
       } finally {
@@ -65,16 +50,17 @@ const EventDetail = () => {
     };
 
     fetchEvent();
-
-    return () => {
-      isMounted = false;
-    };
+    return () => { isMounted = false; };
   }, [id]);
 
-  const handleSuccess = () => {
-    // setIsRegistered(true);
-    setIsEventRegPopUpOpen(false);
+  const handleUnregister = () => {
+    if (event) {
+      dispatch(removeEvent(event.eventId));
+      toast.success("Unregistered successfully!");
+    }
   };
+
+  const isRegistered = processingEvents.some(e => e.id === event?.eventId);
 
   if (loading) {
     return (
@@ -94,7 +80,7 @@ const EventDetail = () => {
       </div>
     );
   }
-  const isRegistered = events.some((e) => e.id === event.eventId);// Check if the event is already registered
+
   return (
     <div className="bg-gradient-to-b from-gray-900 to-black min-h-screen text-gray-100">
       <div className="max-w-7xl mx-auto px-4 py-8 sm:px-6 lg:px-8">
@@ -109,7 +95,7 @@ const EventDetail = () => {
             <div className="md:w-1/2">
               {event.link ? (
                 <div
-                  className="h-64 md:h-full bg-cover bg-center "
+                  className="h-64 md:h-full bg-cover bg-center"
                   style={{ backgroundImage: `url(${event.link})` }}
                 />
               ) : (
@@ -149,18 +135,20 @@ const EventDetail = () => {
                   <span className="block text-lg text-gray-200">₹ {event.prize}</span>
                 </div>
               </div>
+
               <button
-      onClick={isRegistered ? handleUnregister : () => setIsEventRegPopUpOpen(true)}
-      className={`w-full cursor-pointer text-white font-bold py-3 px-6 rounded-lg transition-all duration-200 shadow-lg transform hover:-translate-y-1 ${
-        isRegistered
-          ? "bg-red-500 hover:bg-red-600 shadow-red-500/20 hover:shadow-red-500/40"
-          : "bg-gradient-to-r from-purple-600 to-pink-500 hover:from-purple-700 hover:to-pink-600 shadow-purple-500/20 hover:shadow-purple-500/40"
-      }`}
-    >
-      {isRegistered ? "Unregister" : "Register Now"}
-    </button>
+                onClick={isRegistered ? handleUnregister : () => setIsEventRegPopUpOpen(true)}
+                className={`w-full cursor-pointer text-white font-bold py-3 px-6 rounded-lg transition-all duration-200 shadow-lg transform hover:-translate-y-1 ${
+                  isRegistered
+                    ? "bg-red-500 hover:bg-red-600 shadow-red-500/20 hover:shadow-red-500/40"
+                    : "bg-gradient-to-r from-purple-600 to-pink-500 hover:from-purple-700 hover:to-pink-600 shadow-purple-500/20 hover:shadow-purple-500/40"
+                }`}
+              >
+                {isRegistered ? "Unregister" : "Register Now"}
+              </button>
             </div>
           </div>
+
           {event.rules && event.rules.length > 0 && (
             <div className="p-8 border-t border-gray-700">
               <h2 className="text-2xl font-bold text-purple-400 mb-4">Rules & Guidelines</h2>
@@ -187,11 +175,12 @@ const EventDetail = () => {
           )}
         </div>
       </div>
+
       {isEventRegPopUpOpen && (
         <EventRegPopUp
           isOpen={isEventRegPopUpOpen}
           onClose={() => setIsEventRegPopUpOpen(false)}
-          onSuccess={handleSuccess}
+          onSuccess={() => setIsEventRegPopUpOpen(false)}
           event={event}
         />
       )}
