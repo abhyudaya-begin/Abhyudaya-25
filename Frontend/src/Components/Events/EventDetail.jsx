@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import toast from "react-hot-toast";
 import EventRegPopUp from './EventRegPopUp';
-import { useSelector } from 'react-redux';
+import { useSelector,useDispatch } from 'react-redux';
+import { removeEvent } from "../Redux/EventSlice"; 
 
 const EventDetail = () => {
   const { id } = useParams();
@@ -10,10 +12,18 @@ const EventDetail = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [isEventRegPopUpOpen, setIsEventRegPopUpOpen] = useState(false);
-  const [isRegistered, setIsRegistered] = useState(false);
-  
+
+  const dispatch = useDispatch();
   const user = useSelector(state=>state.user);
+  const events = useSelector((state) => state.events.events);
+  const handleUnregister = () => {
+    dispatch(removeEvent(event.eventId));
+    toast.success("Unregistered successfully!");
+  };
   const navigate = useNavigate();
+    
+    
+  
 
   useEffect(() => {
     let isMounted = true;
@@ -62,7 +72,7 @@ const EventDetail = () => {
   }, [id]);
 
   const handleSuccess = () => {
-    setIsRegistered(true);
+    // setIsRegistered(true);
     setIsEventRegPopUpOpen(false);
   };
 
@@ -84,7 +94,7 @@ const EventDetail = () => {
       </div>
     );
   }
-
+  const isRegistered = events.some((e) => e.id === event.eventId);// Check if the event is already registered
   return (
     <div className="bg-gradient-to-b from-gray-900 to-black min-h-screen text-gray-100">
       <div className="max-w-7xl mx-auto px-4 py-8 sm:px-6 lg:px-8">
@@ -140,11 +150,15 @@ const EventDetail = () => {
                 </div>
               </div>
               <button
-                onClick={() => setIsEventRegPopUpOpen(true)}
-                className="w-full bg-gradient-to-r cursor-pointer from-purple-600 to-pink-500 hover:from-purple-700 hover:to-pink-600 text-white font-bold py-3 px-6 rounded-lg transition-all duration-200 shadow-lg shadow-purple-500/20 hover:shadow-purple-500/40 transform hover:-translate-y-1"
-              >
-                Register Now
-              </button>
+      onClick={isRegistered ? handleUnregister : () => setIsEventRegPopUpOpen(true)}
+      className={`w-full cursor-pointer text-white font-bold py-3 px-6 rounded-lg transition-all duration-200 shadow-lg transform hover:-translate-y-1 ${
+        isRegistered
+          ? "bg-red-500 hover:bg-red-600 shadow-red-500/20 hover:shadow-red-500/40"
+          : "bg-gradient-to-r from-purple-600 to-pink-500 hover:from-purple-700 hover:to-pink-600 shadow-purple-500/20 hover:shadow-purple-500/40"
+      }`}
+    >
+      {isRegistered ? "Unregister" : "Register Now"}
+    </button>
             </div>
           </div>
           {event.rules && event.rules.length > 0 && (
