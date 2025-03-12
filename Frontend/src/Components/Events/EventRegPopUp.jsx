@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
+import { useSelector,useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
+import { addEvent } from "../Redux/EventSlice";
 const EventRegPopUp = ({ isOpen, onClose, onSuccess, event }) => {
   const user = useSelector((state) => state.user);
   const navigate = useNavigate();
-
+  const dispatch = useDispatch();
 
   useEffect(() => {
     if (!user) {
@@ -15,7 +16,9 @@ const EventRegPopUp = ({ isOpen, onClose, onSuccess, event }) => {
   }, [user, navigate]);
 
   const handleSubmit =()=>{
-    toast.success("Coming soon !");
+    dispatch(addEvent({ id:event.eventId, name: event.name,price: event.participationFee    }));
+
+    toast.success("Registration successful");
     onSuccess();
   }
 
