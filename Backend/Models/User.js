@@ -31,7 +31,7 @@ const userSchema = new Schema(
     },
     profilePicture: {
       type: String,
-      required:true
+      required: true,
     },
     gender: {
       type: String,
@@ -97,23 +97,27 @@ const userSchema = new Schema(
       type: [String], // Array of ABH_ID strings
       validate: {
         validator: function (value) {
-          // Only validate if referrals are provided
           if (value && value.length > 0) {
             return this.isCampusAmbassador;
           }
-          return true; // Allow empty or undefined referrals
+          return true;
         },
         message: "Only Campus Ambassadors can have referrals",
       },
-      default: undefined, // Make sure it's undefined if not provided
+      default: undefined,
     },
     
-    eventsParticipated: [
-      {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "Events",
-      },
-    ],
+    // New structure for eventsPending and eventsPaid
+    eventsPending: {
+      type: Map,
+      of: [{ type: mongoose.Schema.Types.ObjectId, ref: "Events" }],
+      default: new Map(),
+    },
+    eventsPaid: {
+      type: Map,
+      of: [{ type: mongoose.Schema.Types.ObjectId, ref: "Events" }],
+      default: new Map(),
+    },
   },
   { timestamps: true }
 );
