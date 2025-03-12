@@ -7,6 +7,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { setUser } from "../Redux/UserSlice";
 import { useEffect, useState } from "react";
 import toast from "react-hot-toast";
+import { fetchEvents } from "../Redux/EventThunks";
 
 const signInSchema = z.object({
   email: z.string().email("Invalid email address"),
@@ -35,6 +36,7 @@ function SignInForm() {
       );
       
       dispatch(setUser( res.data.data )); // Dispatch user data to Redux
+      dispatch(fetchEvents());
       toast.success("Sign In Successful");
     } catch (error) {
       toast.error(error.response.data.errorMessage || "Sign In Failed");

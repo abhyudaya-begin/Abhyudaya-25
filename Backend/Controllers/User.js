@@ -234,94 +234,6 @@ const updateUser = async (req, res) => {
   }
 };
 
-const eventRegister = async (req, res) => {
-  try {
-    const { eventId } = req.body;
-
-    if (!eventId) {
-      return res.status(400).json(new ApiError(400, "Event ID is required"));
-    }
-
-    const user = req.user; // Access user from req object
-    const event = await Events.findOne({ eventId });
-
-    if (!event) {
-      return res.status(404).json(new ApiError(404, "Event not found"));
-    }
-
-    if (user.eventsParticipated?.includes(eventId)) {
-      return res
-        .status(400)
-        .json(new ApiError(400, "User already registered for this event"));
-    }
-
-    user.eventsParticipated.push(eventId);
-    await user.save();
-
-    const populatedUser = await User.findById(user._id).populate({
-      path: "eventsParticipated",
-      model: "Events",
-      match: { eventId: { $exists: true } },
-      select: "eventId eventName category",
-    });
-
-    return res
-      .status(200)
-      .json(
-        new ApiResponse(
-          200,
-          populatedUser,
-          "User registered for event successfully"
-        )
-      );
-  } catch (error) {
-    return res.status(500).json(new ApiError(500, "Something went wrong!"));
-  }
-};
-
-// Unregister Event
-const unregisterEvent = async (req, res) => {
-  try {
-    const { eventId } = req.body;
-
-    if (!eventId) {
-      return res.status(400).json(new ApiError(400, "Event ID is required"));
-    }
-
-    const user = req.user;
-
-    if (!user.eventsParticipated?.includes(eventId)) {
-      return res
-        .status(400)
-        .json(new ApiError(400, "User is not registered for this event"));
-    }
-
-    user.eventsParticipated = user.eventsParticipated.filter(
-      (event) => event !== eventId
-    );
-    await user.save();
-
-    const populatedUser = await User.findById(user._id).populate({
-      path: "eventsParticipated",
-      model: "Events",
-      match: { eventId: { $exists: true } },
-      select: "eventId eventName category",
-    });
-
-    return res
-      .status(200)
-      .json(
-        new ApiResponse(
-          200,
-          populatedUser,
-          `User unregistered successfully from event ${eventId}`
-        )
-      );
-  } catch (error) {
-    return res.status(500).json(new ApiError(500, "Something went wrong!"));
-  }
-};
-
 
 
 module.exports = {
@@ -330,6 +242,4 @@ module.exports = {
   getUsers,
   deleteUser,
   updateUser,
-  eventRegister,
-  unregisterEvent,
 };

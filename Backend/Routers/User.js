@@ -1,5 +1,6 @@
 const { Router } = require("express");
-const { deleteUser, eventRegister, registerUser, unregisterEvent, updateUser, getUsers , Login} = require("../Controllers/User");
+const { deleteUser,  registerUser, updateUser, getUsers , Login} = require("../Controllers/User");
+const { eventRegister, FetchEventsForUsers } = require("../Controllers/EventHandling");
 const { checkAdmin, checkUser } = require("../authentication/Middleware");
 
 const userRouter=Router();
@@ -10,7 +11,7 @@ userRouter.post("/login",  Login);
 userRouter.get("/all",   getUsers);
 userRouter.delete("/", checkAdmin, deleteUser);
 userRouter.put("/",checkUser,  updateUser);
-userRouter.post("/unregisterEvent", checkUser,  unregisterEvent);
+userRouter.get("/fetchEvents", checkUser,  FetchEventsForUsers);
 userRouter.post("/eventRegister", checkUser, eventRegister);
 
 
