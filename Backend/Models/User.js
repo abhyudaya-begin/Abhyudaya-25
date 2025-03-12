@@ -110,12 +110,12 @@ const userSchema = new Schema(
     // New structure for eventsPending and eventsPaid
     eventsPending: {
       type: Map,
-      of: [{ type: mongoose.Schema.Types.ObjectId, ref: "Events" }],
+      of: [{ type:Object}],
       default: new Map(),
     },
     eventsPaid: {
       type: Map,
-      of: [{ type: mongoose.Schema.Types.ObjectId, ref: "Events" }],
+      of: [{ type:Object}],
       default: new Map(),
     },
   },

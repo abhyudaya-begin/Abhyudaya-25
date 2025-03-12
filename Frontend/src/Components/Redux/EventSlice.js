@@ -1,19 +1,18 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { fetchEvents, processPayment } from "./EventThunks";
+import { fetchEvents, moveProcessingToPending } from "./EventThunks";
 import toast from "react-hot-toast";
 
 // Helper function to check if an event already exists in the processing list
 const eventExists = (events, eventId) => {
- 
   return events.some((event) => event.eventId === eventId);
 };
 
 const eventsSlice = createSlice({
   name: "events",
   initialState: {
-    processing: [], // New events before payment
-    eventsPending: {}, // { trxnId: [eventIds] }
-    eventsPaid: {}, // { trxnId: [eventIds] }
+    processing: [], // New events before registration
+    eventsPending: {}, // { trxnId: { all events data } }
+    eventsPaid: {}, // { trxnId: { all events data } }
     status: "idle",
     error: null,
   },
@@ -24,12 +23,10 @@ const eventsSlice = createSlice({
         toast.success("Event added to the wishlist!");
       } else {
         toast.error("Already registered !");
-     
       }
     },
 
     removeEvent: (state, action) => {
-      
       state.processing = state.processing.filter(
         (event) => event.eventId !== action.payload.eventId
       );
@@ -37,16 +34,10 @@ const eventsSlice = createSlice({
 
     moveToPending: (state, action) => {
       const { trxnId, events } = action.payload;
-
-      if (!state.eventsPending[trxnId]) {
-        state.eventsPending[trxnId] = [];
-      }
-      state.eventsPending[trxnId].push(...events);
+      state.eventsPending[trxnId] = events; // Store full event data
 
       // Remove processed events from `processing`
-      state.processing = state.processing.filter(
-        (event) => !events.includes(event.eventId)
-      );
+      state.processing = [];
     },
 
     updateEventStatus: (state, action) => {
@@ -66,7 +57,7 @@ const eventsSlice = createSlice({
         state.eventsPaid = action.payload.eventsPaid;
         state.status = "succeeded";
       })
-      .addCase(processPayment.fulfilled, (state, action) => {
+      .addCase(moveProcessingToPending.fulfilled, (state, action) => {
         const { trxnId, events } = action.payload;
         state.eventsPending[trxnId] = events;
         state.processing = [];
