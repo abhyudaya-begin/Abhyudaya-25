@@ -13,6 +13,18 @@ const RegisteredEvents = () => {
   const loading = useSelector((state) => state.events.status === "loading");
 
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [totalAmount, setTotalAmount] = useState(0);
+
+  useEffect(() => {
+    dispatch(fetchEvents());
+  }, [dispatch]);
+
+  // Calculate total amount for processing events
+  useEffect(() => {
+    const total = processingEvents.reduce((sum, event) => sum + (event?.price || 0), 0);
+    // Round up to nearest 50
+    setTotalAmount(total);
+  }, [processingEvents]);
 
   // Handle "Pay Now" click
   const handlePayNow = () => {
@@ -23,13 +35,14 @@ const RegisteredEvents = () => {
   // Handle Payment Submission
   const handleSubmitPayment = async (transactionId) => {
     if (!transactionId.trim()) return;
-    dispatch(moveProcessingToPending({ trxnId: transactionId, events: processingEvents }));
+    dispatch(
+      moveProcessingToPending({
+        trxnId: transactionId,
+        events: processingEvents,
+      })
+    );
     setIsModalOpen(false);
   };
-
-  useEffect(() => {
-    dispatch(fetchEvents());
-  }, [dispatch]);
 
   // Render event boxes
   const renderEventBox = (events, title, currentState = 1) => (
@@ -63,7 +76,7 @@ const RegisteredEvents = () => {
               key={event?.eventId}
               className="bg-white/10 p-2 cursor-pointer sm:p-4 rounded-xl hover:bg-white/20 transition flex justify-between items-center gap-8"
             >
-              <div className="flex items-center  w-full justify-between space-x-3">
+              <div className="flex items-center w-full justify-between space-x-3">
                 <h4 className="font-medium text-white text-sm sm:text-base">
                   {event?.name}
                 </h4>
@@ -76,7 +89,9 @@ const RegisteredEvents = () => {
               </div>
               {currentState === 0 && (
                 <button
-                  onClick={() => dispatch(removeEvent({ eventId: event.eventId }))}
+                  onClick={() =>
+                    dispatch(removeEvent({ eventId: event.eventId }))
+                  }
                   className="bg-red-500 cursor-pointer hover:bg-red-600 text-white text-xs sm:text-sm px-3 py-1 rounded-lg"
                 >
                   Remove
@@ -95,19 +110,26 @@ const RegisteredEvents = () => {
 
   return (
     <div className="w-full bg-white/10 rounded-2xl p-4 sm:p-5">
-      <h2 className="text-base sm:text-xl font-bold text-white">Registered Events</h2>
+      <h2 className="text-base sm:text-xl font-bold text-white">
+        Registered Events
+      </h2>
 
       {/* Processing Events with Pay Now Button */}
       {renderEventBox(processingEvents, "Processing Events", 0)}
 
       {processingEvents.length > 0 && (
-        <button
-          onClick={handlePayNow}
-          className="bg-indigo-500 hover:bg-indigo-600 text-white text-sm sm:text-base px-4 py-2 rounded-lg mt-3 w-full cursor-pointer"
-          disabled={loading}
-        >
-          {loading ? "Processing..." : "Pay Now"}
-        </button>
+        <>
+          <div className="text-white font-medium mt-2">
+            Total Amount: ₹{totalAmount}
+          </div>
+          <button
+            onClick={handlePayNow}
+            className="bg-indigo-500 hover:bg-indigo-600 text-white text-sm sm:text-base px-4 py-2 rounded-lg mt-3 w-full cursor-pointer"
+            disabled={loading}
+          >
+            {loading ? "Processing..." : "Pay Now"}
+          </button>
+        </>
       )}
 
       {/* Pending Events Grouped by Trxn ID */}
@@ -130,6 +152,7 @@ const RegisteredEvents = () => {
       {/* Payment Modal */}
       {isModalOpen && (
         <PaymentModal
+          amount={totalAmount} // Pass total amount to modal
           isOpen={isModalOpen}
           onClose={() => setIsModalOpen(false)}
           onSubmit={handleSubmitPayment}
