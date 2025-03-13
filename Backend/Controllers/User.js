@@ -112,7 +112,7 @@ const Login = async (req, res) => {
     res.cookie("user", token, {
       httpOnly: true, 
       secure: process.env.NODE_ENV === "production", // ✅ Ensures HTTPS in production
-      sameSite: "None", // ✅ Allows cross-domain cookies
+      sameSite: process.env.NODE_ENV === "production" ? "None" : "Lax", // ✅ Prevents CSRF & allows cross-origin
       maxAge: 7 * 24 * 60 * 60 * 1000, // 7 days
     });
     
