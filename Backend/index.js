@@ -15,7 +15,7 @@ dotenv.config();
 Connection(); // Connect DB
 
 const corsOptions = {
-  origin: [process.env.APPLICATION_URL, process.env.DEPLOYED_URL],
+  origin: process.env.APPLICATION_URL,
   credentials: true,
  
 };

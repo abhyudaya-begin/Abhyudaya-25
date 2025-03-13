@@ -6,6 +6,7 @@ const checkUser = (req, res, next) => {
   if (!req.user) {
     return res.status(401).json(new ApiError(401, "Unauthorized: User not logged in"));
   }
+
   next();
 };
 

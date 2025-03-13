@@ -110,9 +110,12 @@ const Login = async (req, res) => {
     const token = generateToken(user);
 
     res.cookie("user", token, {
-      httpOnly: true,
+      httpOnly: true, 
+      secure: process.env.NODE_ENV === "production", // ✅ Ensures HTTPS in production
+      sameSite: "None", // ✅ Allows cross-domain cookies
       maxAge: 7 * 24 * 60 * 60 * 1000, // 7 days
     });
+    
 
     return res.status(200).json(new ApiResponse(200, user, "Login successful"));
   } catch (error) {
