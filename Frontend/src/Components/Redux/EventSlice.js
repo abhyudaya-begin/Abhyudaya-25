@@ -11,8 +11,8 @@ const eventsSlice = createSlice({
   name: "events",
   initialState: {
     processing: [], // New events before registration
-    eventsPending: {}, // { trxnId: { all events data } }
-    eventsPaid: {}, // { trxnId: { all events data } }
+    eventsPending: null, // { trxnId: { all events data } }
+    eventsPaid: null, // { trxnId: { all events data } }
     status: "idle",
     error: null,
   },
@@ -22,7 +22,7 @@ const eventsSlice = createSlice({
         state.processing.push(action.payload);
         toast.success("Event added to the wishlist!");
       } else {
-        toast.error("Already registered !");
+        toast.error("Already registered!");
       }
     },
 
@@ -34,9 +34,7 @@ const eventsSlice = createSlice({
 
     moveToPending: (state, action) => {
       const { trxnId, events } = action.payload;
-      state.eventsPending[trxnId] = events; // Store full event data
-
-      // Remove processed events from `processing`
+      state.eventsPending = {  [trxnId]: events , ...state.eventsPending}; // ✅ Merging instead of overwriting
       state.processing = [];
     },
 
@@ -44,7 +42,10 @@ const eventsSlice = createSlice({
       const { trxnId, status } = action.payload;
 
       if (status === "Paid") {
-        state.eventsPaid[trxnId] = state.eventsPending[trxnId];
+        state.eventsPaid = {
+          
+          [trxnId]: state.eventsPending[trxnId],...state.eventsPaid
+        };
         delete state.eventsPending[trxnId];
       }
     },
@@ -53,13 +54,13 @@ const eventsSlice = createSlice({
   extraReducers: (builder) => {
     builder
       .addCase(fetchEvents.fulfilled, (state, action) => {
-        state.eventsPending = action.payload.eventsPending;
-        state.eventsPaid = action.payload.eventsPaid;
-        state.status = "succeeded";
+        state.eventsPending = action.payload.events.eventsPending; // ✅ Now properly nested
+        state.eventsPaid = action.payload.events.eventsPaid;
       })
+
       .addCase(moveProcessingToPending.fulfilled, (state, action) => {
         const { trxnId, events } = action.payload;
-        state.eventsPending[trxnId] = events;
+        state.eventsPending = { ...state.eventsPending, [trxnId]: events }; // ✅ Merging with existing
         state.processing = [];
       });
   },

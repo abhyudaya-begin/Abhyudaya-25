@@ -14,15 +14,16 @@ export const fetchEvents = createAsyncThunk(
           withCredentials: true, // Ensures cookies are sent
         }
       );
-      console.log(response);
+      console.log(response.data);
 
-      return response.data; // Expecting { eventsPending: {...}, eventsPaid: {...} }
+      return { events: response.data }; // ✅ Wrap data inside `events`
     } catch (error) {
       console.log(error);
       return rejectWithValue(error.response?.data || "Failed to fetch events");
     }
   }
 );
+
 
 // ✅ Move Processing Events to Pending (Register Events)
 export const moveProcessingToPending = createAsyncThunk(

@@ -13,7 +13,7 @@ const ProfileCard = () => {
         alt="Logo"
       />
       {/* Main Profile Card */}
-      <div className="relative w-full max-w-2xl md:max-w-4xl bg-white/10 backdrop-blur-lg rounded-3xl p-4 sm:p-6 md:p-8 shadow-lg">
+      <div className="relative w-full max-w-2xl md:max-w-6xl bg-white/10 backdrop-blur-lg rounded-3xl p-4 sm:p-6 md:p-8 shadow-lg">
         <div className="flex flex-col lg:flex-row gap-6">
           <ProfileInfo />
           <RegisteredEvents />
