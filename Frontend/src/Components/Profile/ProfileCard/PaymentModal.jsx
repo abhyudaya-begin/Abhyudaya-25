@@ -4,17 +4,7 @@ import toast from "react-hot-toast";
 const PaymentModal = ({ isOpen, onClose, onSubmit }) => {
   const [transactionId, setTransactionId] = useState("");
 
-  useEffect(() => {
-    if (isOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "auto";
-    }
-
-    return () => {
-      document.body.style.overflow = "auto"; // Reset on unmount
-    };
-  }, [isOpen]);
+ 
   const handleSubmit = () => {
     if (!transactionId.trim()) {
       toast.error("Please enter a valid Transaction ID");
