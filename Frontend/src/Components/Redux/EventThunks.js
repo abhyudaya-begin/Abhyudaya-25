@@ -8,15 +8,17 @@ export const fetchEvents = createAsyncThunk(
   "events/fetchEvents",
   async (_, { rejectWithValue }) => {
     try {
-      const response = axios.get(`${import.meta.env.VITE_BACKEND_API_URL}users/fetchEvents`, {
-        withCredentials: true, // Ensures cookies are sent
-      });
-      
-     
+      const response = await axios.get(
+        `${import.meta.env.VITE_BACKEND_API_URL}users/fetchEvents`,
+        {
+          withCredentials: true, // Ensures cookies are sent
+        }
+      );
+      console.log(response);
+
       return response.data; // Expecting { eventsPending: {...}, eventsPaid: {...} }
     } catch (error) {
-     
-      console.log(error)
+      console.log(error);
       return rejectWithValue(error.response?.data || "Failed to fetch events");
     }
   }
@@ -39,7 +41,9 @@ export const moveProcessingToPending = createAsyncThunk(
       // Send only event IDs, not full objects
       // const eventIds = processingEvents.map(event => event.eventId);
 
-      const response = await axios.post(`${import.meta.env.VITE_BACKEND_API_URL}users/eventRegister`, { trxnId, events: processingEvents },
+      const response = await axios.post(
+        `${import.meta.env.VITE_BACKEND_API_URL}users/eventRegister`,
+        { trxnId, events: processingEvents },
         {
           withCredentials: true, // This sends cookies to backend
         }
@@ -48,13 +52,14 @@ export const moveProcessingToPending = createAsyncThunk(
       // Dispatch moveToPending to update Redux state
       dispatch(moveToPending({ trxnId, events: processingEvents }));
       toast.success("Done");
-      
+
       return response.data; // { trxnId, events }
     } catch (error) {
       toast.error("Error");
-      console.log(error)
-      return rejectWithValue(error.response?.data || { message: "Something went wrong!" });
+      console.log(error);
+      return rejectWithValue(
+        error.response?.data || { message: "Something went wrong!" }
+      );
     }
   }
 );
-
