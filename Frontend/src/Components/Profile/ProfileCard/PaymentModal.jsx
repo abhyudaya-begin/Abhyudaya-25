@@ -1,10 +1,23 @@
 import React, { useState, useEffect } from "react";
 import toast from "react-hot-toast";
 
-const PaymentModal = ({ isOpen, onClose, onSubmit }) => {
-  const [transactionId, setTransactionId] = useState("");
 
- 
+const getQRCodeImage = (amount) => {
+  const validAmounts = [
+    50, 100, 150, 200, 250, 300, 350, 400, 450, 500, 550, 600,
+  ];
+  if (!validAmounts.includes(amount)) return null;
+  return `/Payments/${amount}.png`;
+};
+
+const PaymentModal = ({amount,  isOpen, onClose, onSubmit }) => {
+  const [transactionId, setTransactionId] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [qrImage, setqrImage] = useState(null);
+
+  const qrCodeImage = getQRCodeImage(amount);
+
+
   const handleSubmit = () => {
     if (!transactionId.trim()) {
       toast.error("Please enter a valid Transaction ID");
@@ -18,14 +31,16 @@ const PaymentModal = ({ isOpen, onClose, onSubmit }) => {
   if (!isOpen) return null; // Do not render if not open
 
   return (
-    <div  className="fixed  inset-0 z-100 bg-opacity-70 flex justify-center items-center backdrop-blur-2xl h-screen  ">
+    <div className="fixed  inset-0 z-100 bg-opacity-70 flex justify-center items-center backdrop-blur-2xl h-screen  ">
       <div className="bg-gray-900 p-6 rounded-lg shadow-lg w-96  ">
-        <h2 className="text-lg md:text-3xl text-center  text-blue-500 font-semibold mb-4">Scan & Pay</h2>
+        <h2 className="text-lg md:text-3xl text-center  text-blue-500 font-semibold mb-4">
+          Scan & Pay
+        </h2>
 
         {/* QR Code (Replace with actual QR code image) */}
         <div className="flex justify-center">
           <img
-            src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=SamplePaymentQR"
+            src={ qrCodeImage}
             alt="QR Code"
             className="w-40 h-40"
           />
@@ -33,7 +48,9 @@ const PaymentModal = ({ isOpen, onClose, onSubmit }) => {
 
         {/* Input for Transaction ID */}
         <div className="mt-4">
-          <label className="block text-sm font-medium">Please enter the Transaction ID:</label>
+          <label className="block text-sm font-medium">
+            Please enter the Transaction ID:
+          </label>
           <input
             type="text"
             value={transactionId}
