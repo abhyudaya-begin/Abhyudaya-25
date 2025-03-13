@@ -10,11 +10,11 @@ const attachUserWithTokenVerification = async (req, res, next) => {
   try {
     const token = req.cookies?.user; // ✅ Corrected (req.cookies instead of req.cookie)
     
-  
-
+    
     if (!token) return next(); // If no token, continue without modifying req.user
-
+    
     const decoded = jwt.verify(token, process.env.USERNAME_SECRET);
+
     if (decoded) {
       req.user = decoded; // ✅ Directly attach decoded payload
     }
