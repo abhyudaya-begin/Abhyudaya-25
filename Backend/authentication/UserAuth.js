@@ -31,11 +31,10 @@ const attachUserWithTokenVerification = async (req, res, next) => {
 const generateToken = (user) => {
   const payload = {
     fullName: user.fullName,
-    ABH_ID: user.ABH_ID,
+    ABH_ID: user.ABH_ID || null,
     phoneNumber: user.phoneNumber,
-    email: user.email,
-    profilePicture: user.profilePicture,
-    isAdmin:user.isAdmin
+    email: user.email || null,
+    profilePicture: user.profilePicture || null
   };
 
   return jwt.sign( payload , process.env.USERNAME_SECRET, {
@@ -43,4 +42,4 @@ const generateToken = (user) => {
   });
 };
 
-module.exports = {attachUserWithTokenVerification, generateToken, };
+module.exports = {attachUserWithTokenVerification, generateToken};

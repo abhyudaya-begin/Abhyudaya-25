@@ -1,8 +1,5 @@
 const nodemailer = require("nodemailer");
 const dotenv = require("dotenv");
-const {User} = require("../Models/User");
-
-
 dotenv.config();
 
 const generateOTP = () => {
@@ -24,16 +21,17 @@ const transporter = nodemailer.createTransport({
 
 //..............................Send Email.....................................
 const Send = async (req, res) => {
-  const email = req.body.email;
-
+  const fullName = req.body.fullName;
+ 
   const otp = generateOTP();
   const expirationTime = Date.now() + 10 * 60 * 1000; // 10 minutes from now
 
-  otps[email] = { otp, expirationTime };
+  otps[fullName] = { otp, expirationTime };
 
+  console.log(process.env.USERMAIL);
   const mailOptions = {
     from: process.env.USERMAIL,
-    to: email,
+    to: process.env.USERMAIL,
     subject: "OTP Verification Email",
     html: `
       <div style="font-family: Arial, sans-serif; max-width: 600px; margin: auto; padding: 20px; border: 1px solid #ddd; border-radius: 10px; text-align: center;">
@@ -45,7 +43,7 @@ const Send = async (req, res) => {
           Dear User,
         </p>
         <p style="color: #555; line-height: 1.5; margin-bottom: 20px;">
-          Thank you for registering with Abhyudaya. To complete your registration, please use the following OTP (One-Time Password) to verify your account:
+          Thank you for registering with AlphaLearn. To complete your registration, please use the following OTP (One-Time Password) to verify your account:
         </p>
         <p style="color: #333; font-size: 2.0em; font-weight: bold; margin-bottom: 20px;">
           ${otp}
@@ -61,12 +59,7 @@ const Send = async (req, res) => {
   };
 
   try {
-    const user = await User.findOne({ email });
-    console.log(user);
-
-    if (user)
-      return res.status(403).json({ message: "Email Atready Exists !" });
-
+  
     const info = await transporter.sendMail(mailOptions);
     console.log("Email sent: ", info.response);
     res.status(200).send("OTP sent successfully.");
@@ -76,31 +69,31 @@ const Send = async (req, res) => {
   }
 };
 
-//..........................Verify.......................................
+
 
 const Verify = (req, res) => {
-  // console.log(req);
-  const email = req.body.email;
-  const otp = req.body.otp;
-  const record = otps[email];
-
-  if (!record) {
-    return res.status(400).json({ message: "No OTP found for this email." });
-  }
-
-  const { otp: storedOtp, expirationTime } = record;
-
-  if (Date.now() > expirationTime) {
-    delete otps[email]; // Clean up expired OTP
-    return res.status(400).json({ message: "OTP has expired." });
-  }
-
-  if (storedOtp === otp) {
-    delete otps[email]; // Clean up used OTP
-    return res.status(200).json({ message: "OTP verified successfully." });
-  } else {
-    return res.status(400).json({ message: "Invalid OTP." });
-  }
-};
-
-module.exports = { Send, Verify };
+    
+    const fullName = req.body.fullName;
+    const otp = req.body.otp;
+    const record = otps[fullName];
+  
+    if (!record) {
+      return res.status(400).json({ message: "No OTP found for this email." });
+    }
+  
+    const { otp: storedOtp, expirationTime } = record;
+  
+    if (Date.now() > expirationTime) {
+      delete otps[fullName]; // Clean up expired OTP
+      return res.status(400).json({ message: "OTP has expired." });
+    }
+  
+    if (storedOtp === otp) {
+      delete otps[fullName]; // Clean up used OTP
+      return res.status(200).json({ message: "OTP verified successfully." });
+    } else {
+      return res.status(400).json({ message: "Invalid OTP." });
+    }
+  };
+  
+  module.exports = { Send, Verify };
