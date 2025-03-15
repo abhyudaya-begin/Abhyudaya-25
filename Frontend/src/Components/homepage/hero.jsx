@@ -48,9 +48,9 @@ const HeroSection = () => {
 
 
            
-<h1 className=" text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white tracking-wide uppercase text-center">
+<h1 className=" text-3xl  sm:text-5xl md:text-5xl lg:text-6xl xl:text-7xl font-serif text-white tracking-wide uppercase text-center">
   <span className="bg-gradient-to-r from-[#f7d77f] to-[#b58b3b] bg-clip-text text-transparent drop-shadow-lg">
-     4 -  6 APRIL, 2025
+     4 APRIL -  6 APRIL, 2025
   </span>
 </h1>
 
