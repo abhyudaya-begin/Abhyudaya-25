@@ -12,13 +12,6 @@ eventRouter.get("/all", getAllEvents);
 // GET : event/eve_id 
 eventRouter.get("/:id", getEventById);
 
-//Admin
-eventRouter.post("/",   createEvent);
-//Admin
-eventRouter.put("/:id", checkAdmin,  updateEvent);
 
-// admin
-eventRouter.delete("/:id",  deleteEvent);
-//  post ->events add
 
 module.exports =  eventRouter;

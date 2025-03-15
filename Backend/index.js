@@ -8,7 +8,8 @@ const PORT = process.env.PORT || 8000;
 const dotenv = require("dotenv");
 const cors = require("cors");
 const cookieParser = require("cookie-parser");
-const { checkUser } = require("./authentication/Middleware");
+const {checkAdmin} = require('./authentication/Middleware');
+const adminRouter = require("./Routers/Admin");
 
 dotenv.config();
 
@@ -39,6 +40,9 @@ app.get("/", (req, res) => {
 app.use("/events", eventRouter);
 app.use("/users", userRouter);
 app.use("/verify",VerificationRouter);
+app.use("/admin", checkAdmin, adminRouter);
+
+
 
 app.listen(PORT, () => {
   console.log("Server Running at Port " + PORT);
