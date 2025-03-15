@@ -22,6 +22,8 @@ const HeroSection = () => {
           loop
           muted
           playsInline
+          preload="auto"
+           poster="/Vid-Thumbnail.png"
           
         />
 

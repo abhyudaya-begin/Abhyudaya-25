@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import IndexHome from "./homepage/Index-home";
 import ContactUs from "./Contact/ContactUs";
 import Members from "./Team/Members";
@@ -10,10 +10,15 @@ import EventDetail from "./Events/EventDetail";
 import { Toaster } from "react-hot-toast";
 import Gallery from "./Gallery/Gallery";
 import Sponsors from "./Sponsors/Sponsors";
+import { useEffect } from "react";
 // Pages
 
-
 function Routing() {
+  const { pathname } = useLocation();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
   return (
     <div
       style={{
@@ -37,13 +42,8 @@ function Routing() {
         <Route path="/contact" element={<ContactUs />} />
         <Route path="/events" element={<Events />} />
         <Route path="/events/:id" element={<EventDetail />} />
-
-
-       
-        
       </Routes>
     </div>
-  
   );
 }
 
