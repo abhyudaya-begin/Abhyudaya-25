@@ -1,26 +1,27 @@
 import React, { useState, useEffect } from "react";
 import toast from "react-hot-toast";
 
-
 const getQRCodeImage = (amount) => {
-  const validAmounts = [
-    50, 100, 150, 200, 250, 300, 350, 400, 450, 500, 550, 600,
-  ];
-  if (!validAmounts.includes(amount)) return null;
-  return `/Payments/${amount}.png`;
+  const validAmounts = amount % 50 == 0 && amount > 500 && amount <= 1500;
+  if (!validAmounts) return `/Payments/generic_123_alpha.png`;
+  return `/Payments/generic_${amount}_beta.jpg`;
 };
 
-const PaymentModal = ({amount,  isOpen, onClose, onSubmit }) => {
+const PaymentModal = ({ amount, isOpen, onClose, onSubmit }) => {
   const [transactionId, setTransactionId] = useState("");
   const [loading, setLoading] = useState(false);
   const [qrImage, setqrImage] = useState(null);
 
   const qrCodeImage = getQRCodeImage(amount);
 
-
-  const handleSubmit = () => {
-    if (!transactionId.trim()) {
-      toast.error("Please enter a valid Transaction ID");
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (
+      !transactionId.trim() ||
+      transactionId.length !== 12 ||
+      !/^\d{12}$/.test(transactionId) || isNaN(transactionId)
+    ) {
+      toast.error("Transaction ID must be exactly 12 digits.");
       return;
     }
     onSubmit(transactionId); // Send transaction ID to parent
@@ -39,11 +40,7 @@ const PaymentModal = ({amount,  isOpen, onClose, onSubmit }) => {
 
         {/* QR Code (Replace with actual QR code image) */}
         <div className="flex justify-center">
-          <img
-            src={ qrCodeImage}
-            alt="QR Code"
-            className="w-40 h-40"
-          />
+          <img src={qrCodeImage} alt="QR Code" className="w-[60%] h-full" />
         </div>
 
         {/* Input for Transaction ID */}
@@ -63,18 +60,21 @@ const PaymentModal = ({amount,  isOpen, onClose, onSubmit }) => {
 
         {/* Buttons */}
         <div className="mt-4 flex justify-end gap-2">
-          <button
-            onClick={onClose}
-            className="px-4 py-2 bg-gray-900 text-white rounded cursor-pointer"
-          >
-            Cancel
-          </button>
-          <button
-            onClick={handleSubmit}
-            className="px-4 py-2 bg-blue-600 text-white rounded cursor-pointer"
-          >
-            Submit
-          </button>
+          <form action="">
+            <button
+              onClick={onClose}
+              className="px-4 py-2 bg-gray-900 text-white rounded cursor-pointer"
+            >
+              Cancel
+            </button>
+            <button
+              onClick={handleSubmit}
+              type="submit"
+              className="px-4 py-2 bg-blue-600 text-white rounded cursor-pointer"
+            >
+              Submit
+            </button>
+          </form>
         </div>
       </div>
     </div>

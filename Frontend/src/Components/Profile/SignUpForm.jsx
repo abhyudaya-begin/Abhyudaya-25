@@ -109,7 +109,7 @@ function SignUpForm({ setIsSignUp }) {
       const { fullName, ...restAll } = filteredData;
 
       await tryUploadingToSupabase(fullName);
-      console.log(image);
+     
 
       // Include the image URL in the submission data
       const userDataWithImage = {
@@ -166,7 +166,9 @@ function SignUpForm({ setIsSignUp }) {
         toast.success("OTP sent successfully");
       }
     } catch (err) {
+      console.log(err)
       if (!email.trim()) {
+
         toast.error("Email is required");
       } else {
         toast.error("Email Already Exists!");
