@@ -16,6 +16,8 @@ const EventDetail = () => {
   const dispatch = useDispatch();
   const user = useSelector(state => state.user);
   const processingEvents = useSelector(state => state.events.processing);
+  const eventsPaid = useSelector(state => state.events.eventsPaid);
+  const eventsPending = useSelector(state => state.events.eventsPending);
 
   const navigate = useNavigate();
 
@@ -60,7 +62,10 @@ const EventDetail = () => {
     }
   };
 
-  const isRegistered = processingEvents.some(e => e.id === event?.eventId);
+  const isRegistered = 
+  (Array.isArray(processingEvents) && processingEvents.some(e => e.eventId === event?.eventId)) ||
+  (Array.isArray(eventsPending) && Object.values(eventsPending).flat().some(e => e.eventId === event?.eventId)) ||
+  (Array.isArray(eventsPaid) && Object.values(eventsPaid).flat().some(e => e.eventId === event?.eventId));
 
   if (loading) {
     return (
@@ -137,14 +142,15 @@ const EventDetail = () => {
               </div>
 
               <button
+              disabled = {isRegistered}
                 onClick={isRegistered ? handleUnregister : () => setIsEventRegPopUpOpen(true)}
-                className={`w-full cursor-pointer text-white font-bold py-3 px-6 rounded-lg transition-all duration-200 shadow-lg transform hover:-translate-y-1 ${
+                className={`w-full text-white font-bold py-3 px-6 rounded-lg transition-all duration-200 shadow-lg transform hover:-translate-y-1 ${
                   isRegistered
                     ? "bg-red-500 hover:bg-red-600 shadow-red-500/20 hover:shadow-red-500/40"
-                    : "bg-gradient-to-r from-purple-600 to-pink-500 hover:from-purple-700 hover:to-pink-600 shadow-purple-500/20 hover:shadow-purple-500/40"
+                    : "  cursor-pointer bg-gradient-to-r from-purple-600 to-pink-500 hover:from-purple-700 hover:to-pink-600 shadow-purple-500/20 hover:shadow-purple-500/40"
                 }`}
               >
-                {isRegistered ? "Unregister" : "Register Now"}
+                {isRegistered ? "Already Registered" : "Register Now"}
               </button>
             </div>
           </div>

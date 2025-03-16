@@ -28,16 +28,18 @@ export const fetchEvents = createAsyncThunk(
 // ✅ Move Processing Events to Pending (Register Events)
 export const moveProcessingToPending = createAsyncThunk(
   "events/moveProcessingToPending",
-  async (_, { getState, dispatch, rejectWithValue }) => {
+  async (transactionId, { getState, dispatch, rejectWithValue }) => {
     try {
       const state = getState();
       const processingEvents = state.events.processing;
+     
 
       if (!processingEvents.length) {
         return rejectWithValue({ message: "No events in processing!" });
       }
 
-      const trxnId = `TRXN_${Date.now()}`; // Generate a transaction ID
+      const trxnId = transactionId.trxnId; // Generate a transaction ID
+     
 
       // Send only event IDs, not full objects
       // const eventIds = processingEvents.map(event => event.eventId);
