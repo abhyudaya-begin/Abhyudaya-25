@@ -26,7 +26,7 @@ const ProfileInfo = () => {
   });
 
   return (
-    <div className="w-full space-y-6">
+    <div className="w-full space-y-6 h-fit ">
       {/* Profile Header */}
       <div className="flex flex-col sm:flex-row items-center gap-4">
         <img

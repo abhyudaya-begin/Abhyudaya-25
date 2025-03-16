@@ -7,18 +7,27 @@ import AuthForm from "./Profile/AuthForm";
 import ProfileRoute from "./Profile/ProfileRoute";
 import Events from "./Events/Events";
 import EventDetail from "./Events/EventDetail";
-import { Toaster } from "react-hot-toast";
+import toast, { Toaster } from "react-hot-toast";
 import Gallery from "./Gallery/Gallery";
 import Sponsors from "./Sponsors/Sponsors";
 import { useEffect } from "react";
+import { useSelector } from "react-redux";
 // Pages
 
 function Routing() {
+  const user  =  useSelector(state=> state.user)
   const { pathname } = useLocation();
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [pathname]);
+  useEffect(() => {
+    if (user) {
+      toast.success(`Happy Abhyudaya ${user.fullName}🎉`);
+    }
+  }, []);
 
+
+  
   return (
     <div
       style={{

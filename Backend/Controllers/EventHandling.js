@@ -10,7 +10,7 @@ const { generateToken } = require("../authentication/UserAuth.js");
 const eventRegister = async (req, res) => {
   try {
     const { trxnId, events } = req.body;
-    console.log(events);
+    console.log(req.body);
 
     if (!trxnId || !Array.isArray(events) || events.length === 0) {
       return res.status(400).json(new ApiError(400, "Invalid event data"));
@@ -50,6 +50,47 @@ const eventRegister = async (req, res) => {
   }
 };
 
+const movePendingToPaid = async (req, res) => {
+  try {
+    const { trxnId, ABH_ID } = req.body;
+
+    if (!trxnId) {
+      return res.status(400).json(new ApiError(400, "Transaction ID is required"));
+    }
+
+    // ✅ Fetch the user's pending events for the given transaction ID
+    const user = await User.findOne({ ABH_ID });
+
+    if (!user) {
+      return res.status(404).json(new ApiError(404, "User not found"));
+    }
+
+    // ✅ Retrieve the events from Map using `.get()`
+    const eventsToMove = user.eventsPending.get(trxnId); 
+
+  
+
+    if (!eventsToMove || eventsToMove.length === 0) {
+      return res.status(404).json(new ApiError(404, "No events found for this transaction"));
+    }
+
+    // ✅ Move events from `eventsPending` to `eventsPaid`
+    user.eventsPending.delete(trxnId); // Remove from pending
+    user.eventsPaid.set(trxnId, eventsToMove); // Move to paid
+
+    await user.save(); // Save changes
+
+    return res.status(200).json(
+      new ApiResponse(200, { user }, "Events moved to paid successfully")
+    );
+  } catch (error) {
+    console.error(error);
+    return res.status(500).json(new ApiError(500, "Something went wrong!"));
+  }
+};
+
+
+
 const FetchEventsForUsers = async (req, res) => {
   try {
     const user = await User.findOne({ ABH_ID: req.user.ABH_ID }).lean();
@@ -85,4 +126,5 @@ const FetchEventsForUsers = async (req, res) => {
 module.exports = {
   eventRegister,
   FetchEventsForUsers,
+  movePendingToPaid
 };

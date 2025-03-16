@@ -1,8 +1,6 @@
 const mongoose = require("mongoose");
 const { Schema } = mongoose;
 
-
-
 const userSchema = new Schema(
   {
     fullName: {
@@ -13,18 +11,15 @@ const userSchema = new Schema(
     phoneNumber: {
       type: Number,
       required: true,
-      unique: true,
     },
     year: {
-        type: Number,
-        required: true,
-     
-      },
-      rollNumber: {
-        type: Number,
-        required: true,
-        unique: true,
-      }
+      type: Number,
+      required: true,
+    },
+    rollNumber: {
+      type: Number,
+      required: true,
+    },
   },
   { timestamps: true }
 );
