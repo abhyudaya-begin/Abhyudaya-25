@@ -34,6 +34,7 @@ const RegisteredEvents = () => {
 
   // Handle Payment Submission
   const handleSubmitPayment = async (transactionId) => {
+    
     if (!transactionId.trim()) return;
     dispatch(
       moveProcessingToPending({
