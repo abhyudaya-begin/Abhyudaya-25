@@ -5,7 +5,8 @@ const {
   deleteEvent,
 } = require("../Controllers/Events");
 const { AdminLogin } = require("../Admin/Admin_Controller");
-const {Send, Verify} = require('../Admin/EmailForLogin')
+const {Send, Verify} = require('../Admin/EmailForLogin');
+const { movePendingToPaid } = require("../Controllers/EventHandling");
 
 const adminRouter = Router();
 
@@ -23,7 +24,8 @@ adminRouter.post("/verify-email", Verify);
 //
 
 //Payment Handlings and all
-//
+adminRouter.post("/payment", movePendingToPaid);
+// 
 
 //Sponsors Upload.
 //

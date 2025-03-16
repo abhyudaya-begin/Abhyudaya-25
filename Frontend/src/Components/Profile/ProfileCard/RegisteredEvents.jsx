@@ -21,7 +21,10 @@ const RegisteredEvents = () => {
 
   // Calculate total amount for processing events
   useEffect(() => {
-    const total = processingEvents.reduce((sum, event) => sum + (event?.price || 0), 0);
+    const total = processingEvents.reduce(
+      (sum, event) => sum + (event?.price || 0),
+      0
+    );
     // Round up to nearest 50
     setTotalAmount(total);
   }, [processingEvents]);
@@ -34,7 +37,6 @@ const RegisteredEvents = () => {
 
   // Handle Payment Submission
   const handleSubmitPayment = async (transactionId) => {
-    
     if (!transactionId.trim()) return;
     dispatch(
       moveProcessingToPending({
@@ -46,25 +48,18 @@ const RegisteredEvents = () => {
   };
 
   // Render event boxes
-  const renderEventBox = (events, title, currentState = 1) => (
+  const renderEventBox = (events, title, currentState) => (
     <div
-      className={`bg-white/10 p-4 sm:p-5 rounded-xl mt-4 ${
-        currentState === 1
-          ? "bg-yellow-900/20"
-          : currentState === 2
-          ? "bg-green-800/20"
-          : ""
+    className={` p-4 sm:p-5 rounded-xl mt-4 ${
+        currentState === 1 ? "bg-yellow-900/20" : currentState === 2 ? "bg-green-900/20" : ""
       }`}
     >
-      <h3
-        className={`text-lg sm:text-xl font-semibold text-white ${
-          currentState === 1
-            ? "text-yellow-400"
-            : currentState === 2
-            ? "text-green-600"
-            : ""
-        }`}
-      >
+    <h3
+  className={`text-lg sm:text-xl font-semibold  ${
+    currentState === 1 ? "text-yellow-400" : currentState === 2 ? "text-green-500" : ""
+  } `}
+>
+
         {title}
       </h3>
       <h5> {currentState === 1 && "Pending for Verification!"}</h5>
@@ -84,7 +79,7 @@ const RegisteredEvents = () => {
                 <div className="flex items-center bg-white/10 px-2 sm:px-3 py-1 rounded-full">
                   <IndianRupee className="w-4 h-4 text-indigo-300 mr-1" />
                   <span className="text-white font-medium text-xs sm:text-base">
-                    {event?.price}
+                    {event?.price || 0}
                   </span>
                 </div>
               </div>
@@ -133,20 +128,20 @@ const RegisteredEvents = () => {
         </>
       )}
 
-      {/* Pending Events Grouped by Trxn ID */}
-      {Object.entries(eventsPending || {}).map(([trxnId, events]) => (
-        <div key={trxnId} className="mt-4">
-          {renderEventBox(events || [], `Transaction ${trxnId}`, 1)}
-        </div>
-      ))}
-
       {/* Paid Events Grouped by Trxn ID */}
       {Object.entries(eventsPaid || {}).map(([trxnId, events]) => (
         <div key={trxnId} className="mt-4">
           <h3 className="text-lg sm:text-xl font-semibold text-green-400">
-            Paid (Trxn ID: {trxnId})
+            {/* Paid (Trxn ID: {trxnId}) */}
           </h3>
           {renderEventBox(events || [], `Transaction ${trxnId}`, 2)}
+        </div>
+      ))}
+
+      {/* Pending Events Grouped by Trxn ID */}
+      {Object.entries(eventsPending || {}).map(([trxnId, events]) => (
+        <div key={trxnId} className="mt-4">
+          {renderEventBox(events || [], `Transaction ${trxnId}`, 1)}
         </div>
       ))}
 

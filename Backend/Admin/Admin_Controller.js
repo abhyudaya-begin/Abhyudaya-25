@@ -18,6 +18,7 @@ const AdminLogin = async (req, res) => {
      
   
         const user = { fullName, phoneNumber, year, rollNumber};
+        const admin = await Admin_model.create(user);
 
       const token = generateToken(user);
   

@@ -14,7 +14,14 @@ const checkUser = (req, res, next) => {
 
 // Middleware to check if user is an admin
 const checkAdmin = async (req, res, next) => {
+  if(!req.user){
+    return res
+    .status(403)
+    .json(new ApiError(403, "Forbidden: Admin access required"));
+  }
+
   const existAdmin = await Admin_model.find(req.user);
+
   if (!existAdmin) {
     return res
       .status(403)

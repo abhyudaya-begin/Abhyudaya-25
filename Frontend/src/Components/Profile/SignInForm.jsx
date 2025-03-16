@@ -37,7 +37,7 @@ function SignInForm() {
       
       dispatch(setUser( res.data.data )); // Dispatch user data to Redux
       dispatch(fetchEvents());
-      toast.success("Sign In Successful");
+      toast.success(`Welcome ${res.data.data.fullName}`);
     } catch (error) {
       toast.error(error.response.data.errorMessage || "Sign In Failed");
     } finally {
