@@ -41,9 +41,9 @@ const Members = () => {
           </h1>
         </div>
 
-        <div className="flex justify-center ">
+        {/* <div className="flex justify-center ">
           <LeaderCard member={leaderData} />
-        </div>
+        </div> */}
 
         <div className="flex justify-center mt-20">
           <div className="grid grid-cols-1 md:grid-cols-2 md:gap-60 gap-12 mt-12">

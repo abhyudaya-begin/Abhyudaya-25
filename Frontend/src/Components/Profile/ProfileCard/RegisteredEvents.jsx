@@ -106,8 +106,8 @@ const RegisteredEvents = () => {
 
   return (
     <div className="w-full bg-white/10 rounded-2xl p-4 sm:p-5">
-      <h2 className="text-base sm:text-xl font-bold text-white">
-        Registered Events
+      <h2 className="text-base sm:text-2xl font-bold text-white">
+        Wishlist❤️..
       </h2>
 
       {/* Processing Events with Pay Now Button */}
