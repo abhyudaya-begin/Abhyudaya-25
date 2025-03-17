@@ -1,7 +1,6 @@
 const nodemailer = require("nodemailer");
 const dotenv = require("dotenv");
-const {User} = require("../Models/User");
-
+const { User } = require("../Models/User");
 
 dotenv.config();
 
@@ -71,7 +70,6 @@ const Send = async (req, res) => {
     console.log("Email sent: ", info.response);
     res.status(200).send("OTP sent successfully.");
   } catch (error) {
-
     res.status(400).json({ message: "Error : " + error });
   }
 };
@@ -103,4 +101,46 @@ const Verify = (req, res) => {
   }
 };
 
-module.exports = { Send, Verify };
+// ///////////////////////////////////////////////
+const sendContactEmail = async (req, res) => {
+  const mailOptions = {
+    from: process.env.USERMAIL,
+    to: process.env.USERMAIL,
+    subject: "Contact us new message",
+    html: `
+      <div style="font-family: Arial, sans-serif; max-width: 600px; margin: auto; padding: 20px; border: 1px solid #ddd; border-radius: 10px; text-align: center;">
+        
+        <h2 style="color: #333; margin-bottom: 20px;">OTP Verification Email</h2>
+        <p style="color: #555; line-height: 1.5; margin-bottom: 20px;">
+          Dear Admin,
+        </p>
+        <p style="color: #555; line-height: 1.5; margin-bottom: 20px;">
+          New message received from contact us window.
+        </p>
+        <p style="color: #333; font-size: 2.0em; font-weight: bold; margin-bottom: 20px;">
+          ${req.body.fullName}
+        </p>
+         </p>
+        <p style="color: #333; font-size: 2.0em; font-weight: bold; margin-bottom: 20px;">
+          ${req.body.email}-${req.body.phone}
+        </p>
+         </p>
+        <p style="color: #333; font-size: 2.0em; font-weight: bold; margin-bottom: 20px;">
+          ${req.body.message}
+        </p>
+        
+       
+      </div>
+    `,
+  };
+
+  try {
+    const info = await transporter.sendMail(mailOptions);
+    console.log("Email sent: ", info.response);
+    res.status(200).send("OTP sent successfully.");
+  } catch (error) {
+    res.status(400).json({ message: "Error : " + error });
+  }
+};
+
+module.exports = { Send, Verify, sendContactEmail };

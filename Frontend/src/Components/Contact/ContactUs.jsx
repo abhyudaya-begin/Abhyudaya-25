@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { FaInstagram, FaWhatsapp } from "react-icons/fa";
 import logo from "../../assets/Logo-images/logo.png";
+import axios from "axios";
+import toast from "react-hot-toast";
 
 const ContactUs = () => {
   const [formData, setFormData] = useState({
@@ -9,11 +11,31 @@ const ContactUs = () => {
     phone: "",
     message: "",
   });
+  const [loading, setLoading] = useState(false);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Handle form submission logic here
-    console.log(formData);
+
+    try {
+      setLoading(true);
+      const url = `${import.meta.env.VITE_BACKEND_API_URL}verify/contact`;
+      const response = await axios.post(url, formData, {
+        withCredentials: true,
+      });
+      toast.success("Your query has been submitted!");
+    } catch (e) {
+      toast.error("Error reaching the team!");
+    } finally {
+      setLoading(false);
+      setFormData({
+        fullName: "",
+        email: "",
+        phone: "",
+        message: ""
+      });
+    }
+
+
   };
 
   const handleChange = (e) => {
@@ -24,8 +46,8 @@ const ContactUs = () => {
   };
 
   return (
-    <div className="min-h-screen  bg-[#120c0f] flex items-center justify-center p-4 sm:p-8 md:p-12 lg:p-16 xl:p-24">
-      <div className="w-full max-w-6xl mx-4 sm:mx-8 md:mx-12 lg:mx-16 xl:mx-24 flex flex-col md:flex-row rounded-3xl overflow-hidden shadow-2xl">
+    <div className="min-h-screen    bg-[#120c0f] flex items-center justify-center p-2 md:p-12 lg:p-16 xl:p-24">
+      <div className="w-full  mx-4 sm:mx-8 md:mx-12 lg:mx-16 xl:mx-24 flex flex-col md:flex-row rounded-3xl overflow-hidden shadow-2xl">
         {/* Left Section */}
         <div className="w-full md:w-1/2 bg-[#2d1b42]  p-6 sm:p-8 md:p-10 lg:p-12 flex flex-col items-center">
           <h1 className="text-3xl sm:text-4xl font-extrabold text-white mb-6 sm:mb-8 text-center">
@@ -43,9 +65,7 @@ const ContactUs = () => {
           <div className="flex pt-4 flex-col items-center gap-4 sm:gap-6">
             <div className="flex items-center w-full">
               <hr className="flex-grow border-t border-white" />
-              <p className="text-white text-center text-lg sm:text-xl mx-4">
-                OR
-              </p>
+              <p className="text-white text-center text-lg sm:text-xl mx-4"></p>
               <hr className="flex-grow border-t border-white" />
             </div>
 
@@ -79,12 +99,6 @@ const ContactUs = () => {
                 className="hover:text-[#F77737] transition-all duration-300"
               >
                 Team Abhyudaya
-              </a>
-              <a
-                href="https://wa.me/919205025183"
-                className="hover:text-[#25D366] transition-all duration-300"
-              >
-                +91 999999XXXX
               </a>
             </div>
           </div>
@@ -165,9 +179,10 @@ const ContactUs = () => {
             <div className="flex justify-center">
               <button
                 type="submit"
-                className="bg-gradient-to-r from-[#FF512F] to-[#DD2476] w-full py-4 sm:py-4 px-4 text-white font-bold text-lg sm:text-xl no-underline rounded-full transition-all duration-300 hover:from-[#E0432F] hover:to-[#C72064] hover:scale-102 hover:shadow-lg"
+                className="cursor-pointer bg-gradient-to-r from-[#FF512F] to-[#DD2476] w-full py-4 sm:py-4 px-4 text-white font-bold text-lg sm:text-xl no-underline rounded-full transition-all duration-300 hover:from-[#E0432F] hover:to-[#C72064] hover:scale-102 hover:shadow-lg"
+                disabled={loading}
               >
-                SEND MESSAGE
+               {loading ? "Loading...": "SEND MESSAGE"}
               </button>
             </div>
           </form>

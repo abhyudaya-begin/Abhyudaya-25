@@ -7,7 +7,27 @@ const teamsData = [
     "EmailId": "",
     "LinkedInId": "https://www.linkedin.com/in/aryan-singh-7b1b3b228",
     "InstaId": "https://www.instagram.com/aryansingh_07?igshid=1v6c4l0c5s6j7",
-    "Photo": "https://bmpwmkwijlrnrrywhqsp.supabase.co/storage/v1/object/sign/Team/Aryan_Singh.jpg?token"
+    "Photo": "https://i.postimg.cc/nhpG3Zmg/AryanSingh.jpg"
+  },
+  {
+    Position: "Co-Convenor ",
+    Name: "Ishan Mishra",
+    Year: "Final Year",
+    Branch: "E.E",
+    EmailId: "ishanmishra.1614@gmail.com",
+    LinkedInId: "https://www.linkedin.com/in/ishan-mishra-ab108b228/",
+    InstaId: "_i.mishra_",
+    Photo: "https://i.postimg.cc/ZqKDdRPP/Ishan_Mishra.jpg"
+  },
+  {
+    "Position": "Technical Head",
+    "Name": "Shreyas Kumar",
+    "Year": "Final Year",
+    "Branch": "CSE",
+    "EmailId": "shreyaskumar0411@gmail.com",
+    "LinkedInId" : "https://www.linkedin.com/in/shreyas-kumar-416093230?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+    "InstaId": "https://www.instagram.com/shreyas_kumar_411?igsh=MTRubzhld2Mxcng5Mw==",
+    "Photo": "https://i.postimg.cc/0QXkkR7N/Shreyas-Kumar.jpg"
   },
   {
     "Position": "Techinical Head",
@@ -20,57 +40,6 @@ const teamsData = [
     "Photo": "https://i.postimg.cc/YqZvNgGS/Pritish-tomar.jpg"
   },
   {
-    "Position": "Design Head",
-    "Name": "Tushar Gupta",
-    "Year": "Final Year",
-    "Branch": "ECE",
-    "EmailId": "guptatushar015@gmail.com",
-    "LinkedInId": "https://www.linkedin.com/in/tushar-gupta-s/",
-    "InstaId": "https://www.instagram.com/___tushargupta/",
-    "Photo": "https://i.ibb.co/bgkXZ07c/Whats-App-Image-2025-03-10-at-15-58-08-43dc2cbf.jpg"
-  },
-
-  {
-    Position: "Events Head ",
-    Name: "Jayant Lal ",
-    Year: "Final Year",
-    Branch: "CSE",
-    EmailId: "jayant24sha@gmail.com",
-    LinkedInId: "linkedin.com/in/jayant24dec",
-    InstaId: "jayant24dec",
-    Photo: "https://i.postimg.cc/dQndCLj7/Jayant-Lal.jpg"
-  },
-  {
-    Position: "Co-Convenor ",
-    Name: "Ishan Mishra",
-    Year: "Final Year",
-    Branch: "E.E",
-    EmailId: "ishanmishra.1614@gmail.com",
-    LinkedInId: "https://www.linkedin.com/in/ishan-mishra-ab108b228/",
-    InstaId: "_i.mishra_",
-    Photo: "https://i.postimg.cc/sDNhnq8s/Ishan-Mishra.jpg"
-  },
-  // {
-  //   Position: "Executive member ",
-  //   Name: "MAYANK JAISWAL",
-  //   Year: "Final Year",
-  //   Branch: "EE",
-  //   EmailId: "mayankjaiswal0308@gmail.com",
-  //   LinkedInId: "https://www.linkedin.com/in/mayank-jaiswal-071b47255",
-  //   InstaId: "mayankjaiswal0308",
-  //   Photo: "https://i.postimg.cc/TP8Wxmfs/Mayank-Jaiswal.jpg"
-  // },
-  // {
-  //   Position: "Executive member ",
-  //   Name: "Akshay kumar",
-  //   Year: "Final Year",
-  //   Branch: "EE",
-  //   EmailId: "kumarakshay99808@gmail.com",
-  //   LinkedInId: "Akshay kumar",
-  //   InstaId: "ax.shayy__",
-  //   Photo: "https://i.postimg.cc/sxPTPyKj/Akshay-Kumar.jpg"
-  // },
-  {
     Position: "Media & Publicity Head ",
     Name: "Ankur Vansha ",
     Year: "Final Year",
@@ -80,46 +49,6 @@ const teamsData = [
     InstaId: "a.vansha",
     Photo: "https://i.postimg.cc/gjKKXskr/Ankur-Vansha.jpg"
   },
-  {
-    "Position": "Content Head",
-    "Name": "Akshat Saxena",
-    "Year": "Final Year",
-    "Branch": "IT",
-    "EmailId": "akshatsaxena.work1@gmail.com",
-    "LinkedInId" : "https://www.linkedin.com/in/akshat-saxena-26073a229?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-    "InstaId": "https://www.instagram.com/i.akshatsaxena?igsh=MXMwYzlzYW9xcTZjYg==",
-    "Photo": "https://i.postimg.cc/MKxP6MKv/Akshat-saxena.jpg"
-  },
-  {
-    "Position": "Technical Head",
-    "Name": "Shreyas Kumar",
-    "Year": "Final Year",
-    "Branch": "CSE",
-    "EmailId": "shreyaskumar0411@gmail.com",
-    "LinkedInId" : "https://www.linkedin.com/in/shreyas-kumar-416093230?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-    "InstaId": "https://www.instagram.com/shreyas_kumar_411?igsh=MTRubzhld2Mxcng5Mw==",
-    "Photo": "https://i.postimg.cc/0QXkkR7N/Shreyas-Kumar.jpg"
-  },
-  // {
-  //   Position: "Executive member ",
-  //   Name: "Saanvi Gupta ",
-  //   Year: "Final Year",
-  //   Branch: "CSE",
-  //   EmailId: "saanvigupta174@gmail.com",
-  //   LinkedInId: "....",
-  //   InstaId: "https://www.instagram.com/saanviii17?igsh=dDkyZWpidnM0d2lq",
-  //   Photo: "https://i.postimg.cc/5yjtLNfv/Saanvi-Gupta.jpg"
-  // },
-  // {
-  //   Position: "Executive member ",
-  //   Name: "Harshita Mishra ",
-  //   Year: "Final Year",
-  //   Branch: "ECE",
-  //   EmailId: "harshitamishra912@gmail.com ",
-  //   LinkedInId: "https://www.linkedin.com/in/harshita-mishra-66108b228/",
-  //   InstaId: "_harrshhitaa_",
-  //   Photo: "https://i.postimg.cc/k4m8QSHS/Harshita-Mishra.jpg"
-  // },
   {
     Position: "Public Relations Head",
     Name: "Aryan Raj Pandey",
@@ -131,36 +60,7 @@ const teamsData = [
     Photo: "https://i.postimg.cc/m28wTm55/Aryan-Raj-Pandey.jpg"
 
   },
-  // {
-  //   Position: "Executive member ",
-  //   Name: "Awantika Krishna",
-  //   Year: "Final Year",
-  //   Branch: "IT",
-  //   EmailId: "awantikakrishna16@gmail.com",
-  //   LinkedInId: "https://www.linkedin.com/in/awantika-krishna-422101228",
-  //   InstaId: "https://www.instagram.com/i_want_tika.22?igsh=aGplNDF5cm1kM3c0",
-  //   Photo: "https://i.postimg.cc/rptCCMFB/Awantika-Krishna.jpg"
-  // },
-  {
-    Position: "Content Head",
-    Name: "Vanshika Verma",
-    Year: "Final Year",
-    Branch: "B.pharma",
-    EmailId: "vanshikav411@gmail.com",
-    LinkedInId: "https://www.linkedin.com/in/vanshika-verma-115323230/",
-    InstaId: "vanshiika.verma",
-    Photo: "https://i.postimg.cc/c1VKww8L/Vanshika-Verma.jpg"
-  },
-  // {
-  //   Position: "Executive member ",
-  //   Name: "AKANKSHA PAL",
-  //   Year: "Final Year",
-  //   Branch: "EE",
-  //   EmailId: "yuvrajvaibhav71@gmail.com ",
-  //   LinkedInId: "https://www.linkedin.com/in/akanksha-pal-855696230",
-  //   InstaId: "https://www.instagram.com/akankshaaa_17_?igsh=MWc0ejgxbmdpczIxdA==",
-  //   Photo: "https://i.postimg.cc/nL5Sp3CJ/Akanksha-Pal.jpg"
-  // },
+  
   {
     Position: "Public Relations Head",
     Name: "Satish kumar ",
@@ -182,6 +82,59 @@ const teamsData = [
     Photo: "https://i.postimg.cc/xdyqS4sk/Rahul-Singh.jpg"
   },
   {
+    "Position": "Design Head",
+    "Name": "Tushar Gupta",
+    "Year": "Final Year",
+    "Branch": "ECE",
+    "EmailId": "guptatushar015@gmail.com",
+    "LinkedInId": "https://www.linkedin.com/in/tushar-gupta-s/",
+    "InstaId": "https://www.instagram.com/___tushargupta/",
+    "Photo": "https://i.ibb.co/bgkXZ07c/Whats-App-Image-2025-03-10-at-15-58-08-43dc2cbf.jpg"
+  },
+  {
+    Position: "Design Head",
+    Name: "Srishti",
+    Year: "Final Year",
+    Branch: "",
+    EmailId: "",
+    LinkedInId: "",
+    InstaId: "",
+    Photo: ""
+  },
+  {
+    "Position": "Content Head",
+    "Name": "Akshat Saxena",
+    "Year": "Final Year",
+    "Branch": "IT",
+    "EmailId": "akshatsaxena.work1@gmail.com",
+    "LinkedInId" : "https://www.linkedin.com/in/akshat-saxena-26073a229?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+    "InstaId": "https://www.instagram.com/i.akshatsaxena?igsh=MXMwYzlzYW9xcTZjYg==",
+    "Photo": "https://i.postimg.cc/MKxP6MKv/Akshat-saxena.jpg"
+  },
+  
+  {
+    Position: "Content Head",
+    Name: "Vanshika Verma",
+    Year: "Final Year",
+    Branch: "B.pharma",
+    EmailId: "vanshikav411@gmail.com",
+    LinkedInId: "https://www.linkedin.com/in/vanshika-verma-115323230/",
+    InstaId: "vanshiika.verma",
+    Photo: "https://i.postimg.cc/c1VKww8L/Vanshika-Verma.jpg"
+  },
+  
+
+  {
+    Position: "Events Head ",
+    Name: "Jayant Lal ",
+    Year: "Final Year",
+    Branch: "CSE",
+    EmailId: "jayant24sha@gmail.com",
+    LinkedInId: "linkedin.com/in/jayant24dec",
+    InstaId: "jayant24dec",
+    Photo: "https://i.postimg.cc/dQndCLj7/Jayant-Lal.jpg"
+  },
+  {
     Position: "Treasurer",
     Name: "Prakhar Sachan",
     Year: "Final Year",
@@ -201,16 +154,7 @@ const teamsData = [
     InstaId: "",
     Photo: ""
   },
-  {
-    Position: "Design Head",
-    Name: "Srishti",
-    Year: "Final Year",
-    Branch: "",
-    EmailId: "",
-    LinkedInId: "",
-    InstaId: "",
-    Photo: ""
-  },
+ 
   {
     Position: "Sponsorship Head",
     Name: "Arsh Ranjan Singh",
@@ -221,6 +165,76 @@ const teamsData = [
     InstaId: "",
     Photo: ""
   },
+ 
+  
+ 
+ 
+  
+  // {
+  //   Position: "Executive member ",
+  //   Name: "MAYANK JAISWAL",
+  //   Year: "Final Year",
+  //   Branch: "EE",
+  //   EmailId: "mayankjaiswal0308@gmail.com",
+  //   LinkedInId: "https://www.linkedin.com/in/mayank-jaiswal-071b47255",
+  //   InstaId: "mayankjaiswal0308",
+  //   Photo: "https://i.postimg.cc/TP8Wxmfs/Mayank-Jaiswal.jpg"
+  // },
+  // {
+  //   Position: "Executive member ",
+  //   Name: "Akshay kumar",
+  //   Year: "Final Year",
+  //   Branch: "EE",
+  //   EmailId: "kumarakshay99808@gmail.com",
+  //   LinkedInId: "Akshay kumar",
+  //   InstaId: "ax.shayy__",
+  //   Photo: "https://i.postimg.cc/sxPTPyKj/Akshay-Kumar.jpg"
+  // },
+ 
+  // {
+  //   Position: "Executive member ",
+  //   Name: "Saanvi Gupta ",
+  //   Year: "Final Year",
+  //   Branch: "CSE",
+  //   EmailId: "saanvigupta174@gmail.com",
+  //   LinkedInId: "....",
+  //   InstaId: "https://www.instagram.com/saanviii17?igsh=dDkyZWpidnM0d2lq",
+  //   Photo: "https://i.postimg.cc/5yjtLNfv/Saanvi-Gupta.jpg"
+  // },
+  // {
+  //   Position: "Executive member ",
+  //   Name: "Harshita Mishra ",
+  //   Year: "Final Year",
+  //   Branch: "ECE",
+  //   EmailId: "harshitamishra912@gmail.com ",
+  //   LinkedInId: "https://www.linkedin.com/in/harshita-mishra-66108b228/",
+  //   InstaId: "_harrshhitaa_",
+  //   Photo: "https://i.postimg.cc/k4m8QSHS/Harshita-Mishra.jpg"
+  // },
+  
+  // {
+  //   Position: "Executive member ",
+  //   Name: "Awantika Krishna",
+  //   Year: "Final Year",
+  //   Branch: "IT",
+  //   EmailId: "awantikakrishna16@gmail.com",
+  //   LinkedInId: "https://www.linkedin.com/in/awantika-krishna-422101228",
+  //   InstaId: "https://www.instagram.com/i_want_tika.22?igsh=aGplNDF5cm1kM3c0",
+  //   Photo: "https://i.postimg.cc/rptCCMFB/Awantika-Krishna.jpg"
+  // },
+  
+  // {
+  //   Position: "Executive member ",
+  //   Name: "AKANKSHA PAL",
+  //   Year: "Final Year",
+  //   Branch: "EE",
+  //   EmailId: "yuvrajvaibhav71@gmail.com ",
+  //   LinkedInId: "https://www.linkedin.com/in/akanksha-pal-855696230",
+  //   InstaId: "https://www.instagram.com/akankshaaa_17_?igsh=MWc0ejgxbmdpczIxdA==",
+  //   Photo: "https://i.postimg.cc/nL5Sp3CJ/Akanksha-Pal.jpg"
+  // },
+
+ 
   // {
   //   Position: "Executive member ",
   //   Name: "Lavanya Gupta",
@@ -272,17 +286,7 @@ const teamsData = [
     InstaId: "https://www.instagram.com/accounts/login/?hl=en",
     Photo: "https://i.postimg.cc/NjdPPstL/Aastha-Singh.jpg"
   },
-  {
-    "Position": "Content Executive",
-    "Name": "Richa Mishra ",
-    "Year": "3rd Year",
-    "Branch": "ME",
-    "EmailId": "",
-    "LinkedInId": "",  
-    "InstaId": "",
-    "Photo": ""
-  },
-
+  
 
   {
     Position: "Technical Executive",
@@ -304,6 +308,17 @@ const teamsData = [
     InstaId: "heyyvishu",
     Photo: "https://i.postimg.cc/bvBY8fxw/vishwadeep-singh.jpg"
   },
+  {
+    "Position": "Content Executive",
+    "Name": "Richa Mishra ",
+    "Year": "3rd Year",
+    "Branch": "ME",
+    "EmailId": "",
+    "LinkedInId": "",  
+    "InstaId": "",
+    "Photo": ""
+  },
+
   {
     Position: "Online Executive",
     Name: "Ashish Raj ",
