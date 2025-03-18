@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import toast from "react-hot-toast";
 import { IndianRupee } from "lucide-react";
 import { date } from "zod";
+import { useSelector } from "react-redux";
 
 const getQRCodeImage = (amount) => {
   const validAmounts = amount % 50 === 0 && amount <= 1500;
@@ -11,6 +12,7 @@ const getQRCodeImage = (amount) => {
 
 const PaymentModal = ({ amount, isOpen, onClose, onSubmit }) => {
   const [transactionId, setTransactionId] = useState("");
+  const user = useSelector(state=>state.user);
 
   const qrCodeImage = getQRCodeImage(amount);
 
@@ -20,7 +22,7 @@ const PaymentModal = ({ amount, isOpen, onClose, onSubmit }) => {
       let transactionId = timestamp.padEnd(12, "0").slice(0, 12); // Ensure 12 digits
       setTransactionId(transactionId);
     }
-  }, [amount]); // Dependency array to avoid unnecessary re-renders
+  }, [amount]); 
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -51,7 +53,7 @@ const PaymentModal = ({ amount, isOpen, onClose, onSubmit }) => {
 
         {/* QR Code Image */}
 
-        {amount === 0 ? (
+        {(amount === 0  )? (
           <span className="text-center flex justify-center text-lg text-blue-500">
             This is an auto-generated UPI Id.{" "}
           </span>
