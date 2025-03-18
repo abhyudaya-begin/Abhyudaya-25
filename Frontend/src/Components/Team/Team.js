@@ -30,7 +30,7 @@ const teamsData = [
     "Photo": "https://i.postimg.cc/0QXkkR7N/Shreyas-Kumar.jpg"
   },
   {
-    "Position": "Techinical Head",
+    "Position": "Technical Head",
     "Name": "Pritish Tomar",
     "Year": "Final Year",
     "Branch": "IT",
@@ -95,11 +95,11 @@ const teamsData = [
     Position: "Design Head",
     Name: "Srishti",
     Year: "Final Year",
-    Branch: "",
-    EmailId: "",
-    LinkedInId: "",
-    InstaId: "",
-    Photo: ""
+    Branch: "ECE",
+    EmailId: "srishti8317@gmail.com",
+    LinkedInId: "https://www.linkedin.com/in/srishti-665766229/",
+    InstaId: "srishtis045",
+    Photo: "https://i.postimg.cc/XJKJvV8S/Srishti.jpg"
   },
   {
     "Position": "Content Head",
@@ -350,7 +350,7 @@ const teamsData = [
     Photo: "https://i.postimg.cc/NGx8xNBj/Divyansh-Gupta.jpg"
   },
   {
-    Position: "Content Executive",
+    Position: "PR Coordinator",
     Name: "Jayant Singh",
     Year: "3rd Year",
     Branch: "ECE",
@@ -362,7 +362,7 @@ const teamsData = [
  
  
   {
-    Position: "Public Relations Executive",
+    Position: "PR Coordinator",
     Name: "Amar Yadav ",
     Year: "3rd Year",
     Branch: "EE",
@@ -412,7 +412,7 @@ const teamsData = [
   // //   Photo: "https://i.postimg.cc/v87hNYLM/Arun-Kumar.jpg"
   // // },
   {
-    Position: "Public Relations Executive ",
+    Position: "PR Coordinator",
     Name: "Madhur Pratap Singh",
     Year: "3rd Year",
     Branch: "CSE",
@@ -431,16 +431,16 @@ const teamsData = [
   //   InstaId: "Vidhi__8479",
   //   Photo: "https://i.postimg.cc/fW3tVByP/Vidhi-Gupta.jpg"
   // },
-  // {
-  //   Position: "Executive member ",
-  //   Name: "Ayushi Tiwari",
-  //   Year: "3rd Year",
-  //   Branch: "BBA",
-  //   EmailId: "taayushi446@gmail.com",
-  //   LinkedInId: "https://in.linkedin.com/in/ayushi-tiwari-338721281",
-  //   InstaId: "taayushi520",
-  //   Photo: "https://i.postimg.cc/d122p6Cn/Ayushi-Tiwari.jpg"
-  // },
+  {
+    Position: "PR Coordinator",
+    Name: "Ayushi Tiwari",
+    Year: "3rd Year",
+    Branch: "BBA",
+    EmailId: "taayushi446@gmail.com",
+    LinkedInId: "https://in.linkedin.com/in/ayushi-tiwari-338721281",
+    InstaId: "taayushi520",
+    Photo: "https://i.postimg.cc/d122p6Cn/Ayushi-Tiwari.jpg"
+  },
   // {
   //   Position: "Executive member ",
   //   Name: "AADRIKA BARNWAL",
