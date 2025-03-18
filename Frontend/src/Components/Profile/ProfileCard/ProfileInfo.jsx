@@ -19,11 +19,11 @@ const ProfileInfo = () => {
     window.location.reload();
   };
 
-  const dob = new Date(user.dob).toLocaleDateString("en-US", {
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-  });
+  // const dob = new Date(user.dob).toLocaleDateString("en-US", {
+  //   year: "numeric",
+  //   month: "long",
+  //   day: "numeric",
+  // });
 
   return (
     <div className="w-full space-y-6 h-fit ">
@@ -57,7 +57,7 @@ const ProfileInfo = () => {
           { label: "Course", value: user.course },
           { label: "Gender", value: user.gender },
           { label: "Institution", value: user.institution },
-          { label: "Date of Birth", value: dob },
+          // { label: "Date of Birth", value: dob },
         ].map(({ label, value }) => (
           <div
             key={label}

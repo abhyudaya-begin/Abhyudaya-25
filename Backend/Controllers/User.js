@@ -14,7 +14,6 @@ const registerUser = async (req, res) => {
       fullName,
       email,
       phoneNumber,
-      dob,
       password,
       institution,
       course,
@@ -29,7 +28,6 @@ const registerUser = async (req, res) => {
         fullName,
         email,
         phoneNumber,
-        dob,
         password,
         institution,
         course,
@@ -58,7 +56,7 @@ const registerUser = async (req, res) => {
     }
 
 
-    const dobFormatted = new Date(dob).toISOString().split("T")[0];
+   
 
     const hashedPassword = await bcrypt.hash(password, 10);
     const user = await User.create({
@@ -66,7 +64,7 @@ const registerUser = async (req, res) => {
       fullName,
       email,
       phoneNumber,
-      dob: dobFormatted,
+     
       password: hashedPassword,
       institution,
       course,
