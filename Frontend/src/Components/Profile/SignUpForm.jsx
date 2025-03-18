@@ -52,7 +52,7 @@ const signUpSchema = z
       .regex(/^\d{10}$/, "Phone number must be exactly 10 digits"),
     institution: z.string().nonempty("Institution is required"),
     gender: z.string().nonempty("Gender can't be empty"),
-    dob: z.string().nonempty("Date of Birth is required"),
+    // dob: z.string().nonempty("Date of Birth is required"),
     course: z.string().nonempty("Course is required"),
     referralId: z.string().optional(),
     password: z.string().min(8, "Password must be at least 8 characters"),
@@ -99,8 +99,7 @@ function SignUpForm({ setIsSignUp }) {
 
   const onSubmit = async (data) => {
     try {
-      if(!image)
-      {
+      if (!image) {
         toast.error("Please upload image first!");
         return;
       }
@@ -109,7 +108,6 @@ function SignUpForm({ setIsSignUp }) {
       const { fullName, ...restAll } = filteredData;
 
       await tryUploadingToSupabase(fullName);
-     
 
       // Include the image URL in the submission data
       const userDataWithImage = {
@@ -130,8 +128,7 @@ function SignUpForm({ setIsSignUp }) {
     } catch (error) {
       console.log(error);
       toast.error(error.response?.data?.errorMessage || "Sign up Failed");
-    }
-    finally{
+    } finally {
       setClicked(false);
     }
   };
@@ -152,7 +149,6 @@ function SignUpForm({ setIsSignUp }) {
         toast.error("Please enter your email");
         return;
       }
-    
 
       const res = await axios.post(
         `${import.meta.env.VITE_BACKEND_API_URL}verify/email`,
@@ -166,26 +162,26 @@ function SignUpForm({ setIsSignUp }) {
         toast.success("OTP sent successfully");
       }
     } catch (err) {
-      console.log(err)
+      console.log(err);
       if (!email.trim()) {
-
         toast.error("Email is required");
       } else {
         toast.error("Email Already Exists!");
       }
-    }
-    finally{
-      setClickedForEmail(false)
+    } finally {
+      setClickedForEmail(false);
     }
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit, handleFormError)} className="space-y-4">
+    <form
+      onSubmit={handleSubmit(onSubmit, handleFormError)}
+      className="space-y-4"
+    >
       <ProfileImageUploader
         image={image}
         setImage={setImage}
         setIMageUpdated={setIMageUpdated}
-      
       />
 
       <div className="space-y-1">
@@ -228,7 +224,11 @@ function SignUpForm({ setIsSignUp }) {
                     : "hover:text-gray-800 cursor-pointer text-gray-300"
                 }`}
               >
-                {verified ? <Check size={25} color="white" /> : "Verify"}
+                {verified ? (
+                  <Check size={25} color="white" />
+                ) : (
+                  <span className="font-bold text-gray-900 hover:text-gray-800">Verify</span>
+                )}
               </button>
             </div>
           </div>
@@ -297,7 +297,7 @@ function SignUpForm({ setIsSignUp }) {
         </select>
       </div>
 
-      <div className="relative">
+      {/* <div className="relative">
         <Calendar className="absolute left-3 top-3 h-5 w-5 text-white/60" />
         <input
           type="date"
@@ -310,7 +310,7 @@ function SignUpForm({ setIsSignUp }) {
               .split("T")[0]
           } // Set max date to 5 years ago
         />
-      </div>
+      </div> */}
 
       <div className="relative">
         <User className="absolute left-3 top-3 h-5 w-5 text-white/60" />
@@ -352,15 +352,16 @@ function SignUpForm({ setIsSignUp }) {
       <button
         type="submit"
         disabled={!verified || clicked}
-        
         className={`cursor-pointer w-full p-2 rounded-lg text-white transition-all 
         ${
           verified
             ? "bg-gradient-to-r from-pink-500 to-purple-500 hover:from-pink-600 hover:to-purple-600"
             : "bg-gray-400 cursor-not-allowed"
         }`}
+        
       >
-        Sign Up
+        {!verified ? "First get your email verified!" : "Sign Up"} 
+        
       </button>
     </form>
   );

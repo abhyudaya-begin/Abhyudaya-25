@@ -38,30 +38,7 @@ const userSchema = new Schema(
       required: true,
     },
     dob: {
-      type: Date,
-      required: [true, "Date of Birth is required"],
-      validate: [
-        {
-          validator: function (value) {
-            return value < new Date();
-          },
-          message: "Date of Birth cannot be in the future",
-        },
-        {
-          validator: function (value) {
-            const today = new Date();
-            const age = today.getFullYear() - value.getFullYear();
-            const monthDiff = today.getMonth() - value.getMonth();
-            const dayDiff = today.getDate() - value.getDate();
-
-            if (monthDiff < 0 || (monthDiff === 0 && dayDiff < 0)) {
-              return age - 1 >= 5;
-            }
-            return age >= 5;
-          },
-          message: "User must be at least 5 years old",
-        },
-      ],
+      type: Date, 
     },
     password: {
       type: String,
