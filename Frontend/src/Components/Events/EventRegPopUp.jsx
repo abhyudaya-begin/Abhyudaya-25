@@ -25,7 +25,7 @@ const EventRegPopUp = ({ isOpen, onClose, onSuccess, event }) => {
       })
     );
 
-    // toast.success("Registration successful");
+   
     onSuccess();
   };
 
@@ -76,13 +76,13 @@ const EventRegPopUp = ({ isOpen, onClose, onSuccess, event }) => {
         <div className="flex justify-between mt-4">
           <button
             onClick={handleSubmit}
-            className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"
+            className="cursor-pointer bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"
           >
             Confirm
           </button>
           <button
             onClick={onClose}
-            className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded"
+            className="cursor-pointer bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded"
           >
             Cancel
           </button>

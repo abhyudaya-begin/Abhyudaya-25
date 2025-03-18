@@ -54,7 +54,7 @@ export const moveProcessingToPending = createAsyncThunk(
 
       // Dispatch moveToPending to update Redux state
       dispatch(moveToPending({ trxnId, events: processingEvents }));
-      toast.success("Done");
+      toast.success("Payment done!");
 
       return response.data; // { trxnId, events }
     } catch (error) {

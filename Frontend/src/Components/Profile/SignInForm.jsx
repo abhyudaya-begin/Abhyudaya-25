@@ -67,7 +67,7 @@ function SignInForm() {
       <button
         disabled={clicked}
         type="submit"
-        className="w-full bg-gradient-to-r from-pink-500 to-purple-500 p-2 rounded-lg text-white hover:from-pink-600 hover:to-purple-600"
+        className="cursor-pointer w-full bg-gradient-to-r from-pink-500 to-purple-500 p-2 rounded-lg text-white hover:from-pink-600 hover:to-purple-600"
       >
         Sign In
       </button>

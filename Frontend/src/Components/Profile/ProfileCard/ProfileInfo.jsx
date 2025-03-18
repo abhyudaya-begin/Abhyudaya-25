@@ -35,17 +35,26 @@ const ProfileInfo = () => {
           className="w-32 h-32 sm:w-36 sm:h-36 rounded-full object-cover border-4 border-white/30 shadow-lg"
         />
         <div className="text-center sm:text-left">
-          <h1 className="text-lg sm:text-2xl font-bold text-white">{user.fullName}</h1>
+          <h1 className="text-lg sm:text-2xl font-bold text-white">
+            {user.fullName}
+          </h1>
           <div className="flex items-center gap-2 mt-2 justify-center sm:justify-start">
             <span>ABH ID : </span>
-            <span className="text-white/70 text-sm sm:text-base">{user.ABH_ID}</span>
+            <span className="text-white/70 text-sm sm:text-base">
+              {user.ABH_ID}
+            </span>
             <button
               onClick={handleCopy}
               className="bg-white/10 p-1 sm:p-2 rounded-md text-white hover:bg-white/20 transition"
-            >
-              {copied ? <Check className="w-4 h-4 text-green-400" /> : <Copy className="w-4 h-4" />}
+              >
+              {copied ? (
+                <Check className="w-4 h-4 text-green-400" />
+              ) : (
+                <Copy className="w-4 h-4" />
+              )}
             </button>
           </div>
+              <p className="text-xs font-semibold text-gray-400">Remember your ABH_ID for further usage.</p>
         </div>
       </div>
 

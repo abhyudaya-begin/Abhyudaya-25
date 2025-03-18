@@ -20,7 +20,8 @@ const eventsSlice = createSlice({
     addEvent: (state, action) => {
       if (!eventExists(state.processing, action.payload.eventId)) {
         state.processing.push(action.payload);
-        toast.success("Event added to the wishlist!");
+        toast.success("Added to wishlist! \n Visit profile to complete registration.");
+        
       } else {
         toast.error("Already registered!");
       }
