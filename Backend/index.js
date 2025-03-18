@@ -40,7 +40,7 @@ app.get("/", (req, res) => {
 app.use("/events", eventRouter);
 app.use("/users", userRouter);
 app.use("/verify",VerificationRouter);
-app.use("/admin", checkAdmin, adminRouter);
+app.use("/admin",  adminRouter);
 
 
 
