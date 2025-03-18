@@ -72,7 +72,7 @@ const teamsData = [
     Photo: "https://i.postimg.cc/k59Xwyn7/Satish-Kumar.jpg"
   },
   {
-    Position: "Techincal Lead",
+    Position: "Techincal Head",
     Name: "Rahul Singh",
     Year: "Final Year",
     Branch: "CSE",

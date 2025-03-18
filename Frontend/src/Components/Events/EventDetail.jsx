@@ -137,7 +137,7 @@ const EventDetail = () => {
                 </div>
                 <div className="bg-gray-900 p-4 rounded-lg border border-gray-700">
                   <span className="block text-sm text-purple-400 font-medium">Prize Money</span>
-                  <span className="block text-lg text-gray-200">₹ {event.prize}</span>
+                  <span className="block text-lg text-gray-200">🎉Revealing soon!🎉</span>
                 </div>
               </div>
 
