@@ -300,6 +300,16 @@ const teamsData = [
   },
   {
     Position: "Technical Executive",
+    Name: "Ashish Raj ",
+    Year: "3rd Year",
+    Branch: "CSE",
+    EmailId: "ashishraj93865@gmail.com",
+    LinkedInId: "https://www.linkedin.com/in/ashish-raj-482a47255?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+    InstaId: "https://www.instagram.com/ashishraj6219?igsh=Zmp3anhzY3RudTQ5",
+    Photo: "https://i.postimg.cc/52ymywcN/Ashish-Raj.png"
+  },
+  {
+    Position: "Technical Executive",
     Name: "Vishwadeep singh",
     Year: "3rd Year",
     Branch: "CSE",
@@ -319,16 +329,7 @@ const teamsData = [
     "Photo": ""
   },
 
-  {
-    Position: "Online Executive",
-    Name: "Ashish Raj ",
-    Year: "3rd Year",
-    Branch: "CSE",
-    EmailId: "ashishraj93865@gmail.com",
-    LinkedInId: "https://www.linkedin.com/in/ashish-raj-482a47255?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-    InstaId: "https://www.instagram.com/ashishraj6219?igsh=Zmp3anhzY3RudTQ5",
-    Photo: "https://i.postimg.cc/52ymywcN/Ashish-Raj.png"
-  },
+ 
   {
     Position: "Design Executive",
     Name: "Vivek Mani Tripathy",
@@ -411,16 +412,16 @@ const teamsData = [
   // //   InstaId: "arukumar6094",
   // //   Photo: "https://i.postimg.cc/v87hNYLM/Arun-Kumar.jpg"
   // // },
-  {
-    Position: "PR Coordinator",
-    Name: "Madhur Pratap Singh",
-    Year: "3rd Year",
-    Branch: "CSE",
-    EmailId: "madhurgaur9140@gmail.com",
-    LinkedInId: "https://www.linkedin.com/in/madhur-gaur-mmmut/",
-    InstaId: "https://www.instagram.com/madhurgaur_",
-    Photo: "https://i.postimg.cc/FRNdd4fg/MPSG.jpg"
-  },
+  // {
+  //   Position: "PR Coordinator",
+  //   Name: "Madhur Pratap Singh",
+  //   Year: "3rd Year",
+  //   Branch: "CSE",
+  //   EmailId: "madhurgaur9140@gmail.com",
+  //   LinkedInId: "https://www.linkedin.com/in/madhur-gaur-mmmut/",
+  //   InstaId: "https://www.instagram.com/madhurgaur_",
+  //   Photo: "https://i.postimg.cc/FRNdd4fg/MPSG.jpg"
+  // },
   // {
   //   Position: "Executive member ",
   //   Name: "Vidhi Gupta",
