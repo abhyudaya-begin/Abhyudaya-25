@@ -442,6 +442,16 @@ const teamsData = [
     InstaId: "taayushi520",
     Photo: "https://i.postimg.cc/d122p6Cn/Ayushi-Tiwari.jpg"
   },
+  {
+    Position: "Design Coordinator",
+    Name: "Anshika Verma ",
+    Year: "3rd Year",
+    Branch: "IT",
+    EmailId: "vermaanshika1001@gmail.com",
+    LinkedInId: "https://www.linkedin.com/in/anshika-verma-137165257?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+    InstaId: "https://www.instagram.com/_anshikaverma23?igsh=d2Y1aDQyc3MzdzFo",
+    Photo: "https://i.postimg.cc/d1r6vvb2/Anshika-Verma.jpg"
+  },
   // {
   //   Position: "Executive member ",
   //   Name: "AADRIKA BARNWAL",
@@ -532,16 +542,7 @@ const teamsData = [
   //   InstaId: "Srishti_singh.25",
   //   Photo: "https://i.postimg.cc/G3NL6Rc7/Srishti-Singh.jpg"
   // },
-  // {
-  //   Position: "Executive member ",
-  //   Name: "Anshika Verma ",
-  //   Year: "3rd Year",
-  //   Branch: "IT",
-  //   EmailId: "vermaanshika1001@gmail.com",
-  //   LinkedInId: "https://www.linkedin.com/in/anshika-verma-137165257?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-  //   InstaId: "https://www.instagram.com/_anshikaverma23?igsh=d2Y1aDQyc3MzdzFo",
-  //   Photo: "https://i.postimg.cc/d1r6vvb2/Anshika-Verma.jpg"
-  // },
+
   // {
   //   Position: "Executive member ",
   //   Name: "Ritika Rao",
