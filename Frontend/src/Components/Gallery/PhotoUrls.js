@@ -1,4 +1,17 @@
 const photoUrls = [
+  "https://i.postimg.cc/5yzV5X5R/37.jpg",
+  "https://i.postimg.cc/B6k31TFF/38.jpg",
+  "https://i.postimg.cc/c4QWr8LK/39.jpg",
+  "https://i.postimg.cc/W4fLQGXy/40.jpg",
+  "https://i.postimg.cc/7Z9yN87w/41.jpg",
+  "https://i.postimg.cc/4xsgtNYW/42.jpg",
+  "https://i.postimg.cc/VvrTy2dr/43.jpg",
+  "https://i.postimg.cc/zGFqPRmm/44.jpg",
+  "https://i.postimg.cc/NfTsmzpj/45.jpg",
+  "https://i.postimg.cc/ZKykXvd7/46.jpg",
+  "https://i.postimg.cc/Pxq9yCHM/47.jpg",
+  "https://i.postimg.cc/bv6pqcN3/48.jpg",
+  "https://i.postimg.cc/434XCNZY/49.jpg",
   "https://i.postimg.cc/rmsBVd8B/1.jpg",
   "https://i.postimg.cc/h4ktYnsD/10.jpg",
   "https://i.postimg.cc/R0pMLxqz/11.jpg",
@@ -34,9 +47,7 @@ const photoUrls = [
   "https://i.postimg.cc/jC0m4ZzT/7.jpg",
   "https://i.postimg.cc/Y2GS801D/8.jpg",
   "https://i.postimg.cc/28nSRt94/9.jpg",
-  "https://i.postimg.cc/P548b9Nj/36.jpg"
-  
-  
+  "https://i.postimg.cc/P548b9Nj/36.jpg",
 ];
 
 export default photoUrls;
