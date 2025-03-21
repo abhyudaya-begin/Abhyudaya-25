@@ -1,6 +1,5 @@
 const photoUrls = [
   "https://i.postimg.cc/5yzV5X5R/37.jpg",
-  "https://i.postimg.cc/B6k31TFF/38.jpg",
   "https://i.postimg.cc/c4QWr8LK/39.jpg",
   "https://i.postimg.cc/W4fLQGXy/40.jpg",
   "https://i.postimg.cc/7Z9yN87w/41.jpg",
