@@ -152,7 +152,7 @@ const teamsData = [
     EmailId: "",
     LinkedInId: "",
     InstaId: "",
-    Photo: ""
+    Photo: "https://i.postimg.cc/zB61sz21/Shreys-Singh.jpg"
   },
  
   {
