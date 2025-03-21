@@ -50,9 +50,30 @@ const ContactUs = () => {
       <div className="w-full  mx-4 sm:mx-8 md:mx-12 lg:mx-16 xl:mx-24 flex flex-col md:flex-row rounded-3xl overflow-hidden shadow-2xl">
         {/* Left Section */}
         <div className="w-full md:w-1/2 bg-[#2d1b42]  p-6 sm:p-8 md:p-10 lg:p-12 flex flex-col items-center">
-          <h1 className="text-3xl sm:text-4xl font-extrabold text-white mb-6 sm:mb-8 text-center">
-            GET IN TOUCH WITH US
-          </h1>
+        <h1 className="text-3xl sm:text-5xl font-extrabold text-white mb-6 sm:mb-8 text-center tracking-wider">
+  <span className="bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 text-transparent bg-clip-text font-[Dancing Script] text-6xl sm:text-7xl">G</span>
+  <span className="text-yellow-400 font-[Lobster] rotate-6 inline-block">E</span>
+  <span className="text-green-400 font-[Pacifico] italic">T </span>
+  
+  <span className="mx-2 text-cyan-400 font-[Dancing Script] text-5xl">I</span>
+  <span className="text-red-500 font-[Lobster] scale-110 inline-block">N </span>
+  
+  <span className="text-blue-500 font-[Pacifico] tracking-widest"> T</span>
+  <span className="text-orange-500 font-[Dancing Script] text-5xl">O</span>
+  <span className="text-purple-400 font-[Lobster] italic">U</span>
+  <span className="text-yellow-500 font-[Pacifico] skew-x-6">C</span>
+  <span className="text-green-500 font-[Dancing Script] underline">H</span>
+
+  <br />
+  
+  <span className="text-pink-400 font-[Lobster]">W</span>
+  <span className="text-blue-400 font-[Pacifico] text-5xl">I</span>
+  <span className="text-orange-400 font-[Dancing Script] tracking-wide">T</span>
+  <span className="text-red-400 font-[Lobster]">H</span>
+  
+  <span className="ml-2 text-cyan-500 font-[Dancing Script] animate-pulse text-6xl">U</span>
+  <span className="text-yellow-500 font-[Lobster] rotate-12 inline-block">S</span>
+</h1>
 
           <div className="relative flex items-center justify-center w-60 h-60 sm:w-100 sm:h-100 md:w-60 md:h-60 lg:w-100 lg:h-100">
             <img

@@ -34,6 +34,7 @@ const photoUrls = [
   "https://i.postimg.cc/jC0m4ZzT/7.jpg",
   "https://i.postimg.cc/Y2GS801D/8.jpg",
   "https://i.postimg.cc/28nSRt94/9.jpg",
+  "https://i.postimg.cc/P548b9Nj/36.jpg"
   
   
 ];
