@@ -89,6 +89,35 @@ const movePendingToPaid = async (req, res) => {
   }
 };
 
+const removePendingTransaction = async (req, res) => {
+  try {
+    const { trxnId, ABH_ID } = req.body;
+
+    if (!trxnId) {
+      return res.status(400).json(new ApiError(400, "Transaction ID is required"));
+    }
+
+    // ✅ Use `findOneAndUpdate` to remove transaction from `eventsPending`
+    const user = await User.findOneAndUpdate(
+      { ABH_ID, [`eventsPending.${trxnId}`]: { $exists: true } }, // Ensure the transaction exists
+      { $unset: { [`eventsPending.${trxnId}`]: "" } }, // Remove the transaction
+      { new: true } // Return the updated user document
+    );
+
+    if (!user) {
+      return res.status(404).json(new ApiError(404, "User or transaction not found in pending state"));
+    }
+
+    return res.status(200).json(
+      new ApiResponse(200, { user }, "Transaction removed from pending successfully")
+    );
+
+  } catch (error) {
+    console.error(error);
+    return res.status(500).json(new ApiError(500, "Something went wrong!"));
+  }
+};
+
 
 const getAllUserTransactions = async (req, res) => {
   try {
@@ -175,5 +204,6 @@ module.exports = {
   eventRegister,
   FetchEventsForUsers,
   movePendingToPaid,
+  removePendingTransaction,
   getAllUserTransactions
 };
