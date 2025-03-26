@@ -1,29 +1,53 @@
 import React from "react";
-import Marquee from "react-fast-marquee";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay } from "swiper/modules";
 import currentSponsors from "./currentSponser";
+
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/autoplay";
 
 const SponsorSlider = () => {
   return (
-    <div className="p-4 bg-black-100 rounded-lg shadow-md">
-       <div className="text-center mb-24">
-          <h1 className="text-5xl  md:text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 animate-gradient-x ">
-        Our Sponsors
-          </h1>
-        </div>
-      <Marquee speed={63} pauseOnHover={false} className="cursor-pointer">
+    <div className="relative w-full max-w-none mx-auto px-6 py-12 bg-gradient-to-b from-gray-900 to-black">
+
+      <Swiper
+  modules={[Autoplay]}
+  spaceBetween={20}
+  slidesPerView={1}
+  loop={true}
+  centeredSlides={true}
+  autoplay={{
+    delay: 2000,
+    disableOnInteraction: false,
+    waitForTransition: false,
+  }}
+  breakpoints={{
+    640: { slidesPerView: 2 },
+    768: { slidesPerView: 3 },
+    1024: { slidesPerView: 4 },
+  }}
+  className="perspective-3d"
+>
+
         {currentSponsors.map((sponsor, index) => (
-          <div key={index} className="mx-8 flex flex-col items-center">
-            <img
-              src={sponsor.image}
-              alt={sponsor.name}
-              className="w-60 h-36 object-contain"
-            />
-          
-          </div>
+          <SwiperSlide key={index} className="flex justify-center">
+           <div className="p-4 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+
+              <img 
+                src={sponsor.image} 
+                alt={`Sponsor ${index + 1}`} 
+                className="w-40 h-40 object-contain mx-auto"
+              />
+            </div>
+          </SwiperSlide>
         ))}
-      </Marquee>
+      </Swiper>
     </div>
   );
 };
 
 export default SponsorSlider;
+
+
+
