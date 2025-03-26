@@ -16,7 +16,7 @@ const teamsData = [
     Branch: "E.E",
     EmailId: "ishanmishra.1614@gmail.com",
     LinkedInId: "https://www.linkedin.com/in/ishan-mishra-ab108b228/",
-    InstaId: "_i.mishra_",
+    InstaId: "i.mishra",
     Photo: "https://i.postimg.cc/ZqKDdRPP/Ishan_Mishra.jpg"
   },
   {
@@ -88,7 +88,7 @@ const teamsData = [
     "Branch": "ECE",
     "EmailId": "guptatushar015@gmail.com",
     "LinkedInId": "https://www.linkedin.com/in/tushar-gupta-s/",
-    "InstaId": "https://www.instagram.com/___tushargupta/",
+    "InstaId": "https://www.instagram.com/_tushargupta/",
     "Photo": "https://i.ibb.co/bgkXZ07c/Whats-App-Image-2025-03-10-at-15-58-08-43dc2cbf.jpg"
   },
   {
@@ -124,16 +124,16 @@ const teamsData = [
   },
   
 
-  {
-    Position: "Events Head ",
-    Name: "Jayant Lal ",
-    Year: "Final Year",
-    Branch: "CSE",
-    EmailId: "jayant24sha@gmail.com",
-    LinkedInId: "linkedin.com/in/jayant24dec",
-    InstaId: "jayant24dec",
-    Photo: "https://i.postimg.cc/dQndCLj7/Jayant-Lal.jpg"
-  },
+  // {
+  //   Position: "Events Head ",
+  //   Name: "Jayant Lal ",
+  //   Year: "Final Year",
+  //   Branch: "CSE",
+  //   EmailId: "jayant24sha@gmail.com",
+  //   LinkedInId: "linkedin.com/in/jayant24dec",
+  //   InstaId: "jayant24dec",
+  //   Photo: "https://i.postimg.cc/dQndCLj7/Jayant-Lal.jpg"
+  // },
   {
     Position: "Treasurer",
     Name: "Prakhar Sachan",
@@ -180,16 +180,16 @@ const teamsData = [
   //   InstaId: "mayankjaiswal0308",
   //   Photo: "https://i.postimg.cc/TP8Wxmfs/Mayank-Jaiswal.jpg"
   // },
-  // {
-  //   Position: "Executive member ",
-  //   Name: "Akshay kumar",
-  //   Year: "Final Year",
-  //   Branch: "EE",
-  //   EmailId: "kumarakshay99808@gmail.com",
-  //   LinkedInId: "Akshay kumar",
-  //   InstaId: "ax.shayy__",
-  //   Photo: "https://i.postimg.cc/sxPTPyKj/Akshay-Kumar.jpg"
-  // },
+  {
+    Position: "Executive member ",
+    Name: "Akshay kumar",
+    Year: "Final Year",
+    Branch: "EE",
+    EmailId: "kumarakshay99808@gmail.com",
+    LinkedInId: "Akshay kumar",
+    InstaId: "ax.shayy__",
+    Photo: "https://i.postimg.cc/sxPTPyKj/Akshay-Kumar.jpg"
+  },
  
   // {
   //   Position: "Executive member ",
@@ -208,7 +208,7 @@ const teamsData = [
   //   Branch: "ECE",
   //   EmailId: "harshitamishra912@gmail.com ",
   //   LinkedInId: "https://www.linkedin.com/in/harshita-mishra-66108b228/",
-  //   InstaId: "_harrshhitaa_",
+  //   InstaId: "harrshhitaa",
   //   Photo: "https://i.postimg.cc/k4m8QSHS/Harshita-Mishra.jpg"
   // },
   
@@ -325,8 +325,8 @@ const teamsData = [
     "Branch": "ME",
     "EmailId": "",
     "LinkedInId": "",  
-    "InstaId": "",
-    "Photo": ""
+    "InstaId": "richa.mishra",
+    "Photo": "https://i.postimg.cc/VkfHn917/Richa-Mishra.jpg"
   },
 
  
@@ -347,7 +347,7 @@ const teamsData = [
     Branch: "C.S.E",
     EmailId: "divyanshgupta764@gmail.com",
     LinkedInId: "https://www.linkedin.com/in/divyansh-gupta-b9a435249",
-    InstaId: "__the_divyansh123__",
+    InstaId: "_the_divyansh123_",
     Photo: "https://i.postimg.cc/NGx8xNBj/Divyansh-Gupta.jpg"
   },
   {
@@ -372,16 +372,16 @@ const teamsData = [
     InstaId: "amaryadav7146",
     Photo: "https://i.postimg.cc/gkDMnzn4/Amar-Yadav.jpg"
   },
-  // {
-  //   Position: "Executive member ",
-  //   Name: "Abhyodaya Pratap Singh ",
-  //   Year: "3rd Year",
-  //   Branch: "CSE",
-  //   EmailId: "abhyodayasingh00@gmail.com",
-  //   LinkedInId: "https://www.linkedin.com/in/abhyodaya-pratap-singh-895190258",
-  //   InstaId: "abhi.7.i",
-  //   Photo: "https://i.postimg.cc/pXYSzQ1f/Abhyodaya-Singh.jpg"
-  // },
+  {
+    Position: "Executive member ",
+    Name: "Abhyodaya Pratap Singh ",
+    Year: "3rd Year",
+    Branch: "CSE",
+    EmailId: "abhyodayasingh00@gmail.com",
+    LinkedInId: "https://www.linkedin.com/in/abhyodaya-pratap-singh-895190258",
+    InstaId: "abhi.7.i",
+    Photo: "https://i.postimg.cc/pXYSzQ1f/Abhyodaya-Singh.jpg"
+  },
   // {
   //   Position: "Executive member ",
   //   Name: "Vishal kotak",
@@ -392,26 +392,26 @@ const teamsData = [
   //   InstaId: "Kotak.vishal__",
   //   Photo: "https://i.postimg.cc/fTnLJs63/Vishal-Kotak.jpg"
   // },
-  // // {
-  // //   Position: "Executive member ",
-  // //   Name: "Harsh singh",
-  // //   Year: "3rd Year",
-  // //   Branch: "Civil",
-  // //   EmailId: "Hhss7331@gmail.com",
-  // //   LinkedInId: "https://www.linkedin.com/in/harsh-singh-642793203?trk=contact-info",
-  // //   InstaId: "Harsh_singh0617",
-  // //   Photo: "https://i.postimg.cc/kgLW5zFf/harsh-singh.jpg"
-  // // },
-  // // {
-  // //   Position: "Executive member ",
-  // //   Name: "Arun Kumar ",
-  // //   Year: "3rd Year",
-  // //   Branch: "EE",
-  // //   EmailId: "abherabhi1230@gmail.com",
-  // //   LinkedInId: "https://www.linkedin.com/in/arun-kumar-508722276",
-  // //   InstaId: "arukumar6094",
-  // //   Photo: "https://i.postimg.cc/v87hNYLM/Arun-Kumar.jpg"
-  // // },
+  {
+    Position: "Executive member ",
+    Name: "Harsh singh",
+    Year: "3rd Year",
+    Branch: "Civil",
+    EmailId: "Hhss7331@gmail.com",
+    LinkedInId: "https://www.linkedin.com/in/harsh-singh-642793203?trk=contact-info",
+    InstaId: "Harsh_singh0617",
+    Photo: "https://i.postimg.cc/kgLW5zFf/harsh-singh.jpg"
+  },
+  {
+    Position: "Executive member ",
+    Name: "Arun Kumar ",
+    Year: "3rd Year",
+    Branch: "EE",
+    EmailId: "abherabhi1230@gmail.com",
+    LinkedInId: "https://www.linkedin.com/in/arun-kumar-508722276",
+    InstaId: "arukumar6094",
+    Photo: "https://i.postimg.cc/v87hNYLM/Arun-Kumar.jpg"
+  },
   // {
   //   Position: "PR Coordinator",
   //   Name: "Madhur Pratap Singh",
@@ -452,26 +452,26 @@ const teamsData = [
     InstaId: "https://www.instagram.com/_anshikaverma23?igsh=d2Y1aDQyc3MzdzFo",
     Photo: "https://i.postimg.cc/d1r6vvb2/Anshika-Verma.jpg"
   },
-  // {
-  //   Position: "Executive member ",
-  //   Name: "AADRIKA BARNWAL",
-  //   Year: "3rd Year",
-  //   Branch: "IT",
-  //   EmailId: "aadreeka03@gmail.com",
-  //   LinkedInId: "aadrika-barnwal",
-  //   InstaId: "aadreeeka ",
-  //   Photo: "https://i.postimg.cc/t4qM51LL/Aadreeka-Barnwal.jpg"
-  // },
-  // {
-  //   Position: "Executive member ",
-  //   Name: "Akshita Upadhyay ",
-  //   Year: "3rd Year",
-  //   Branch: "EE",
-  //   EmailId: "realakshitaupadhyay@gmail.com",
-  //   LinkedInId: "Akshita Upadhyay ",
-  //   InstaId: "_.akshita._1409",
-  //   Photo: "https://i.postimg.cc/x8Vsbqvp/Akshita-Upadhyay.jpg"
-  // },
+  {
+    Position: "Executive member ",
+    Name: "AADRIKA BARNWAL",
+    Year: "3rd Year",
+    Branch: "IT",
+    EmailId: "aadreeka03@gmail.com",
+    LinkedInId: "aadrika-barnwal",
+    InstaId: "aadreeeka ",
+    Photo: "https://i.postimg.cc/t4qM51LL/Aadreeka-Barnwal.jpg"
+  },
+  {
+    Position: "Executive member ",
+    Name: "Akshita Upadhyay ",
+    Year: "3rd Year",
+    Branch: "EE",
+    EmailId: "realakshitaupadhyay@gmail.com",
+    LinkedInId: "Akshita Upadhyay ",
+    InstaId: "_.akshita._1409",
+    Photo: "https://i.postimg.cc/x8Vsbqvp/Akshita-Upadhyay.jpg"
+  },
   // {
   //   Position: "Executive member ",
   //   Name: "Yash Pratap Singh",
@@ -482,16 +482,16 @@ const teamsData = [
   //   InstaId: "www.instagram.com",
   //   Photo: "https://i.postimg.cc/XqwnwZTr/Yash-Pratap-Singh.jpg"
   // },
-  // {
-  //   Position: "Executive member ",
-  //   Name: "Dipendra Singh",
-  //   Year: "3rd Year",
-  //   Branch: "EE",
-  //   EmailId: "dipendras135@gmail.com",
-  //   LinkedInId: "https://www.linkedin.com/in/dipendra-singh-573446264?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-  //   InstaId: "https://www.instagram.com/dip.x.music?igsh=OTF3cGRubW5nYzBj",
-  //   Photo: "https://i.postimg.cc/g2xvmmRx/Dipendra-Singh.jpg"
-  // },
+  {
+    Position: "Executive member ",
+    Name: "Dipendra Singh",
+    Year: "3rd Year",
+    Branch: "EE",
+    EmailId: "dipendras135@gmail.com",
+    LinkedInId: "https://www.linkedin.com/in/dipendra-singh-573446264?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+    InstaId: "https://www.instagram.com/dip.x.music?igsh=OTF3cGRubW5nYzBj",
+    Photo: "https://i.postimg.cc/g2xvmmRx/Dipendra-Singh.jpg"
+  },
   // {
   //   Position: "Executive member ",
   //   Name: "Ritik Bind",
@@ -512,57 +512,57 @@ const teamsData = [
   //   InstaId: "prishaaa_agrawal",
   //   Photo: "hhttps://i.postimg.cc/2jHb6gCh/Prisha-Agrawal.jpg"
   // },
-  // {
-  //   Position: "Executive member ",
-  //   Name: "Nandini Mishra",
-  //   Year: "3rd Year",
-  //   Branch: "CE",
-  //   EmailId: "nandininm1109@gmail.com",
-  //   LinkedInId: "Nandini Mishra",
-  //   InstaId: "_nan_dinii",
-  //   Photo: "https://i.postimg.cc/Fs7fJGKq/Nandini-Mishra.jpg"
-  // },
-  // {
-  //   Position: "Executive member ",
-  //   Name: "Shivam Pal",
-  //   Year: "3rd Year",
-  //   Branch: "CSE",
-  //   EmailId: "shivmpl71727@gmail.com",
-  //   LinkedInId: "www.linkedin.com/in/shivampalofficial13",
-  //   InstaId: "none",
-  //   Photo: "https://i.postimg.cc/2jXymvxx/Shivam-Pal.jpg"
-  // },
-  // {
-  //   Position: "Executive member ",
-  //   Name: "Srishti Singh ",
-  //   Year: "3rd Year",
-  //   Branch: "BBA",
-  //   EmailId: "srishtisingh25ss@gmail.com",
-  //   LinkedInId: "Srishti Singh ",
-  //   InstaId: "Srishti_singh.25",
-  //   Photo: "https://i.postimg.cc/G3NL6Rc7/Srishti-Singh.jpg"
-  // },
+  {
+    Position: "Executive member ",
+    Name: "Nandini Mishra",
+    Year: "3rd Year",
+    Branch: "CE",
+    EmailId: "nandininm1109@gmail.com",
+    LinkedInId: "Nandini Mishra",
+    InstaId: "_nan_dinii",
+    Photo: "https://i.postimg.cc/Fs7fJGKq/Nandini-Mishra.jpg"
+  },
+  {
+    Position: "Executive member ",
+    Name: "Shivam Pal",
+    Year: "3rd Year",
+    Branch: "CSE",
+    EmailId: "shivmpl71727@gmail.com",
+    LinkedInId: "www.linkedin.com/in/shivampalofficial13",
+    InstaId: "none",
+    Photo: "https://i.postimg.cc/2jXymvxx/Shivam-Pal.jpg"
+  },
+  {
+    Position: "Executive member ",
+    Name: "Srishti Singh ",
+    Year: "3rd Year",
+    Branch: "BBA",
+    EmailId: "srishtisingh25ss@gmail.com",
+    LinkedInId: "Srishti Singh ",
+    InstaId: "Srishti_singh.25",
+    Photo: "https://i.postimg.cc/G3NL6Rc7/Srishti-Singh.jpg"
+  },
 
-  // {
-  //   Position: "Executive member ",
-  //   Name: "Ritika Rao",
-  //   Year: "3rd Year",
-  //   Branch: "ECE",
-  //   EmailId: "raoritika313@gmail.com",
-  //   LinkedInId: "https://www.linkedin.com/in/ritika-rao-a6a447257?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-  //   InstaId: "https://www.instagram.com/ritikarao2352?igsh=emk5Mmdrbmxncmdm",
-  //   Photo: "https://i.postimg.cc/htmf2jT1/Ritika-rao.jpg"
-  // },
-  // {
-  //   Position: "Executive member ",
-  //   Name: "Yashi Kardam ",
-  //   Year: "3rd Year",
-  //   Branch: "IT",
-  //   EmailId: "yashikardam240@gmail.com",
-  //   LinkedInId: "https://www.linkedin.com/in/yashi-kardam-81288a25b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-  //   InstaId: "https://www.instagram.com/yashiiii24_/profilecard/?igsh=ZDlmNjE5Yjl4czc0",
-  //   Photo: "https://i.postimg.cc/Kz3G8pfr/Yashi-Kardam.jpg"
-  // },
+  {
+    Position: "Executive member ",
+    Name: "Ritika Rao",
+    Year: "3rd Year",
+    Branch: "ECE",
+    EmailId: "raoritika313@gmail.com",
+    LinkedInId: "https://www.linkedin.com/in/ritika-rao-a6a447257?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+    InstaId: "https://www.instagram.com/ritikarao2352?igsh=emk5Mmdrbmxncmdm",
+    Photo: "https://i.postimg.cc/htmf2jT1/Ritika-rao.jpg"
+  },
+  {
+    Position: "Executive member ",
+    Name: "Yashi Kardam ",
+    Year: "3rd Year",
+    Branch: "IT",
+    EmailId: "yashikardam240@gmail.com",
+    LinkedInId: "https://www.linkedin.com/in/yashi-kardam-81288a25b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+    InstaId: "https://www.instagram.com/yashiiii24_/profilecard/?igsh=ZDlmNjE5Yjl4czc0",
+    Photo: "https://i.postimg.cc/Kz3G8pfr/Yashi-Kardam.jpg"
+  },
   {
     Position: "Technical Executive ",
     Name: "Samyak Jain",
@@ -574,378 +574,378 @@ const teamsData = [
     Photo: "https://i.postimg.cc/NMdMKrvB/Samyak-Jain.jpg"
   },
 
-  // {
-  //   Position: "Executive member ",
-  //   Name: "Sonu Kumar ",
-  //   Year: "3rd Year",
-  //   Branch: "CE",
-  //   EmailId: "sonu86517630@gmail.com",
-  //   LinkedInId: "Sonu Kumar ",
-  //   InstaId: "ace._.sonu07",
-  //   Photo: "https://i.postimg.cc/j2GRfHg0/sonu-kumar.jpg"
-  // },
-//   {
-//     Position: "Executive member ",
-//     Name: "Aditi Sharma ",
-//     Year: "2nd Year",
-//     Branch: "E.C.E",
-//     EmailId: "aditisharma3749@gmail.com",
-//     LinkedInId: "https://www.linkedin.com/in/aditi-sharma-2a01a3308?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-//     InstaId: "https://www.instagram.com/aditi.rs.3112?igsh=MXNqa3BmcWM3eDFnZw==",
-//     Photo: "https://i.postimg.cc/TPhNzz20/Aditi-Sharma.jpg"
-//   },
-//   {
-//     Position: "Executive Member",
-//     Name: "Abhishek Kumar Nigam",
-//     Year: "2nd Year",
-//     Branch: "E.E",
-//     EmailId: "imabhishek@gmail.com",
-//     LinkedInId: "https://www.linkedin.com/in/abhishek-kumar-nigam-665925294/",
-//     InstaId: "https://www.instagram.com/imabhishek40/",
-//     Photo: "https://i.postimg.cc/nVqSfYxy/AKN.png"
-//   },
-//   {
-//     Position: "Executive member ",
-//     Name: "Chandan Gupta ",
-//     Year: "2nd Year",
-//     Branch: "CSE",
-//     EmailId: "cgupta7068@gmail.com",
-//     LinkedInId: "https://www.linkedin.com/in/chandan-gupta-90576229b/?originalSubdomain=in",
-//     InstaId: "https://www.instagram.com/__chandan__gupta/",
-//     Photo: "https://i.postimg.cc/vTGrsnLy/Chandan-Gupta.jpg"
-//   },
-//   {
-//     Position: "Executive member ",
-//     Name: "Alok kumar ",
-//     Year: "2nd Year",
-//     Branch: "E.C.E",
-//     EmailId: "arav8172@gmail.com",
-//     LinkedInId: "alok-kumar-6374aa299",
-//     InstaId: "alok_k.775",
-//     Photo: "https://i.postimg.cc/43rPrnS4/Alok-kumar.png"
-//   },
+  {
+    Position: "Executive member ",
+    Name: "Sonu Kumar ",
+    Year: "3rd Year",
+    Branch: "CE",
+    EmailId: "sonu86517630@gmail.com",
+    LinkedInId: "Sonu Kumar ",
+    InstaId: "ace._.sonu07",
+    Photo: "https://i.postimg.cc/j2GRfHg0/sonu-kumar.jpg"
+  },
+  {
+    Position: "Executive member ",
+    Name: "Aditi Sharma ",
+    Year: "2nd Year",
+    Branch: "E.C.E",
+    EmailId: "aditisharma3749@gmail.com",
+    LinkedInId: "https://www.linkedin.com/in/aditi-sharma-2a01a3308?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+    InstaId: "https://www.instagram.com/aditi.rs.3112?igsh=MXNqa3BmcWM3eDFnZw==",
+    Photo: "https://i.postimg.cc/TPhNzz20/Aditi-Sharma.jpg"
+  },
+  {
+    Position: "Executive Member",
+    Name: "Abhishek Kumar Nigam",
+    Year: "2nd Year",
+    Branch: "E.E",
+    EmailId: "imabhishek@gmail.com",
+    LinkedInId: "https://www.linkedin.com/in/abhishek-kumar-nigam-665925294/",
+    InstaId: "https://www.instagram.com/imabhishek40/",
+    Photo: "https://i.postimg.cc/nVqSfYxy/AKN.png"
+  },
+  {
+    Position: "Executive member ",
+    Name: "Chandan Gupta ",
+    Year: "2nd Year",
+    Branch: "CSE",
+    EmailId: "cgupta7068@gmail.com",
+    LinkedInId: "https://www.linkedin.com/in/chandan-gupta-90576229b/?originalSubdomain=in",
+    InstaId: "https://www.instagram.com/_chandan_gupta/",
+    Photo: "https://i.postimg.cc/vTGrsnLy/Chandan-Gupta.jpg"
+  },
+  {
+    Position: "Executive member ",
+    Name: "Alok kumar ",
+    Year: "2nd Year",
+    Branch: "E.C.E",
+    EmailId: "arav8172@gmail.com",
+    LinkedInId: "alok-kumar-6374aa299",
+    InstaId: "alok_k.775",
+    Photo: "https://i.postimg.cc/43rPrnS4/Alok-kumar.png"
+  },
   
-//   {
-//     Position: "Executive member ",
-//     Name: "Vinayak Yadav ",
-//     Year: "2nd Year",
-//     Branch: "IT",
-//     EmailId: "yadavinayak0@gmail.com",
-//     LinkedInId: "https://www.linkedin.com/in/vinayak-yadav-79a6a0294?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-//     InstaId: "https://www.instagram.com/vinayak_y0/profilecard/?igsh=MTNlNnpzdm1jZDE3Zg==",
-//     Photo: "https://i.postimg.cc/8PM7HchB/VINAYAK-YADAV.jpg"
-//   },
-//   {
-//     Position: "Executive member ",
-//     Name: "Yashvardhan Ojha ",
-//     Year: "2nd Year",
-//     Branch: "C.S.E",
-//     EmailId: "yashvardhanojha8217@gmail.com",
-//     LinkedInId: "https://www.linkedin.com/in/yashvardhan-ojha-b5b325287?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-//     InstaId: "https://www.instagram.com/yashvardhan.ojha?igsh=YWZlc2lqbDd1b3Bi",
-//     Photo: "https://i.postimg.cc/1Xx9n0Yx/Yashvarshan-Ojha.jpg "
-//   },
-//   {
-//     Position: "Executive member ",
-//     Name: "Shatakshi Srivastava ",
-//     Year: "2nd Year",
-//     Branch: "ECE",
-//     EmailId: "shatakshi.srivastava188@gmail.com",
-//     LinkedInId: "None ",
-//     InstaId: "shatakshi.srivastava188",
-//     Photo: "https://i.postimg.cc/9F6fwhKR/Shatakshi-Srivastav.jpg"
-//   },
-//   {
-//     Position: "Executive member ",
-//     Name: "Vaishnavi Rai",
-//     Year: "2nd Year",
-//     Branch: "CE",
-//     EmailId: "vaishnavi.rai2648@gmail.com",
-//     LinkedInId: "vaishnavi-rai-540b41294",
-//     InstaId: "vaishnavirai2409",
-//     Photo: "https://i.postimg.cc/s1dRxVx3/Vaishnavi-Rai.jpg"
-//   },
-//   {
-//     Position: "Executive member ",
-//     Name: "Shashikant Vishwakarma ",
-//     Year: "2nd Year",
-//     Branch: "C.S.E",
-//     EmailId: "sv84826@gmail.com",
-//     LinkedInId: "shashikant-vishwakarma-8737b2293",
-//     InstaId: "_shashikant97_",
-//     Photo: "https://i.postimg.cc/CLB1K1Pp/Shashikant-Vishwakarma.jpg"
-//   },
-//   {
-//     Position: "EXECUTIVE MEMBER",
-//     Name: "AVIRAL OMAR",
-//     Year: "2nd Year",
-//     Branch: "Chemical",
-//     EmailId: "aviralmaster@gmail.com",
-//     LinkedInId: "https://www.linkedin.com/in/aviral-omar-763878294?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-//     InstaId: "aviral.xy",
-//     Photo: "https://i.postimg.cc/HxD06RrV/Aviral-Omar.jpg"
-//   },
-//   {
-//     Position: "Executive member ",
-//     Name: "Vishal Yadav",
-//     Year: "2nd Year",
-//     Branch: "E.E",
-//     EmailId: "Vaibhav910yadav@gmail.com",
-//     LinkedInId: "https://www.linkedin.com/in/vishal-yadav-278627275",
-//     InstaId: "vishalmmmut27",
-//     Photo: "https://i.postimg.cc/Vk4LGC5M/Vishal-Yadav.jpg"
-//   },
-//   {
-//     Position: "Executive member ",
-//     Name: "Arnav Mishra",
-//     Year: "2nd Year",
-//     Branch: "MECH",
-//     EmailId: "arnavmishra68@gmail.com",
-//     LinkedInId: "https://www.linkedin.com/in/arnav-mishra-0246b9235",
-//     InstaId: "arnavamoghofficial",
-//     Photo: "https://i.postimg.cc/xT05rwtm/Arav-Mishra.jpg"
-//   },
-//   {
-//     Position: "Executive member ",
-//     Name: "Sudhanshu Kumar Yadav",
-//     Year: "2nd Year",
-//     Branch: "EE",
-//     EmailId: "sudhanshu4169@gmail.com",
-//     LinkedInId: "www.linkedin.com/in/sudhanshu-yadav-2023031072ee",
-//     InstaId: "5udh.anshu",
-//     Photo: "https://i.postimg.cc/T3vRYc5n/Sudhanshu-Yadav.jpg"
-//   },
-//   {
-//     Position: "Executive member ",
-//     Name: "Vishu Srivastava ",
-//     Year: "2nd Year",
-//     Branch: "ECE(IoT)",
-//     EmailId: "vishusrivastava0415@gmail.com ",
-//     LinkedInId: "https://in.linkedin.com/in/vishu-srivastava-882109134",
-//     InstaId: "vishus0415",
-//     Photo: "https://i.postimg.cc/L8m83T42/Vishu-Srivastava.png"
-//   },
-//   {
-//     Position: "Executive member ",
-//     Name: "Snehil Saxena ",
-//     Year: "2nd Year",
-//     Branch: "IT",
-//     EmailId: "snehilsaxena2903@gmail.com",
-//     LinkedInId: "https://www.linkedin.com/in/snehil-saxena-b541a4264/",
-//     InstaId: "snehil341",
-//     Photo: "https://i.postimg.cc/Rh3MqsTL/Snehil-Saxena.jpg"
-//   },
-//   {
-//     Position: "Executive member ",
-//     Name: "Anju Mani",
-//     Year: "2nd Year",
-//     Branch: "ECE(IoT)",
-//     EmailId: "mani.anju2005@gmail.com",
-//     LinkedInId: "https://www.linkedin.com/in/anju-mani-50725827b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-//     InstaId: "https://www.instagram.com/anju_mani07?igsh=MWt4d3A2c2llcjh5",
-//     Photo: "https://i.postimg.cc/3wy9S29b/Anju-Mani.jpg"
-//   },
-//   {
-//     Position: "Executive member ",
-//     Name: "Ajay Kumar ",
-//     Year: "2nd Year",
-//     Branch: "CE",
-//     EmailId: "aj3223743@gmail.com",
-//     LinkedInId: "Ajay Kumar ",
-//     InstaId: "ajay_ak00",
-//     Photo: "https://i.postimg.cc/W3kW30kJ/Ajay.jpg"
-//   },
-//   {
-//     Position: "Executive member ",
-//     Name: "Ritesh Srivastava ",
-//     Year: "2nd Year",
-//     Branch: "BBA",
-//     EmailId: "rishriofficial@gmail.com",
-//     LinkedInId: "https://www.linkedin.com/in/ritesh-srivastava-59825626b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-//     InstaId: "https://www.instagram.com/_riteshsrivastava_?igsh=eWZkZG82a3h6djNy",
-//     Photo: "https://i.postimg.cc/MG8XNSY2/Ritesh-Srivastava.jpg"
-//   },
-//   {
-//     Position: "Executive member ",
-//     Name: "Amit Chaurasiya ",
-//     Year: "2nd Year",
-//     Branch: "MECH",
-//     EmailId: "amitchaurasiya1002@gmail.com",
-//     LinkedInId: "https://www.linkedin.com/in/amit-chaurasiya-aab24a294",
-//     InstaId: "_a.m.i.t_30",
-//     Photo: "https://i.postimg.cc/nhh3mymx/Amit-Chaurasiya.jpg"
-//   },
-//   {
-//     Position: "Executive member ",
-//     Name: "HIMANSHU MISHRA",
-//     Year: "2nd Year",
-//     Branch: "CHEMICAL",
-//     EmailId: "himanshumishra64402@gmail.com ",
-//     LinkedInId: "Himanshu mishra",
-//     InstaId: "h_m_n_s_u_",
-//     Photo: "https://i.postimg.cc/cJYwthFZ/Himanshu-mishra.png"
-//   },
+  {
+    Position: "Executive member ",
+    Name: "Vinayak Yadav ",
+    Year: "2nd Year",
+    Branch: "IT",
+    EmailId: "yadavinayak0@gmail.com",
+    LinkedInId: "https://www.linkedin.com/in/vinayak-yadav-79a6a0294?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+    InstaId: "https://www.instagram.com/vinayak_y0/profilecard/?igsh=MTNlNnpzdm1jZDE3Zg==",
+    Photo: "https://i.postimg.cc/8PM7HchB/VINAYAK-YADAV.jpg"
+  },
+  {
+    Position: "Executive member ",
+    Name: "Yashvardhan Ojha ",
+    Year: "2nd Year",
+    Branch: "C.S.E",
+    EmailId: "yashvardhanojha8217@gmail.com",
+    LinkedInId: "https://www.linkedin.com/in/yashvardhan-ojha-b5b325287?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+    InstaId: "https://www.instagram.com/yashvardhan.ojha?igsh=YWZlc2lqbDd1b3Bi",
+    Photo: "https://i.postimg.cc/1Xx9n0Yx/Yashvarshan-Ojha.jpg "
+  },
+  {
+    Position: "Executive member ",
+    Name: "Shatakshi Srivastava ",
+    Year: "2nd Year",
+    Branch: "ECE",
+    EmailId: "shatakshi.srivastava188@gmail.com",
+    LinkedInId: "None ",
+    InstaId: "shatakshi.srivastava188",
+    Photo: "https://i.postimg.cc/9F6fwhKR/Shatakshi-Srivastav.jpg"
+  },
+  {
+    Position: "Executive member ",
+    Name: "Vaishnavi Rai",
+    Year: "2nd Year",
+    Branch: "CE",
+    EmailId: "vaishnavi.rai2648@gmail.com",
+    LinkedInId: "vaishnavi-rai-540b41294",
+    InstaId: "vaishnavirai2409",
+    Photo: "https://i.postimg.cc/s1dRxVx3/Vaishnavi-Rai.jpg"
+  },
+  {
+    Position: "Executive member ",
+    Name: "Shashikant Vishwakarma ",
+    Year: "2nd Year",
+    Branch: "C.S.E",
+    EmailId: "sv84826@gmail.com",
+    LinkedInId: "shashikant-vishwakarma-8737b2293",
+    InstaId: "shashikant97",
+    Photo: "https://i.postimg.cc/CLB1K1Pp/Shashikant-Vishwakarma.jpg"
+  },
+  {
+    Position: "EXECUTIVE MEMBER",
+    Name: "AVIRAL OMAR",
+    Year: "2nd Year",
+    Branch: "Chemical",
+    EmailId: "aviralmaster@gmail.com",
+    LinkedInId: "https://www.linkedin.com/in/aviral-omar-763878294?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+    InstaId: "aviral.xy",
+    Photo: "https://i.postimg.cc/HxD06RrV/Aviral-Omar.jpg"
+  },
+  {
+    Position: "Executive member ",
+    Name: "Vishal Yadav",
+    Year: "2nd Year",
+    Branch: "E.E",
+    EmailId: "Vaibhav910yadav@gmail.com",
+    LinkedInId: "https://www.linkedin.com/in/vishal-yadav-278627275",
+    InstaId: "vishalmmmut27",
+    Photo: "https://i.postimg.cc/Vk4LGC5M/Vishal-Yadav.jpg"
+  },
+  {
+    Position: "Executive member ",
+    Name: "Arnav Mishra",
+    Year: "2nd Year",
+    Branch: "MECH",
+    EmailId: "arnavmishra68@gmail.com",
+    LinkedInId: "https://www.linkedin.com/in/arnav-mishra-0246b9235",
+    InstaId: "arnavamoghofficial",
+    Photo: "https://i.postimg.cc/xT05rwtm/Arav-Mishra.jpg"
+  },
+  {
+    Position: "Executive member ",
+    Name: "Sudhanshu Kumar Yadav",
+    Year: "2nd Year",
+    Branch: "EE",
+    EmailId: "sudhanshu4169@gmail.com",
+    LinkedInId: "www.linkedin.com/in/sudhanshu-yadav-2023031072ee",
+    InstaId: "5udh.anshu",
+    Photo: "https://i.postimg.cc/T3vRYc5n/Sudhanshu-Yadav.jpg"
+  },
+  {
+    Position: "Executive member ",
+    Name: "Vishu Srivastava ",
+    Year: "2nd Year",
+    Branch: "ECE(IoT)",
+    EmailId: "vishusrivastava0415@gmail.com ",
+    LinkedInId: "https://in.linkedin.com/in/vishu-srivastava-882109134",
+    InstaId: "vishus0415",
+    Photo: "https://i.postimg.cc/L8m83T42/Vishu-Srivastava.png"
+  },
+  {
+    Position: "Executive member ",
+    Name: "Snehil Saxena ",
+    Year: "2nd Year",
+    Branch: "IT",
+    EmailId: "snehilsaxena2903@gmail.com",
+    LinkedInId: "https://www.linkedin.com/in/snehil-saxena-b541a4264/",
+    InstaId: "snehil341",
+    Photo: "https://i.postimg.cc/Rh3MqsTL/Snehil-Saxena.jpg"
+  },
+  {
+    Position: "Executive member ",
+    Name: "Anju Mani",
+    Year: "2nd Year",
+    Branch: "ECE(IoT)",
+    EmailId: "mani.anju2005@gmail.com",
+    LinkedInId: "https://www.linkedin.com/in/anju-mani-50725827b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+    InstaId: "https://www.instagram.com/anju_mani07?igsh=MWt4d3A2c2llcjh5",
+    Photo: "https://i.postimg.cc/3wy9S29b/Anju-Mani.jpg"
+  },
+  {
+    Position: "Executive member ",
+    Name: "Ajay Kumar ",
+    Year: "2nd Year",
+    Branch: "CE",
+    EmailId: "aj3223743@gmail.com",
+    LinkedInId: "Ajay Kumar ",
+    InstaId: "ajay_ak00",
+    Photo: "https://i.postimg.cc/W3kW30kJ/Ajay.jpg"
+  },
+  {
+    Position: "Executive member ",
+    Name: "Ritesh Srivastava ",
+    Year: "2nd Year",
+    Branch: "BBA",
+    EmailId: "rishriofficial@gmail.com",
+    LinkedInId: "https://www.linkedin.com/in/ritesh-srivastava-59825626b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+    InstaId: "https://www.instagram.com/riteshsrivastava?igsh=eWZkZG82a3h6djNy",
+    Photo: "https://i.postimg.cc/MG8XNSY2/Ritesh-Srivastava.jpg"
+  },
+  {
+    Position: "Executive member ",
+    Name: "Amit Chaurasiya ",
+    Year: "2nd Year",
+    Branch: "MECH",
+    EmailId: "amitchaurasiya1002@gmail.com",
+    LinkedInId: "https://www.linkedin.com/in/amit-chaurasiya-aab24a294",
+    InstaId: "_a.m.i.t_30",
+    Photo: "https://i.postimg.cc/nhh3mymx/Amit-Chaurasiya.jpg"
+  },
+  {
+    Position: "Executive member ",
+    Name: "HIMANSHU MISHRA",
+    Year: "2nd Year",
+    Branch: "CHEMICAL",
+    EmailId: "himanshumishra64402@gmail.com ",
+    LinkedInId: "Himanshu mishra",
+    InstaId: "h_m_n_s_u_",
+    Photo: "https://i.postimg.cc/cJYwthFZ/Himanshu-mishra.png"
+  },
   
-//   {
-//     Position: "Executive member ",
-//     Name: "Anurag Gangwar ",
-//     Year: "2nd Year",
-//     Branch: "MECH",
-//     EmailId: "patelanuraag143@gmail.com",
-//     LinkedInId: "Anurag Gangwar ",
-//     InstaId: "_anrggg1",
-//     Photo: "https://i.postimg.cc/8cGHz9Gq/Anurag-Gangwar.jpg"
-//   },
-//   {
-//     Position: "Executive member ",
-//     Name: "Shreyansh Singh Sengar",
-//     Year: "2nd Year",
-//     Branch: "MECH",
-//     EmailId: "iamsengar1114@gmail.com",
-//     LinkedInId: "Shreyansh Singh Sengar ",
-//     InstaId: "_.sengar.shreyansh06._",
-//     Photo: "https://i.postimg.cc/cL7dK8f2/Shreyansh.jpg"
-//   },
-//   {
-//     Position: "Executive member ",
-//     Name: "Pranav Mishra",
-//     Year: "2nd Year",
-//     Branch: "IT",
-//     EmailId: "pranavmishra2791939@gmail.com",
-//     LinkedInId: "https://www.linkedin.com/in/pranav-mishra-8a7908294?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-//     InstaId: "https://www.instagram.com/er._pranav_mishra?igsh=MXR1bjc3MGU4bzR4MA==",
-//     Photo: "https://i.postimg.cc/C56zQncm/Pranav-Mishra.png"
-//   },
-//   {
-//     Position: "Executive member ",
-//     Name: "Pragya Kumari ",
-//     Year: "2nd Year",
-//     Branch: "EE",
-//     EmailId: "pragya12070@gmail.com",
-//     LinkedInId: "Pragya Kumari ",
-//     InstaId: "sowhatpraxya",
-//     Photo: "https://i.postimg.cc/sXmB5N7F/Pragya.jpg"
-//   },
-//   {
-//     Position: "Executive member ",
-//     Name: "Utkarsh Pandey ",
-//     Year: "2nd Year",
-//     Branch: "CE",
-//     EmailId: "appuutkarsh@gmail.com",
-//     LinkedInId: "Utkarsh Pandey ",
-//     InstaId: "utkarsh.pandey18",
-//     Photo: "https://i.postimg.cc/hjYnF8qz/Utkarsh-Pandey.jpg"
-//   },
-//   {
-//     Position: "Executive member ",
-//     Name: "Shristi Pandey ",
-//     Year: "2nd Year",
-//     Branch: "CE",
-//     EmailId: "shreepandey1305@gmail.com",
-//     LinkedInId: "https://www.linkedin.com/in/shristi-pandey-452078294?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-//     InstaId: "https://www.instagram.com/hey.shristii_?igsh=MWwyMWtrcGVueWg1cA==",
-//     Photo: "https://i.postimg.cc/GhyLCftc/Shristi-Pandey.jpg"
-//   },
-//   {
-//     Position: "Executive member ",
-//     Name: "Shreya Baboota",
-//     Year: "2nd Year",
-//     Branch: "IT",
-//     EmailId: "babootashreya@gmail.com",
-//     LinkedInId: "https://www.linkedin.com/in/shreya-baboota-233352282?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-//     InstaId: "https://www.instagram.com/shreya_baboota?igsh=cWxvdjVyb203d25j",
-//     Photo: "https://i.postimg.cc/Z565rQzf/Shreya-Baboota.jpg"
-//   },
-//   {
-//     Position: "Executive member ",
-//     Name: "ASHMI SINGH",
-//     Year: "2nd Year",
-//     Branch: "EE",
-//     EmailId: "ashmisingh4002@gmail.com",
-//     LinkedInId: "https://www.linkedin.com/in/ashmi-singh-b9141a294?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-//     InstaId: "_ashmisingh_25",
-//     Photo: "https://i.postimg.cc/qvFx3z0c/ASHMI-SINGH.jpg"
-//   },
-//   {
-//     Position: "Executive member ",
-//     Name: "Tanaya Kaushik",
-//     Year: "2nd Year",
-//     Branch: "CE",
-//     EmailId: "tanayakaushik21@gmail.com",
-//     LinkedInId: "TANAYA KAUSHIK",
-//     InstaId: "tanaya_kaushik",
-//     Photo: "https://i.postimg.cc/VND1gQGF/Tanya.jpg"
-//   },
-//   {
-//     Position: "Executive member ",
-//     Name: "Ravikant Tripathi ",
-//     Year: "2nd Year",
-//     Branch: "B. PHARMA",
-//     EmailId: "msdpratap07@gmail.com",
-//     LinkedInId: "Ravikant Tripathi ",
-//     InstaId: "ravisamrat_108",
-//     Photo: "https://i.postimg.cc/2y51G771/PRAVEEN-YADAV.jpg"
-//   },
-//   {
-//     Position: "Executive member ",
-//     Name: "Taruna Patel",
-//     Year: "2nd Year",
-//     Branch: "CHEMICAL",
-//     EmailId: "ptaruna182@gmail.com",
-//     LinkedInId: "https://www.linkedin.com/in/taruna-patel-a72159322?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-//     InstaId: "https://www.instagram.com/taruna_._patel?igsh=dHk4aWltZjRmbGps",
-//     Photo: "https://i.postimg.cc/xd0nLTRC/Taruna-Patel.jpg"
-//   },
-//   {
-//     Position: "Executive member ",
-//     Name: "VAIBHAV SINGH",
-//     Year: "2nd Year",
-//     Branch: "EE",
-//     EmailId: "vaibhavsingh000085@gmail.com",
-//     LinkedInId: "ABCD",
-//     InstaId: "ABCD",
-//     Photo: "https://i.postimg.cc/fy0NM3wH/VAIBHAV-SINGH.jpg"
-//   },
-//   {
-//     Position: "Executive member ",
-//     Name: "Divyansh Singh Rathore ",
-//     Year: "2nd Year",
-//     Branch: "ECE",
-//     EmailId: "divyanshrathorz@gmail.com",
-//     LinkedInId: "https://www.linkedin.com/in/divyansh-singh-rathore-a69489271?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-//     InstaId: "divyansh.rathore.2005",
-//     Photo: "https://i.postimg.cc/kGwxX5fb/Divyansh-Singh-Rathore.jpg"
-//   },
-//   {
-//     Position: "Executive member ",
-//     Name: "Gaurav Vishwakarma",
-//     Year: "2nd Year",
-//     Branch: "ECE",
-//     EmailId: "gauravishwakarma2@gmail.com",
-//     LinkedInId: "Gaurav Vishwakarma",
-//     InstaId: "Not applicable",
-//     Photo: "https://i.postimg.cc/rFF1ZSwC/GAURAV-VISHWAKARMA.jpg"
-//   },
-//   {
-//     Position: "Executive member ",
-//     Name: "Shrestha Gupta ",
-//     Year: "2nd Year",
-//     Branch: "ECE",
-//     EmailId: "shrestha01gupta@gmail.com",
-//     LinkedInId: ".",
-//     InstaId: "https://www.instagram.com/shrestha_30.09?igsh=MTZ4bnZicDNub25kNQ==",
-//     Photo: "https://i.postimg.cc/rmwy2F0b/Shrestha-Gupta.jpg"
-//   },
-//   {
-//     Position: "Executive member ",
-//     Name: "Jagriti Singh",
-//     Year: "2nd Year",
-//     Branch: "Civil",
-//     EmailId: "jagritithakur175@gmail.com",
-//     LinkedInId: "https://linkedin.com/in/jagriti-singh-22bb742a0",
-//     InstaId: "jagritiisingh_",
-//     Photo: "https://i.postimg.cc/RhPHxDZ1/Jagriti.jpg"
-//   }
+  {
+    Position: "Executive member ",
+    Name: "Anurag Gangwar ",
+    Year: "2nd Year",
+    Branch: "MECH",
+    EmailId: "patelanuraag143@gmail.com",
+    LinkedInId: "Anurag Gangwar ",
+    InstaId: "_anrggg1",
+    Photo: "https://i.postimg.cc/8cGHz9Gq/Anurag-Gangwar.jpg"
+  },
+  {
+    Position: "Executive member ",
+    Name: "Shreyansh Singh Sengar",
+    Year: "2nd Year",
+    Branch: "MECH",
+    EmailId: "iamsengar1114@gmail.com",
+    LinkedInId: "Shreyansh Singh Sengar ",
+    InstaId: ".sengar.shreyansh06.",
+    Photo: "https://i.postimg.cc/cL7dK8f2/Shreyansh.jpg"
+  },
+  {
+    Position: "Executive member ",
+    Name: "Pranav Mishra",
+    Year: "2nd Year",
+    Branch: "IT",
+    EmailId: "pranavmishra2791939@gmail.com",
+    LinkedInId: "https://www.linkedin.com/in/pranav-mishra-8a7908294?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+    InstaId: "https://www.instagram.com/er._pranav_mishra?igsh=MXR1bjc3MGU4bzR4MA==",
+    Photo: "https://i.postimg.cc/C56zQncm/Pranav-Mishra.png"
+  },
+  {
+    Position: "Executive member ",
+    Name: "Pragya Kumari ",
+    Year: "2nd Year",
+    Branch: "EE",
+    EmailId: "pragya12070@gmail.com",
+    LinkedInId: "Pragya Kumari ",
+    InstaId: "sowhatpraxya",
+    Photo: "https://i.postimg.cc/sXmB5N7F/Pragya.jpg"
+  },
+  {
+    Position: "Executive member ",
+    Name: "Utkarsh Pandey ",
+    Year: "2nd Year",
+    Branch: "CE",
+    EmailId: "appuutkarsh@gmail.com",
+    LinkedInId: "Utkarsh Pandey ",
+    InstaId: "utkarsh.pandey18",
+    Photo: "https://i.postimg.cc/hjYnF8qz/Utkarsh-Pandey.jpg"
+  },
+  {
+    Position: "Executive member ",
+    Name: "Shristi Pandey ",
+    Year: "2nd Year",
+    Branch: "CE",
+    EmailId: "shreepandey1305@gmail.com",
+    LinkedInId: "https://www.linkedin.com/in/shristi-pandey-452078294?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+    InstaId: "https://www.instagram.com/hey.shristii_?igsh=MWwyMWtrcGVueWg1cA==",
+    Photo: "https://i.postimg.cc/GhyLCftc/Shristi-Pandey.jpg"
+  },
+  {
+    Position: "Executive member ",
+    Name: "Shreya Baboota",
+    Year: "2nd Year",
+    Branch: "IT",
+    EmailId: "babootashreya@gmail.com",
+    LinkedInId: "https://www.linkedin.com/in/shreya-baboota-233352282?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+    InstaId: "https://www.instagram.com/shreya_baboota?igsh=cWxvdjVyb203d25j",
+    Photo: "https://i.postimg.cc/Z565rQzf/Shreya-Baboota.jpg"
+  },
+  {
+    Position: "Executive member ",
+    Name: "ASHMI SINGH",
+    Year: "2nd Year",
+    Branch: "EE",
+    EmailId: "ashmisingh4002@gmail.com",
+    LinkedInId: "https://www.linkedin.com/in/ashmi-singh-b9141a294?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+    InstaId: "_ashmisingh_25",
+    Photo: "https://i.postimg.cc/qvFx3z0c/ASHMI-SINGH.jpg"
+  },
+  {
+    Position: "Executive member ",
+    Name: "Tanaya Kaushik",
+    Year: "2nd Year",
+    Branch: "CE",
+    EmailId: "tanayakaushik21@gmail.com",
+    LinkedInId: "TANAYA KAUSHIK",
+    InstaId: "tanaya_kaushik",
+    Photo: "https://i.postimg.cc/VND1gQGF/Tanya.jpg"
+  },
+  {
+    Position: "Executive member ",
+    Name: "Ravikant Tripathi ",
+    Year: "2nd Year",
+    Branch: "B. PHARMA",
+    EmailId: "msdpratap07@gmail.com",
+    LinkedInId: "Ravikant Tripathi ",
+    InstaId: "ravisamrat_108",
+    Photo: "https://i.postimg.cc/2y51G771/PRAVEEN-YADAV.jpg"
+  },
+  {
+    Position: "Executive member ",
+    Name: "Taruna Patel",
+    Year: "2nd Year",
+    Branch: "CHEMICAL",
+    EmailId: "ptaruna182@gmail.com",
+    LinkedInId: "https://www.linkedin.com/in/taruna-patel-a72159322?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+    InstaId: "https://www.instagram.com/taruna_._patel?igsh=dHk4aWltZjRmbGps",
+    Photo: "https://i.postimg.cc/xd0nLTRC/Taruna-Patel.jpg"
+  },
+  {
+    Position: "Executive member ",
+    Name: "VAIBHAV SINGH",
+    Year: "2nd Year",
+    Branch: "EE",
+    EmailId: "vaibhavsingh000085@gmail.com",
+    LinkedInId: "ABCD",
+    InstaId: "ABCD",
+    Photo: "https://i.postimg.cc/fy0NM3wH/VAIBHAV-SINGH.jpg"
+  },
+  {
+    Position: "Executive member ",
+    Name: "Divyansh Singh Rathore ",
+    Year: "2nd Year",
+    Branch: "ECE",
+    EmailId: "divyanshrathorz@gmail.com",
+    LinkedInId: "https://www.linkedin.com/in/divyansh-singh-rathore-a69489271?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+    InstaId: "divyansh.rathore.2005",
+    Photo: "https://i.postimg.cc/kGwxX5fb/Divyansh-Singh-Rathore.jpg"
+  },
+  {
+    Position: "Executive member ",
+    Name: "Gaurav Vishwakarma",
+    Year: "2nd Year",
+    Branch: "ECE",
+    EmailId: "gauravishwakarma2@gmail.com",
+    LinkedInId: "Gaurav Vishwakarma",
+    InstaId: "Not applicable",
+    Photo: "https://i.postimg.cc/rFF1ZSwC/GAURAV-VISHWAKARMA.jpg"
+  },
+  {
+    Position: "Executive member ",
+    Name: "Shrestha Gupta ",
+    Year: "2nd Year",
+    Branch: "ECE",
+    EmailId: "shrestha01gupta@gmail.com",
+    LinkedInId: ".",
+    InstaId: "https://www.instagram.com/shrestha_30.09?igsh=MTZ4bnZicDNub25kNQ==",
+    Photo: "https://i.postimg.cc/rmwy2F0b/Shrestha-Gupta.jpg"
+  },
+  {
+    Position: "Executive member ",
+    Name: "Jagriti Singh",
+    Year: "2nd Year",
+    Branch: "Civil",
+    EmailId: "jagritithakur175@gmail.com",
+    LinkedInId: "https://linkedin.com/in/jagriti-singh-22bb742a0",
+    InstaId: "jagritiisingh_",
+    Photo: "https://i.postimg.cc/RhPHxDZ1/Jagriti.jpg"
+  }
 ]
 
 export default teamsData;
