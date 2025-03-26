@@ -611,7 +611,7 @@ const teamsData = [
     Branch: "CSE",
     EmailId: "cgupta7068@gmail.com",
     LinkedInId: "https://www.linkedin.com/in/chandan-gupta-90576229b/?originalSubdomain=in",
-    InstaId: "https://www.instagram.com/_chandan_gupta/",
+    InstaId: "https://www.instagram.com/__chandan__gupta/",
     Photo: "https://i.postimg.cc/vTGrsnLy/Chandan-Gupta.jpg"
   },
   {
@@ -672,7 +672,7 @@ const teamsData = [
     Branch: "C.S.E",
     EmailId: "sv84826@gmail.com",
     LinkedInId: "shashikant-vishwakarma-8737b2293",
-    InstaId: "shashikant97",
+    InstaId: "_shashikant97_",
     Photo: "https://i.postimg.cc/CLB1K1Pp/Shashikant-Vishwakarma.jpg"
   },
   {
@@ -762,7 +762,7 @@ const teamsData = [
     Branch: "BBA",
     EmailId: "rishriofficial@gmail.com",
     LinkedInId: "https://www.linkedin.com/in/ritesh-srivastava-59825626b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-    InstaId: "https://www.instagram.com/riteshsrivastava?igsh=eWZkZG82a3h6djNy",
+    InstaId: "https://www.instagram.com/_riteshsrivastava_?igsh=eWZkZG82a3h6djNy",
     Photo: "https://i.postimg.cc/MG8XNSY2/Ritesh-Srivastava.jpg"
   },
   {
@@ -803,7 +803,7 @@ const teamsData = [
     Branch: "MECH",
     EmailId: "iamsengar1114@gmail.com",
     LinkedInId: "Shreyansh Singh Sengar ",
-    InstaId: ".sengar.shreyansh06.",
+    InstaId: "_.sengar.shreyansh06._",
     Photo: "https://i.postimg.cc/cL7dK8f2/Shreyansh.jpg"
   },
   {
