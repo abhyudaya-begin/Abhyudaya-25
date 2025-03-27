@@ -52,12 +52,7 @@ function TeamCards({ member }) {
               <FaInstagram size={20} color="#641504" />
             </a>
           )}
-          <a
-            href={`mailto:${member.EmailId}`}
-            className="text-black-900 hover:text-red-600 transition-all duration-300 transform hover:scale-110 hover:-translate-x-1"
-          >
-            <FaEnvelope size={20} color="#641504" />
-          </a>
+          
         </div>
       </div>
 
