@@ -903,7 +903,7 @@ const teamsData = [
     Branch: "EE",
     EmailId: "vaibhavsingh000085@gmail.com",
     LinkedInId: "ABCD",
-    InstaId: "ABCD",
+    InstaId: "https://www.instagram.com/",
     Photo: "https://i.postimg.cc/fy0NM3wH/VAIBHAV-SINGH.jpg"
   },
   {
