@@ -5,7 +5,7 @@ import Header from "./Header";
 import TabNavigation from "./TabNavigation";
 import WhatIsCA from "./WhatIsCA";
 import PerksAndBenefits from "./PerksAndBenifits";
-import Leaderboard from "./LeaderBoard";
+// import Leaderboard from "./LeaderBoard";
 import CallToAction from "./CallToAction";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css"; // Import styles for toast
@@ -16,7 +16,7 @@ export default function CampusAmbassadorProgram() {
   const tabs = [
     { id: "what", label: "What is CA?" },
     { id: "perks", label: "Perks & Benefits" },
-    { id: "leaderboard", label: "Leaderboard" }
+    // { id: "leaderboard", label: "Leaderboard" }
   ];
 
   // Animation variants
@@ -82,9 +82,9 @@ export default function CampusAmbassadorProgram() {
             <PerksAndBenefits contentVariants={contentVariants} itemVariants={itemVariants} />
           )}
 
-          {activeTab === "leaderboard" && (
+          {/* {activeTab === "leaderboard" && (
             <Leaderboard contentVariants={contentVariants} itemVariants={itemVariants} />
-          )}
+          )} */}
         </motion.div>
 
         {/* Call to Action */}
