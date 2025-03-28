@@ -1,5 +1,10 @@
 const sponsorsData = [
     {
+        "name": "GD Goenka",
+        "spon-link": "https://bmpwmkwijlrnrrywhqsp.supabase.co/storage/v1/object/sign/Sponsors/GDGoenka.jpg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJTcG9uc29ycy9HREdvZW5rYS5qcGciLCJpYXQiOjE3NDE0Mzk2MDYsImV4cCI6MTgzNjA0NzYwNn0.a7lmxIFQnPMJVcrSJoyKJnpDGVpsTsIM6t0WwAbYOQA",
+    },
+   
+    {
         "name": "91.1 FM",
         "spon-link": "https://i.postimg.cc/XJHhGn2T/91-9.png",
     },
