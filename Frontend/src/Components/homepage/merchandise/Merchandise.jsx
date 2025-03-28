@@ -13,7 +13,7 @@ const FlipCard = () => {
         "Premium Quality Stitching",
       ],
       image:
-        "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?auto=format&fit=crop&q=80&w=800",
+        "https://i.postimg.cc/MT9wsgV4/black-tee.png",
     },
     white: {
       title: "White T-Shirt",
@@ -24,7 +24,7 @@ const FlipCard = () => {
         "Tailored Perfect Fit",
       ],
       image:
-        "https://images.unsplash.com/photo-1581655353564-df123a1eb820?auto=format&fit=crop&q=80&w=800",
+        "https://i.postimg.cc/bJy89qDk/white-tee.png ",
     },
   };
 
