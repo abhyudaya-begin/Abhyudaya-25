@@ -62,7 +62,7 @@ const teamsData = [
     Photo: "https://i.postimg.cc/m28wTm55/Aryan-Raj-Pandey.jpg",
   },
 
-  {
+ /*  {
     Position: "Public Relations Head",
     Name: "Satish kumar ",
     Year: "Final Year",
@@ -71,7 +71,7 @@ const teamsData = [
     LinkedInId: "https://linkedin.com/in/satishkumar-263290235",
     InstaId: "Satish8569kumar ",
     Photo: "https://i.postimg.cc/k59Xwyn7/Satish-Kumar.jpg",
-  },
+  },*/
   {
     Position: "Techincal Head",
     Name: "Rahul Singh",
@@ -389,7 +389,7 @@ const teamsData = [
   //   InstaId: "Kotak.vishal__",
   //   Photo: "https://i.postimg.cc/fTnLJs63/Vishal-Kotak.jpg"
   // },
-  {
+ /* {
     Position: "Executive member ",
     Name: "Harsh singh",
     Year: "3rd Year",
@@ -399,7 +399,7 @@ const teamsData = [
       "https://www.linkedin.com/in/harsh-singh-642793203?trk=contact-info",
     InstaId: "Harsh_singh0617",
     Photo: "https://i.postimg.cc/kgLW5zFf/harsh-singh.jpg",
-  },
+  },*/
   {
     Position: "Executive member ",
     Name: "Arun Kumar ",
@@ -481,7 +481,7 @@ const teamsData = [
   //   InstaId: "/",
   //   Photo: "https://i.postimg.cc/XqwnwZTr/Yash-Pratap-Singh.jpg"
   // },
-  {
+ /* {
     Position: "Executive member ",
     Name: "Dipendra Singh",
     Year: "3rd Year",
@@ -491,7 +491,7 @@ const teamsData = [
       "https://www.linkedin.com/in/dipendra-singh-573446264?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
     InstaId: "dip.x.music?igsh=OTF3cGRubW5nYzBj",
     Photo: "https://i.postimg.cc/g2xvmmRx/Dipendra-Singh.jpg",
-  },
+  },*/
   // {
   //   Position: "Executive member ",
   //   Name: "Ritik Bind",
