@@ -141,7 +141,7 @@ const teamsData = [
     InstaId: "https://www.instagram.com/akankshaaa_17_?igsh=MWc0ejgxbmdpczIxdA==",
     Photo: "https://i.postimg.cc/nL5Sp3CJ/Akanksha-Pal.jpg"
   },
-  {
+ /* {
     Position: "Executive member ",
     Name: "Satish kumar ",
     Year: "Final Year",
@@ -150,7 +150,7 @@ const teamsData = [
     LinkedInId: "https://linkedin.com/in/satishkumar-263290235",
     InstaId: "Satish8569kumar ",
     Photo: "https://i.postimg.cc/k59Xwyn7/Satish-Kumar.jpg"
-  },
+  },*/
   {
     Position: "Executive member ",
     Name: "Rahul Singh",
@@ -321,7 +321,7 @@ const teamsData = [
     InstaId: "Kotak.vishal__",
     Photo: "https://i.postimg.cc/fTnLJs63/Vishal-Kotak.jpg"
   },
-  {
+  /*{
     Position: "Executive member ",
     Name: "Harsh singh",
     Year: "3rd Year",
@@ -330,7 +330,7 @@ const teamsData = [
     LinkedInId: "https://www.linkedin.com/in/harsh-singh-642793203?trk=contact-info",
     InstaId: "Harsh_singh0617",
     Photo: "https://i.postimg.cc/kgLW5zFf/harsh-singh.jpg"
-  },
+  },*/
   {
     Position: "Executive member ",
     Name: "Arun Kumar ",
