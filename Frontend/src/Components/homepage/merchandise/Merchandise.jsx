@@ -13,7 +13,7 @@ const FlipCard = () => {
         "Premium Quality Stitching",
       ],
       image:
-        "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?auto=format&fit=crop&q=80&w=800",
+        "https://i.postimg.cc/MT9wsgV4/black-tee.png",
     },
     white: {
       title: "White T-Shirt",
@@ -24,7 +24,7 @@ const FlipCard = () => {
         "Tailored Perfect Fit",
       ],
       image:
-        "https://images.unsplash.com/photo-1581655353564-df123a1eb820?auto=format&fit=crop&q=80&w=800",
+        "https://i.postimg.cc/bJy89qDk/white-tee.png ",
     },
   };
 
@@ -57,7 +57,7 @@ const FlipCard = () => {
 
         
             <span className=" text-yellow-400 text-center text-lg sm:text-xl font-bold mt-2">
-             ₹311/-
+             ₹250/-(first 50 orders)
             </span>
             </div>
           </div>
@@ -65,15 +65,13 @@ const FlipCard = () => {
       </div>
 
       <a
-        href="https://forms.gle/YBM1q9oevFvUYEA29"
-        target="_blank"
-        rel="noreferrer"
-        
-
-        className="disabled pointer-events-none mt-12 py-2 sm:py-4 px-5 sm:px-10 bg-white text-gray-900 text-lg sm:text-xl font-bold rounded-xl shadow-lg hover:bg-gray-800 hover:text-gray-100 transition-transform transform hover:scale-105"
-      >
-        Buy Now
-      </a>
+  href="https://forms.gle/PDNFEp92rBMiLqxQ8"
+  target="_blank"
+  rel="noreferrer"
+  className="mt-12 py-2 sm:py-4 px-5 sm:px-10 bg-white text-gray-900 text-lg sm:text-xl font-bold rounded-xl shadow-lg hover:bg-gray-800 hover:text-gray-100 transition-transform transform hover:scale-105"
+>
+  Buy Now
+</a>
     </div>
   );
 };
