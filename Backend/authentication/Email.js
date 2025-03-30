@@ -8,7 +8,6 @@ const generateOTP = () => {
   return Math.floor(1000 + Math.random() * 9000).toString();
 };
 
-// const otp = generateOTP();
 let otps = {};
 
 const transporter = nodemailer.createTransport({
@@ -61,15 +60,19 @@ const Send = async (req, res) => {
 
   try {
     const user = await User.findOne({ email });
-    console.log(user);
+    // console.log(user);
 
     if (user)
-      return res.status(403).json({ message: "Email Atready Exists !" });
+      return res.status(400).json({ message: "Email Atready Exists !" });
 
-    const info = await transporter.sendMail(mailOptions);
-    console.log("Email sent: ", info.response);
-    res.status(200).send("OTP sent successfully.");
+
+      return res.status(200).json({ message: "Okay!" });
+
+    // const info = await transporter.sendMail(mailOptions);
+    // console.log("Email sent: ", info.response);
+    // res.status(200).send("OTP sent successfully.");
   } catch (error) {
+    console.log(error)
     res.status(400).json({ message: "Error : " + error });
   }
 };
