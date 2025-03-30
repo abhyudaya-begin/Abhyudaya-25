@@ -57,7 +57,7 @@ const FlipCard = () => {
 
         
             <span className=" text-yellow-400 text-center text-lg sm:text-xl font-bold mt-2">
-             ₹311/-
+             ₹250/-(first 50 orders)
             </span>
             </div>
           </div>
@@ -65,15 +65,13 @@ const FlipCard = () => {
       </div>
 
       <a
-        href="https://forms.gle/YBM1q9oevFvUYEA29"
-        target="_blank"
-        rel="noreferrer"
-        
-
-        className="disabled pointer-events-none mt-12 py-2 sm:py-4 px-5 sm:px-10 bg-white text-gray-900 text-lg sm:text-xl font-bold rounded-xl shadow-lg hover:bg-gray-800 hover:text-gray-100 transition-transform transform hover:scale-105"
-      >
-        Buy Now
-      </a>
+  href="https://forms.gle/PDNFEp92rBMiLqxQ8"
+  target="_blank"
+  rel="noreferrer"
+  className="mt-12 py-2 sm:py-4 px-5 sm:px-10 bg-white text-gray-900 text-lg sm:text-xl font-bold rounded-xl shadow-lg hover:bg-gray-800 hover:text-gray-100 transition-transform transform hover:scale-105"
+>
+  Buy Now
+</a>
     </div>
   );
 };
