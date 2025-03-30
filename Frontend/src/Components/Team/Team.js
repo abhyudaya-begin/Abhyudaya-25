@@ -578,7 +578,7 @@ const teamsData = [
     Photo: "https://i.postimg.cc/NMdMKrvB/Samyak-Jain.jpg",
   },
 
-  {
+ /* {
     Position: "Executive member ",
     Name: "Sonu Kumar ",
     Year: "3rd Year",
@@ -587,7 +587,7 @@ const teamsData = [
     LinkedInId: "https://www.linkedin.com",
     InstaId: "ace._.sonu07",
     Photo: "https://i.postimg.cc/j2GRfHg0/sonu-kumar.jpg",
-  },
+  },*/
   {
     Position: "Executive member ",
     Name: "Aditi Sharma ",
