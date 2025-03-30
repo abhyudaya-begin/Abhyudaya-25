@@ -70,6 +70,7 @@ function SignUpForm({ setIsSignUp }) {
   const [image, setImage] = useState(null); // Default Image
   const [imageUpdated, setIMageUpdated] = useState(false);
   const [clicked, setClicked] = useState(false);
+  const [loading, setLoading] = useState(false);
   const [clickedForEmail, setClickedForEmail] = useState(false);
 
   const navigate = useNavigate();
@@ -104,6 +105,7 @@ function SignUpForm({ setIsSignUp }) {
         return;
       }
       setClicked(true);
+      setLoading(true);
       const { confirmPassword, ...filteredData } = data;
       const { fullName, ...restAll } = filteredData;
 
@@ -129,6 +131,7 @@ function SignUpForm({ setIsSignUp }) {
       console.log(error);
       toast.error(error.response?.data?.errorMessage || "Sign up Failed");
     } finally {
+      setLoading(false)
       setClicked(false);
     }
   };
@@ -158,8 +161,8 @@ function SignUpForm({ setIsSignUp }) {
         }
       );
       if (res.status) {
-        setIsOTPOpen(true);
-        toast.success("OTP sent successfully");
+        setVerified(true);
+        // toast.success("OTP sent successfully");
       }
     } catch (err) {
       console.log(err);
@@ -233,12 +236,7 @@ function SignUpForm({ setIsSignUp }) {
             </div>
           </div>
         </div>
-        {isOTPOpen && (
-          <Otp
-            props={{ email, setVerified }}
-            onClose={() => setIsOTPOpen(false)}
-          />
-        )}
+       
       </div>
 
       <div className="relative">
@@ -351,7 +349,7 @@ function SignUpForm({ setIsSignUp }) {
 
       <button
         type="submit"
-        disabled={!verified || clicked}
+        disabled={!verified || clicked || loading}
         className={`cursor-pointer w-full p-2 rounded-lg text-white transition-all 
         ${
           verified
