@@ -19,9 +19,8 @@ const registerUser = async (req, res) => {
       course,
       gender,
       referallId,
-      profilePicture
+      profilePicture,
     } = req.body;
-
 
     if (
       ![
@@ -32,10 +31,9 @@ const registerUser = async (req, res) => {
         institution,
         course,
         gender,
-        profilePicture
+        profilePicture,
       ].every((field) => (typeof field === "string" ? field.trim() : field))
     ) {
-    
       return res.status(400).json(new ApiError(400, "All fields are required"));
     }
 
@@ -45,18 +43,15 @@ const registerUser = async (req, res) => {
       return res.status(409).json(new ApiError(409, "User already exists"));
     }
 
-    if(referallId)
-    {
+    if (referallId) {
+      const referallIdExist = await User.find({ ABH_ID: referallId });
 
-      const referallIdExist = await User.find({ABH_ID : referallId});
-      
       if (!referallIdExist) {
-        return res.status(409).json(new ApiError(404, "This Referall Id does not exist!"));
+        return res
+          .status(409)
+          .json(new ApiError(404, "This Referall Id does not exist!"));
       }
     }
-
-
-   
 
     const hashedPassword = await bcrypt.hash(password, 10);
     const user = await User.create({
@@ -64,13 +59,13 @@ const registerUser = async (req, res) => {
       fullName,
       email,
       phoneNumber,
-     
+
       password: hashedPassword,
       institution,
       course,
       gender,
       referallId,
-      profilePicture
+      profilePicture,
     });
 
     return res
@@ -108,12 +103,11 @@ const Login = async (req, res) => {
     const token = generateToken(user);
 
     res.cookie("user", token, {
-      httpOnly: true, 
+      httpOnly: true,
       secure: process.env.NODE_ENV === "production", // ✅ Ensures HTTPS in production
       sameSite: process.env.NODE_ENV === "production" ? "None" : "Lax", // ✅ Prevents CSRF & allows cross-origin
       maxAge: 7 * 24 * 60 * 60 * 1000, // 7 days
     });
-    
 
     return res.status(200).json(new ApiResponse(200, user, "Login successful"));
   } catch (error) {
@@ -192,9 +186,7 @@ const deleteUser = async (req, res) => {
 // Update User Details
 const updateUser = async (req, res) => {
   try {
-    
     const { email, ABH_ID, ...updateData } = req.body;
-  
 
     if (!email && !ABH_ID) {
       return res
@@ -234,8 +226,6 @@ const updateUser = async (req, res) => {
     return res.status(500).json(new ApiError(500, "Something went wrong!"));
   }
 };
-
-
 
 module.exports = {
   registerUser,
