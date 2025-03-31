@@ -200,9 +200,39 @@ const FetchEventsForUsers = async (req, res) => {
   }
 };
 
+const FetchAllUsersEvents = async (req, res) => {
+  try {
+    const users = await User.find({}, "ABH_ID fullName email phoneNumber eventsPending eventsPaid").lean();
+
+    if (!users || users.length === 0) {
+      return res.status(404).json({
+        statuscode: 404,
+        status: false,
+        message: "No users found",
+      });
+    }
+
+    return res.status(200).json({
+      statuscode: 200,
+      status: true,
+      message: "Users and their events fetched successfully",
+      users,
+    });
+  } catch (error) {
+    console.error("Error fetching users and their events:", error);
+    return res.status(500).json({
+      statuscode: 500,
+      status: false,
+      message: "Internal Server Error",
+    });
+  }
+};
+
+
 module.exports = {
   eventRegister,
   FetchEventsForUsers,
+  FetchAllUsersEvents,
   movePendingToPaid,
   removePendingTransaction,
   getAllUserTransactions
