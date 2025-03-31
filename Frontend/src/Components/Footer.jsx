@@ -108,7 +108,7 @@ const Footer = ({ isSidebarOpen }) => {
         <div className="flex flex-col w-full md:w-1/3 lg:w-1/3 xl:w-1/3">
           <div className="rounded-lg overflow-hidden flex-1 h-[250px] md:h-[240px] lg:h-[250px]">
           <iframe
-  src="https://www.youtube.com/embed/5pzCzYzePjw"
+  src="https://www.youtube.com/embed/ziAZfHGa270?si=HQ_GKi6ODGPezuPB"
   className="w-full h-[250px] md:h-[240px] lg:h-[250px] rounded-xl shadow-lg"
   style={{ border: 0 }}
   allow=" web-share; fullscreen"
