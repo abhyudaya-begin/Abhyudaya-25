@@ -51,11 +51,43 @@ const currentSponsors = [
     },
    
   
-        //break    
-        {
+   //break    
+   {
           name: "Vicky Pandey",
           image: "https://i.postimg.cc/mr9Tzw9p/Vicky-Pandey.png "
         },
+
+
+        {
+          name: "Azzurre",
+          image: "https://i.postimg.cc/1zLjkHNS/Azzurre.jpg",
+        },
+      
+        {
+          name: "Float",
+          image: "https://i.postimg.cc/90BgqHgX/float.jpg",
+        },
+          //break    
+          {
+            name: "Pulse",
+            image: " https://i.postimg.cc/NFtPMj4P/Pulse.jpg"
+          },
+         
+        
+              //break    
+              {
+                name: "Trition",
+                image: "https://i.postimg.cc/44tQ2G5m/Trition.png "
+              },
+              {
+                name: "Ridezupp",
+                image: " https://i.postimg.cc/Gmj13nC1/Ridezupp.png "
+              },
+              {
+              name: "91.1 FM",
+                image: "https://i.postimg.cc/XJHhGn2T/91-9.png",
+            },
+          
       
   
 
