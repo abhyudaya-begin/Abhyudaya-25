@@ -6,7 +6,7 @@ const {
 } = require("../Controllers/Events");
 const { AdminLogin } = require("../Admin/Admin_Controller");
 const {Send, Verify} = require('../Admin/EmailForLogin');
-const { movePendingToPaid, getAllUserTransactions, removePendingTransaction } = require("../Controllers/EventHandling");
+const { movePendingToPaid, getAllUserTransactions,FetchAllUsersEvents, removePendingTransaction } = require("../Controllers/EventHandling");
 const { checkAdmin } = require("../authentication/Middleware");
 
 const adminRouter = Router();
@@ -20,6 +20,7 @@ const adminRouter = Router();
 adminRouter.post("/user", AdminLogin);
 adminRouter.post("/send-email",  Send);
 adminRouter.post("/verify-email", Verify);
+adminRouter.get("/users-events", FetchAllUsersEvents);
 
 // Users per events.
 //
