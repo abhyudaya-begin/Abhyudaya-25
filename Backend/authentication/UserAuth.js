@@ -7,6 +7,7 @@ dotenv.config();
 const attachUserWithTokenVerification = async (req, res, next) => {
   try {
     const token = req.cookies?.user;
+    console.log(req.cookies);
     
     if (!token) return next(); // No token, proceed without modification
     

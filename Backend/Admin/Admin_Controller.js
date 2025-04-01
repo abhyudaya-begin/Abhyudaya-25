@@ -21,6 +21,8 @@ const AdminLogin = async (req, res) => {
         const admin = await Admin_model.create(user);
 
       const token = generateToken(user);
+      
+
   
       res.cookie("user", token, {
         httpOnly: true,
