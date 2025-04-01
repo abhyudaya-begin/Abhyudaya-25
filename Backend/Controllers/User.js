@@ -89,7 +89,15 @@ const Login = async (req, res) => {
         .json(new ApiError(400, "Email/ABH_ID and Password are required"));
     }
 
-    const user = await User.findOne(email ? { email } : { ABH_ID });
+    const user = await User.findOne(
+      email
+        ? { email: { $regex: `^${email}$`, $options: "i" } } // Case-insensitive
+        : { ABH_ID }
+    );
+    
+    
+    console.log(user)
+    
 
     if (!user) {
       return res.status(404).json(new ApiError(404, "User not found"));
