@@ -20,7 +20,7 @@ const adminRouter = Router();
 adminRouter.post("/user", AdminLogin);
 adminRouter.post("/send-email",  Send);
 adminRouter.post("/verify-email", Verify);
-adminRouter.get("/users-events", FetchAllUsersEvents);
+adminRouter.get("/users-events", checkAdmin, FetchAllUsersEvents);
 
 // Users per events.
 //
