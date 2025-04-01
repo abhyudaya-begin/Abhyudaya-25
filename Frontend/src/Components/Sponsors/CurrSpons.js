@@ -66,7 +66,7 @@ const CurrSpons=[
     },
    
   
-        //break    
+ //break    
         {
           name: "Trition",
           "spon-link": "https://i.postimg.cc/44tQ2G5m/Trition.png "
