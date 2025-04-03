@@ -29,7 +29,7 @@ adminRouter.get("/users-events", checkAdmin, FetchAllUsersEvents);
 
 adminRouter.post("/payment", checkAdmin,  movePendingToPaid);
 adminRouter.post("/pay-delete", checkAdmin,  removePendingTransaction);
-adminRouter.get("/transactions", checkAdmin,  getAllUserTransactions);
+adminRouter.get("/transactions",  getAllUserTransactions);
 // 
 
 //Sponsors Upload.
