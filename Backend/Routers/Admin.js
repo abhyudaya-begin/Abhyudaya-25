@@ -27,8 +27,8 @@ adminRouter.get("/users-events",  FetchAllUsersEvents);
 
 //Payment Handlings and all
 
-adminRouter.post("/payment", checkAdmin,  movePendingToPaid);
-adminRouter.post("/pay-delete", checkAdmin,  removePendingTransaction);
+adminRouter.post("/payment",  movePendingToPaid);
+adminRouter.post("/pay-delete",  removePendingTransaction);
 adminRouter.get("/transactions",  getAllUserTransactions);
 // 
 
