@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import { motion } from "framer-motion";
+import { Sparkles } from "lucide-react";
 
 const Countdown = () => {
   // Set your event date here (format: year, month-1, day, hour, minute, second)
@@ -76,123 +78,133 @@ const Countdown = () => {
   };
 
   return (
-    <div className="flex  flex-col items-center justify-center text-white px-6 bg-transparent ">
-      <div className="w-full max-w-4xl">
-        <div className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white text-center mb-12 animate-pulse">
-          Abhyudaya '25 Goes Live in...
-        </div>
+<div className="text-center mb-4 flex items-center justify-center gap-4">
+  <span className="text-4xl md:text-6xl">🎉</span>
+  <h1 className="text-4xl md:text-7xl font-extrabold tracking-tight">
+    <span className="bg-clip-text text-transparent bg-gradient-to-r from-pink-400 to-purple-300 animate-pulse">
+      ABHYUDAYA IS LIVE!
+    </span>
+  </h1>
+  <span className="text-4xl md:text-6xl">🎉</span>
+</div>
 
-        {/* Countdown Timer */}
-        <div className="flex justify-center flex-wrap items-center gap-2 sm:gap-0  space-x-1 md:space-x-2">
-          {/* Days */}
-          <div className="flex flex-col items-center ">
-            <div className="relative">
-              <div
-                className={`bg-purple-900 bg-opacity-80 backdrop-blur-sm rounded-xl border-2 border-purple-300 border-opacity-70 shadow-lg shadow-purple-500/40 p-4 md:p-6 transition-all duration-700 ease-in-out ${
-                  animateDay ? "scale-110 border-opacity-100" : "scale-100"
-                }`}
-              >
-                <span className=" text-5xl  md:text-6xl lg:text-7xl font-bold text-white">
-                  {formatTime(timeLeft.days)}
-                </span>
-              </div>
-              <div
-                className={`absolute -inset-1 bg-gradient-to-r from-pink-400 to-purple-400 rounded-xl blur opacity-50 transition-opacity duration-700 ${
-                  animateDay ? "opacity-80" : ""
-                }`}
-              ></div>
-            </div>
-            <div className="mt-2 text-sm md:text-lg font-medium text-white">
-              Days
-            </div>
-          </div>
+    // <div className="flex  flex-col items-center justify-center text-white px-6 bg-transparent ">
+    //   <div className="w-full max-w-4xl">
+    //     <div className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white text-center mb-12 animate-pulse">
+    //       Abhyudaya '25 Goes Live in...
+    //     </div>
 
-          {/* Colon */}
-          <div className="hidden sm:flex text-5xl mx-1 md:text-6xl lg:text-7xl font-bold text-white opacity-90 animate-pulse flex items-center self-start mt-4 md:mt-6">
-            :
-          </div>
+    //     {/* Countdown Timer */}
+    //     <div className="flex justify-center flex-wrap items-center gap-2 sm:gap-0  space-x-1 md:space-x-2">
+    //       {/* Days */}
+    //       <div className="flex flex-col items-center ">
+    //         <div className="relative">
+    //           <div
+    //             className={`bg-purple-900 bg-opacity-80 backdrop-blur-sm rounded-xl border-2 border-purple-300 border-opacity-70 shadow-lg shadow-purple-500/40 p-4 md:p-6 transition-all duration-700 ease-in-out ${
+    //               animateDay ? "scale-110 border-opacity-100" : "scale-100"
+    //             }`}
+    //           >
+    //             <span className=" text-5xl  md:text-6xl lg:text-7xl font-bold text-white">
+    //               {formatTime(timeLeft.days)}
+    //             </span>
+    //           </div>
+    //           <div
+    //             className={`absolute -inset-1 bg-gradient-to-r from-pink-400 to-purple-400 rounded-xl blur opacity-50 transition-opacity duration-700 ${
+    //               animateDay ? "opacity-80" : ""
+    //             }`}
+    //           ></div>
+    //         </div>
+    //         <div className="mt-2 text-sm md:text-lg font-medium text-white">
+    //           Days
+    //         </div>
+    //       </div>
 
-          {/* Hours */}
-          <div className="flex flex-col items-center">
-            <div className="relative">
-              <div
-                className={`bg-indigo-900 bg-opacity-20 backdrop-blur-sm rounded-xl border-2 border-indigo-300 border-opacity-70 shadow-lg shadow-indigo-500/40 p-4 md:p-6 transition-all duration-700 ease-in-out ${
-                  animateHour ? "scale-110 border-opacity-100" : "scale-100"
-                }`}
-              >
-                <span className=" text-5xl md:text-6xl lg:text-7xl font-bold text-white">
-                  {formatTime(timeLeft.hours)}
-                </span>
-              </div>
-              <div
-                className={`absolute -inset-1 bg-gradient-to-r from-indigo-400 to-blue-400 rounded-xl blur opacity-50 transition-opacity duration-700 ${
-                  animateHour ? "opacity-80" : ""
-                }`}
-              ></div>
-            </div>
-            <div className="mt-2 text-sm md:text-lg font-medium text-white">
-              Hours
-            </div>
-          </div>
+    //       {/* Colon */}
+    //       <div className="hidden sm:flex text-5xl mx-1 md:text-6xl lg:text-7xl font-bold text-white opacity-90 animate-pulse flex items-center self-start mt-4 md:mt-6">
+    //         :
+    //       </div>
 
-          {/* Colon */}
-          <div className="hidden sm:flex text-5xl mx-1 md:text-6xl lg:text-7xl font-bold text-white opacity-90 animate-pulse flex items-center self-start mt-4 md:mt-6">
-            :
-          </div>
+    //       {/* Hours */}
+    //       <div className="flex flex-col items-center">
+    //         <div className="relative">
+    //           <div
+    //             className={`bg-indigo-900 bg-opacity-20 backdrop-blur-sm rounded-xl border-2 border-indigo-300 border-opacity-70 shadow-lg shadow-indigo-500/40 p-4 md:p-6 transition-all duration-700 ease-in-out ${
+    //               animateHour ? "scale-110 border-opacity-100" : "scale-100"
+    //             }`}
+    //           >
+    //             <span className=" text-5xl md:text-6xl lg:text-7xl font-bold text-white">
+    //               {formatTime(timeLeft.hours)}
+    //             </span>
+    //           </div>
+    //           <div
+    //             className={`absolute -inset-1 bg-gradient-to-r from-indigo-400 to-blue-400 rounded-xl blur opacity-50 transition-opacity duration-700 ${
+    //               animateHour ? "opacity-80" : ""
+    //             }`}
+    //           ></div>
+    //         </div>
+    //         <div className="mt-2 text-sm md:text-lg font-medium text-white">
+    //           Hours
+    //         </div>
+    //       </div>
 
-          {/* Minutes */}
-          <div className="flex flex-col items-center">
-            <div className="relative">
-              <div
-                className={`bg-violet-900 bg-opacity-20 backdrop-blur-sm rounded-xl border-2 border-violet-300 border-opacity-70 shadow-lg shadow-violet-500/40 p-4 md:p-6 transition-all duration-700 ease-in-out ${
-                  animateMinute ? "scale-110 border-opacity-100" : "scale-100"
-                }`}
-              >
-                <span className=" text-5xl md:text-6xl lg:text-7xl font-bold text-white">
-                  {formatTime(timeLeft.minutes)}
-                </span>
-              </div>
-              <div
-                className={`absolute -inset-1 bg-gradient-to-r from-violet-400 to-fuchsia-400 rounded-xl blur opacity-50 transition-opacity duration-700 ${
-                  animateMinute ? "opacity-80" : ""
-                }`}
-              ></div>
-            </div>
-            <div className="mt-2 text-sm md:text-lg font-medium text-white">
-              Mins
-            </div>
-          </div>
+    //       {/* Colon */}
+    //       <div className="hidden sm:flex text-5xl mx-1 md:text-6xl lg:text-7xl font-bold text-white opacity-90 animate-pulse flex items-center self-start mt-4 md:mt-6">
+    //         :
+    //       </div>
 
-          {/* Colon */}
-          <div className="hidden sm:flex text-5xl mx-1 md:text-6xl lg:text-7xl font-bold text-white opacity-90 animate-pulse flex items-center self-start mt-4 md:mt-6">
-            :
-          </div>
+    //       {/* Minutes */}
+    //       <div className="flex flex-col items-center">
+    //         <div className="relative">
+    //           <div
+    //             className={`bg-violet-900 bg-opacity-20 backdrop-blur-sm rounded-xl border-2 border-violet-300 border-opacity-70 shadow-lg shadow-violet-500/40 p-4 md:p-6 transition-all duration-700 ease-in-out ${
+    //               animateMinute ? "scale-110 border-opacity-100" : "scale-100"
+    //             }`}
+    //           >
+    //             <span className=" text-5xl md:text-6xl lg:text-7xl font-bold text-white">
+    //               {formatTime(timeLeft.minutes)}
+    //             </span>
+    //           </div>
+    //           <div
+    //             className={`absolute -inset-1 bg-gradient-to-r from-violet-400 to-fuchsia-400 rounded-xl blur opacity-50 transition-opacity duration-700 ${
+    //               animateMinute ? "opacity-80" : ""
+    //             }`}
+    //           ></div>
+    //         </div>
+    //         <div className="mt-2 text-sm md:text-lg font-medium text-white">
+    //           Mins
+    //         </div>
+    //       </div>
 
-          {/* Seconds */}
-          <div className="flex flex-col items-center">
-            <div className="relative">
-              <div
-                className={`bg-fuchsia-900 bg-opacity-20 backdrop-blur-sm rounded-xl border-2 border-fuchsia-300 border-opacity-70 shadow-lg shadow-fuchsia-500/40 p-4 md:p-6 transition-all duration-700 ease-in-out ${
-                  animateSecond ? "scale-105 border-opacity-100" : "scale-100"
-                }`}
-              >
-                <span className=" text-5xl md:text-6xl lg:text-7xl font-bold text-white">
-                  {formatTime(timeLeft.seconds)}
-                </span>
-              </div>
-              <div
-                className={`absolute -inset-1 bg-gradient-to-r from-fuchsia-400 to-pink-400 rounded-xl blur opacity-50 transition-opacity duration-700 ${
-                  animateSecond ? "opacity-80" : ""
-                }`}
-              ></div>
-            </div>
-            <div className="mt-2 text-sm md:text-lg font-medium text-white">
-              Secs
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+    //       {/* Colon */}
+    //       <div className="hidden sm:flex text-5xl mx-1 md:text-6xl lg:text-7xl font-bold text-white opacity-90 animate-pulse flex items-center self-start mt-4 md:mt-6">
+    //         :
+    //       </div>
+
+    //       {/* Seconds */}
+    //       <div className="flex flex-col items-center">
+    //         <div className="relative">
+    //           <div
+    //             className={`bg-fuchsia-900 bg-opacity-20 backdrop-blur-sm rounded-xl border-2 border-fuchsia-300 border-opacity-70 shadow-lg shadow-fuchsia-500/40 p-4 md:p-6 transition-all duration-700 ease-in-out ${
+    //               animateSecond ? "scale-105 border-opacity-100" : "scale-100"
+    //             }`}
+    //           >
+    //             <span className=" text-5xl md:text-6xl lg:text-7xl font-bold text-white">
+    //               {formatTime(timeLeft.seconds)}
+    //             </span>
+    //           </div>
+    //           <div
+    //             className={`absolute -inset-1 bg-gradient-to-r from-fuchsia-400 to-pink-400 rounded-xl blur opacity-50 transition-opacity duration-700 ${
+    //               animateSecond ? "opacity-80" : ""
+    //             }`}
+    //           ></div>
+    //         </div>
+    //         <div className="mt-2 text-sm md:text-lg font-medium text-white">
+    //           Secs
+    //         </div>
+    //       </div>
+    //     </div>
+    //   </div>
+    // </div>
   );
 };
 
