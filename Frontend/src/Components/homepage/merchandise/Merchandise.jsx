@@ -65,14 +65,16 @@ const FlipCard = () => {
       </div>
 
       <a
-      disabled
-  href=""
-  target="_blank"
-  rel="noreferrer"
+  href="#"
+  onClick={(e) => {
+    e.preventDefault();
+    toast.info("Buy option is currently unavailable.");
+  }}
   className="mt-12 py-2 sm:py-4 px-5 sm:px-10 bg-white text-gray-900 text-lg sm:text-xl font-bold rounded-xl shadow-lg hover:bg-gray-800 hover:text-gray-100 transition-transform transform hover:scale-105"
 >
   Buy Now
 </a>
+
     </div>
   );
 };
