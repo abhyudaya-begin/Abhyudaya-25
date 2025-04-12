@@ -43,11 +43,11 @@ function Routing() {
         <Route path="/about" element={<Members />} />
         <Route
           path="/campus-ambassador"
-          element={<CampusAmbassadorProgram />}
+          element={<IndexHome />}
         />
         <Route path="/gallery" element={<Gallery />} />
         <Route path="/Sponsors" element={<Sponsors />} />
-        <Route path="/profile" element={<ProfileRoute />} />
+        <Route path="/profile" element={<IndexHome />} />
         <Route path="/contact" element={<ContactUs />} />
         <Route path="/events" element={<Events />} />
         <Route path="/events/:id" element={<EventDetail />} />

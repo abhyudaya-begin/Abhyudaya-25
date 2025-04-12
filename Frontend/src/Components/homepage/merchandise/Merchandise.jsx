@@ -65,7 +65,8 @@ const FlipCard = () => {
       </div>
 
       <a
-  href="https://forms.gle/PDNFEp92rBMiLqxQ8"
+      disabled
+  href=""
   target="_blank"
   rel="noreferrer"
   className="mt-12 py-2 sm:py-4 px-5 sm:px-10 bg-white text-gray-900 text-lg sm:text-xl font-bold rounded-xl shadow-lg hover:bg-gray-800 hover:text-gray-100 transition-transform transform hover:scale-105"

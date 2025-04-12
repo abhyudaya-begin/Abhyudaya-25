@@ -61,6 +61,11 @@ const EventDetail = () => {
       toast.success("Unregistered successfully!");
     }
   };
+  const handleClick = () => {
+    toast.info("Come back next year!");
+  };
+  
+  
 
   const isRegistered = 
   (Array.isArray(processingEvents) && processingEvents.some(e => e.eventId === event?.eventId)) ||
@@ -142,16 +147,12 @@ const EventDetail = () => {
               </div>
 
               <button
-              disabled = {isRegistered}
-                onClick={isRegistered ? handleUnregister : () => setIsEventRegPopUpOpen(true)}
-                className={`w-full text-white font-bold py-3 px-6 rounded-lg transition-all duration-200 shadow-lg transform hover:-translate-y-1 ${
-                  isRegistered
-                    ? "bg-red-500 hover:bg-red-600 shadow-red-500/20 hover:shadow-red-500/40"
-                    : "  cursor-pointer bg-gradient-to-r from-purple-600 to-pink-500 hover:from-purple-700 hover:to-pink-600 shadow-purple-500/20 hover:shadow-purple-500/40"
-                }`}
-              >
-                {isRegistered ? "Already Registered" : "Register Now"}
-              </button>
+  onClick={handleClick}
+  className={`w-full text-white font-bold py-3 px-6 rounded-lg transition-all duration-200 shadow-lg transform cursor-not-allowed bg-gray-400 shadow-gray-400/30`}
+>
+  Come Back Next Year
+</button>
+
             </div>
           </div>
 
