@@ -1,0 +1,45 @@
+# Core ML/AI Dependencies
+torch>=2.0.0
+transformers>=4.30.0
+datasets>=2.14.0
+accelerate>=0.20.0
+
+# API Framework
+fastapi>=0.103.0
+uvicorn[standard]>=0.23.0
+pydantic>=2.0.0
+
+# Data Processing
+numpy>=1.24.0
+pandas>=2.0.0
+scikit-learn>=1.3.0
+scipy>=1.11.0
+
+# Geospatial Processing
+geopandas>=0.13.0
+shapely>=2.0.0
+folium>=0.14.0
+
+# Speech Processing
+openai-whisper>=20230314
+speechrecognition>=3.10.0
+pydub>=0.25.0
+
+# Monitoring and Logging
+mlflow>=2.5.0
+wandb>=0.15.0
+loguru>=0.7.0
+
+# Deployment and Utilities
+python-multipart>=0.0.6
+python-jose[cryptography]>=3.3.0
+passlib[bcrypt]>=1.7.4
+aiofiles>=23.0.0
+redis>=4.6.0
+
+# Development
+pytest>=7.4.0
+pytest-asyncio>=0.21.0
+jupyter>=1.0.0
+matplotlib>=3.7.0
+seaborn>=0.12.0

@@ -82,7 +82,7 @@ const Countdown = () => {
   <span className="text-4xl md:text-6xl">🎉</span>
   <h1 className="text-4xl md:text-7xl font-extrabold tracking-tight">
     <span className="bg-clip-text text-transparent bg-gradient-to-r from-pink-400 to-purple-300 animate-pulse">
-      ABHYUDAYA IS LIVE!
+      COMING SOON!
     </span>
   </h1>
   <span className="text-4xl md:text-6xl">🎉</span>
